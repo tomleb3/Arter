@@ -6,11 +6,11 @@ function _ItemPreview({ item }) {
 
     return <article className="item-preview">
 
-        <Link to="/item/:id">
+        <Link to={`/item/${item._id}`}>
             <div className="item-img-placeholder"></div>
         </Link>
         <div className="info-container">
-            <Link to="/user/:id">
+            <Link to={`/item/${item._id}`}>
                 <div className="profile-container flex a-center">
                     <div className="user-img-placeholder"></div>
                     <h5>{item.seller.fullname}</h5>

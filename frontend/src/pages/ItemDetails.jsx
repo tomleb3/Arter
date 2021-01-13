@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { itemService } from '../services/itemService.js'
+import { Link } from 'react-router-dom'
 
 export class ItemDetails extends Component {
 
@@ -34,7 +35,7 @@ export class ItemDetails extends Component {
                     </div>
                 </div>
                 <div className="artist-link">
-                    Artist Details link
+                <Link to={`/user/${item.seller._id}`}>Artist Profile</Link>
                 </div>
                 <div className="other-works flex j-evenly">
                     <div>other item link</div>
