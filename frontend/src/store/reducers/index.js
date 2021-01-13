@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { systemReducer } from './systemReducer'
+import { itemReducer } from './itemReducer'
 
 export const rootReducer = combineReducers({
-    systemModule: systemReducer,
+    itemModule: itemReducer
 })

@@ -18,8 +18,8 @@ header {
         padding: 10px;
     }
 
-    nav *:hover {
-        background-color: rgba(136, 136, 136, 0.05);
+    nav p:hover {
+        background-color: rgba(140, 140, 140, 0.015);
     }
 
     nav *:not(:last-child) {
