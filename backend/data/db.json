@@ -12,7 +12,7 @@
             "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay",
             "imgUrl": "/img/items/img3.jpg",
             "createdAt": 8293048239402,
-            "isPurchased": false,
+            "purchasedAt": 324678463497,
             "tags": [
                 "wood",
                 "elephant",
@@ -35,9 +35,9 @@
                 "fullname": "Ayelet Avni",
                 "imgUrl": "/img/profiles/img1.jpg"
             },
-            "price": 200,
             "item": {
                 "_id": "v140",
+                "price": 200,
                 "title": "Wooden Elephant",
                 "imgUrl":"/img/items/img3.jpg"
             },
@@ -54,7 +54,6 @@
             "email": "avnia@gmail.com",
             "password": "secret",
             "createdAt":829304856782,
-            "itemsCreatedCount": 1,
             "reviews": [
                 {
                     "id": "r101",
@@ -77,15 +76,7 @@
             "email": "mikero@gmail.com",
             "password": "secret",
             "createdAt":829304856782,
-            "itemsCreatedCount": 0,
             "reviews": []
-           
         }
     ]
-} 
-
-
-
-// "usertags": [
-//     "wood-artist","painter","sculpture"
-// ]
+}

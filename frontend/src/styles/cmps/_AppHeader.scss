@@ -1,0 +1,28 @@
+header {
+    background-color: white;
+    font-size: 1.175rem;
+
+    section {
+        height: 70px;
+    }
+
+    .logo {
+        font-family: Sofia;
+        font-size: 1.875rem;
+        color: #13acca;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    nav p {
+        padding: 10px;
+    }
+
+    nav *:hover {
+        background-color: rgba(136, 136, 136, 0.05);
+    }
+
+    nav *:not(:last-child) {
+        margin-inline-end: 25px;
+    }
+}
