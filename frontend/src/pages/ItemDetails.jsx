@@ -24,7 +24,7 @@ export class ItemDetails extends Component {
                 <div  className="item-details flex j-evenly">
                     <div className="item-show flex col j-between">
                         <h1>{item.title}</h1>
-                        <img src={`${item.imgURL}`} alt={`${item.title}`} />
+                        <img src={`${item.imgUrl}`} alt={`${item.title}`} />
                     </div>
                     <div className="item-desc flex col j-between">
                         <h3>About this piece:</h3>

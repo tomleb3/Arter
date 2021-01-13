@@ -7,10 +7,10 @@
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
-                "imgUrl": "/img/profiles/img1.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
             },
             "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
-            "imgUrl": "/img/items/img3.jpg",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
             "createdAt": 8293048239402,
             "purchasedAt": 324678463497,
             "tags": [
@@ -26,7 +26,7 @@
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
-                "imgUrl": "/img/profiles/img1.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
             },
             "description": "Noir-themed black and white painting",
             "imgUrl": "/img/items/img3.jpg",
@@ -47,6 +47,45 @@
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+            },
+            "description": "Early photo from World War 2",
+            "imgUrl": "/img/items/img3.jpg",
+            "createdAt": 8293048239402,
+            "purchasedAt": 324678463497,
+            "tags": [
+                "war",
+                "world",
+                "photo"
+            ]
+        },
+        {
+            "_id": "v143",
+            "title": "Body painting",
+            "price": 150,
+            "seller": {
+                "_id": "u102",
+                "fullname": "Mike Ronen",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg"
+            },
+            "description": "Early photo from World War 2",
+            "imgUrl": "/img/items/img3.jpg",
+            "createdAt": 8293048239402,
+            "purchasedAt": 324678463497,
+            "tags": [
+                "war",
+                "world",
+                "photo"
+            ]
+        }
+        ,
+        {
+            "_id": "v144",
+            "title": "WWI Photo",
+            "price": 150,
+            "seller": {
+                "_id": "u103",
+                "fullname": "Shoshi Cohen",
                 "imgUrl": "/img/profiles/img1.jpg"
             },
             "description": "Early photo from World War 2",
@@ -78,7 +117,7 @@
                 "_id": "v140",
                 "price": 200,
                 "title": "Wooden Elephant",
-                "imgUrl": "/img/items/img3.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
             },
             "status": "pending"
         }
@@ -87,7 +126,7 @@
         {
             "_id": "u101",
             "fullname": "Ayelet Avni",
-            "imgUrl": "/img/profiles/img1.jpg",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg",
             "isAdmin": false,
             "username": "ayalila",
             "email": "avnia@gmail.com",
@@ -101,7 +140,7 @@
                     "byUser": {
                         "_id": "u102",
                         "fullname": "Mike Ronen",
-                        "imgUrl": "/img/profiles/img2.jpg"
+                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg"
                     }
                 }
             ]
@@ -109,7 +148,7 @@
         {
             "_id": "u102",
             "fullname": "Mike Ronen",
-            "imgUrl": "/img/profiles/img2.jpg",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg",
             "isAdmin": false,
             "username": "mikey",
             "email": "mikero@gmail.com",
