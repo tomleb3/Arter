@@ -1,16 +1,21 @@
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function _ItemPreview({ item }) {
     console.log(item)
 
     return <article className="item-preview">
 
-        <div className="item-img-placeholder"></div>
+        <Link to="/item/:id">
+            <div className="item-img-placeholder"></div>
+        </Link>
         <div className="info-container">
-            <div className="flex a-center">
-                <div className="user-img-placeholder"></div>
-                <h5>{item.seller.fullname}</h5>
-            </div>
+            <Link to="/user/:id">
+                <div className="profile-container flex a-center">
+                    <div className="user-img-placeholder"></div>
+                    <h5>{item.seller.fullname}</h5>
+                </div>
+            </Link>
             <h3>{item.title}</h3>
         </div>
         <div className="bottom-container">

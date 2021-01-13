@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadItems } from '../store/actions/itemActions.js'
-import { ItemList } from '../cmps/ItemList.jsx'
+import { UserItemList } from '../cmps/UserItemList.jsx'
 
 export class _Explore extends Component {
 
@@ -12,7 +12,8 @@ export class _Explore extends Component {
 
     render() {
         return <section className="explore">
-            <ItemList />
+            <UserItemList />
+            {/* <ItemList /> */}
         </section>
     }
 }

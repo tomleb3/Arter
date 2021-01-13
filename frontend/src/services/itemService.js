@@ -13,13 +13,6 @@
 // }
 
 
-
-
-
-
-
-
-
 import { httpService } from './httpService'
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
@@ -46,6 +39,7 @@ function query(filterBy) {
 function getById(itemId) {
     return httpService.get(`item/${itemId}`)
 }
+
 
 function remove(itemId) {
     return httpService.delete(`item/${itemId}`)
