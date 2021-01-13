@@ -10,16 +10,19 @@ export class UserDetails extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params
         const user = await userService.getById(id)
+        console.log('user: ',user);
         this.setState({ user })
     }
 
 
     render() {
-        return (
-            <div>
-                <h1>User Details</h1>
-
-            </div>
-        )
+        const { user } = this.state
+        if (!user) return <div className="loader"></div>    
+            return (
+                <div>
+                    <h1>User Details</h1>
+                
+                </div>
+            )
     }
 }
