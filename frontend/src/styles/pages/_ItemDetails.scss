@@ -5,17 +5,29 @@
 .item-details {
     height: 500px;
     border-radius: 10px;
-    background-color: rgba(197, 241, 241, 0.876);
+    background-color: rgba(146, 210, 216, 0.876);
     padding: 50px;
     margin: auto;
 
     .item-show{
         width: 400px;
+        .item-img{
+            width: 300px;
+            height: 300px;
+            border-radius:10px;
+            text-align: center;
+        }
+        .item-name{
+            margin-bottom: 25px;
+        }
     }
 
     .item-desc{
         width: 400px; 
-        letter-spacing: 0.08em;
+        p{
+            font-size: 1.3rem;
+        }
+
     }
 
 }
