@@ -43,7 +43,7 @@ function query(filterBy) {
     // return storageService.query('item')
 }
 
-async function getById(itemId) {
+function getById(itemId) {
     return httpService.get(`item/${itemId}`)
 }
 

@@ -7,6 +7,7 @@ export class _Explore extends Component {
 
     componentDidMount() {
         this.props.loadItems()
+        // this.props.loadUsers()
     }
 
     render() {

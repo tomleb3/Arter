@@ -13,7 +13,6 @@ function App() {
       <Switch>
         <Route path="/explore" component={Explore} />
         <Route path="/" component={Home} />
-        {/* {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)} */}
       </Switch>
     </main>
   );

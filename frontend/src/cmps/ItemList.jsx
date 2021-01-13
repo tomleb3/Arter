@@ -5,7 +5,7 @@ function _ItemList({ items }) {
 
     if (!items || !items.length) return <div className="loader"></div>
 
-    return <div className="item-list grid main-layout">
+    return <div className="item-list grid j-center main-layout">
         {items.length && items.map(item => {
             return <ItemPreview key={item._id} item={item} />
         })}
