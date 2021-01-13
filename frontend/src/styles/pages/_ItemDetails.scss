@@ -1,0 +1,36 @@
+.item-page {
+    height: 100vh;
+}
+
+.item-details {
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgba(197, 241, 241, 0.876);
+    padding: 50px;
+    margin: auto;
+
+    .item-show{
+        width: 400px;
+        
+
+    }
+
+    .item-desc{
+        width: 400px; 
+        letter-spacing: 0.08em;
+    }
+
+}
+
+.artist-link {
+    background-color: beige;
+    padding: 25px;
+    border-radius: 50%;
+    width: 100px;
+    margin: 20px;
+}
+
+.other-works {
+    background-color: rgba(197, 241, 241, 0.876);
+    padding: 25px;
+}

@@ -19,23 +19,24 @@ export class ItemDetails extends Component {
         const { item } = this.state
         if (!item) return <div className="loader"></div>
         return (
-            <section>
-                <div>
-                    <div>
+            <section className="item-page flex col j-evenly">
+                <div  className="item-details flex j-evenly">
+                    <div className="item-show flex col j-between">
                         <h1>{item.title}</h1>
                         <img src={`${item.imgURL}`} alt={`${item.title}`} />
                     </div>
-                    <div>
+                    <div className="item-desc flex col j-between">
+                        <h3>About this piece:</h3>
                         <p>{item.description}</p>
-                        <p>{item.price}</p>
+                        <p>price: ${item.price}</p>
                         {/* <p>{item.tags}</p> */}
-                        <button>Purchase</button>
+                        <button className="purchase-btn">Purchase</button>
                     </div>
                 </div>
-                <article>
+                <div className="artist-link">
                     Artist Details link
-                </article>
-                <div>
+                </div>
+                <div className="other-works flex j-evenly">
                     <div>other item link</div>
                     <div>other item link</div>
                     <div>other item link</div>
