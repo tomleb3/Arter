@@ -9,10 +9,12 @@
 
 @import "./cmps/AppHeader";
 @import "./cmps/AppFooter";
-@import "./cmps/ItemList";
+@import "./cmps/UserItemList";
 @import "./cmps/ItemPreview";
+@import "./cmps/UserPreview";
 
 @import "./pages/Home";
 @import "./pages/Explore";
 @import "./pages/User";
 @import "./pages/LoginSignup";
+@import "./pages/ItemDetails";

@@ -24,4 +24,8 @@ yarn-debug.log*
 yarn-error.log*
 
 FRONTEND/..eslintcache
+<<<<<<< HEAD
 FRONTEND/.eslintcache
+=======
+FRONTEND/.eslintcache
+>>>>>>> 55809b763565cb940858883a0d2adad4b1cef649

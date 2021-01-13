@@ -3,21 +3,60 @@
         {
             "_id": "v140",
             "title": "Wooden Elephant",
-            "price": 200,
+            "price": 380,
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
                 "imgUrl": "/img/profiles/img1.jpg"
             },
-            "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay",
+            "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
             "imgUrl": "/img/items/img3.jpg",
             "createdAt": 8293048239402,
             "purchasedAt": 324678463497,
             "tags": [
                 "wood",
                 "elephant",
-                "traditional",
-                "Ayelet Avni"
+                "traditional"
+            ]
+        },
+        {
+            "_id": "v141",
+            "title": "B&W Painting",
+            "price": 200,
+            "seller": {
+                "_id": "u101",
+                "fullname": "Ayelet Avni",
+                "imgUrl": "/img/profiles/img1.jpg"
+            },
+            "description": "Noir-themed black and white painting",
+            "imgUrl": "/img/items/img3.jpg",
+            "createdAt": 8293048239402,
+            "purchasedAt": 324678463497,
+            "tags": [
+                "50s",
+                "noir",
+                "painting",
+                "black",
+                "white"
+            ]
+        },
+        {
+            "_id": "v142",
+            "title": "WWII Photo",
+            "price": 150,
+            "seller": {
+                "_id": "u101",
+                "fullname": "Ayelet Avni",
+                "imgUrl": "/img/profiles/img1.jpg"
+            },
+            "description": "Early photo from World War 2",
+            "imgUrl": "/img/items/img3.jpg",
+            "createdAt": 8293048239402,
+            "purchasedAt": 324678463497,
+            "tags": [
+                "war",
+                "world",
+                "photo"
             ]
         }
     ],
@@ -39,7 +78,7 @@
                 "_id": "v140",
                 "price": 200,
                 "title": "Wooden Elephant",
-                "imgUrl":"/img/items/img3.jpg"
+                "imgUrl": "/img/items/img3.jpg"
             },
             "status": "pending"
         }
@@ -53,7 +92,7 @@
             "username": "ayalila",
             "email": "avnia@gmail.com",
             "password": "secret",
-            "createdAt":829304856782,
+            "createdAt": 829304856782,
             "reviews": [
                 {
                     "id": "r101",
@@ -75,7 +114,7 @@
             "username": "mikey",
             "email": "mikero@gmail.com",
             "password": "secret",
-            "createdAt":829304856782,
+            "createdAt": 829304856782,
             "reviews": []
         }
     ]

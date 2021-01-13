@@ -1,14 +1,14 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function AppHeader({ }) {
 
     return (
         <header>
             <section className="main-layout flex j-between a-center">
-                <div className="logo"><NavLink exact to="/">Arter</NavLink></div>
+                <div className="logo"><Link exact to="/">Arter</Link></div>
                 <nav className="flex">
-                    <NavLink to="/explore"><p>Explore</p></NavLink>
-                    <NavLink to="/"><p>Signup</p></NavLink>
+                    <Link to="/explore"><p>Explore</p></Link>
+                    <Link to="/"><p>Signup</p></Link>
                 </nav>
             </section>
         </header>
