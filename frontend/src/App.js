@@ -1,11 +1,11 @@
 import React from 'react';
-// import { routes } from './routes.js'
-import { AppHeader } from './cmps/AppHeader.jsx'
 import { Switch, Route } from 'react-router-dom'
 import './styles/global.scss'
+import { AppHeader } from './cmps/AppHeader.jsx'
 import { Home } from './pages/Home.jsx';
 import { Explore } from './pages/Explore.jsx';
 import { UserDetails } from './pages/UserDetails.jsx';
+// import { routes } from './routes.js'
 
 function App() {
   return (
