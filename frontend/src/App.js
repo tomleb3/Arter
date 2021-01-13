@@ -6,12 +6,14 @@ import './styles/global.scss'
 import { Home } from './pages/Home.jsx';
 import { Explore } from './pages/Explore.jsx';
 import { UserDetails } from './pages/UserDetails.jsx';
+import { ItemDetails } from './pages/ItemDetails.jsx';
 
 function App() {
   return (
     <main>
       <AppHeader />
       <Switch>
+        <Route exact path="/explore/:id" component={ItemDetails} />
         <Route path="/explore" component={Explore} />
         <Route path="/user/:id" component={UserDetails} />
         <Route path="/" component={Home} />
@@ -20,5 +22,6 @@ function App() {
     </main>
   );
 }
+// /explore/v140
 
 export default App;
