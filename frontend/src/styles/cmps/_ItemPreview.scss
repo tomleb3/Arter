@@ -9,10 +9,31 @@
         background-color: lightgray;
     }
 
+    .info-container {
+        padding: 10px;
+
+        .profile-container {
+            width: fit-content;
+        }
+    }
+
     .user-img-placeholder {
         border-radius: 50%;
         background-color: lightgray;
         height: 25px;
         width: 25px;
+        margin-inline-end: 10px;
+    }
+
+    h3 {
+        margin-top: 15px;
+    }
+
+    .bottom-container {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+        h5 {
+            padding: 10px;
+        }
     }
 }

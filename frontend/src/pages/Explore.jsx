@@ -1,17 +1,19 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadItems } from '../store/actions/itemActions.js'
-import { ItemList } from '../cmps/ItemList.jsx'
+import { UserItemList } from '../cmps/UserItemList.jsx'
 
 export class _Explore extends Component {
 
     componentDidMount() {
         this.props.loadItems()
+        // this.props.loadUsers()
     }
 
     render() {
         return <section className="explore">
-            <ItemList />
+            <UserItemList />
+            {/* <ItemList /> */}
         </section>
     }
 }

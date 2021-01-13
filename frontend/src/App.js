@@ -13,11 +13,10 @@ function App() {
     <main>
       <AppHeader />
       <Switch>
-        <Route exact path="/explore/:id" component={ItemDetails} />
+        <Route exact path="/item/:id" component={ItemDetails} />
         <Route path="/explore" component={Explore} />
         <Route path="/user/:id" component={UserDetails} />
         <Route path="/" component={Home} />
-        {/* {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)} */}
       </Switch>
     </main>
   );

@@ -4,9 +4,8 @@ export class Home extends Component {
 
     render() {
         return <main className="home">
-            <div className="hero">
-                {/* <img src="" alt="" /> */}
-            </div>
+            <div className="hero"></div>
+            
             <section className="main-layout">
 
             </section>
