@@ -42,6 +42,7 @@ export class UserDetails extends Component {
                         <div>
                             <div className="about">
                                 <h1>{user.fullname}</h1>
+                                <p>{user.description}</p>
                             </div>
                             <div className="item-list flex">
                                 {items.map((item) => <ItemPreview item={item} />)}
