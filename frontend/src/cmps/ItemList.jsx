@@ -1,7 +1,6 @@
-import { connect } from 'react-redux'
 import { ItemPreview } from "./ItemPreview.jsx"
 
-function _ItemList({ items }) {
+export function ItemList({ items }) {
 
     if (!items || !items.length) {
         return <div className="item-list main-layout">
@@ -14,11 +13,3 @@ function _ItemList({ items }) {
         })}
     </section>
 }
-
-const mapStateToProps = (state) => {
-    return {
-        items: state.itemModule.items
-    }
-}
-
-export const ItemList = connect(mapStateToProps)(_ItemList)

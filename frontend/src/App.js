@@ -11,6 +11,7 @@ import { UserDetails } from './pages/UserDetails.jsx';
 import { ItemDetails } from './pages/ItemDetails.jsx';
 import { loadItems } from './store/actions/itemActions'
 import { loadUsers } from './store/actions/userActions'
+import { LoginSignup } from './pages/LoginSignup'
 
 class _App extends Component {
   componentDidMount() {
@@ -23,6 +24,8 @@ class _App extends Component {
       <main>
         <AppHeader />
         <Switch>
+          <Route exact path="/signup" component={LoginSignup} />
+          <Route exact path="/login" component={LoginSignup} />
           <Route exact path="/item/:id" component={ItemDetails} />
           <Route path="/explore" component={Explore} />
           <Route path="/user/:id" component={UserDetails} />

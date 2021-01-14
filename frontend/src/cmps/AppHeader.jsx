@@ -8,7 +8,7 @@ export function AppHeader({ }) {
                 <div className="logo"><Link exact to="/">Arter</Link></div>
                 <nav className="flex">
                     <Link to="/explore"><p>Explore</p></Link>
-                    <Link to="/"><p>Signup</p></Link>
+                    <Link to="/login"><p>Login</p></Link>
                 </nav>
             </section>
         </header>

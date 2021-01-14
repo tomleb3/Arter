@@ -1,10 +1,15 @@
-import { connect } from 'react-redux'
 import { UserPreview } from "./UserPreview.jsx"
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-function _UserList({ items, users }) {
-    console.log(users)
+function getArtists(items, users) {
+    console.log(items, users)
+
+    // if (items.
+}
+
+export function UserList({ items, users }) {
+    console.log(getArtists(items, users))
 
     if (!users || !users.length) {
         return <div className="user-list empty main-layout">
@@ -22,12 +27,3 @@ function _UserList({ items, users }) {
         <div className="chevron flex a-center j-end"><ChevronRightIcon fontSize="large" /></div>
     </div>
 }
-
-const mapStateToProps = (state) => {
-    return {
-        items: state.itemModule.items,
-        users: state.userModule.users,
-    }
-}
-
-export const UserList = connect(mapStateToProps)(_UserList)

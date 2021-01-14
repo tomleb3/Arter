@@ -1,9 +1,6 @@
 import { Component } from 'react'
-import { connect } from 'react-redux'
 
-
-
-export class _AppFilter extends Component {
+export class AppFilter extends Component {
 
     state = {
         filterBy: {
@@ -14,10 +11,8 @@ export class _AppFilter extends Component {
     handleChange = ({ target }) => {
         const field = target.name
         const value =  target.value
-        console.log (field)
         this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), () => {
             this.props.onSetFilter(this.state.filterBy)
-            console.log(this.state);
         })
     }
 
@@ -37,16 +32,3 @@ export class _AppFilter extends Component {
         )
     }
 }
-
-
-const mapStateToProps = (state) => {
-    return {
-        // toys: state.toyModule.toys,
-        // filterBy: state.toyModule.filterBy
-    }
-}
-
-const mapDispatchToProps = {
-}
-
-export const AppFilter = connect(mapStateToProps, mapDispatchToProps)(_AppFilter)
