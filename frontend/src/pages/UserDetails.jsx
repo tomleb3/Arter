@@ -28,34 +28,37 @@ export class UserDetails extends Component {
         const { items } = this.state
         if (!user) return <div className="loader"></div>
         return (
-            <section>
+            <section className="main-layout">
                 {/* BANNER */}
                 <img src="" alt="" />
                 {/* PROFILE */}
-                <img className="profile-img" src={`${user.imgUrl}`} alt="" />
-                <div className="sidebar">
-                    <button>something1</button>
-                    <button>something2</button>
-                </div>
-                <div className="main">
-                    <div>
-                        <div className="about">
-                            <h1>{user.fullname}</h1>
-                        </div>
-                        <div className="item-list flex">
-                            {items.map((item) => <ItemPreview item={item} />)}
+                <img className="profile-img" src={`${user.imgUrl}`} alt={`${user.fullname}`} />
+                <div className="content flex ">
+                    <div className="sidebar ">
+                        <button>something1</button>
+                        <button>something2</button>
+                    </div>
+                    <div className="main">
+                        <div>
+                            <div className="about">
+                                <h1>{user.fullname}</h1>
+                            </div>
+                            <div className="item-list flex">
+                                {items.map((item) => <ItemPreview item={item} />)}
 
-                            {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
-                            {/* {if(items.length===0) return <button>Go Explore</button>
+                                {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
+                                {/* {if(items.length===0) return <button>Go Explore</button>
                             else return <div>{items.map((item) => <ItemPreview item={item} />)}</div>} */}
 
-                        </div>
-                        <div>
-                            {/* {user.reviews.map((review) => (<ReviewList reviews={user.reviews}/>))} */}
+                            </div>
+                            <div>
+                                {/* {user.reviews.map((review) => (<ReviewList reviews={user.reviews}/>))} */}
 
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
             </section>
 
