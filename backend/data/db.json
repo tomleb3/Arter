@@ -43,6 +43,7 @@
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
                 "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
             },
+            "description" :"NEED TO ADD",
             "isAdmin": false,
             "username": "mikey",
             "email": "mikebo@gmail.com",
@@ -57,6 +58,7 @@
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg",
                 "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
             },
+            "description" :"NEED TO ADD",
             "isAdmin": false,
             "username": "efratcoco",
             "email": "effratt@gmail.com",
