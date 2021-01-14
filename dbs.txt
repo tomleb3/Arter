@@ -1,0 +1,19 @@
+{
+    "_id": "u101",
+    "fullname": "Ayelet Avni",
+    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+}
+
+{
+    "_id": "u102",
+    "fullname": "Mike Bosh",
+    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+}
+
+{
+    "_id": "u103",
+    "fullname": "Efrat Cohen",
+    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+}
+
+user->review(mini user)

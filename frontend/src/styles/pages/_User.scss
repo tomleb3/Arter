@@ -1,19 +1,35 @@
-.profile-img{
-    width: 100px;
-    border-radius:50% ;
-    margin: 20px;
-    border: 2px solid rgb(92, 61, 43);
+.profile-header {
+    position: relative;
+    margin-bottom: 100px;
+
+    .profile1-img {
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 25%;
+        border-radius: 50%;
+        // border: 2px solid rgb(92, 61, 43);
+        // margin: 20px;
+        // padding: 20px;
+    }
+
+    .banner-img {
+        position: relative;
+        width: 100%;
+        // margin: 20px;
+        // border: 2px solid rgb(92, 61, 43);
+    }
 }
 
-.sidebar{
+.sidebar {
     background-color: #cbb9aa;
     width: 25%;
     padding: 15px;
 
-    button{
+    button {
         width: 70%;
         padding: 10px;
         margin: 6px;
     }
 }
-
