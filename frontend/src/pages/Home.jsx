@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { GetStarted } from '../cmps/GetStarted.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
 
@@ -14,10 +15,9 @@ export class Home extends Component {
                     <UserList />
                 </article>
                 <article className="our-services">
-                    <div className="btn"><Button>Publish Now</Button></div>
-
-
+                    <div className="btn"><Button variant="outlined" color="primary">Publish Now</Button></div>
                 </article>
+                <GetStarted />
             </main>
         </section>
     }

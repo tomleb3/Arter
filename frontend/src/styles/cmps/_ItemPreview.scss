@@ -1,11 +1,11 @@
 .item-preview {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 250px;
+    min-height: 250px;
     width: 200px;
 
     .item-img {
         width: 100%;
-        height: 120px;
+        height: 155px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         background-color: lightgray;
         // object-fit: cover;
