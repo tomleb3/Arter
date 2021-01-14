@@ -6,7 +6,7 @@ function _UserPreview({ user }) {
 
     return <section className="user-preview">
         <Link to={`/user/${user._id}`}>
-            <img className="item-img" src={user.imgUrl}></img>
+            <img className="item-img" src={user.imgUrls.profile}></img>
         </Link>
     </section>
 }
