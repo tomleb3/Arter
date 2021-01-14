@@ -30,7 +30,7 @@ export const itemService = {
 // return axios.get('api/toy/?', {params: {id: 1223, balanse:13}})
 
 function query(filterBy) {
-    var queryStr = (!filterBy) ? '' : `?name=${filterBy.title}&sort=anaAref`
+    var queryStr = (!filterBy) ? '' : `?title_like=${filterBy.title}`
     console.log(queryStr)
     return httpService.get(`item/${queryStr}`)
     // return storageService.query('item')
