@@ -14,6 +14,7 @@ import { loadUsers } from './store/actions/userActions'
 import { LoginSignup } from './pages/LoginSignup'
 
 class _App extends Component {
+  
   componentDidMount() {
     this.props.loadItems()
     this.props.loadUsers()

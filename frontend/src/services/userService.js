@@ -17,7 +17,7 @@ export const userService = {
 // }
 
 function query(filterBy) {
-    var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+    var queryStr = (!filterBy) ? '' : `?fullname_like=${filterBy.name}&sort=anaAref`
     return httpService.get(`user/${queryStr}`)
     // return storageService.query('item')
 }
@@ -31,6 +31,7 @@ function remove(userId) {
     // return storageService.delete('item', itemId)
 
 }
+
 function add(user) {
     return httpService.post(`user`, user)
 }

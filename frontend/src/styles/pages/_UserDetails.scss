@@ -1,6 +1,6 @@
 .profile-header {
     position: relative;
-    margin-bottom: 12%;
+    // margin-bottom: 12%;
 
     .profile1-img {
         top: 55%;
@@ -25,9 +25,10 @@
 }
 
 .sidebar {
-    background-color: #cbb9aa;
+    // background-color: #cbb9aa;
     width: 25%;
     padding: 15px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
 
     button {
         width: 70%;
@@ -36,14 +37,18 @@
     }
 }
 
-.about{
-    margin: 10px;
-    padding: 10px;
-    // background-color: rgb(197, 35, 35);
-    border: 2px solid rgb(219, 219, 219);
-    border-radius: 0.3rem;
+.main {
+    margin-inline-start: 35px;
+
+    .about {
+        margin: 115px 0 20px;
+        padding: 10px;
+        // background-color: rgb(197, 35, 35);
+        border: 2px solid rgb(219, 219, 219);
+        border-radius: 0.3rem;
+    }
 }
 
-.c-order{
+.c-order {
     background-color: #fff;
 }

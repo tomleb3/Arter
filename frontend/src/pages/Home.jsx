@@ -8,7 +8,7 @@ import { Uploader } from '../cmps/Uploader.jsx'
 class _Home extends Component {
 
     render() {
-        const { users } = this.props
+        const { users, items } = this.props
 
         return <section className="home">
             <div className="hero"></div>
@@ -16,7 +16,7 @@ class _Home extends Component {
             <main className="main-layout">
                 <article>
                     <h3>Fetured Artists</h3>
-                    <UserList users={users} />
+                    <UserList users={users} items={items} />
                 </article>
                 <article className="our-services">
                     <div className="btn"><Button variant="outlined" color="primary">Publish Now</Button></div>
@@ -31,7 +31,8 @@ class _Home extends Component {
 const mapStateToProps = (state) => {
     return {
         // loggedInUser: state.userModule.loggedInUser
-        users: state.userModule.users
+        users: state.userModule.users,
+        items: state.itemModule.items,
     }
 }
 

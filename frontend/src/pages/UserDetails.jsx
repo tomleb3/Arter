@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { userService } from '../services/userService.js'
 import { itemService } from '../services/itemService.js'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
+import { ReviewList } from '../cmps/ReviewList.jsx'
 
 export class UserDetails extends Component {
 
@@ -13,12 +14,12 @@ export class UserDetails extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params
         const user = await userService.getById(id)
-        console.log('user: ', user);
+        console.log('user: ', user)
         this.setState({ user })
 
         const items = await itemService.query()
         const userItems = items.filter((item) => id === item.seller._id)
-        console.log('userItems', userItems);
+        console.log('userItems', userItems)
         this.setState({ items: userItems })
     }
 
@@ -26,43 +27,39 @@ export class UserDetails extends Component {
     render() {
         const { user } = this.state
         const { items } = this.state
+
         if (!user) return <div className="loader"></div>
         return (
             <section className="main-layout">
                 <div className="profile-header">
-                    <img className="banner-img" src={`${user.imgUrls.banner}`} alt="" />
-                    <img className="profile1-img" src={`${user.imgUrls.profile}`} alt={`${user.fullname}`} />
+                    <img className="banner-img" src={user.imgUrls.banner} alt="" />
+                    <img className="profile1-img" src={user.imgUrls.profile} alt={user.fullname} />
                 </div>
                 <div className="content flex ">
-                    <div className="sidebar ">
+                    <div className="sidebar">
                         <button>search</button>
                         <button className="c-order">Custom order</button>
                     </div>
                     <div className="main">
-                        <div>
-                            <div className="about">
-                                <h1>{user.fullname}</h1>
-                                <p>{user.description}</p>
-                            </div>
-                            <div className="item-list flex">
-                                {items.map((item) => <ItemPreview item={item} />)}
+                        <div className="about">
+                            <h1>{user.fullname}</h1>
+                            <p>{user.description}</p>
+                        </div>
+                        <div className="item-list flex">
+                            {items.map((item) => <ItemPreview item={item} />)}
 
-                                {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
-                                {/* {if(items.length===0) return <button>Go Explore</button>
+                            {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
+                            {/* {if(items.length===0) return <button>Go Explore</button>
                             else return <div>{items.map((item) => <ItemPreview item={item} />)}</div>} */}
 
-                            </div>
-                            <div>
-                                {/* {user.reviews.map((review) => (<ReviewList reviews={user.reviews}/>))} */}
-
-                            </div>
+                        </div>
+                        <div className="review-container">
+                            {/* {user.reviews.map(review => <ReviewList reviews={user.reviews}/>)} */}
+                            <ReviewList reviews={user.reviews} />
                         </div>
                     </div>
                 </div>
-
-
             </section>
-
         )
     }
 }
