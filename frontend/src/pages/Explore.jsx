@@ -1,32 +1,13 @@
 import { Component } from 'react'
-import { connect } from 'react-redux'
-import { loadItems } from '../store/actions/itemActions.js'
-import { loadUsers } from '../store/actions/userActions.js'
-import { UserItemList } from '../cmps/UserItemList.jsx'
+import { UserList } from '../cmps/UserList.jsx'
+import { ItemList } from '../cmps/ItemList.jsx'
 
-export class _Explore extends Component {
-
-    componentDidMount() {
-        this.props.loadItems()
-        this.props.loadUsers()
-    }
+export class Explore extends Component {
 
     render() {
         return <section className="explore">
-            <UserItemList />
+            <UserList />
+            <ItemList />
         </section>
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        // loggedInUser: state.userModule.loggedInUser
-    }
-}
-
-const mapDispatchToProps = {
-    loadItems,
-    loadUsers
-}
-
-export const Explore = connect(mapStateToProps, mapDispatchToProps)(_Explore)
