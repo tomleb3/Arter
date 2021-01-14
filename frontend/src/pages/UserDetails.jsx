@@ -11,7 +11,20 @@ export class UserDetails extends Component {
         items: []
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        this.loadUser()
+    }
+
+    componentDidUpdate(prevProps) {
+        console.log('prevProps', prevProps);
+        console.log('this.props', this.props);
+        if(this.props.match.params.id !== prevProps.match.params.id){
+            this.loadUser()
+        }
+    }
+
+
+    loadUser = async () => {
         const { id } = this.props.match.params
         const user = await userService.getById(id)
         console.log('user: ', user)
