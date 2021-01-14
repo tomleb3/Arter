@@ -13,7 +13,6 @@ export class _Explore extends Component {
     render() {
         return <section className="explore">
             <UserItemList />
-            {/* <ItemList /> */}
         </section>
     }
 }
