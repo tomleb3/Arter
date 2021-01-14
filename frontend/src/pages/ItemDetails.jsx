@@ -21,10 +21,10 @@ export class ItemDetails extends Component {
         if (!item) return <div className="loader"></div>
         return (
             <section className="item-page flex col j-evenly">
-                <div  className="item-details flex j-evenly">
-                    <div className="item-show flex col j-between">
-                        <h1>{item.title}</h1>
-                        <img src={item.imgURL} alt={item.title} />
+                <div className="item-details flex j-evenly">
+                    <div className="item-show flex col">
+                        <h1 className="item-name">{item.title}</h1>
+                        <img className="item-img" src={item.imgUrl} alt={item.title} />
                     </div>
                     <div className="item-desc flex col j-between">
                         <h3>About this piece:</h3>
@@ -34,8 +34,8 @@ export class ItemDetails extends Component {
                         <button className="purchase-btn">Purchase</button>
                     </div>
                 </div>
-                <div className="artist-link">
-                <Link to={`/user/${item.seller._id}`}>Artist Profile</Link>
+                <div>
+                    <Link to={`/user/${item.seller._id}`}><img className="profile-img" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
                 </div>
                 <div className="other-works flex j-evenly">
                     <div>other item link</div>

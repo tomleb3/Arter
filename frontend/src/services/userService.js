@@ -8,8 +8,13 @@ export const userService = {
     query,
     remove,
     getById
+    // getItems
 }
 
+
+// function getItems(userId){
+//     return httpService.get(`item?seller.id=${userId}`)
+// }
 
 function query(filterBy) {
     var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`

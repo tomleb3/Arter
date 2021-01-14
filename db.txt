@@ -1,0 +1,23 @@
+!! SEE ABOUT MINI USER (IMG) IN THE ORDER !!
+!! ABOUT THE ARTIST IN THR DB !!
+
+user
+
+item -> mini user
+
+order -> mini user1, mini user2 , mini item
+
+
+user(3)
+item(5)
+order(1)
+
+
+u101: Ayelet Avni
+items{v140,v141,v142}
+
+u102: Mike Bosh
+items{v143}
+
+u103: Shoshi Cohen
+items{v144}

@@ -1,6 +1,9 @@
 header {
     background-color: white;
     font-size: 1.175rem;
+    border-bottom: 2px solid rgb(92, 61, 43);
+    box-shadow: inset 0px -31px 12px -26px rgba(92, 61, 43,0.2) ;
+    
 
     section {
         height: 70px;
@@ -8,10 +11,11 @@ header {
 
     .logo {
         font-family: Sofia;
-        font-size: 1.875rem;
+        font-size: 2rem;
         color: #13acca;
         font-style: italic;
         font-weight: 600;
+        padding: 0 24px;
     }
 
     nav p {
@@ -19,7 +23,8 @@ header {
     }
 
     nav p:hover {
-        background-color: rgba(140, 140, 140, 0.05);
+        background-color: rgba(140, 140, 140, 0.06);
+        border-radius: 6px;
     }
 
     nav *:not(:last-child) {
