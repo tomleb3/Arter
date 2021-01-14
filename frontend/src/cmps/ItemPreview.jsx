@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function _ItemPreview({ item }) {
     console.log(item)
 
-    return <article className="item-preview">
+    return <section className="item-preview">
 
         <Link to={`/item/${item._id}`}>
             <img className="item-img" src={item.imgUrl}></img>
@@ -21,7 +21,7 @@ function _ItemPreview({ item }) {
         <div className="bottom-container">
             <h5 className="right">${item.price}</h5>
         </div>
-    </article>
+    </section>
 }
 
 const mapStateToProps = (state) => {

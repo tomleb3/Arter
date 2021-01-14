@@ -1,9 +1,25 @@
-.home{
+.home {
+    article {
+        margin: 200px 0;
+    }
 
-    .hero{
+    .hero {
         background-color: #13acca;
-        background-image: url('https://www.transparenttextures.com/patterns/beige-paper.png');
+        background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
         width: 100vw;
         height: 300px;
+    }
+
+    .our-services {
+        width: 100%;
+        height: 300px;
+        background-color: lightgray;
+        position: relative;
+
+        .btn {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+        }
     }
 }
