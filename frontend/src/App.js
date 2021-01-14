@@ -2,13 +2,13 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import './styles/global.scss'
 import { AppHeader } from './cmps/AppHeader.jsx'
+import { AppFooter } from './cmps/AppFooter.jsx'
 import { Home } from './pages/Home.jsx';
 import { Explore } from './pages/Explore.jsx';
 import { UserDetails } from './pages/UserDetails.jsx';
 import { ItemDetails } from './pages/ItemDetails.jsx';
-// import { routes } from './routes.js'
 
-function App() {
+export function App() {
   return (
     <main>
       <AppHeader />
@@ -18,9 +18,9 @@ function App() {
         <Route path="/user/:id" component={UserDetails} />
         <Route path="/" component={Home} />
       </Switch>
+      <AppFooter />
     </main>
   );
 }
-// /explore/v140
 
-export default App;
+// export const App = connect(mapStateToProps, mapDispatchToProps)(_App)

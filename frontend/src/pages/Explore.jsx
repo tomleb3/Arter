@@ -1,13 +1,14 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadItems } from '../store/actions/itemActions.js'
+import { loadUsers } from '../store/actions/userActions.js'
 import { UserItemList } from '../cmps/UserItemList.jsx'
 
 export class _Explore extends Component {
 
     componentDidMount() {
         this.props.loadItems()
-        // this.props.loadUsers()
+        this.props.loadUsers()
     }
 
     render() {
@@ -24,7 +25,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    loadItems
+    loadItems,
+    loadUsers
 }
 
 export const Explore = connect(mapStateToProps, mapDispatchToProps)(_Explore)
