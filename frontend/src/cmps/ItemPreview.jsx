@@ -7,12 +7,12 @@ function _ItemPreview({ item }) {
     return <article className="item-preview">
 
         <Link to={`/item/${item._id}`}>
-            <div className="item-img-placeholder"></div>
+            <img className="item-img" src={item.imgUrl}></img>
         </Link>
         <div className="info-container">
             <Link to={`/item/${item.seller._id}`}>
                 <div className="profile-container flex a-center">
-                    <div className="user-img-placeholder"></div>
+                    <img className="user-img" src={item.seller.imgUrl}></img>
                     <h5>{item.seller.fullname}</h5>
                 </div>
             </Link>
