@@ -30,8 +30,8 @@ export class UserDetails extends Component {
         return (
             <section className="main-layout">
                 <div className="profile-header">
-                    <img className="banner-img" src={`${user.urlImgs.banner}`} alt="" />
-                    <img className="profile1-img" src={`${user.urlImgs.profile}`} alt={`${user.fullname}`} />
+                    <img className="banner-img" src={`${user.imgUrls.banner}`} alt="" />
+                    <img className="profile1-img" src={`${user.imgUrls.profile}`} alt={`${user.fullname}`} />
                 </div>
                 <div className="content flex ">
                     <div className="sidebar ">

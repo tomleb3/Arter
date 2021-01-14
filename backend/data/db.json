@@ -3,13 +3,13 @@
         {
             "_id": "u101",
             "fullname": "Ayelet Avni",
-            "urlImgs": {
+            "imgUrls": {
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
                 "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610582393/users/banners/paint_stains_multicolored_122482_2560x1024_eyeb9w.jpg"
             },
             "isAdmin": false,
             "username": "ayalila",
-            "email": "avnia@gmail.com",
+            "email": "avnia12@gmail.com",
             "password": "secret",
             "createdAt": 1312130853500,
             "reviews": [
@@ -38,7 +38,7 @@
         {
             "_id": "u102",
             "fullname": "Mike Bosh",
-            "urlImgs": {
+            "imgUrls": {
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
                 "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
             },
@@ -52,9 +52,9 @@
         {
             "_id": "u103",
             "fullname": "Efrat Cohen",
-            "urlImgs": {
+            "imgUrls": {
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg",
-                "banner": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
             },
             "isAdmin": false,
             "username": "efratcoco",
@@ -69,7 +69,7 @@
                     "byUser": {
                         "_id": "u101",
                         "fullname": "Ayelet Avni",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
                     }
                 }
             ]
@@ -92,7 +92,7 @@
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
             }
         },
         {
@@ -111,9 +111,9 @@
                 "white"
             ],
             "seller": {
-                "_id": "u101",
-                "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                "_id": "u103",
+                "fullname": "Efrat Cohen",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
             }
         },
         {
@@ -132,7 +132,7 @@
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
             }
         },
         {
@@ -150,15 +150,15 @@
             ],
             "seller": {
                 "_id": "u102",
-                "fullname": "Mike bosh",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg"
+                "fullname": "Mike Bosh",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
             }
         },
         {
             "_id": "v144",
             "title": "Onyx stone ring",
             "price": 150,
-            "description": "Early photo from World War 2",
+            "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
             "imgUrl": "/img/items/img3.jpg",
             "createdAt": 1519129853500,
             "purchasedAt": 1519129853500,
@@ -169,8 +169,8 @@
             ],
             "seller": {
                 "_id": "u103",
-                "fullname": "Shoshi Cohen",
-                "imgUrl": "/img/profiles/img1.jpg"
+                "fullname": "Efrat Cohen",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
             }
         }
     ],
@@ -179,21 +179,21 @@
             "_id": "o1225",
             "status": "pending",
             "createdAt": 1519129853500,
-            "buyer": {
-                "_id": "u102",
-                "fullname": "Mike Bosh",
-                "imgUrl": "/img/profiles/img2.jpg"
-            },
             "seller": {
                 "_id": "u101",
                 "fullname": "Ayelet Avni",
-                "imgUrl": "/img/profiles/img1.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+            },
+            "buyer": {
+                "_id": "u102",
+                "fullname": "Mike Bosh",
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
             },
             "item": {
                 "_id": "v140",
                 "price": 200,
                 "title": "Wooden Elephant",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg"
             }
         }
     ]
