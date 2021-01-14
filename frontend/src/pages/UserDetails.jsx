@@ -29,10 +29,10 @@ export class UserDetails extends Component {
         if (!user) return <div className="loader"></div>
         return (
             <section className="main-layout">
-                {/* BANNER */}
-                <img src="" alt="" />
-                {/* PROFILE */}
-                <img className="profile-img" src={`${user.imgUrl}`} alt={`${user.fullname}`} />
+                <div className="profile-header">
+                    <img className="banner-img" src={`${user.urlImgs.banner}`} alt="" />
+                    <img className="profile1-img" src={`${user.urlImgs.profile}`} alt={`${user.fullname}`} />
+                </div>
                 <div className="content flex ">
                     <div className="sidebar ">
                         <button>something1</button>

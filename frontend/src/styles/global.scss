@@ -1,5 +1,4 @@
 @import "./basics/base";
-@import "./basics/function";
 @import "./basics/functions";
 @import "./basics/helpers";
 @import "./basics/layout";
@@ -9,7 +8,8 @@
 
 @import "./cmps/AppHeader";
 @import "./cmps/AppFooter";
-@import "./cmps/UserItemList";
+@import "./cmps/ItemList";
+@import "./cmps/UserList";
 @import "./cmps/ItemPreview";
 @import "./cmps/UserPreview";
 

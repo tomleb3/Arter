@@ -3,7 +3,10 @@
         {
             "_id": "u101",
             "fullname": "Ayelet Avni",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg",
+            "urlImgs": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610582393/users/banners/paint_stains_multicolored_122482_2560x1024_eyeb9w.jpg"
+            },
             "isAdmin": false,
             "username": "ayalila",
             "email": "avnia@gmail.com",
@@ -17,7 +20,7 @@
                     "byUser": {
                         "_id": "u102",
                         "fullname": "Mike Bosh",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg"
+                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
                     }
                 },
                 {
@@ -26,8 +29,8 @@
                     "txt": "I've really liked her work.",
                     "byUser": {
                         "_id": "u103",
-                        "fullname": "Shoshi Cohen",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg"
+                        "fullname": "Efrat Cohen",
+                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
                     }
                 }
             ]
@@ -35,7 +38,10 @@
         {
             "_id": "u102",
             "fullname": "Mike Bosh",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg",
+            "urlImgs": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
+            },
             "isAdmin": false,
             "username": "mikey",
             "email": "mikebo@gmail.com",
@@ -45,11 +51,14 @@
         },
         {
             "_id": "u103",
-            "fullname": "Mike Bosh",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/jhonkrispel_qxmioc.jpg",
+            "fullname": "Efrat Cohen",
+            "urlImgs": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/ayeletavni_bfgfh7.jpg"
+            },
             "isAdmin": false,
-            "username": "mikey",
-            "email": "mikebo@gmail.com",
+            "username": "efratcoco",
+            "email": "effratt@gmail.com",
             "password": "secret",
             "createdAt": 1319159853500,
             "reviews": [
