@@ -4,38 +4,34 @@
 
 .item-details {
     height: 500px;
-<<<<<<< HEAD
     border-radius: 3px;
     background-color: rgba(197, 241, 241, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.1);
-=======
-    border-radius: 10px;
-    background-color: rgba(146, 210, 216, 0.876);
->>>>>>> dc7c0304c767c6228265b0ad93f568eb2a320a3e
     padding: 50px;
     margin: auto;
 
-    .item-show{
+    .item-show {
         width: 400px;
-        .item-img{
+
+        .item-img {
             width: 300px;
             height: 300px;
-            border-radius:10px;
+            border-radius: 10px;
             text-align: center;
         }
-        .item-name{
+
+        .item-name {
             margin-bottom: 25px;
         }
     }
 
-    .item-desc{
-        width: 400px; 
-        p{
+    .item-desc {
+        width: 400px;
+
+        p {
             font-size: 1.3rem;
         }
-
     }
-
 }
 
 .artist-link {
