@@ -16,4 +16,13 @@
     "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
 }
 
+{
+    "_id": "u104",
+    "fullname": "Aaron Pikotsky",
+    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
+
+}
+
 user->review(mini user)
+
+

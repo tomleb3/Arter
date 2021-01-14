@@ -35,8 +35,8 @@ export class UserDetails extends Component {
                 </div>
                 <div className="content flex ">
                     <div className="sidebar ">
-                        <button>something1</button>
-                        <button>something2</button>
+                        <button>search</button>
+                        <button className="c-order">Custom order</button>
                     </div>
                     <div className="main">
                         <div>
