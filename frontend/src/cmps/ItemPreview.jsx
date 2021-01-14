@@ -10,7 +10,7 @@ function _ItemPreview({ item }) {
             <img className="item-img" src={item.imgUrl}></img>
         </Link>
         <div className="info-container">
-            <Link to={`/item/${item.seller._id}`}>
+            <Link to={`/user/${item.seller._id}`}>
                 <div className="profile-container flex a-center">
                     <img className="user-img" src={item.seller.imgUrl}></img>
                     <h5>{item.seller.fullname}</h5>
