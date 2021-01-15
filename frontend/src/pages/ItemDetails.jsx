@@ -20,7 +20,7 @@ export class ItemDetails extends Component {
         const { item } = this.state
         if (!item) return <div className="loader"></div>
         return (
-            <section className="item-page flex col j-evenly">
+            <section className="item-page flex col j-evenly m-page">
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
                         <h1 className="item-name">{item.title}</h1>

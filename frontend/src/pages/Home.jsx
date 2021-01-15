@@ -10,7 +10,7 @@ class _Home extends Component {
     render() {
         const { users, items } = this.props
 
-        return <section className="home">
+        return <section className="home m-page">
             <div className="hero"></div>
 
             <main className="main-layout">

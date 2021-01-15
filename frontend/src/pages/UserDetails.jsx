@@ -43,7 +43,7 @@ export class UserDetails extends Component {
 
         if (!user) return <div className="loader"></div>
         return (
-            <section className="main-layout">
+            <section className="main-layout m-page">
                 <div className="profile-header">
                     <img className="banner-img" src={user.imgUrls.banner} alt="" />
                     <img className="profile1-img" src={user.imgUrls.profile} alt={user.fullname} />
