@@ -53,7 +53,7 @@ export function ReviewAdd({ onAdd }) {
                     }} />
             </div>
             <p>Let your voice be heard</p>
-            <textarea ref={textAreaRef}></textarea>
+            <textarea autoFocus ref={textAreaRef}></textarea>
             <div className="btns-container right">
                 <Button onClick={handleClose}>Close</Button>
                 <Button variant="contained" color="primary" onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>

@@ -20,9 +20,8 @@
 .item-details {
     height: 500px;
     border-radius: 4px;
-    background-color: #62cce4;
-    // background-color: $clr1;
-    border: 5px solid #119AB5;
+    background-color: rgba(197, 241, 241, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 50px;
     margin: auto;
     
@@ -33,7 +32,7 @@
             position: relative;
             width: 300px;
             padding-bottom: 82.5%;
-            background: black;
+            background: rgba(0, 0, 0, 0.9);
             box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.3);
         }
         
@@ -80,14 +79,13 @@
             align-self: flex-end;
             background-color: #fff;
             // border: $clr1 2px solid;
-            border: 5px solid #119AB5;
+            border: 2px solid #119AB5;
             border-radius: 2rem;
             padding: 10px;
             width: 220px;
             
             &:hover{
-                border: 5px solid #007e94;
-
+                border-color: #007e94;
             }
         }
     }
