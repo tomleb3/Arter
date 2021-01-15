@@ -12,6 +12,8 @@ FRONTEND/coverage
 # production
 FRONTEND/build
 
+.vscode/
+
 # misc
 .DS_Store
 .env.local

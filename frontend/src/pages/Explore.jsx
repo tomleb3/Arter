@@ -7,9 +7,9 @@ import { connect } from 'react-redux'
 
 class _Explore extends Component {
 
-    componentDidMount(){
-        this.props.loadItems()
-    }
+    // componentDidMount(){
+    //     this.props.loadItems()
+    // }
 
     onSetFilter = (filterBy) => {
         this.props.loadItems(filterBy)
