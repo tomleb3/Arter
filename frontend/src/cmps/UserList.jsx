@@ -12,21 +12,22 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 // SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export function UserList({ users, items }) {
+    console.log('users in UserList', users);
+    if(!users || !users.length) return <div><h1>lopa</h1></div>
     return <Swiper
         className="user-list main-layout"
         spaceBetween={30}
         slidesPerView={5}
         navigation
-        Autoplay
-        EffectFade
+        autoPlay
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}>
 
-        {users && users.map(user => {
-            return <SwiperSlide>
-                <UserPreview key={user._id} user={user} />
+        { users.map(user => {
+            return <SwiperSlide key={user._id}>
+                <UserPreview  user={user} />
             </SwiperSlide>
         })}
         {/* <SwiperSlide>Slide 1</SwiperSlide>

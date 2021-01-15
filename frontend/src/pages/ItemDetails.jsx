@@ -11,7 +11,6 @@ export class ItemDetails extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params
         const item = await itemService.getById(id)
-        console.log('item: ', item);
         this.setState({ item })
     }
 
@@ -20,6 +19,7 @@ export class ItemDetails extends Component {
         const { item } = this.state
         if (!item) return <div className="loader"></div>
         return (
+            // <ItemUpdate/>
             <section className="item-page flex col j-evenly m-page">
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">

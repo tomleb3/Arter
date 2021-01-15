@@ -17,8 +17,6 @@ export class UserDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        console.log('prevProps', prevProps);
-        console.log('this.props', this.props);
         if(this.props.match.params.id !== prevProps.match.params.id){
             this.loadUser()
         }
@@ -28,12 +26,10 @@ export class UserDetails extends Component {
     loadUser = async () => {
         const { id } = this.props.match.params
         const user = await userService.getById(id)
-        console.log('user: ', user)
         this.setState({ user })
 
         const items = await itemService.query()
         const userItems = items.filter((item) => id === item.seller._id)
-        console.log('userItems', userItems)
         this.setState({ items: userItems })
     }
 
@@ -61,7 +57,7 @@ export class UserDetails extends Component {
                         </div>
                         
                         <div className="item-list flex">
-                            {items.map((item) => <ItemPreview item={item} />)}
+                            {items.map((item) => <ItemPreview key={item._id} item={item} />)}
 
                             {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
                             {/* {if(items.length===0) return <button>Go Explore</button>

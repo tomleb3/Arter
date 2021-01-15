@@ -1,8 +1,7 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-function _ItemPreview({ item }) {
-    console.log(item)
+function _ItemPreview({ item , onRemove}) {
 
     return <section className="item-preview">
 
@@ -20,6 +19,7 @@ function _ItemPreview({ item }) {
         </div>
         <div className="bottom-container">
             <h5 className="right">${item.price}</h5>
+            <button className="remove-btn" onClick={()=>onRemove(item._id)}>x</button>
         </div>
     </section>
 }
