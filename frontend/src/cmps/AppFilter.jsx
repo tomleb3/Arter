@@ -24,9 +24,9 @@ export class AppFilter extends Component {
     render() {
         const {title} = this.state.filterBy
         return (
-            <section className="app-filter">
+            <section className="app-filter main-layout">
                 <form className="filter-form" onSubmit={this.onFilter}>
-                    <input placeholder="Search" type="text" name='title' value={title} onChange={this.handleChange} />
+                    <input className="search-bar" placeholder="Search" type="text" name='title' value={title} onChange={this.handleChange} />
                 </form>
             </section>
         )

@@ -3,6 +3,7 @@ import { userService } from '../services/userService.js'
 import { itemService } from '../services/itemService.js'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
+import { AppFilter } from '../cmps/AppFilter.jsx'
 
 export class UserDetails extends Component {
 
@@ -50,14 +51,15 @@ export class UserDetails extends Component {
                 </div>
                 <div className="content flex ">
                     <div className="sidebar">
-                        <button>search</button>
-                        <button className="c-order">Custom order</button>
+                        <AppFilter/>
+                        <button className="custom-order-btn">Custom Order</button>
                     </div>
                     <div className="main">
                         <div className="about">
                             <h1>{user.fullname}</h1>
                             <p>{user.description}</p>
                         </div>
+                        
                         <div className="item-list flex">
                             {items.map((item) => <ItemPreview item={item} />)}
 
