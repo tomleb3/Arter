@@ -1,0 +1,13 @@
+.app-filter{
+    text-align: right;
+
+    .search-bar{
+        padding: 10px;
+        border-radius: 2rem;
+        border: 2px  solid lightblue;
+        margin-top: 20px;
+        &:focus{
+            outline: none;
+        }
+    }
+}

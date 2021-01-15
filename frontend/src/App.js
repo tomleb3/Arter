@@ -12,6 +12,7 @@ import { ItemDetails } from './pages/ItemDetails.jsx';
 import { loadItems } from './store/actions/itemActions'
 import { loadUsers } from './store/actions/userActions'
 import { LoginSignup } from './pages/LoginSignup'
+// import { AppFilter } from './cmps/AppFilter'
 
 class _App extends Component {
   
