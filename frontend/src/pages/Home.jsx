@@ -11,7 +11,8 @@ class _Home extends Component {
         const { users, items } = this.props
 
         return <section className="home m-page">
-            <div className="hero"></div>
+            {/* <div className="hero"></div> */}
+            {/* <img src="../../public/hero1.jpg" /> */}
 
             <main className="main-layout">
                 <article>

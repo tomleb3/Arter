@@ -23,6 +23,7 @@ export class ItemDetails extends Component {
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
                         <h1 className="item-name">{item.title}</h1>
+<<<<<<< HEAD
 
                         <div class="frame">
                             <div class="mat">
@@ -32,9 +33,13 @@ export class ItemDetails extends Component {
                             </div>
                         </div>
 
+=======
+                        <img className="item-img" src={item.imgUrl} alt={item.title} />
+                        <Link to={`/user/${item.seller._id}`}><img className="profile-img" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
+>>>>>>> 6f8cc639523d45de4eb7d25574de0295aaaf39e0
                     </div>
                     <div className="item-desc flex col j-between">
-                        <h3>About this piece:</h3>
+                        <h2>About this piece:</h2>
                         <p>{item.description}</p>
                         <p>Price: ${item.price}</p>
                         {/* <p>{item.tags}</p> */}
@@ -42,7 +47,6 @@ export class ItemDetails extends Component {
                     </div>
                 </div>
                 <div>
-                    <Link to={`/user/${item.seller._id}`}><img className="profile-img" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
                 </div>
                 <div className="other-works flex j-evenly">
                     <div>other item link</div>
