@@ -9,10 +9,10 @@ export function ReviewPreview({ review }) {
 
     return <article className="review-preview">
         <Link to={`/user/${review.byUser._id}`}>
-        <div className="reviewer-info flex a-center">
-            <img src={review.byUser.imgUrl}></img>
-            <h4>{review.byUser.fullname}</h4>
-        </div>
+            <div className="reviewer-info flex a-center">
+                <img src={review.byUser.imgUrl}></img>
+                <h4>{review.byUser.fullname}</h4>
+            </div>
         </Link>
         <Rating value={review.rate} readOnly size="small" />
         <p>{review.txt}</p>
