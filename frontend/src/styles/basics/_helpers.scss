@@ -1,11 +1,25 @@
 // Font Sizes
-.fs12 { font-size: rem(12px); }
-.fs14 { font-size: rem(14px); }
-.fs18 { font-size: rem(18px); }
-.fs20 { font-size: rem(20px); }
-.fs24 { font-size: rem(24px); }
-.fs28 { font-size: rem(28px); }
-.fs30 { font-size: rem(30px); }
+.fs12 {
+    font-size: rem(12px);
+}
+.fs14 {
+    font-size: rem(14px);
+}
+.fs18 {
+    font-size: rem(18px);
+}
+.fs20 {
+    font-size: rem(20px);
+}
+.fs24 {
+    font-size: rem(24px);
+}
+.fs28 {
+    font-size: rem(28px);
+}
+.fs30 {
+    font-size: rem(30px);
+}
 
 // DISPLAY
 
@@ -152,6 +166,20 @@
     color: lemonchiffon;
 }
 
+// FONTS
+
+.font-sof {
+    font-family: Sofia;
+}
+
+.font-yan {
+    font-family: Yanone;
+}
+
+.font-mont {
+    font-family: Montserrat;
+}
+
 /* OTHERS */
 
 .clean-list {
@@ -165,4 +193,8 @@
 .muted {
     font-size: 0.8em;
     opacity: 0.5;
+}
+
+.pointer {
+    cursor: pointer;
 }

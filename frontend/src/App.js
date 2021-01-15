@@ -15,7 +15,7 @@ import { LoginSignup } from './pages/LoginSignup'
 // import { AppFilter } from './cmps/AppFilter'
 
 class _App extends Component {
-  
+
   componentDidMount() {
     this.props.loadItems()
     this.props.loadUsers()
