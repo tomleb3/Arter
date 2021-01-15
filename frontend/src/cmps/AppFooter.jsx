@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-export function AppFooter({ }) {
-
+export function AppFooter() {
     return <div></div>
 }

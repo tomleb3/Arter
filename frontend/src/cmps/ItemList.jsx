@@ -1,6 +1,6 @@
 import { ItemPreview } from "./ItemPreview.jsx"
 
-export function ItemList({ items }) {
+export function ItemList({ items , onRemove}) {
 
     if (!items || !items.length) {
         return <div className="item-list main-layout">
@@ -9,7 +9,7 @@ export function ItemList({ items }) {
     }
     return <section className="item-list grid main-layout">
         {items && items.map(item => {
-            return <ItemPreview key={item._id} item={item} />
+            return <ItemPreview key={item._id} item={item} onRemove={onRemove} />
         })}
     </section>
 }

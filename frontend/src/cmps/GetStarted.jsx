@@ -7,7 +7,7 @@ export class GetStarted extends Component {
         currPage: 'buyers'
     }
 
-    componentDidUpdate() { console.log(this.state) }
+    // componentDidUpdate() { console.log(this.state) }
 
     render() {
         return <article className="get-started flex j-center">

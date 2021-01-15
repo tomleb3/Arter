@@ -31,7 +31,6 @@ export const itemService = {
 
 function query(filterBy) {
     var queryStr = (!filterBy) ? '' : `?title_like=${filterBy.title}`
-    console.log(queryStr)
     return httpService.get(`item/${queryStr}`)
     // return storageService.query('item')
 }

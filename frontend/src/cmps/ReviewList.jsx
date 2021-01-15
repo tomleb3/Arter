@@ -1,15 +1,13 @@
 import { ReviewPreview } from './ReviewPreview.jsx'
-import AddIcon from '@material-ui/icons/Add';
-import { ReviewAddModal } from './ReviewAddModal.jsx'
+import { ReviewAdd } from './ReviewAdd.jsx'
 
-export function ReviewList({ reviews }) {
+export function ReviewList({ reviews, onAdd }) {
 
     return <section className="review-list">
         <div className="flex a-center j-between">
             <h3>Reviews</h3>
-            <AddIcon className="pointer" />
+            <ReviewAdd onAdd={onAdd} />
         </div>
-        {reviews.length ? (reviews.map(review => { return <ReviewPreview review={review} /> })) : 'No reviews yet...'}
-        <ReviewAddModal />
+        {reviews.length ? reviews.map(review => <ReviewPreview key={review.id} review={review} />) : 'No reviews yet...'}
     </section>
 }

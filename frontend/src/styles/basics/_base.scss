@@ -11,8 +11,9 @@
             cursor: pointer;
         }
 
-        input {
-            caret-color: red;
+        input,
+        textarea {
+            caret-color: $clr1;
         }
 
         a {
