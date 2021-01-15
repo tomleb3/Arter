@@ -91,6 +91,111 @@
             "password": "secret",
             "createdAt": 1319620853500,
             "reviews": []
+        },
+        {
+            "_id": "u105",
+            "fullname": "Ariana Celaeno",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610718560/users/profiles/010.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "ArianaCee",
+            "email": "ariana80@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u106",
+            "fullname": "Cooper Jackson",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610614749/users/profiles/007.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "CooperAndJackson",
+            "email": "jackson007@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u107",
+            "fullname": "William Wells",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610718576/users/profiles/012.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "I'm William",
+            "email": "wwwilliam@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u108",
+            "fullname": "Sophia Chambers",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610614712/users/profiles/008.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "Sophia Cham",
+            "email": "sophilinya@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u109",
+            "fullname": "Emma Binnington",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610718403/users/profiles/454545_xplpgz.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "EmmaBinn",
+            "email": "emmabinnington@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u110",
+            "fullname": "Ethan D'Angelo",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610614296/users/profiles/006.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "Ethannn...",
+            "email": "ethand@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
+        },
+        {
+            "_id": "u111",
+            "fullname": "Mia Reyes",
+            "imgUrls": {
+                "profile": "https://res.cloudinary.com/arter/image/upload/v1610718342/users/profiles/miaaa_yuce5n.jpg",
+                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+            },
+            "description" :"NEED TO ADD",
+            "isAdmin": false,
+            "username": "Pia Mia",
+            "email": "piamia@gmail.com",
+            "password": "secret",
+            "createdAt": 1319620853500,
+            "reviews": []
         }
     ],
     "item": [
@@ -118,7 +223,7 @@
             "title": "B&W Painting",
             "price": 200,
             "description": "Noir-themed black and white painting",
-            "imgUrl": "/img/items/img3.jpg",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610714560/items/4387807-OEZCEHCS-7_itx4k4.jpg",
             "createdAt": 1519129853500,
             "purchasedAt": 1519129853500,
             "tags": [
@@ -158,7 +263,7 @@
             "title": "Body painting",
             "price": 150,
             "description": "Early photo from World War 2",
-            "imgUrl": "/img/items/img3.jpg",
+            "imgUrl": "https:/",
             "createdAt": 1519129853500,
             "purchasedAt": 1519129853500,
             "tags": [
@@ -177,7 +282,7 @@
             "title": "Onyx stone ring",
             "price": 150,
             "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-            "imgUrl": "/img/items/img3.jpg",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610714365/items/low_jew__9_40_2_fy2lm2.jpg",
             "createdAt": 1519129853500,
             "purchasedAt": 1519129853500,
             "tags": [
