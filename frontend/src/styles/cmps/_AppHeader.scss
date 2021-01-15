@@ -2,6 +2,11 @@ header {
     background-color: white;
     font-size: 1.175rem;
     box-shadow: 0px 2px 10px -5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 10;
 
     section {
         height: 70px;

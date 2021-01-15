@@ -15,7 +15,7 @@ class _Explore extends Component {
         const { users } = this.props
         const { items } = this.props
 
-        return <section className="explore">
+        return <section className="explore m-page">
             <AppFilter onSetFilter={this.onSetFilter} />
             <UserList users={users} items={items} />
             <ItemList items={items} />
