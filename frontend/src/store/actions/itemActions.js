@@ -4,7 +4,6 @@ export function loadItems(filterBy) {
     return async dispatch => {
         try {
             const items = await itemService.query(filterBy)
-            console.log(items);
             dispatch({ type: 'SET_ITEMS', items })
         } catch (err) {
             console.log('itemActions:', err)
@@ -37,8 +36,8 @@ export function updateItem(item) {
 export function removeItem(itemId) {
     return async dispatch => {
         try {
-            const removedItem = await itemService.remove(itemId)
-            dispatch({ type: 'REMOVE_ITEM', removedItem })
+            await itemService.remove(itemId)
+            dispatch({ type: 'REMOVE_ITEM', itemId })
         } catch (err) {
             console.log('itemActions:', err)
         }

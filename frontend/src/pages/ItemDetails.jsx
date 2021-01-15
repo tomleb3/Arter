@@ -11,7 +11,6 @@ export class ItemDetails extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params
         const item = await itemService.getById(id)
-        console.log('item: ', item);
         this.setState({ item })
     }
 

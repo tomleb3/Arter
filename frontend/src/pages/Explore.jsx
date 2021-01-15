@@ -7,10 +7,6 @@ import { connect } from 'react-redux'
 
 class _Explore extends Component {
 
-    // componentDidMount(){
-    //     this.props.loadItems()
-    // }
-
     onSetFilter = (filterBy) => {
         this.props.loadItems(filterBy)
     }
@@ -22,7 +18,6 @@ class _Explore extends Component {
     render() {
         const { users } = this.props
         const { items } = this.props
-        console.log(items,'wtf');
         return <section className="explore m-page">
             <AppFilter onSetFilter={this.onSetFilter} />
             <UserList users={users} items={items} />
