@@ -37,7 +37,7 @@ export function updateItem(item) {
 export function removeItem(itemId) {
     return async dispatch => {
         try {
-            const removedItem = await itemService.removeItem(itemId)
+            const removedItem = await itemService.remove(itemId)
             dispatch({ type: 'REMOVE_ITEM', removedItem })
         } catch (err) {
             console.log('itemActions:', err)

@@ -1,218 +1,159 @@
 {
-    "user": [
+  "user": [
+    {
+      "_id": "u101",
+      "fullname": "Ayelet Avni",
+      "imgUrls": {
+        "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
+        "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633390/users/banners/0056_nm1u5s.jpg"
+      },
+      "description": "Hi! This is Ayelet Avni, i love to do Crafting, I do Any DIY Origami Craft videos for Your Social Media for Commercial use, Include-Full HD Video, copyright free Music, Title & Pro Edits for your youtube Channel or any social media Content.",
+      "isAdmin": false,
+      "username": "ayalila",
+      "email": "avnia12@gmail.com",
+      "password": "secret",
+      "createdAt": 1312130853500,
+      "reviews": [
         {
-            "_id": "u101",
-            "fullname": "Ayelet Avni",
-            "imgUrls": {
-                "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
-                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633390/users/banners/0056_nm1u5s.jpg"
-            },
-            "description" : "Hi! This is Ayelet Avni, i love to do Crafting, I do Any DIY Origami Craft videos for Your Social Media for Commercial use, Include-Full HD Video, copyright free Music, Title & Pro Edits for your youtube Channel or any social media Content.",
-            "isAdmin": false,
-            "username": "ayalila",
-            "email": "avnia12@gmail.com",
-            "password": "secret",
-            "createdAt": 1312130853500,
-            "reviews": [
-                {
-                    "id": "r101",
-                    "rate": 5,
-                    "txt": "Best Artist EVER!!!",
-                    "byUser": {
-                        "_id": "u102",
-                        "fullname": "Mike Bosh",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
-                    }
-                },
-                {
-                    "id": "r102",
-                    "rate": 4,
-                    "txt": "I've really liked her work.",
-                    "byUser": {
-                        "_id": "u103",
-                        "fullname": "Efrat Cohen",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
-                    }
-                }
-            ]
-        },
-        {
+          "id": "r101",
+          "rate": 5,
+          "txt": "Best Artist EVER!!!",
+          "byUser": {
             "_id": "u102",
             "fullname": "Mike Bosh",
-            "imgUrls": {
-                "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
-                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633068/users/banners/002.jpg"
-            },
-            "description" :"NEED TO ADD",
-            "isAdmin": false,
-            "username": "mikey",
-            "email": "mikebo@gmail.com",
-            "password": "secret",
-            "createdAt": 1319620853500,
-            "reviews": []
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+          }
         },
         {
+          "id": "r102",
+          "rate": 4,
+          "txt": "I've really liked her work.",
+          "byUser": {
             "_id": "u103",
             "fullname": "Efrat Cohen",
-            "imgUrls": {
-                "profile": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg",
-                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
-            },
-            "description" :"NEED TO ADD",
-            "isAdmin": false,
-            "username": "efratcoco",
-            "email": "effratt@gmail.com",
-            "password": "secret",
-            "createdAt": 1319159853500,
-            "reviews": [
-                {
-                    "id": "r103",
-                    "rate": 5,
-                    "txt": "Beautiful art. I'm very happy about my purchase.",
-                    "byUser": {
-                        "_id": "u101",
-                        "fullname": "Ayelet Avni",
-                        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
-                    }
-                }
-            ]
-        },
-        {
-            "_id": "u104",
-            "fullname": "Aaron Pikotsky",
-            "imgUrls": {
-                "profile": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg",
-                "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
-            },
-            "description" :"NEED TO ADD",
-            "isAdmin": false,
-            "username": "AaronPeacock",
-            "email": "aaaaron@gmail.com",
-            "password": "secret",
-            "createdAt": 1319620853500,
-            "reviews": []
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+          }
         }
-    ],
-    "item": [
+      ]
+    },
+    {
+      "_id": "u102",
+      "fullname": "Mike Bosh",
+      "imgUrls": {
+        "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
+        "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633068/users/banners/002.jpg"
+      },
+      "description": "NEED TO ADD",
+      "isAdmin": false,
+      "username": "mikey",
+      "email": "mikebo@gmail.com",
+      "password": "secret",
+      "createdAt": 1319620853500,
+      "reviews": []
+    },
+    {
+      "_id": "u103",
+      "fullname": "Efrat Cohen",
+      "imgUrls": {
+        "profile": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg",
+        "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610619722/users/banners/ayeletavni_horybm.jpg"
+      },
+      "description": "NEED TO ADD",
+      "isAdmin": false,
+      "username": "efratcoco",
+      "email": "effratt@gmail.com",
+      "password": "secret",
+      "createdAt": 1319159853500,
+      "reviews": [
         {
-            "_id": "v140",
-            "title": "Wooden Elephant",
-            "price": 380,
-            "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
-            "createdAt": 1519229860500,
-            "purchasedAt": 1529129853500,
-            "tags": [
-                "wood",
-                "elephant",
-                "traditional"
-            ],
-            "seller": {
-                "_id": "u101",
-                "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
-            }
-        },
-        {
-            "_id": "v141",
-            "title": "B&W Painting",
-            "price": 200,
-            "description": "Noir-themed black and white painting",
-            "imgUrl": "/img/items/img3.jpg",
-            "createdAt": 1519129853500,
-            "purchasedAt": 1519129853500,
-            "tags": [
-                "50s",
-                "noir",
-                "painting",
-                "black",
-                "white"
-            ],
-            "seller": {
-                "_id": "u103",
-                "fullname": "Efrat Cohen",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
-            }
-        },
-        {
-            "_id": "v142",
-            "title": "WWII Photo",
-            "price": 150,
-            "description": "Early photo from World War 2",
-            "imgUrl": "/img/items/img3.jpg",
-            "createdAt": 1519129853500,
-            "purchasedAt": 1519129853500,
-            "tags": [
-                "war",
-                "world",
-                "photo"
-            ],
-            "seller": {
-                "_id": "u101",
-                "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
-            }
-        },
-        {
-            "_id": "v143",
-            "title": "Body painting",
-            "price": 150,
-            "description": "Early photo from World War 2",
-            "imgUrl": "/img/items/img3.jpg",
-            "createdAt": 1519129853500,
-            "purchasedAt": 1519129853500,
-            "tags": [
-                "body",
-                "paint",
-                "color"
-            ],
-            "seller": {
-                "_id": "u102",
-                "fullname": "Mike Bosh",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
-            }
-        },
-        {
-            "_id": "v144",
-            "title": "Onyx stone ring",
-            "price": 150,
-            "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-            "imgUrl": "/img/items/img3.jpg",
-            "createdAt": 1519129853500,
-            "purchasedAt": 1519129853500,
-            "tags": [
-                "ring",
-                "jewelry",
-                "silver"
-            ],
-            "seller": {
-                "_id": "u103",
-                "fullname": "Efrat Cohen",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
-            }
+          "id": "r103",
+          "rate": 5,
+          "txt": "Beautiful art. I'm very happy about my purchase.",
+          "byUser": {
+            "_id": "u101",
+            "fullname": "Ayelet Avni",
+            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+          }
         }
-    ],
-    "order": [
-        {
-            "_id": "o1225",
-            "status": "pending",
-            "createdAt": 1519129853500,
-            "seller": {
-                "_id": "u101",
-                "fullname": "Ayelet Avni",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
-            },
-            "buyer": {
-                "_id": "u102",
-                "fullname": "Mike Bosh",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
-            },
-            "item": {
-                "_id": "v140",
-                "price": 200,
-                "title": "Wooden Elephant",
-                "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg"
-            }
-        }
-    ]
+      ]
+    },
+    {
+      "_id": "u104",
+      "fullname": "Aaron Pikotsky",
+      "imgUrls": {
+        "profile": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg",
+        "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
+      },
+      "description": "NEED TO ADD",
+      "isAdmin": false,
+      "username": "AaronPeacock",
+      "email": "aaaaron@gmail.com",
+      "password": "secret",
+      "createdAt": 1319620853500,
+      "reviews": []
+    }
+  ],
+  "item": [
+    {
+      "_id": "v140",
+      "title": "Wooden Elephant",
+      "price": 380,
+      "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
+      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
+      "createdAt": 1519229860500,
+      "purchasedAt": 1529129853500,
+      "tags": [
+        "wood",
+        "elephant",
+        "traditional"
+      ],
+      "seller": {
+        "_id": "u101",
+        "fullname": "Ayelet Avni",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+      }
+    },
+    {
+      "_id": "v144",
+      "title": "Onyx stone ring",
+      "price": 150,
+      "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
+      "imgUrl": "/img/items/img3.jpg",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+        "ring",
+        "jewelry",
+        "silver"
+      ],
+      "seller": {
+        "_id": "u103",
+        "fullname": "Efrat Cohen",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+      }
+    }
+  ],
+  "order": [
+    {
+      "_id": "o1225",
+      "status": "pending",
+      "createdAt": 1519129853500,
+      "seller": {
+        "_id": "u101",
+        "fullname": "Ayelet Avni",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+      },
+      "buyer": {
+        "_id": "u102",
+        "fullname": "Mike Bosh",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+      },
+      "item": {
+        "_id": "v140",
+        "price": 200,
+        "title": "Wooden Elephant",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg"
+      }
+    }
+  ]
 }
