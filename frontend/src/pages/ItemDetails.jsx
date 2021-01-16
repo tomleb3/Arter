@@ -23,7 +23,7 @@ export class ItemDetails extends Component {
             <section className="item-page flex col j-evenly m-page">
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
-                        <h1 className="item-name">{item.title}</h1>
+                        <h2 className="item-name">{item.title}</h2>
                         <img className="item-img" src={item.imgUrl} alt={item.title} />
                         <Link to={`/user/${item.seller._id}`}><img className="profile-img" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
                     </div>

@@ -13,7 +13,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 
 export function UserList({ users, items }) {
     console.log('users in UserList', users);
-    if(!users || !users.length) return <div><h1>lopa</h1></div>
+    if(!users || !users.length) return <div><h1></h1></div>
     return <Swiper
         className="user-list main-layout"
         spaceBetween={30}
