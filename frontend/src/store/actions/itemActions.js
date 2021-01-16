@@ -12,21 +12,23 @@ export function loadItems(filterBy) {
 }
 
 export function addItem(item) {
+    // console.log('item!!', item)
     return async dispatch => {
         try {
-            const addedItem = itemService.saveItem(item)
-            dispatch({ type: 'ADD_ITEM', review: addedItem })
+            const addedItem = itemService.add(item)
+            dispatch({ type: 'ADD_ITEM', item: addedItem })
         } catch (err) {
             console.log('itemActions:', err)
         }
     }
 }
 
-export function updateItem(item) {
+export function editItem(item) {
+    // console.log('item', item)
     return async dispatch => {
         try {
-            const addedItem = itemService.saveItem(item)
-            dispatch({ type: 'SAVE_ITEM', review: addedItem })
+            const editedItem = itemService.update(item)
+            dispatch({ type: 'EDIT_ITEM', item: editedItem })
         } catch (err) {
             console.log('itemActions:', err)
         }
@@ -43,13 +45,3 @@ export function removeItem(itemId) {
         }
     }
 }
-
-// export function setFilter(filterBy) {
-//     return (dispatch) => {
-//         const action = {
-//             type: 'FILTER_ITEMS',
-//             filterBy
-//         }
-//         dispatch(action)
-//     }
-// }

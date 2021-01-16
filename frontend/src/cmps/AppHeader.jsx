@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export function AppHeader({ }) {
+export function AppHeader() {
 
     return (
         <header>

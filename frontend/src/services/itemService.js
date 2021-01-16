@@ -20,6 +20,7 @@ import { httpService } from './httpService'
 
 export const itemService = {
     add,
+    update,
     query,
     remove,
     getById
@@ -47,4 +48,9 @@ function remove(itemId) {
 }
 function add(item) {
     return httpService.post(`item`, item)
+}
+
+function update(item) {
+    // console.log('item', item)
+    return httpService.put(`item/${item._id}`, item)
 }

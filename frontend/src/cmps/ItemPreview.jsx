@@ -6,12 +6,12 @@ function _ItemPreview({ item , onRemove}) {
     return <section className="item-preview">
 
         <Link to={`/item/${item._id}`}>
-            <img className="item-img" src={item.imgUrl}></img>
+            <img className="item-img" src={item.imgUrl} alt=""></img>
         </Link>
         <div className="info-container">
             <Link to={`/user/${item.seller._id}`}>
                 <div className="profile-container flex a-center">
-                    <img className="user-img" src={item.seller.imgUrl}></img>
+                    <img className="user-img" src={item.seller.imgUrl} alt=""></img>
                     <h5>{item.seller.fullname}</h5>
                 </div>
             </Link>

@@ -18,9 +18,9 @@ export class ItemDetails extends Component {
     render() {
         const { item } = this.state
         if (!item) return <div className="loader"></div>
-        return (
-            // <ItemUpdate/>
-            <section className="item-page flex col j-evenly m-page">
+        return (  
+            <section className="item-page flex col j-evenly m-page">  
+            <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
                         <h1 className="item-name">{item.title}</h1>
