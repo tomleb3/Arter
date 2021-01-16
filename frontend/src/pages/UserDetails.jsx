@@ -55,7 +55,7 @@ class _UserDetails extends Component {
                     <img className="banner-img" src={user.imgUrls.banner} alt="" />
                     <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname} />
                 </div>
-                <div className="content flex ">
+                <div className="content flex">
                     <div className="sidebar">
                         <AppFilter />
                         <button className="custom-order-btn">Custom Order</button>
@@ -66,16 +66,11 @@ class _UserDetails extends Component {
                             <p>{user.description}</p>
                         </div>
 
-                        <div className="item-list flex">
+                        <div className="item-list grid">
                             {items.map((item) => <ItemPreview key={item._id} item={item} />)}
-
-                            {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
-                            {/* {if(items.length===0) return <button>Go Explore</button>
-                            else return <div>{items.map((item) => <ItemPreview item={item} />)}</div>} */}
 
                         </div>
                         <div className="review-container">
-                            {/* {user.reviews.map(review => <ReviewList reviews={user.reviews}/>)} */}
                             <ReviewList reviews={user.reviews} onAdd={this.onAddReview} />
                         </div>
                     </div>
