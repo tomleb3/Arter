@@ -28,6 +28,29 @@ export function removeUser(userId) {
   }
 }
 
+export function addReview(review) {
+  return async dispatch => {
+    try {
+      console.log(review)
+      // await userService.save(review)
+      dispatch({ type: 'ADD_REVIEW', review })
+    } catch (err) {
+      console.log('UserActions: err in addReview', err)
+    }
+  }
+}
+
+export function removeReview(reviewId) {
+  return async dispatch => {
+    try {
+      await userService.save(reviewId)
+      dispatch({ type: 'REMOVE_REVIEW', reviewId })
+    } catch (err) {
+      console.log('UserActions: err in removeReview', err)
+    }
+  }
+}
+
 export function login(userCreds) {
   return async dispatch => {
     try {

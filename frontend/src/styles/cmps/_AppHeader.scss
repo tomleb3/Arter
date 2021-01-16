@@ -12,15 +12,6 @@ header {
         height: 70px;
     }
 
-    .logo {
-        font-family: Sofia;
-        font-size: 2rem;
-        color: $clr1;
-        font-style: italic;
-        font-weight: 600;
-        padding: 0 24px;
-    }
-
     nav h3 {
         padding: 10px;
     }
@@ -33,4 +24,13 @@ header {
     nav *:not(:last-child) {
         margin-inline-end: 25px;
     }
+}
+
+.logo {
+    font-family: Sofia;
+    font-size: 2rem;
+    color: $clr1;
+    font-style: italic;
+    font-weight: 600;
+    // padding: 0 24px;
 }

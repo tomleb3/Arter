@@ -1,7 +1,6 @@
 .login-signup {
     width: 350px;
-    margin: auto;
-    margin-top: 75px;
+    margin: 170px 0 100px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     min-height: 55vh;
 
@@ -36,11 +35,14 @@
     .btn-group {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-        * {
-            padding: 10px;
+        .link,
+        .MuiButton-root {
+            height: 100%;
+            width: 100%;
         }
-        button {
-            flex-grow: 1;
+
+        .MuiButton-root {
+            padding: 30px;
         }
     }
 }

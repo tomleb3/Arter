@@ -23,11 +23,10 @@ class _LoginSignup extends Component {
         currPage: '/login',
         msg: '',
         loginCred: {
-            username: '',
+            email: '',
             password: ''
         },
         signupCred: {
-            username: '',
             password: '',
             fullname: '',
             email: ''
@@ -35,6 +34,7 @@ class _LoginSignup extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0)
         this.setState({ currPage: this.props.match.path })
     }
 
@@ -60,14 +60,14 @@ class _LoginSignup extends Component {
 
     doLogin = async ev => {
         ev.preventDefault()
-        const { username, password } = this.state.loginCred
-        if (!username) {
+        const { email, password } = this.state.loginCred
+        if (!email || !password) {
             return this.setState({ msg: 'Please enter user/password' })
         }
-        const userCreds = { username, password }
+        const userCreds = { email, password }
         try {
             await this.props.login(userCreds)
-            this.setState({ loginCred: { username: '', password: '' } })
+            this.setState({ loginCred: { email: '', password: '' } })
             if (sessionStorage['loggedinUser']) this.props.history.push('/toy')
         } catch (err) {
             return await this.setState({ msg: 'Login failed, try again.' })
@@ -76,13 +76,13 @@ class _LoginSignup extends Component {
 
     doSignup = async ev => {
         ev.preventDefault()
-        const { username, password, firstName, lastName, email } = this.state.signupCred
-        if (!username || !password || !firstName || !lastName || !email) {
+        const { email, password, firstName, lastName } = this.state.signupCred
+        if (!email || !password || !firstName || !lastName || !email) {
             return this.setState({ msg: 'All inputs are required' })
         }
-        const signupCreds = { username, password, email, fullname: firstName + lastName }
+        const signupCreds = { email, password, fullname: firstName + lastName }
         await this.props.signup(signupCreds)
-        this.setState({ signupCred: { username: '', password: '', fullname: '', email: '' } })
+        this.setState({ signupCred: { email: '', password: '', fullname: '' } })
         if (sessionStorage['loggedinUser']) this.props.history.push('/toy')
     }
 
@@ -114,13 +114,6 @@ class _LoginSignup extends Component {
                     label="Last Name"
                 />
                 <TextField
-                    type="text"
-                    name="username"
-                    value={this.state.signupCred.username}
-                    onChange={this.signupHandleChange}
-                    label="Username"
-                />
-                <TextField
                     name="password"
                     type="password"
                     value={this.state.signupCred.password}
@@ -135,10 +128,10 @@ class _LoginSignup extends Component {
                 <h2>Sign In</h2>
                 <TextField
                     type="text"
-                    name="username"
-                    value={this.state.loginCred.username}
+                    name="email"
+                    value={this.state.loginCred.email}
                     onChange={this.loginHandleChange}
-                    label="Username"
+                    label="Email"
                 />
                 <TextField
                     type="password"
@@ -161,24 +154,25 @@ class _LoginSignup extends Component {
         const { msg } = this.state
         const { currPage } = this.state
         return (
-            <div className="login-signup">
-                { loggedInUser && (
-                    <div>
-                        <h3>
-                            Welcome {loggedInUser.firstName + ' ' + loggedInUser.lastName}
-                            <Button color="secondary" onClick={this.props.logout}>LOGOUT</Button>
-                        </h3>
+            <div className="flex j-center">
+                <div className="login-signup">
+                    {loggedInUser && (
+                        <div>
+                            <h3>
+                                Welcome {loggedInUser.firstName + ' ' + loggedInUser.lastName}
+                                <Button color="secondary" onClick={this.props.logout}>LOGOUT</Button>
+                            </h3>
+                        </div>
+                    )}
+                    <div className="btn-group flex">
+                        <Link to='/login' className="link"><Button color="primary" onClick={() => { this.setState({ currPage: '/login' }) }}>Login</Button></Link>
+                        <Link to='/signup' className="link"><Button color="secondary" onClick={() => { this.setState({ currPage: '/signup' }) }}>Signup</Button></Link>
                     </div>
-                )
-                }
-                <div className="btn-group flex">
-                    <Button color="primary"><Link to='/login'>Login</Link></Button>
-                    <Button color="secondary"><Link to='/signup'>Signup</Link></Button>
+                    <p className="muted red">{msg ? '* ' + msg : ''}</p>
+                    <div className="lock-icon-div flex j-center"><FaceIcon fontSize="large" color={currPage === '/login' ? "primary" : "secondary"}></FaceIcon></div>
+                    {(!loggedInUser && currPage === '/login') && loginSection}
+                    {(!loggedInUser && currPage === '/signup') && signupSection}
                 </div>
-                <p className="muted red">{msg ? '* ' + msg : ''}</p>
-                <div className="lock-icon-div flex j-center"><FaceIcon fontSize="large" color={currPage === '/login' ? "primary" : "secondary"}></FaceIcon></div>
-                {(!loggedInUser && currPage === '/login') && loginSection}
-                {(!loggedInUser && currPage === '/signup') && signupSection}
             </div >
         )
     }

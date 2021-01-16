@@ -19,9 +19,19 @@ export function itemReducer(state = initialState, action) {
             }
         case 'REMOVE_ITEM':
             return { ...state, items: state.items.filter(item => item._id !== action.itemId) }
-        // case 'FILTER_ITEMS':
-        //     return { ...state, filterBy: action.filterBy }
         default:
             return state
     }
-}
+} 
+
+
+
+
+
+
+
+
+
+
+// case 'FILTER_ITEMS':
+        //     return { ...state, filterBy: action.filterBy }

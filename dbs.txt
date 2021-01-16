@@ -18,14 +18,14 @@
 
 {
     "_id": "u104",
-    "fullname": "Aaron Pikotsky",
+    "fullname": "Aaron Pikovsky",
     "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
 
 }
 
 {
     "_id": "u105",
-    "fullname": "Ariana Celaeno",
+    "fullname": "Ariana Celano",
     "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
 
 }
