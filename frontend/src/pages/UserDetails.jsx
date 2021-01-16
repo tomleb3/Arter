@@ -4,6 +4,7 @@ import { userService } from '../services/userService.js'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { AppFilter } from '../cmps/AppFilter.jsx'
+import { addReview } from '../store/actions/userActions.js'
 
 class _UserDetails extends Component {
 
@@ -13,6 +14,7 @@ class _UserDetails extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0)
         this.loadUser()
     }
 
@@ -22,8 +24,14 @@ class _UserDetails extends Component {
         }
     }
 
-    onAddReview = (text, rating) => {
-        console.log(text, rating)
+    onAddReview = (txt, rating) => {
+        console.log(txt, rating)
+        const review = {
+            txt,
+            rating,
+            createdAt: Date.now()
+        }
+        this.props.addReview(review)
     }
 
     loadUser = async () => {
@@ -86,7 +94,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    // removeItem
+    addReview
 }
 
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)

@@ -30,7 +30,7 @@ export function ReviewAdd({ onAdd }) {
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
-    const [ratingValue, setValue] = React.useState(1);
+    const [ratingValue, setValue] = React.useState(5);
     const textAreaRef = React.createRef()
 
     const handleOpen = () => {
@@ -44,7 +44,7 @@ export function ReviewAdd({ onAdd }) {
     const body = (
         <div style={modalStyle} className={classes.paper}>
             <div className="flex j-between">
-                <h2>Add Review</h2>
+                <h3>Add Review</h3>
                 <Rating
                     name="rating"
                     value={ratingValue}
@@ -56,7 +56,7 @@ export function ReviewAdd({ onAdd }) {
             <textarea autoFocus ref={textAreaRef}></textarea>
             <div className="btns-container right">
                 <Button onClick={handleClose}>Close</Button>
-                <Button variant="contained" color="primary" onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
+                <Button variant="contained" color="secondary" onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
             </div>
         </div>
     );

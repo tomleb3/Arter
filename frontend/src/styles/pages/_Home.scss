@@ -1,25 +1,97 @@
 .home {
     article {
-        margin: 200px 0;
+        margin: 150px 0;
     }
 
-    .hero {
-        // background-color: #13acca;
-        // background-image: url("../../assets/imgs/hero1.jpg");
+    .hero-container {
+        position: relative;
+
+        .hero {
+            background-color: #13acca;
+            // background-image: url("../../assets/imgs/hero1.jpg");
+            background-image: url("../../assets/imgs/heroPattern.png");
+            width: 100%;
+            height: 300px;
+        }
+
+        h2 {
+            position: absolute;
+            left: 55%;
+            top: 30%;
+            font-size: 3em;
+            color: white;
+        }
+        h2:last-of-type {
+            left: 58%;
+            top: 50%;
+        }
+        .btn {
+            position: absolute;
+            right: 25%;
+            bottom: 10%;
+
+            .MuiButton-label {
+                font-size: 1.15em;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    .categories {
         width: 100%;
-        height: 100%;
+
+        div {
+            height: 300px;
+            width: 200px;
+            background-color: lightgray;
+            border-radius: 4px;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            letter-spacing: 1.75px;
+            font-size: 1.27em;
+        }
+    }
+
+    h3 {
+        margin-bottom: 10px;
     }
 
     .our-services {
         width: 100%;
-        height: 300px;
+        height: 400px;
         background-color: lightgray;
+        background: url("../../assets/imgs/bannerImg.jpeg") no-repeat;
+        background-size: cover;
+        background-position: 0 65%;
         position: relative;
 
+        h2 {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            font-size: 3em;
+        }
+        h2:last-of-type {
+            left: 15%;
+            top: 40%;
+        }
         .btn {
             position: absolute;
-            right: 35px;
-            bottom: 25px;
+            left: 45%;
+            bottom: 25%;
+
+            .link {
+                height: 100%;
+                width: 100%;
+            }
+
+            .MuiButton-label {
+                font-size: 1.15em;
+                font-weight: bolder;
+            }
         }
     }
 }

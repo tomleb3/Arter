@@ -1,20 +1,15 @@
 import { httpService } from './httpService'
+import { utilService } from './utilService'
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
 // import { utilService } from './utilService'
 
 export const userService = {
-    add,
     query,
+    save,
     remove,
     getById
-    // getItems
 }
-
-
-// function getItems(userId){
-//     return httpService.get(`item?seller.id=${userId}`)
-// }
 
 function query(filterBy) {
     var queryStr = (!filterBy) ? '' : `?fullname_like=${filterBy.name}&sort=anaAref`
@@ -26,12 +21,18 @@ function getById(userId) {
     return httpService.get(`user/${userId}`)
 }
 
+function save(userToSave) {
+    if (userToSave._id)
+        return httpService.put(`user/${userToSave._id}`, userToSave) // UPDATE
+    else
+        return httpService.post('user/', userToSave) // CREATE
+}
+
 function remove(userId) {
     return httpService.delete(`user/${userId}`)
     // return storageService.delete('item', itemId)
-
 }
 
-function add(user) {
-    return httpService.post(`user`, user)
-}
+// function add(user) {
+//     return httpService.post(`user`, user)
+// }
