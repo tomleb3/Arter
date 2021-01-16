@@ -7,7 +7,7 @@
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633390/users/banners/0056_nm1u5s.jpg"
       },
-      "description": "Hi! I love crafting and woodwork and textured paintings, as well as Origami and textile work. you can contact me or request a special wood work for any home or commercial use, even Origami animation for vidoes and wood work for wall hanging and for gardens!",
+      "description": "Hi! This is Ayelet Avni, i love to do Crafting, I do Any DIY Origami Craft videos for Your Social Media for Commercial use, Include-Full HD Video, copyright free Music, Title & Pro Edits for your youtube Channel or any social media Content.",
       "isAdmin": false,
       "username": "ayalila",
       "email": "avnia12@gmail.com",
@@ -17,7 +17,8 @@
         {
           "id": "r101",
           "rate": 5,
-          "txt": "Ayelet is such a unique artist, her wood on canvas work is incredible",
+          "txt": "Best Artist EVER!!!",
+          "createdAt": 1610717718,
           "byUser": {
             "_id": "u102",
             "fullname": "Mike Bosh",
@@ -27,7 +28,8 @@
         {
           "id": "r102",
           "rate": 4,
-          "txt": "I really liked her work, my friend ordered origami for his video and it came out great!",
+          "txt": "I've really liked her work.",
+          "createdAt": 1610717718,
           "byUser": {
             "_id": "u103",
             "fullname": "Efrat Cohen",
@@ -45,7 +47,7 @@
       },
       "description": "NEED TO ADD",
       "isAdmin": false,
-      "username": "mikeyB",
+      "username": "mikey",
       "email": "mikebo@gmail.com",
       "password": "secret",
       "createdAt": 1319620853500,
@@ -69,6 +71,7 @@
           "id": "r103",
           "rate": 5,
           "txt": "Beautiful art. I'm very happy about my purchase.",
+          "createdAt": 1610717718,
           "byUser": {
             "_id": "u101",
             "fullname": "Ayelet Avni",
@@ -79,12 +82,12 @@
     },
     {
       "_id": "u104",
-      "fullname": "Aaron Pikovsky",
+      "fullname": "Aaron Pikotsky",
       "imgUrls": {
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
       },
-      "description": "I make glass work of all kinds, colored glass and vitrage work, i also like to make psychadelic paintings inspired by and indian art by my love for peacocks! I live near a Monterey, holler me up if you're in the area and you want to check out my some of my home-build glass work!",
+      "description": "NEED TO ADD",
       "isAdmin": false,
       "username": "AaronPeacock",
       "email": "aaaaron@gmail.com",
@@ -99,7 +102,7 @@
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610718560/users/profiles/010.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
       },
-      "description": "I like artsand searching for beautiful creations, I am a buyer for Bloomingdales new home and crafts division",
+      "description": "NEED TO ADD",
       "isAdmin": false,
       "username": "ArianaCee",
       "email": "ariana80@gmail.com",
@@ -114,9 +117,9 @@
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610614749/users/profiles/007.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
       },
-      "description": "I live in Dartmouth, MA and I study arts history at BU, will publish my work here soon...",
+      "description": "NEED TO ADD",
       "isAdmin": false,
-      "username": "cooperj",
+      "username": "CooperAndJackson",
       "email": "jackson007@gmail.com",
       "password": "secret",
       "createdAt": 1319620853500,
@@ -129,9 +132,9 @@
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610718576/users/profiles/012.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
       },
-      "description": "I am a vice president of the Montreal Arts and Crafts Lover Association, holler if you come to Canada sometime!",
+      "description": "NEED TO ADD",
       "isAdmin": false,
-      "username": "williamos",
+      "username": "I'm William",
       "email": "wwwilliam@gmail.com",
       "password": "secret",
       "createdAt": 1319620853500,
@@ -144,9 +147,9 @@
         "profile": "https://res.cloudinary.com/arter/image/upload/v1610614712/users/profiles/008.jpg",
         "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633075/users/banners/001.jpg"
       },
-      "description": "I am a painter from Glasgow, check out my work here there's more to come...",
+      "description": "NEED TO ADD",
       "isAdmin": false,
-      "username": "SophiaCham",
+      "username": "Sophia Cham",
       "email": "sophilinya@gmail.com",
       "password": "secret",
       "createdAt": 1319620853500,
@@ -176,7 +179,7 @@
       },
       "description": "NEED TO ADD",
       "isAdmin": false,
-      "username": "EthanD",
+      "username": "Ethannn...",
       "email": "ethand@gmail.com",
       "password": "secret",
       "createdAt": 1319620853500,
@@ -202,8 +205,8 @@
     {
       "_id": "v140",
       "title": "Wooden Elephant",
-      "price": 390,
-      "description": "Made of vietnamese Monkeypod with pearl inlay on eyes. I made this while traveling in southern vietnam during monsoon season, the finish is aged laqua with brown gloss, and the carving is inspired by a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
+      "price": 380,
+      "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
       "createdAt": 1519229860500,
       "purchasedAt": 1529129853500,
@@ -220,7 +223,7 @@
     },
     {
       "_id": "v142",
-      "title": "",
+      "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
       "imgUrl": "/img/items/img3.jpg",
@@ -241,17 +244,14 @@
       "_id": "v143",
       "title": "Body painting",
       "price": 150,
-      "description": "This is an example of Body Painting I drew on my friend Angela Wong, for a video she filmed with the band Shaman from Toronto. only non-toxic and washable colors used, the gold pattern is a special feature here!",
+      "description": "Early photo from World War 2",
       "imgUrl": "https:/",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
         "body",
         "paint",
-        "color",
-        "portrait",
-        "gold",
-        "urban"
+        "color"
       ],
       "seller": {
         "_id": "u102",
@@ -270,9 +270,7 @@
       "tags": [
         "ring",
         "jewelry",
-        "silver", 
-        "polished metal",
-        "stone"
+        "silver"
       ],
       "seller": {
         "_id": "u103",

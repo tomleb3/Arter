@@ -1,49 +1,72 @@
 .item-page {
-    height: 100vh;
-}
+    .profile-img {
+        // background-color: beige;
+        // padding: 25px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-inline-end: 10px;
+        // margin: 20px;
+    }
 
-.item-details {
-    height: 500px;
-    border-radius: 3px;
-    background-color: rgba(197, 241, 241, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 50px;
-    margin: auto;
+    .item-details {
+        height: 500px;
+        border-radius: 4px;
+        background-color: rgba(197, 241, 241, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 50px;
+        margin: auto;
+        margin-top: 100px;
 
-    .item-show {
-        width: 400px;
+        .item-show {
+            width: 400px;
 
-        .item-img {
-            width: 300px;
-            height: 300px;
-            border-radius:10px;
+            .item-img {
+                width: 300px;
+                height: 300px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+            }
+
+            .item-name {
+                margin-bottom: 25px;
+            }
         }
 
-        .item-name {
-            margin-bottom: 25px;
+        h5 {
+            margin-bottom: 10px;
+        }
+
+        .item-desc {
+            width: 400px;
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            .purchase-btn {
+                align-self: flex-end;
+                background-color: #fff;
+                // border: $clr1 2px solid;
+                border: 2px solid #119ab5;
+                border-radius: 10px;
+                padding: 10px;
+                width: 220px;
+
+                &:hover {
+                    border-color: #007e94;
+                }
+            }
         }
     }
 
-    .item-desc {
-        width: 400px;
+    .other-works {
+        background-color: rgba(197, 241, 241, 0.876);
+        padding: 10px;
+        margin-top: 150px;
 
-        p {
-            font-size: 1.3rem;
+        h3 {
+            margin: 10px 0;
         }
     }
-}
-
-.profile-img {
-    background-color: beige;
-    // padding: 25px;
-    border-radius: 50%;
-    width: 125px;
-    height: 125px;
-    object-fit: cover;
-    margin: 20px;
-}
-
-.other-works {
-    background-color: rgba(197, 241, 241, 0.876);
-    padding: 25px;
 }

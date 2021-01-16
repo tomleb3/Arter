@@ -7,8 +7,8 @@ export function AppHeader() {
             <section className="main-layout flex j-between a-center">
                 <div className="logo"><Link to="/">Arter</Link></div>
                 <nav className="flex">
-                    <Link to="/explore"><p>Explore</p></Link>
-                    <Link to="/login"><p>Login</p></Link>
+                    <Link to="/explore"><h3>Explore</h3></Link>
+                    <Link to="/login"><h3>Login</h3></Link>
                 </nav>
             </section>
         </header>

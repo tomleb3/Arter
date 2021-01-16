@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { GetStarted } from '../cmps/GetStarted.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
@@ -7,22 +8,71 @@ import { Uploader } from '../cmps/Uploader.jsx'
 
 class _Home extends Component {
 
+    componentDidMount() { window.scrollTo(0, 0) }
+
     render() {
         const { users, items } = this.props
 
         return <section className="home m-page">
-            <div className="hero"></div>
+            <div className="hero-container">
+                <div className="hero"></div>
+                <h2>Join The Family,</h2>
+                <h2>Share Your Arts</h2>
+                <div className="btn"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Publish Now</Button></div>
+                {/* <img src="../../public/hero1.jpg" /> */}
+            </div>
 
             <main className="main-layout">
+                <article>
+                    <h3>Hot Categories</h3>
+                    <section className="categories flex j-between txt-center">
+                        <div className="flex col">
+                            <Link to={{ pathname: "/explore", state: "Glass" }}>
+                                <div className="flex a-center j-center"
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826046/Home%20topics/pexels-pixabay-220990_b1c6hg.jpg)` }}></div>
+                            </Link>
+                            <h5>Glasswork</h5>
+                        </div>
+                        <div className="flex col">
+                            <Link to={{ pathname: "/explore", state: "Wood" }}>
+                                <div className="flex a-center j-center"
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825140/Home%20topics/woodwork2_a9gmbz.jpg)` }}></div>
+                            </Link>
+                            <h5>Woodwork</h5>
+                        </div>
+                        <div className="flex col">
+                            <Link to={{ pathname: "/explore", state: "Painting" }}>
+                                <div className="flex a-center j-center"
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825845/Home%20topics/painting1_fvloac.jpg)` }}></div>
+                            </Link>
+                            <h5>Paintings</h5>
+                        </div>
+                        <div className="flex col">
+                            <Link to={{ pathname: "/explore", state: "Jewelry" }}>
+                                <div className="flex a-center j-center"
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825888/Home%20topics/jewlery_ifguvi.jpg)` }}></div>
+                            </Link>
+                            <h5>Jewelry</h5>
+                        </div>
+                        <div className="flex col">
+                            <Link to={{ pathname: "/explore", state: "Photo" }}>
+                                <div className="flex a-center j-center"
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}></div>
+                            </Link>
+                            <h5>Crafts</h5>
+                        </div>
+                    </section>
+                </article>
+                <article className="our-services">
+                    <h2>Find New Creations,</h2>
+                    <h2>Get To Know The Artists</h2>
+                    <div className="btn"><Link to="/explore" className="link"><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Discover</Button></Link></div>
+                </article>
                 <article>
                     <h3>Fetured Artists</h3>
                     <UserList users={users} items={items} />
                 </article>
-                <article className="our-services">
-                    <div className="btn"><Button variant="outlined" color="primary">Publish Now</Button></div>
-                </article>
-                <GetStarted />
-                <Uploader></Uploader>
+                {/* <GetStarted /> */}
             </main>
         </section>
     }

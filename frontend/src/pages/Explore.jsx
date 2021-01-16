@@ -2,26 +2,26 @@ import { Component } from 'react'
 import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
-import { loadItems, removeItem } from '../store/actions/itemActions'
 import { connect } from 'react-redux'
 
 class _Explore extends Component {
 
-    onSetFilter = (filterBy) => {
-        this.props.loadItems(filterBy)
-    }
+    // onSetFilter = (filterTxt) => {
+    //     this.props.loadItems(filterTxt)
+    // }
+
+    componentDidMount() { window.scrollTo(0, 0) }
 
     onRemoveItem = (itemId) => {
         this.props.removeItem(itemId)
     }
 
     render() {
-        const { users } = this.props
-        const { items } = this.props
+        const { users, items } = this.props
         return <section className="explore m-page">
-            <AppFilter onSetFilter={this.onSetFilter} />
+            <AppFilter initialFilter={this.props.location.state} />
             <UserList users={users} items={items} />
-            <ItemList items={items} onRemove={this.onRemoveItem}/>
+            <ItemList items={items} />
         </section>
     }
 }
@@ -34,10 +34,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = {
-    loadItems,
-    removeItem
-}
-
-export const Explore = connect(mapStateToProps, mapDispatchToProps)(_Explore)
-
+export const Explore = connect(mapStateToProps)(_Explore)
