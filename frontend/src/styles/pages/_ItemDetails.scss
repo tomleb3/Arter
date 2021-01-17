@@ -9,64 +9,67 @@
         margin-inline-end: 10px;
         // margin: 20px;
     }
-
+    .swiper-pagination-bullet-active {
+        background-color: $clr1;
+    }
+    div.swiper-button-prev,
+    div.swiper-button-next {
+        color: $clr1;
+    }
     .item-details {
-        // height: 500px;
+        height: 500px;
         border-radius: 4px;
         background-color: rgba(197, 241, 241, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 50px;
         margin: auto;
         margin-top: 100px;
-
         .item-show {
-            // width: 40vw;
-
+            width: 400px;
             .item-img {
                 width: 300px;
                 height: 300px;
                 border: 1px solid rgba(0, 0, 0, 0.2);
             }
-
             .item-name {
                 margin-bottom: 25px;
             }
         }
-
         h5 {
             margin-bottom: 10px;
         }
-
         .item-desc {
-            // width: 40vw;
-
+            width: 400px;
             p {
-                font-size: 1.3rem;
+                font-size: 1rem;
             }
-
             .purchase-btn {
                 align-self: flex-end;
                 background-color: #fff;
                 // border: $clr1 2px solid;
-                border: 2px solid #119ab5;
+                border: 2px solid #119AB5;
                 border-radius: 10px;
                 padding: 10px;
                 width: 220px;
-
                 &:hover {
-                    border-color: #007e94;
+                    border-color: #007E94;
                 }
             }
         }
     }
-
     .other-works {
-        background-color: rgba(197, 241, 241, 0.876);
-        padding: 10px;
+        background-color: rgba(197, 241, 241, 0.5);
+        padding: 20px;
         margin-top: 150px;
-
         h3 {
             margin: 10px 0;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: $clr6;
+        }
+        div.swiper-button-prev,
+        div.swiper-button-next {
+            color: $clr1;
         }
     }
 }

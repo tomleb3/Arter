@@ -7,7 +7,7 @@ export function itemReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_ITEMS':
             return { ...state, items: action.items }
-        case 'SAVE_ITEM':
+        case 'EDIT_ITEM':
             return {
                 ...state,
                 items: state.items.map(item => (item._id === action.item._id) ? action.item : item)

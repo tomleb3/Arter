@@ -6,11 +6,44 @@ footer {
     .content {
         padding: 100px 0;
 
-        h3 {
-            margin-inline-start: 35px;
-            margin-bottom: 5px;
-            // font-size: 1.5em;
-            // padding-top: 6px;
+        section:first-child {
+            h3 {
+                margin-inline-start: 35px;
+                margin-bottom: 5px;
+                // font-size: 1.5em;
+                // padding-top: 6px;
+            }
+        }
+
+        section:last-child {
+            .profile-img {
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                background-size: contain;
+                background-color: lightgray;
+
+                &.eran {
+                    background-image: url("../../assets/imgs/team/eran.jpg");
+                }
+                &.ohad {
+                    background-image: url("../../assets/imgs/team/ohad.jpg");
+                }
+                &.tom {
+                    background-image: url("../../assets/imgs/team/tom.jpg");
+                }
+            }
+
+            p {
+                margin-bottom: 15px;
+            }
+            .link {
+                margin-bottom: 15px;
+                width: fit-content;
+            }
+            h3 {
+                margin-inline-start: 10px;
+            }
         }
     }
 }

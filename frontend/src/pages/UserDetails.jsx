@@ -5,6 +5,7 @@ import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { AppFilter } from '../cmps/AppFilter.jsx'
 import { addReview } from '../store/actions/userActions.js'
+import { ItemList } from '../cmps/ItemList.jsx'
 
 class _UserDetails extends Component {
 
@@ -19,9 +20,7 @@ class _UserDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match.params.id !== prevProps.match.params.id) {
-            this.loadUser()
-        }
+        if (this.props.match.params.id !== prevProps.match.params.id) this.loadUser()
     }
 
     onAddReview = (txt, rating) => {
@@ -31,6 +30,8 @@ class _UserDetails extends Component {
             rating,
             createdAt: Date.now()
         }
+        const {user} = this.state
+        user.reviews.unshift(review)
         this.props.addReview(review)
     }
 
@@ -55,27 +56,22 @@ class _UserDetails extends Component {
                     <img className="banner-img" src={user.imgUrls.banner} alt="" />
                     <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname} />
                 </div>
-                <div className="content flex ">
+                <div className="content flex">
                     <div className="sidebar">
                         <AppFilter />
                         <button className="custom-order-btn">Custom Order</button>
+                        <button className="custom-order-btn">Contact Me</button>
                     </div>
                     <div className="main">
                         <div className="about">
                             <h1>{user.fullname}</h1>
+                            <br />
                             <p>{user.description}</p>
                         </div>
 
-                        <div className="item-list flex">
-                            {items.map((item) => <ItemPreview key={item._id} item={item} />)}
-
-                            {/* {items.map((item) => <h3 key={item._id}>{item.title}</h3>)} */}
-                            {/* {if(items.length===0) return <button>Go Explore</button>
-                            else return <div>{items.map((item) => <ItemPreview item={item} />)}</div>} */}
-
-                        </div>
+                        <h3 className="portfolio">Portfolio</h3>
+                        <ItemList items={items} />
                         <div className="review-container">
-                            {/* {user.reviews.map(review => <ReviewList reviews={user.reviews}/>)} */}
                             <ReviewList reviews={user.reviews} onAdd={this.onAddReview} />
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadItems, addItem, editItem } from '../store/actions/itemActions'
+import { loadItems, addItem, editItem, removeItem } from '../store/actions/itemActions'
 import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 
@@ -18,12 +18,12 @@ class _ItemEdit extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        if (!this.props.items.length) await this.props.loadItems()
         const { id } = this.props.match.params
         if (id) {
-            const item = this.props.items.find(item => {
-                return item._id === id
-            })
+            console.log('lieli',this.props.items);
+            const item = this.props.items.find(item =>item._id === id)
             this.setState({ item: item })
         }
     }
@@ -44,22 +44,27 @@ class _ItemEdit extends Component {
         })
     }
 
-    onSaveItem = (ev) => {
+    onRemoveItem = (itemId) => {
+        const {item} = this.state
+        this.props.removeItem(itemId).then(() => this.props.history.push(`/user/${item.seller._id}`))
+    }
+
+    onSaveItem = async (ev) => {
         ev.preventDefault()
         const { item } = this.state
-        // if (!toy.name) return
         if (item._id) {
-            this.props.editItem(item).then(() => this.props.history.push('/explore'))
+            await this.props.editItem(item)
+            this.props.history.push(`/item/${item._id}`)
         } else {
-            this.props.addItem(item).then(() => this.props.history.push('/explore'))
+            await this.props.addItem(item)
+            this.props.history.push(`/user/${item.seller._id}`)
         }
-        this.setState({ item: { title: '', price: 0, description: '' } })
     }
 
     render() {
         // console.log(this.props.loggedInUser)
         const { item } = this.state
-        // if (!item) return <div className="loader"></div>
+        if (!item) return <div className="loader m-page"></div>
         return (
             <div className="item-edit m-page">
                 {/* <h3>{toy._id ? 'Update' : 'Add'} Toy</h3> */}
@@ -67,9 +72,10 @@ class _ItemEdit extends Component {
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
                     <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-
-
-                    
+                    <div>
+                    {item._id &&<Button type="button" onClick={() => this.onRemoveItem(item._id)}>Delete Item</Button>}
+                    <Button type="submit">Save</Button>
+                    </div>
                 </form>
             </div>
         )
@@ -87,7 +93,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     loadItems,
     addItem,
-    editItem
+    editItem,
+    removeItem
 }
 
 export const ItemEdit = connect(mapStateToProps, mapDispatchToProps)(_ItemEdit)
