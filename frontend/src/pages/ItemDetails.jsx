@@ -9,6 +9,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+import { loadItems } from '../store/actions/itemActions.js'
 
 class _ItemDetails extends Component {
 
@@ -18,37 +19,37 @@ class _ItemDetails extends Component {
     }
 
     async componentDidMount() {
-        window.scrollTo(0, 0)
-        const { id } = this.props.match.params
-        const item = await itemService.getById(id)
-        const otherItems = this.props.items.filter(_item => {
-            if ((item.seller._id === _item.seller._id) && (item._id !== _item._id))
-                return _item
-        })
-        this.setState({ item, otherItems })
+        SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
+        if (!this.props.items.length) await this.props.loadItems()
+        this.loadOtherItems()
     }
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
-            window.scrollTo(0, 0)
-            const { id } = this.props.match.params
-            const item = await itemService.getById(id)
-            const otherItems = this.props.items.filter(_item => {
-                if ((item.seller._id === _item.seller._id) && (item._id !== _item._id))
-                    return _item
-            })
-            this.setState({ item, otherItems })
+            if (!this.props.items.length) await this.props.loadItems()
+            this.loadOtherItems()
         }
     }
 
-    render() {
-        SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
-        const { item, otherItems } = this.state
+    async loadOtherItems() {
+        window.scrollTo(0, 0)
+        const { id } = this.props.match.params
+        const { items } = this.props
+        const item = await itemService.getById(id)
+        console.log({ items });
+        const otherItems = items.filter(currItem =>
+            (item.seller._id === currItem.seller._id) && (item._id !== currItem._id)
+        )
+        this.setState({ item, otherItems })
+    }
 
-        if (!item) return <div className="loader"></div>
-        return (  
-            <section className="item-page flex col j-evenly m-page">  
-            <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
+    render() {
+        const { item, otherItems } = this.state
+        
+        if (!item) return <div className="loader m-page"></div>
+        return (
+            <section className="item-page flex col j-evenly m-page">
+                <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
                         <h2 className="item-name">{item.title}</h2>
@@ -71,7 +72,7 @@ class _ItemDetails extends Component {
                 </div>
                 <div className="other-works">
                     <div className="main-layout"><h3>Other Works By Artist:</h3></div>
-                    {otherItems.length ? <Swiper
+                    {otherItems.length ? <Swiper 
                         className="main-layout"
                         spaceBetween={30}
                         slidesPerView={5}
@@ -83,7 +84,6 @@ class _ItemDetails extends Component {
                         onSlideChange={() => console.log('slide change')}>
 
                         {otherItems.map(item => {
-                            console.log(item)
                             return <SwiperSlide key={item._id}>
                                 <ItemPreview item={item} />
                             </SwiperSlide>
@@ -103,7 +103,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-export const ItemDetails = connect(mapStateToProps)(_ItemDetails)
+const mapDispatchToProps = {
+    loadItems
+}
+
+export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)
 
 
 

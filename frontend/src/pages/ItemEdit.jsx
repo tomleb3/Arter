@@ -1,7 +1,7 @@
 
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { loadItems, addItem, editItem } from '../store/actions/itemActions'
+import { loadItems, addItem, editItem, removeItem } from '../store/actions/itemActions'
 import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 
@@ -44,6 +44,11 @@ class _ItemEdit extends Component {
         })
     }
 
+    onRemoveItem = (itemId) => {
+        this.props.removeItem(itemId).then(() => this.props.history.push('/explore'))
+    }
+
+
     onSaveItem = (ev) => {
         ev.preventDefault()
         const { item } = this.state
@@ -67,7 +72,10 @@ class _ItemEdit extends Component {
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
                     <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-                    <Button type="submit" color='powderblue'>Save</Button>
+                    <div>
+                    {item._id &&<Button type="button" onClick={() => this.onRemoveItem(item._id)}>Delete Item</Button>}
+                    <Button type="submit">Save</Button>
+                    </div>
                 </form>
             </div>
         )
@@ -85,7 +93,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     loadItems,
     addItem,
-    editItem
+    editItem,
+    removeItem
 }
 
 export const ItemEdit = connect(mapStateToProps, mapDispatchToProps)(_ItemEdit)

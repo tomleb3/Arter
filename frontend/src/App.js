@@ -17,12 +17,13 @@ import { ItemEdit } from './pages/ItemEdit'
 
 class _App extends Component {
 
-  componentDidMount() {
-    this.props.loadItems()
-    this.props.loadUsers()
+  async componentDidMount() {
+   await this.props.loadItems()
+   await this.props.loadUsers()
   }
 
   render() {
+    console.log('APP.JSX', this.props.items);
     return (
       <main>
         <AppHeader />
@@ -43,7 +44,8 @@ class _App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // loggedInUser: state.userModule.loggedInUser
+    // loggedInUser: state.userModule.loggedInUser,
+    items: state.itemModule.items
   }
 }
 

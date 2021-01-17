@@ -12,9 +12,6 @@ class _Explore extends Component {
 
     componentDidMount() { window.scrollTo(0, 0) }
 
-    onRemoveItem = (itemId) => {
-        this.props.removeItem(itemId)
-    }
 
     render() {
         const { users, items } = this.props

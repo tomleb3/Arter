@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // import { Button } from '@material-ui/core'
-import { removeItem } from '../store/actions/itemActions'
 
-function _ItemPreview({ item, removeItem }) {
+function _ItemPreview({ item }) {
 
     return <section className="item-preview">
         <Link to={`/item/${item._id}`}>
@@ -18,7 +17,6 @@ function _ItemPreview({ item, removeItem }) {
         </div>
         <div className="bottom-container">
             <h5 className="right">${item.price}</h5>
-            <button className="remove-btn" onClick={() => removeItem(item._id)}>x</button>
         </div>
     </section>
 }
@@ -29,8 +27,5 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = {
-    removeItem
-}
 
-export const ItemPreview = connect(mapStateToProps, mapDispatchToProps)(_ItemPreview)
+export const ItemPreview = connect(mapStateToProps)(_ItemPreview)

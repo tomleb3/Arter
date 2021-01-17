@@ -31,6 +31,8 @@ class _UserDetails extends Component {
             rating,
             createdAt: Date.now()
         }
+        const {user} = this.state
+        user.reviews.unshift(review)
         this.props.addReview(review)
     }
 
