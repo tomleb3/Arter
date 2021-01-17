@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { itemService } from '../services/itemService.js'
 import { Link } from 'react-router-dom'
 import { ItemPreview } from "../cmps/ItemPreview.jsx"
-import { Swiper, SwiperSlide } from 'swiper/react';
+import Swiper from 'react-id-swiper'
+import { SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -46,9 +47,9 @@ class _ItemDetails extends Component {
         const { item, otherItems } = this.state
 
         if (!item) return <div className="loader"></div>
-        return (  
-            <section className="item-page flex col j-evenly m-page">  
-            <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
+        return (
+            <section className="item-page flex col j-evenly m-page">
+                <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
                 <div className="item-details flex j-evenly">
                     <div className="item-show flex col">
                         <h2 className="item-name">{item.title}</h2>
@@ -71,24 +72,30 @@ class _ItemDetails extends Component {
                 </div>
                 <div className="other-works">
                     <div className="main-layout"><h3>Other Works By Artist:</h3></div>
-                    {otherItems.length ? <Swiper
-                        className="main-layout"
-                        spaceBetween={30}
-                        slidesPerView={5}
-                        navigation
-                        autoplay={{ delay: 2000, disableOnInteraction: false }}
-                        pagination={{ clickable: true }}
-                        // scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}>
+                    {otherItems.length ? <div className="main-layout">
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={5}
+                            navigation={{
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev'
+                            }}
+                            observer
+                            autoplay={{ delay: 2500, disableOnInteraction: false }}
+                            pagination={{
+                                el: '.swiper-pagination',
+                                clickable: true
+                            }}
+                            // scrollbar={{ draggable: true }}
+                            onSwiper={(swiper) => console.log(swiper)}
+                            onSlideChange={() => console.log('slide change')}>
 
-                        {otherItems.map(item => {
-                            console.log(item)
-                            return <SwiperSlide key={item._id}>
-                                <ItemPreview item={item} />
-                            </SwiperSlide>
-                        })}
-                    </Swiper> : ''}
+                            {otherItems.map(item => {
+                                return <SwiperSlide key={item._id}>
+                                    <ItemPreview item={item} />
+                                </SwiperSlide>
+                            })}
+                        </Swiper></div> : ''}
                 </div>
             </section>
         )

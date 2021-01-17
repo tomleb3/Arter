@@ -2,11 +2,21 @@ import { Link } from 'react-router-dom'
 
 export function AppFooter() {
     return <footer>
-        <div className="content main-layout">
-            <div className="logo">Arter</div>
-            <h3>is an online marketplace created with the artist in mind.</h3>
-            <h3>Our goal is to give artists, both amateurs and professionals,</h3>
-            <h3>a safe platform to share and sell their art with the world.</h3>
+        <div className="content main-layout flex j-between a-center">
+            <section>
+                <div className="logo"><Link to="/">Arter</Link></div>
+                <h3>is an online marketplace created with the artist in mind.</h3>
+                <h3>Our goal is to give artists, both amateurs and professionals,</h3>
+                <h3>a safe platform to share and sell their art with the world.</h3>
+            </section>
+            <section>
+                <p>Meet the team</p>
+                <div className="flex col">
+                    <Link to="/" className="link flex a-center"><div className="profile-img eran"></div><h3>Eran Harel</h3></Link>
+                    <Link to="/" className="link flex a-center"><div className="profile-img ohad"></div><h3>Ohad Avitan</h3></Link>
+                    <Link to="/" className="link flex a-center"><div className="profile-img tom"></div><h3>Tom Lebeodkin</h3></Link>
+                </div>
+            </section>
         </div>
     </footer>
 }

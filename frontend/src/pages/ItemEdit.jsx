@@ -67,7 +67,7 @@ class _ItemEdit extends Component {
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
                     <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-                    <Button type="submit" color='powderblue'>Save</Button>
+                    <Button type="submit">Save</Button>
                 </form>
             </div>
         )
