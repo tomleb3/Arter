@@ -7,7 +7,7 @@
                 "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
                 "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633390/users/banners/0056_nm1u5s.jpg"
             },
-            "description": "Hi! This is Ayelet Avni, i love to do Crafting, I do Any DIY Origami Craft videos for Your Social Media for Commercial use, Include-Full HD Video, copyright free Music, Title & Pro Edits for your youtube Channel or any social media Content.",
+            "description": "I love crafting and woodwork and textured paintings, as well as Origami and textile work. you can contact me or request a special wood work for any home or commercial use, even Origami animation for vidoes and wood work for wall hanging and for gardens!",
             "isAdmin": false,
             "email": "avnia12@gmail.com",
             "password": "secret",
@@ -515,7 +515,7 @@
             "_id": "v167",
             "title": "Amber necklace",
             "price": 160,
-            "description": "WILL UPLOAD SOON..",
+            "description": "WILL UPLOAD SOON...",
             "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820743/items/EC/amber_necklace_gkrweq.jpg",
             "createdAt": 1519129853500,
             "purchasedAt": 1519129853500,
@@ -665,7 +665,7 @@
         },
         {
             "_id": "v198",
-            "title": "Texture print gazelle",
+            "title": "Textures-print gazelles",
             "price": 160,
             "description": "WILL UPLOAD SOON...",
             "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820769/items/AA/texture_gazelle_aonxyc.jpg",

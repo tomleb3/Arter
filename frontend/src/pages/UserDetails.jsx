@@ -64,6 +64,7 @@ class _UserDetails extends Component {
                     <div className="main">
                         <div className="about">
                             <h1>{user.fullname}</h1>
+                            <br/>
                             <p>{user.description}</p>
                         </div>
 
