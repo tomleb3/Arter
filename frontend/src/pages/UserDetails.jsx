@@ -5,6 +5,7 @@ import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { AppFilter } from '../cmps/AppFilter.jsx'
 import { addReview } from '../store/actions/userActions.js'
+import { ItemList } from '../cmps/ItemList.jsx'
 
 class _UserDetails extends Component {
 
@@ -19,9 +20,7 @@ class _UserDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match.params.id !== prevProps.match.params.id) {
-            this.loadUser()
-        }
+        if (this.props.match.params.id !== prevProps.match.params.id) this.loadUser()
     }
 
     onAddReview = (txt, rating) => {
@@ -64,14 +63,12 @@ class _UserDetails extends Component {
                     <div className="main">
                         <div className="about">
                             <h1>{user.fullname}</h1>
-                            <br/>
+                            <br />
                             <p>{user.description}</p>
                         </div>
 
-                        <div className="item-list grid">
-                            {items.map((item) => <ItemPreview key={item._id} item={item} />)}
-
-                        </div>
+                        <h3 className="portfolio">Portfolio</h3>
+                        <ItemList items={items} />
                         <div className="review-container">
                             <ReviewList reviews={user.reviews} onAdd={this.onAddReview} />
                         </div>

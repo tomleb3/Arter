@@ -8,7 +8,11 @@ export const userService = {
     query,
     save,
     remove,
-    getById
+    getById,
+    login,
+    signup,
+    logout,
+    getLoggedinUser
 }
 
 function query(filterBy) {
@@ -24,8 +28,8 @@ function getById(userId) {
 function save(userToSave) {
     if (userToSave._id)
         return httpService.put(`user/${userToSave._id}`, userToSave) // UPDATE
-    else
-        return httpService.post('user/', userToSave) // CREATE
+    // else
+    //     return httpService.post('user/', userToSave) // CREATE
 }
 
 function remove(userId) {
@@ -33,6 +37,31 @@ function remove(userId) {
     // return storageService.delete('item', itemId)
 }
 
-// function add(user) {
-//     return httpService.post(`user`, user)
-// }
+async function login(userCred) {
+    // const users = await storageService.query('user')
+    // const user = users.find(user => user.username === userCred.username)
+    // return _handleLogin(user)
+
+    const user = await httpService.post('auth/login', userCred)
+    if (user) return _saveLocalUser(user)
+}
+
+async function signup(userCred) {
+    // const user = await storageService.post('user', userCred)
+    const user = await httpService.post('auth/signup', userCred)
+    return _saveLocalUser(user)
+}
+
+async function logout() {
+    sessionStorage.clear()
+    return await httpService.post('auth/logout')
+}
+
+function getLoggedinUser() {
+    return JSON.parse(sessionStorage.getItem('loggedinUser'))
+}
+
+function _saveLocalUser(user) {
+    sessionStorage.setItem('loggedinUser', JSON.stringify(user))
+    return user
+}

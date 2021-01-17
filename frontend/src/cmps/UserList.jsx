@@ -12,7 +12,7 @@ export function UserList({ users, items }) {
 
     if (!users || !users.length) return <div></div>
     return <Swiper
-        className="user-list main-layout"
+        className="user-list"
         spaceBetween={30}
         slidesPerView={5}
         navigation
