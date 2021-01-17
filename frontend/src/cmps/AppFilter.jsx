@@ -32,7 +32,7 @@ class _AppFilter extends Component {
         const { title } = this.state
 
         return (
-            <section className="app-filter main-layout">
+            <section className="app-filter">
                 <form className="filter-form" onSubmit={this.onFilter}>
                     <input className="search-bar" placeholder="Search" type="text" name='title' value={title} ref={this.inputRef} onChange={this.handleChange} />
                 </form>

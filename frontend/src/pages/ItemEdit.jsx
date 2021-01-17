@@ -18,12 +18,12 @@ class _ItemEdit extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        if (!this.props.items.length) await this.props.loadItems()
         const { id } = this.props.match.params
         if (id) {
-            const item = this.props.items.find(item => {
-                return item._id === id
-            })
+            console.log('lieli',this.props.items);
+            const item = this.props.items.find(item =>item._id === id)
             this.setState({ item: item })
         }
     }
@@ -45,26 +45,26 @@ class _ItemEdit extends Component {
     }
 
     onRemoveItem = (itemId) => {
-        this.props.removeItem(itemId).then(() => this.props.history.push('/explore'))
+        const {item} = this.state
+        this.props.removeItem(itemId).then(() => this.props.history.push(`/user/${item.seller._id}`))
     }
 
-
-    onSaveItem = (ev) => {
+    onSaveItem = async (ev) => {
         ev.preventDefault()
         const { item } = this.state
-        // if (!toy.name) return
         if (item._id) {
-            this.props.editItem(item).then(() => this.props.history.push('/explore'))
+            await this.props.editItem(item)
+            this.props.history.push(`/item/${item._id}`)
         } else {
-            this.props.addItem(item).then(() => this.props.history.push('/explore'))
+            await this.props.addItem(item)
+            this.props.history.push(`/user/${item.seller._id}`)
         }
-        this.setState({ item: { title: '', price: 0, description:''}})
     }
 
     render() {
         // console.log(this.props.loggedInUser)
         const { item } = this.state
-        // if (!item) return <div className="loader"></div>
+        if (!item) return <div className="loader m-page"></div>
         return (
             <div className="item-edit m-page">
                 {/* <h3>{toy._id ? 'Update' : 'Add'} Toy</h3> */}

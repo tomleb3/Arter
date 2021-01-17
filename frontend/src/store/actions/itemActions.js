@@ -27,7 +27,7 @@ export function editItem(item) {
     // console.log('item', item)
     return async dispatch => {
         try {
-            const editedItem = itemService.update(item)
+            const editedItem = await itemService.update(item)
             dispatch({ type: 'EDIT_ITEM', item: editedItem })
         } catch (err) {
             console.log('itemActions:', err)

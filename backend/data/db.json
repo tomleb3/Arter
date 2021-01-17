@@ -67,6 +67,7 @@
         {
           "id": "r103",
           "rate": 5,
+          "createdAt": 1545671829938,
           "txt": "Beautiful art. I'm very happy about my purchase.",
           "byUser": {
             "_id": "u101",
@@ -234,7 +235,7 @@
     {
       "_id": "v187",
       "title": "Silver ruby necklace",
-      "price": 120,
+      "price": 135,
       "description": "White silver and genuine Ghana ruby stone, fitting delicate attire",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/silver_ruby_necklace_v3tgw2.webp",
       "createdAt": 1519129853500,
@@ -305,7 +306,7 @@
       ],
       "seller": {
         "_id": "u104",
-        "fullname": "Aaron Pikotsky",
+        "fullname": "Aaron Pikovsky",
         "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
       }
     },
@@ -554,7 +555,7 @@
     {
       "_id": "v207",
       "title": "Polished silver ring",
-      "price": 90,
+      "price": 95,
       "description": "WILL UPLOAD SOON..",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/polished_silver_ring_hnvxot.jpg",
       "createdAt": 1519129853500,
@@ -573,7 +574,7 @@
     {
       "_id": "v227",
       "title": "Tree dual painting",
-      "price": 40,
+      "price": 65,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820740/items/EC/003cfca5efcd0303f1189006cf6b7ba7_r9ygyd.jpg",
       "createdAt": 1519129853500,
@@ -744,25 +745,7 @@
       ],
       "seller": {
         "_id": "u104",
-        "fullname": "Aaron Pikotsky",
-        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
-      }
-    },
-    {
-      "_id": "v189",
-      "title": "Glass elephant colorful",
-      "price": 160,
-      "description": "WILL UPLOAD SOON...",
-      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820793/items/AP/glass_elephant_colorfull_icr5qg.jpg",
-      "createdAt": 1519129853500,
-      "purchasedAt": 1519129853500,
-      "tags": [
-        "elephant",
-        "glass"
-      ],
-      "seller": {
-        "_id": "u104",
-        "fullname": "Aaron Pikotsky",
+        "fullname": "Aaron Pikovsky",
         "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
       }
     }

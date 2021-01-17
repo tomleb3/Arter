@@ -12,11 +12,11 @@ export function UserList({ users, items }) {
 
     if (!users || !users.length) return <div></div>
     return <Swiper
-        className="user-list main-layout"
+        className="user-list"
         spaceBetween={30}
         slidesPerView={5}
         navigation
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}

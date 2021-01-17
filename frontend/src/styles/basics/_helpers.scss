@@ -94,19 +94,28 @@
     display: grid;
 
     &.j-center {
-        justify-content: center;
+        justify-items: center;
     }
-    &.j-around {
-        justify-content: space-around;
+    &.j-start{
+        justify-items: start;
     }
-    &.j-between {
-        justify-content: space-between;
+    &.j-end{
+        justify-items: end;
     }
-    &.j-evenly {
-        justify-content: space-evenly;
+    &.j-stretch{
+        justify-items: stretch;
     }
     &.a-center {
         align-items: center;
+    }
+    &.a-start {
+        align-items: start;
+    }
+    &.a-end {
+        align-items: end;
+    }
+    &.a-stretch {
+        align-items: stretch;
     }
 }
 

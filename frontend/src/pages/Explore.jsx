@@ -15,10 +15,10 @@ class _Explore extends Component {
 
     render() {
         const { users, items } = this.props
-        return <section className="explore m-page">
+        return <section className="explore m-page main-layout">
             <AppFilter initialFilter={this.props.location.state} />
             <UserList users={users} items={items} />
-            <ItemList items={items} />
+            <ItemList items={items} withProfile />
         </section>
     }
 }

@@ -77,5 +77,14 @@
         h3 {
             margin: 10px 0;
         }
+
+        .swiper-pagination-bullet-active {
+            background-color: $clr6;
+        }
+    
+        div.swiper-button-prev,
+        div.swiper-button-next {
+            color: $clr1;
+        }
     }
 }
