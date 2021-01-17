@@ -56,7 +56,7 @@ export function ReviewAdd({ onAdd }) {
             <textarea autoFocus ref={textAreaRef}></textarea>
             <div className="btns-container right">
                 <Button onClick={handleClose}>Close</Button>
-                <Button variant="contained" color="secondary" onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
+                <Button variant="contained" style={{backgroundColor: '#13acca'}} onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
             </div>
         </div>
     );

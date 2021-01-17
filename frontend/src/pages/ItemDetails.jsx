@@ -26,7 +26,19 @@ class _ItemDetails extends Component {
                 return _item
         })
         this.setState({ item, otherItems })
+    }
 
+    async componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            window.scrollTo(0, 0)
+            const { id } = this.props.match.params
+            const item = await itemService.getById(id)
+            const otherItems = this.props.items.filter(_item => {
+                if ((item.seller._id === _item.seller._id) && (item._id !== _item._id))
+                    return _item
+            })
+            this.setState({ item, otherItems })
+        }
     }
 
     render() {
@@ -58,7 +70,7 @@ class _ItemDetails extends Component {
                     </div>
                 </div>
                 <div className="other-works">
-                    <div className="main-layout"><h3>Other Works</h3></div>
+                    <div className="main-layout"><h3>Other Works By Artist:</h3></div>
                     {otherItems.length ? <Swiper
                         className="main-layout"
                         spaceBetween={30}

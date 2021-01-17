@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Button } from '@material-ui/core'
+// import { Button } from '@material-ui/core'
 import { removeItem } from '../store/actions/itemActions'
 
 function _ItemPreview({ item, removeItem }) {
@@ -18,7 +18,7 @@ function _ItemPreview({ item, removeItem }) {
         </div>
         <div className="bottom-container">
             <h5 className="right">${item.price}</h5>
-            <Button className="remove-btn" color="secondary" onClick={() => removeItem(item._id)}>X</Button>
+            <button className="remove-btn" onClick={() => removeItem(item._id)}>x</button>
         </div>
     </section>
 }

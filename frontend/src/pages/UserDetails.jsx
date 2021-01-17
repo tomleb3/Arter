@@ -59,6 +59,7 @@ class _UserDetails extends Component {
                     <div className="sidebar">
                         <AppFilter />
                         <button className="custom-order-btn">Custom Order</button>
+                        <button className="custom-order-btn">Contact Me</button>
                     </div>
                     <div className="main">
                         <div className="about">

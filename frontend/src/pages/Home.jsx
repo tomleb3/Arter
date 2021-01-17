@@ -55,7 +55,7 @@ class _Home extends Component {
                             <h5>Jewelry</h5>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Photo" }}>
+                            <Link to={{ pathname: "/explore", state: "Crafts" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}></div>
                             </Link>
@@ -69,7 +69,7 @@ class _Home extends Component {
                     <div className="btn"><Link to="/explore" className="link"><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Discover</Button></Link></div>
                 </article>
                 <article>
-                    <h3>Fetured Artists</h3>
+                    <h3>Featured Artists</h3>
                     <UserList users={users} items={items} />
                 </article>
                 {/* <GetStarted /> */}

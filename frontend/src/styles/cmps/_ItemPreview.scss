@@ -31,6 +31,19 @@
         margin-top: 15px;
     }
 
+    .remove-btn {
+        background-color: lightgray;
+        border-radius: 50%;
+        border: none;
+        padding-right: 5px;
+        padding-left: 5px;
+
+        &:hover{
+            background-color: rgb(179, 171, 171);
+            color: white;
+        }
+    }
+
     .bottom-container {
         // border-top: 1px solid rgba(0, 0, 0, 0.1);
 

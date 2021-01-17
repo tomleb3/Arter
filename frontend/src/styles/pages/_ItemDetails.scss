@@ -10,11 +10,20 @@
         // margin: 20px;
     }
 
+    .swiper-pagination-bullet-active {
+        background-color: $clr1;
+    }
+
+    div.swiper-button-prev,
+    div.swiper-button-next {
+        color: $clr1;
+    }
+
     .item-details {
         height: 500px;
         border-radius: 4px;
         background-color: rgba(197, 241, 241, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 50px;
         margin: auto;
         margin-top: 100px;
@@ -41,7 +50,7 @@
             width: 400px;
 
             p {
-                font-size: 1.3rem;
+                font-size: 1rem;
             }
 
             .purchase-btn {
@@ -61,8 +70,8 @@
     }
 
     .other-works {
-        background-color: rgba(197, 241, 241, 0.876);
-        padding: 10px;
+        background-color: rgba(197, 241, 241, 0.5);
+        padding: 20px;
         margin-top: 150px;
 
         h3 {
