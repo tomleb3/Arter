@@ -14,7 +14,7 @@ class _ItemEdit extends Component {
             description: '',
             // tags: ['Traditional'],
             // seller: this.props.loggedInUser.username
-            
+
         }
     }
 
@@ -53,7 +53,7 @@ class _ItemEdit extends Component {
         } else {
             this.props.addItem(item).then(() => this.props.history.push('/explore'))
         }
-        this.setState({ item: { title: '', price: 0, description:''}})
+        this.setState({ item: { title: '', price: 0, description: '' } })
     }
 
     render() {
@@ -63,11 +63,13 @@ class _ItemEdit extends Component {
         return (
             <div className="item-edit m-page">
                 {/* <h3>{toy._id ? 'Update' : 'Add'} Toy</h3> */}
-                <form className="flex col j-between" onSubmit={this.onSaveItem}>
+                <form className="flex col j-between" autoComplete="off" onSubmit={this.onSaveItem}>
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
                     <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-                    <Button type="submit" color='powderblue'>Save</Button>
+
+
+                    
                 </form>
             </div>
         )

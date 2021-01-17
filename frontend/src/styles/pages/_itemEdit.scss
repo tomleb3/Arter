@@ -1,5 +1,25 @@
 .item-edit{
-    width: 50vw;
+    width: 40vw;
+    min-width: 300px;
     margin: 150px auto;
-    height: 50vh;
+    height: 47vh;
+
+    .MuiButton-root{
+        // background-color: rgb(0, 255, 128);
+    }
+
+    .m-bottom{
+        margin-bottom: 15px;
+    }
+
+    .save-btn{
+        width: 220px;
+        align-self: center;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    .discard-btn{
+        width: 220px;
+        align-self: center;
+    }
 }

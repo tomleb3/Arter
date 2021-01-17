@@ -35,9 +35,9 @@ class _ItemDetails extends Component {
 
         if (!item) return <div className="loader"></div>
         return (  
-            <section className="item-page flex col j-evenly m-page">  
+            <section className="main-layout item-page flex col j-evenly m-page">  
             <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
-                <div className="item-details flex j-evenly">
+                <div className="item-details">
                     <div className="item-show flex col">
                         <h2 className="item-name">{item.title}</h2>
                         <img className="item-img" src={item.imgUrl} alt={item.title} />
