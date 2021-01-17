@@ -11,7 +11,8 @@ function _ItemPreview({ item, withProfile }) {
         <div className="info-container">
             {withProfile && <Link to={`/user/${item.seller._id}`} className="profile-container flex a-center">
                 <img className="user-img" src={item.seller.imgUrl} alt=""></img>
-                <h5>{item.seller.fullname}</h5>
+                <h4>{item.seller.fullname}</h4>
+                {/* <Rating name="rating" value={item.seller.} /> */}
             </Link>}
             <h3>{item.title}</h3>
         </div>

@@ -44,18 +44,17 @@ class _ItemDetails extends Component {
         return (
             <section className="item-page flex col j-evenly m-page">
                 <div className="item-details flex j-evenly">
-                    <div className="item-show flex col">
-                        <h2 className="item-name">{item.title}</h2>
+                    <div className="item-show">
                         <img className="item-img" src={item.imgUrl} alt={item.title} />
                     </div>
                     <div className="item-desc flex col j-between">
-                        <h2>About this piece:</h2>
+                        <h2 className="item-name">{item.title}</h2>
                         <p>{item.description}</p>
                         <p>Price: ${item.price}</p>
                         <div>
                             <h5 className="muted">Artist:</h5>
-                            <div className="flex a-center">
-                                <Link to={`/user/${item.seller._id}`}><img className="profile-img" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
+                            <div className="profile-container flex a-center">
+                                <Link to={`/user/${item.seller._id}`}><img className="profile-img flex a-center" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
                                 <h4>{item.seller.fullname}</h4>
                             </div>
                         </div>
@@ -68,8 +67,8 @@ class _ItemDetails extends Component {
                     <div className="main-layout"><h3>Other Works By Artist:</h3></div>
                     {otherItems.length ? <div className="main-layout">
                         <Swiper
-                            spaceBetween={30}
-                            slidesPerView={5}
+                            spaceBetween={80}
+                            slidesPerView={4}
                             navigation={{
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev'

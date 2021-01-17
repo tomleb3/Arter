@@ -63,7 +63,7 @@ export function ReviewAdd({ onAdd }) {
 
     return (
         <div>
-            <AddIcon className="pointer" onClick={handleOpen} />
+            <AddIcon className="pointer" onClick={handleOpen} fontSize="large" style={{ backgroundColor: '#13acca', color: 'white', borderRadius: '5px' }} />
             <Modal
                 className="review-add-modal"
                 open={open}

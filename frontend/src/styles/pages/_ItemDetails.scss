@@ -1,13 +1,15 @@
 .item-page {
-    .profile-img {
-        // background-color: beige;
-        // padding: 25px;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-        margin-inline-end: 10px;
-        // margin: 20px;
+    .profile-container {
+        .profile-img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-inline-end: 10px;
+        }
+        h4 {
+            letter-spacing: 1px;
+        }
     }
     .swiper-pagination-bullet-active {
         background-color: $clr1;
@@ -19,48 +21,54 @@
     .item-details {
         height: 500px;
         border-radius: 4px;
-        background-color: rgba(197, 241, 241, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 50px;
-        margin: auto;
-        margin-top: 100px;
         .item-show {
-            width: 400px;
             .item-img {
-                width: 300px;
-                height: 300px;
+                max-width: 500px;
+                max-height: 500px;
+                min-width: 200px;
+                min-height: 200px;
                 border: 1px solid rgba(0, 0, 0, 0.2);
-            }
-            .item-name {
-                margin-bottom: 25px;
             }
         }
         h5 {
             margin-bottom: 10px;
         }
         .item-desc {
-            width: 400px;
+            width: 500px;
+            padding: 50px;
+            min-height: 550px;
+            background-color: rgba(211, 211, 211, 0.25);
             p {
                 font-size: 1rem;
+
+                &:last-of-type {
+                    font-weight: bold;
+                }
+            }
+            .item-name {
+                margin: 0 0 25px 0;
+                letter-spacing: 1px;
             }
             .purchase-btn {
-                align-self: flex-end;
                 background-color: #fff;
-                // border: $clr1 2px solid;
-                border: 2px solid #119AB5;
+                border: 2px solid #119ab5;
                 border-radius: 10px;
-                padding: 10px;
-                width: 220px;
+                padding: 12px 0;
+                width: 100%;
+                font-size: 1.15em;
+                letter-spacing: 1px;
                 &:hover {
-                    border-color: #007E94;
+                    border-color: $clr6;
                 }
             }
         }
     }
     .other-works {
         background-color: rgba(197, 241, 241, 0.5);
-        padding: 20px;
-        margin-top: 150px;
+        padding-top: 15px;
+        margin-top: 175px;
+        // max-height: 350px;
         h3 {
             margin: 10px 0;
         }

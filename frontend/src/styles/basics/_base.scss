@@ -6,14 +6,19 @@
         font-family: Montserrat;
         scroll-behavior: smooth;
         overflow-x: hidden;
-        
-        h1,h2,h3,h4,h5,h6{
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: Yanone;
-            
         }
 
         button {
             cursor: pointer;
+            outline: none;
         }
 
         input,

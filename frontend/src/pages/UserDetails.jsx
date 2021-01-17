@@ -20,7 +20,10 @@ class _UserDetails extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match.params.id !== prevProps.match.params.id) this.loadUser()
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            window.scrollTo(0, 0)
+            this.loadUser()
+        }
     }
 
     onAddReview = (txt, rating) => {

@@ -16,8 +16,7 @@
         {
           "id": "r101",
           "rate": 5,
-          "txt": "Ayelet is an awesome artist, I love her intricate wood work!",
-          "createdAt": 1545211809934,
+          "txt": "Best Artist EVER!!!",
           "byUser": {
             "_id": "u102",
             "fullname": "Mike Bosh",
@@ -26,9 +25,8 @@
         },
         {
           "id": "r102",
-          "rate": 5,
-          "txt": "I really liked ayelet's work and she's also very nice to speak to, we talk about making wood and gem stones jewelery collection together and i purchased a great centerpiece of her wood on canvas series.",
-          "createdAt": 1517812705954,
+          "rate": 4,
+          "txt": "I've really liked her work.",
           "byUser": {
             "_id": "u103",
             "fullname": "Efrat Cohen",
@@ -68,7 +66,6 @@
           "id": "r103",
           "rate": 5,
           "txt": "Beautiful art. I'm very happy about my purchase.",
-          "createdAt": 1545211809935,
           "byUser": {
             "_id": "u101",
             "fullname": "Ayelet Avni",
@@ -194,7 +191,7 @@
     {
       "_id": "v188",
       "title": "Wooden flower for wall",
-      "price": 170,
+      "price": 160,
       "description": "This flower is inspired by Indian Mandala art, but infused with the monochromatic vibe of wood. I used Teak and Mango and Purpleheart wood with transparent laqua to bring out the natural wood color. I have another one as a centerpiece in my living room",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820770/items/AA/wooden_flower_for_wall_qziz51.jpg",
       "createdAt": 1519129853500,
@@ -214,7 +211,7 @@
     {
       "_id": "v159",
       "title": "Glass elephant monochromatic",
-      "price": 80,
+      "price": 160,
       "description": "This glass elephant is my first attempt of working with colored glass, in a modern Chihooli style",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820795/items/AP/glass_elephant_monochromatic_djpvhm.jpg",
       "createdAt": 1519129853500,
@@ -235,7 +232,7 @@
     {
       "_id": "v187",
       "title": "Silver ruby necklace",
-      "price": 120,
+      "price": 170,
       "description": "White silver and genuine Ghana ruby stone, fitting delicate attire",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/silver_ruby_necklace_v3tgw2.webp",
       "createdAt": 1519129853500,
@@ -274,7 +271,7 @@
     {
       "_id": "v155",
       "title": "Portrait 1",
-      "price": 35,
+      "price": 130,
       "description": "Inspired by the 2pac portrait, with acrylic and oil mixture, measures 100cm wide X 80cm long",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610819622/items/MB/portrait_1_ujmutq.jpg",
       "createdAt": 1519129853500,
@@ -333,7 +330,7 @@
     {
       "_id": "v145",
       "title": "City 1",
-      "price": 65,
+      "price": 160,
       "description": "Water color on pattern-work design, inspired by my hometown Toronto and its skyline, painted in summer of 2018.",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610819620/items/MB/city_1_jwt7te.jpg",
       "createdAt": 1519129853500,
@@ -354,7 +351,7 @@
     {
       "_id": "v165",
       "title": "Portrait 2",
-      "price": 35,
+      "price": 60,
       "description": "Self portait , oil strokes on carbon drawing.",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610819620/items/MB/portrait_2_cxzodf.jpg",
       "createdAt": 1519129853500,
@@ -374,7 +371,7 @@
     {
       "_id": "v140",
       "title": "Wooden Elephant",
-      "price": 180,
+      "price": 380,
       "description": "Made of vietnamese Monkeypod with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged laqua with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
       "createdAt": 1519229860500,
@@ -415,7 +412,7 @@
     {
       "_id": "v146",
       "title": "Figurative painting with fish",
-      "price": 50,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820830/items/SC/figurative_painting_with_fish_zw7vgd.jpg",
       "createdAt": 1519129853500,
@@ -436,7 +433,7 @@
     {
       "_id": "v197",
       "title": "Saphire leaf necklace",
-      "price": 150,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/saphire_leaf_necklace_kkehxi.jpg",
       "createdAt": 1519129853500,
@@ -456,7 +453,7 @@
     {
       "_id": "v175",
       "title": "Portrait 3",
-      "price": 140,
+      "price": 199,
       "description": "Hip-hop queen of my teen years Lauryn Hill is the star of this portrait, acrylic strokes on a blueprint photo",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610819622/items/MB/portrait_3_xxou3n.jpg",
       "createdAt": 1519129853500,
@@ -477,7 +474,7 @@
     {
       "_id": "v156",
       "title": "Fish and books",
-      "price": 80,
+      "price": 160,
       "description": "WILL UPLOAD SOON..",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820821/items/SC/fish_and_books_ijjzql.jpg",
       "createdAt": 1519129853500,
@@ -497,7 +494,7 @@
     {
       "_id": "v147",
       "title": "Gold and quartz",
-      "price": 165,
+      "price": 80,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820744/items/EC/gold_and_quartz_xhwyb1.jpg",
       "createdAt": 1519129853500,
@@ -517,7 +514,7 @@
     {
       "_id": "v167",
       "title": "Amber necklace",
-      "price": 190,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820743/items/EC/amber_necklace_gkrweq.jpg",
       "createdAt": 1519129853500,
@@ -536,7 +533,7 @@
     {
       "_id": "v177",
       "title": "Colorful glass necklace",
-      "price": 45,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/colorful_glass_necklace_uwudv2.jpg",
       "createdAt": 1519129853500,
@@ -555,7 +552,7 @@
     {
       "_id": "v207",
       "title": "Polished silver ring",
-      "price": 90,
+      "price": 160,
       "description": "WILL UPLOAD SOON..",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820741/items/EC/polished_silver_ring_hnvxot.jpg",
       "createdAt": 1519129853500,
@@ -574,7 +571,7 @@
     {
       "_id": "v227",
       "title": "Tree dual painting",
-      "price": 40,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820740/items/EC/003cfca5efcd0303f1189006cf6b7ba7_r9ygyd.jpg",
       "createdAt": 1519129853500,
@@ -592,7 +589,7 @@
     {
       "_id": "v217",
       "title": "Glass and gold star of david",
-      "price": 185,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820740/items/EC/glass_and_gold_star_of_david_wqbtqz.jpg",
       "createdAt": 1519129853500,
@@ -613,7 +610,7 @@
     {
       "_id": "v157",
       "title": "Tree oil painting",
-      "price": 40,
+      "price": 160,
       "description": "WILL UPLOAD SOON..",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820743/items/EC/tree_painting_1_oyqq2g.jpg",
       "createdAt": 1519129853500,
@@ -631,7 +628,7 @@
     {
       "_id": "v158",
       "title": "Woodenn elephant 2",
-      "price": 110,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820787/items/AA/woodenn_elephant_2_stwpbj.webp",
       "createdAt": 1519129853500,
@@ -649,7 +646,7 @@
     {
       "_id": "v178",
       "title": "Wood on canvas",
-      "price": 200,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820770/items/AA/wood_on_canvas_ojfaps.jpg",
       "createdAt": 1519129853500,
@@ -669,7 +666,7 @@
     {
       "_id": "v198",
       "title": "Textures-print gazelles",
-      "price": 70,
+      "price": 160,
       "description": "WILL UPLOAD SOON...",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820769/items/AA/texture_gazelle_aonxyc.jpg",
       "createdAt": 1519129853500,
@@ -742,6 +739,25 @@
         "animals",
         "colorful",
         "home"
+      ],
+      "seller": {
+        "_id": "u104",
+        "fullname": "Aaron Pikotsky",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
+      }
+    },
+    {
+      "_id": "v179",
+      "title": "Glass peacock sculpture",
+      "price": 160,
+      "description": "WILL UPLOAD SOON...",
+      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820795/items/AP/glass_peacock_sculpture_t1jdoz.webp",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+        "sculpture",
+        "glass",
+        "animals"
       ],
       "seller": {
         "_id": "u104",

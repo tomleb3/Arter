@@ -36,7 +36,7 @@ class _Home extends Component {
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", state: "Wood" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825140/Home%20topics/woodwork2_a9gmbz.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610901953/Home%20topics/woodwork2_dikhpk.jpg)` }}></div>
                             </Link>
                             <h5>Woodwork</h5>
                         </div>
