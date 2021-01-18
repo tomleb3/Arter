@@ -15,6 +15,7 @@ class _Home extends Component {
 
         return <section className="home m-page">
             <div className="hero-container">
+                <div className="hero-img"></div>
                 <div className="hero"></div>
                 <h2>Join The Family,</h2>
                 <h2>Share Your Arts</h2>
