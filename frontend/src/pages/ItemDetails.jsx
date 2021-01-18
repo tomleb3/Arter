@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { itemService } from '../services/itemService.js'
+import { utilService } from '../services/utilService.js'
+import { Rating } from '@material-ui/lab'
 import { Link } from 'react-router-dom'
 import { ItemPreview } from "../cmps/ItemPreview.jsx"
 import Swiper from 'react-id-swiper'
@@ -11,22 +13,27 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import { loadItems } from '../store/actions/itemActions.js'
+
 class _ItemDetails extends Component {
+
     state = {
         item: null,
         otherItems: []
     }
+
     async componentDidMount() {
         SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
         if (!this.props.items.length) await this.props.loadItems()
         this.loadOtherItems()
     }
+
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
             if (!this.props.items.length) await this.props.loadItems()
             this.loadOtherItems()
         }
     }
+
     async loadOtherItems() {
         window.scrollTo(0, 0)
         const { id } = this.props.match.params
@@ -38,9 +45,13 @@ class _ItemDetails extends Component {
         )
         this.setState({ item, otherItems })
     }
+
     render() {
         const { item, otherItems } = this.state
-        if (!item) return <div className="loader m-page"></div>
+        if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
+        const user = this.props.users.find(user => item.seller._id === user._id)
+        const userRating = utilService.calcRate(user)
+
         return (
             <section className="item-page flex col j-evenly m-page">
                 <div className="item-details flex j-evenly">
@@ -54,8 +65,14 @@ class _ItemDetails extends Component {
                         <div>
                             <h5 className="muted">Artist:</h5>
                             <div className="profile-container flex a-center">
-                                <Link to={`/user/${item.seller._id}`}><img className="profile-img flex a-center" src={item.seller.imgUrl} alt={item.seller.fullname} /></Link>
-                                <h4>{item.seller.fullname}</h4>
+                                <Link to={`/user/${item.seller._id}`}><img className="profile-img flex a-center" src={user.imgUrls.profile} alt={item.seller.fullname} /></Link>
+                                <div>
+                                    <h4>{item.seller.fullname}</h4>
+                                    <div className="flex">
+                                        <Rating name="rating" value={userRating} readOnly size="small" />
+                                        <p className="muted">({user.reviews.length})</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
@@ -84,7 +101,7 @@ class _ItemDetails extends Component {
                             onSlideChange={() => console.log('slide change')}>
                             {otherItems.map(item => {
                                 return <SwiperSlide key={item._id}>
-                                    <ItemPreview item={item} />
+                                    <ItemPreview item={item} user={user} />
                                 </SwiperSlide>
                             })}
                         </Swiper></div> : ''}
@@ -98,6 +115,7 @@ const mapStateToProps = (state) => {
         // loggedInUser: state.userModule.loggedInUser
         // users: state.userModule.users,
         items: state.itemModule.items,
+        users: state.userModule.users
     }
 }
 const mapDispatchToProps = {

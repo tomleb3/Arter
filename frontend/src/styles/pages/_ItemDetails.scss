@@ -39,11 +39,16 @@
             padding: 50px;
             min-height: 550px;
             background-color: rgba(211, 211, 211, 0.25);
-            p {
+            > p {
                 font-size: 1rem;
 
                 &:last-of-type {
                     font-weight: bold;
+                }
+            }
+            .profile-container {
+                p {
+                    margin: 0 5px;
                 }
             }
             .item-name {

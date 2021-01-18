@@ -18,8 +18,8 @@ import { ItemEdit } from './pages/ItemEdit'
 class _App extends Component {
 
   async componentDidMount() {
-   await this.props.loadItems()
-   await this.props.loadUsers()
+    await this.props.loadItems()
+    await this.props.loadUsers()
   }
 
   render() {

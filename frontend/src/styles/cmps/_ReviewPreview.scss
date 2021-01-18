@@ -3,12 +3,16 @@
 
     .reviewer-info {
         width: fit-content;
-        
+
         img {
             border-radius: 50%;
-            height: 30px;
-            width: 30px;
+            height: 45px;
+            width: 45px;
             margin-inline-end: 10px;
         }
+    }
+
+    .MuiRating-root {
+        margin: 10px 0;
     }
 }

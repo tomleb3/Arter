@@ -18,7 +18,7 @@ class _Explore extends Component {
         return <section className="explore m-page main-layout">
             <AppFilter initialFilter={this.props.location.state} />
             <UserList users={users} items={items} />
-            <ItemList items={items} withProfile />
+            <ItemList users={users} items={items} withProfile />
         </section>
     }
 }

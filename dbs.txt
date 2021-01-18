@@ -74,5 +74,3 @@
 
 
 user->review(mini user)
-
-
