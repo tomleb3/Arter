@@ -27,11 +27,5 @@ export function itemReducer(state = initialState, action) {
 
 
 
-
-
-
-
-
-
 // case 'FILTER_ITEMS':
         //     return { ...state, filterBy: action.filterBy }

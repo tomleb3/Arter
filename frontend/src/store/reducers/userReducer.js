@@ -22,8 +22,6 @@ export function userReducer(state = initialState, action = {}) {
       // return state.users.map(user => (user._id === action.user._id) ? action.user : user)
     case 'REMOVE_REVIEW':
       return
-    case 'SET_SCORE':
-      return { ...state, loggedInUser: { ...state.loggedInUser } }
     default:
       return state
   }

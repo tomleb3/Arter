@@ -76,11 +76,14 @@ class _LoginSignup extends Component {
 
     doSignup = async ev => {
         ev.preventDefault()
-        const { email, password, firstName, lastName } = this.state.signupCred
+        let { email, password, firstName, lastName } = this.state.signupCred
         if (!email || !password || !firstName || !lastName || !email) {
             return this.setState({ msg: 'All inputs are required' })
         }
-        const signupCreds = { email, password, fullname: firstName + lastName }
+        firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1)
+        lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1)
+        let fullname = firstName + ' ' + lastName
+        const signupCreds = { email, password, fullname }
         await this.props.signup(signupCreds)
         this.setState({ signupCred: { email: '', password: '', fullname: '' } })
         if (sessionStorage['loggedinUser']) this.props.history.push('/toy')
@@ -159,7 +162,7 @@ class _LoginSignup extends Component {
                     {loggedInUser && (
                         <div>
                             <h3>
-                                Welcome {loggedInUser.firstName + ' ' + loggedInUser.lastName}
+                                Welcome {loggedInUser.fullname}
                                 <Button color="secondary" onClick={this.props.logout}>LOGOUT</Button>
                             </h3>
                         </div>
