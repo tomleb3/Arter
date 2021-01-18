@@ -748,24 +748,6 @@
         "fullname": "Aaron Pikotsky",
         "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
       }
-    },
-    {
-      "_id": "v189",
-      "title": "Glass elephant colorful",
-      "price": 160,
-      "description": "WILL UPLOAD SOON...",
-      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610820793/items/AP/glass_elephant_colorfull_icr5qg.jpg",
-      "createdAt": 1519129853500,
-      "purchasedAt": 1519129853500,
-      "tags": [
-        "elephant",
-        "glass"
-      ],
-      "seller": {
-        "_id": "u104",
-        "fullname": "Aaron Pikotsky",
-        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610633664/users/profiles/004.jpg"
-      }
     }
   ],
   "order": [
