@@ -33,5 +33,4 @@ const mapStateToProps = (state) => {
         // loggedInUser: state.userModule.loggedInUser
     }
 }
-
 export const ItemPreview = connect(mapStateToProps)(_ItemPreview)

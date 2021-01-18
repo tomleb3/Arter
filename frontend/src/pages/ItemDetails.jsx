@@ -23,25 +23,23 @@ class _ItemDetails extends Component {
 
     async componentDidMount() {
         SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
-        if (!this.props.items.length) await this.props.loadItems()
         this.loadOtherItems()
+        window.scrollTo(0, 0)
     }
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
-            if (!this.props.items.length) await this.props.loadItems()
             this.loadOtherItems()
+            window.scrollTo(0, 0)
         }
     }
 
     async loadOtherItems() {
-        window.scrollTo(0, 0)
         const { id } = this.props.match.params
         const { items } = this.props
         const item = await itemService.getById(id)
-        console.log({ items });
         const otherItems = items.filter(currItem =>
-            (item.seller._id === currItem.seller._id) && (item._id !== currItem._id)
+            (item.sellerId === currItem.seller._id) && (item._id !== currItem._id)
         )
         this.setState({ item, otherItems })
     }
@@ -49,7 +47,7 @@ class _ItemDetails extends Component {
     render() {
         const { item, otherItems } = this.state
         if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
-        const user = this.props.users.find(user => item.seller._id === user._id)
+        const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
 
         return (
@@ -65,9 +63,9 @@ class _ItemDetails extends Component {
                         <div>
                             <h5 className="muted">Artist:</h5>
                             <div className="profile-container flex a-center">
-                                <Link to={`/user/${item.seller._id}`}><img className="profile-img flex a-center" src={user.imgUrls.profile} alt={item.seller.fullname} /></Link>
+                                <Link to={`/user/${item.sellerId}`}><img className="profile-img flex a-center" src={user.imgUrls.profile} alt={user.fullname} /></Link>
                                 <div>
-                                    <h4>{item.seller.fullname}</h4>
+                                    <h4>{user.fullname}</h4>
                                     <div className="flex">
                                         <Rating name="rating" value={userRating} readOnly size="small" />
                                         <p className="muted">({user.reviews.length})</p>
@@ -110,6 +108,7 @@ class _ItemDetails extends Component {
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         // loggedInUser: state.userModule.loggedInUser

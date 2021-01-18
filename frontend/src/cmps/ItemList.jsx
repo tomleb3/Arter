@@ -10,7 +10,7 @@ export function ItemList({ items, users, withProfile }) {
     }
     return (
         <ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 650: 2, 900: 3, 1400: 4 }}>
-            <Masonry columnsCount={4} gutter={30}>
+            <Masonry columnsCount={4} gutter="30px">
                 {items.map(item => {
                     const user = users.find(user => item.seller._id === user._id)
 
@@ -19,7 +19,6 @@ export function ItemList({ items, users, withProfile }) {
             </Masonry>
         </ResponsiveMasonry>
     )
-
 
     // return <section className="item-list grid j-center">
     //     {items.map(item => {

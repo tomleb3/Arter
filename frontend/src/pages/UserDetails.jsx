@@ -5,6 +5,7 @@ import { utilService } from '../services/utilService.js'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { AppFilter } from '../cmps/AppFilter.jsx'
 import { addReview } from '../store/actions/userActions.js'
+import { loadItems } from '../store/actions/itemActions.js'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
@@ -16,15 +17,15 @@ class _UserDetails extends Component {
         items: []
     }
 
-    componentDidMount() {
-        window.scrollTo(0, 0)
+    async componentDidMount() {
         this.loadUser()
+        window.scrollTo(0, 0)
     }
 
-    componentDidUpdate(prevProps) {
+    async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
-            window.scrollTo(0, 0)
             this.loadUser()
+            window.scrollTo(0, 0)
         }
     }
 
@@ -54,9 +55,9 @@ class _UserDetails extends Component {
     render() {
         const { user, items } = this.state
         const { users } = this.props
-        const userRating = utilService.calcRate(user)
+        const userRating = utilService.calcRate(user) || 0
 
-        if (!user || !items.length || !users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
+        if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
         return (
             <section className="main-layout m-page">
                 <div className="profile-header">
@@ -101,9 +102,8 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items
     }
 }
-
 const mapDispatchToProps = {
+    loadItems,
     addReview
 }
-
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)
