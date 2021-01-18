@@ -18,24 +18,26 @@ import { ItemEdit } from './pages/ItemEdit'
 class _App extends Component {
 
   async componentDidMount() {
-   await this.props.loadItems()
-   await this.props.loadUsers()
+    await this.props.loadItems()
+    await this.props.loadUsers()
   }
 
   render() {
-    console.log('APP.JSX', this.props.items);
+    const { users, items } = this.props
+
     return (
       <main>
         <AppHeader />
-        <Switch>
-          <Route exact path="/signup" component={LoginSignup} />
-          <Route exact path="/login" component={LoginSignup} />
-          <Route exact path="/item/edit/:id?" component={ItemEdit} />
-          <Route exact path="/item/:id" component={ItemDetails} />
-          <Route path="/explore" component={Explore} />
-          <Route path="/user/:id" component={UserDetails} />
-          <Route path="/" component={Home} />
-        </Switch>
+        { items.length && users.length &&
+          <Switch>
+            <Route exact path="/signup" component={LoginSignup} />
+            <Route exact path="/login" component={LoginSignup} />
+            <Route exact path="/item/edit/:id?" component={ItemEdit} />
+            <Route exact path="/item/:id" component={ItemDetails} />
+            <Route path="/explore" component={Explore} />
+            <Route path="/user/:id" component={UserDetails} />
+            <Route path="/" component={Home} />
+          </Switch>}
         <AppFooter />
       </main>
     );
@@ -45,7 +47,8 @@ class _App extends Component {
 const mapStateToProps = (state) => {
   return {
     // loggedInUser: state.userModule.loggedInUser,
-    items: state.itemModule.items
+    items: state.itemModule.items,
+    users: state.userModule.users
   }
 }
 

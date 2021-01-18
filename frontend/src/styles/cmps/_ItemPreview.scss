@@ -1,7 +1,7 @@
 .item-preview {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    height: fit-content;
+    height: 100%;
     max-width: 300px;
 
     &:hover {
@@ -15,18 +15,18 @@
     }
 
     .info-container {
-        padding: 15px;
-        h3 {
-            font-size: 1.7em;
-            letter-spacing: 1.1px;
+        width: fit-content;
+        margin-bottom: 10px;
+        padding: 25px 15px;
+
+        h4 {
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            margin-inline-start: 3px;
         }
 
-        .profile-container {
-            width: fit-content;
-            h4 {
-                font-size: 1.3em;
-                letter-spacing: 1px;
-            }
+        p {
+            margin: 0 5px;
         }
     }
 
@@ -39,7 +39,10 @@
     }
 
     h3 {
-        margin-top: 15px;
+        margin: 10px 0 15px;
+        font-size: 1.55em;
+        letter-spacing: 1.1px;
+        margin-inline-start: 20px;
     }
 
     .remove-btn {
@@ -59,7 +62,7 @@
         // border-top: 1px solid rgba(0, 0, 0, 0.1);
 
         h5 {
-            padding: 10px;
+            padding: 15px;
             font-size: 1.25em;
         }
     }
