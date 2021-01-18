@@ -7,10 +7,24 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
 
+function filterArtists(users, items) {
+
+    const artistIds = items.reduce((accUserMap, item, idx) => {
+        const { _id } = item.seller
+        if (!accUserMap.includes(_id)) accUserMap.push(_id)
+        return accUserMap
+    }, [])
+    const artists = users.filter(user => artistIds.includes(user._id))
+    return artists
+}
+
+
 export function UserList({ users, items }) {
     SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
     if (!users || !users.length) return <div></div>
+    const artists = filterArtists(users, items)
+
     return <Swiper
         className="user-list"
         spaceBetween={30}
@@ -22,9 +36,9 @@ export function UserList({ users, items }) {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}>
 
-        {users.map(user => {
-            return <SwiperSlide key={user._id}>
-                <UserPreview user={user} />
+        {artists.map(artist => {
+            return <SwiperSlide key={artist._id}>
+                <UserPreview user={artist} />
             </SwiperSlide>
         })}
     </Swiper>
