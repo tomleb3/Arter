@@ -39,9 +39,8 @@ function remove(userId) {
 
 async function login(userCred) {
     // const users = await storageService.query('user')
-    // const user = users.find(user => user.username === userCred.username)
+    // const user = users.find(user => user.email === userCred.email)
     // return _handleLogin(user)
-
     const user = await httpService.post('auth/login', userCred)
     if (user) return _saveLocalUser(user)
 }
@@ -63,5 +62,6 @@ function getLoggedinUser() {
 
 function _saveLocalUser(user) {
     sessionStorage.setItem('loggedinUser', JSON.stringify(user))
+    console.log(user)
     return user
 }

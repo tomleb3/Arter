@@ -1,9 +1,9 @@
 import { ItemPreview } from "./ItemPreview.jsx"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
-export function ItemList({ items, users, withProfile }) {
+export function ItemList({ items, minified, withProfile }) {
 
-    if (!items.length || !users.length) {
+    if (!items.length) {
         return <div className="item-list main-layout">
             <div className="loader"></div>
         </div>
@@ -12,9 +12,7 @@ export function ItemList({ items, users, withProfile }) {
         <ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 650: 2, 900: 3, 1400: 4 }}>
             <Masonry columnsCount={4} gutter="30px">
                 {items.map(item => {
-                    const user = users.find(user => item.seller._id === user._id)
-
-                    return <ItemPreview key={item._id} item={item} user={user} withProfile={withProfile} />
+                    return <ItemPreview key={item._id} item={item} withProfile={withProfile} minified={minified} />
                 })}
             </Masonry>
         </ResponsiveMasonry>

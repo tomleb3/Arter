@@ -50,13 +50,13 @@ async function getById(userId) {
         throw err
     }
 }
-async function getByUsername(username) {
+async function getByUsername(email) {
     try {
         const collection = await dbService.getCollection('user')
-        const user = await collection.findOne({ username })
+        const user = await collection.findOne({ email })
         return user
     } catch (err) {
-        logger.error(`while finding user ${username}`, err)
+        logger.error(`while finding user ${email}`, err)
         throw err
     }
 }
@@ -76,7 +76,7 @@ async function update(user) {
         // peek only updatable fields!
         const userToSave = {
             _id: ObjectId(user._id),
-            username: user.username,
+            email: user.email,
             fullname: user.fullname,
             score: user.score
         }
@@ -93,10 +93,9 @@ async function add(user) {
     try {
         // peek only updatable fields!
         const userToAdd = {
-            username: user.username,
+            email: user.email,
             password: user.password,
             fullname: user.fullname,
-            score: user.score || 0
         }
         const collection = await dbService.getCollection('user')
         await collection.insertOne(userToAdd)
@@ -113,7 +112,7 @@ function _buildCriteria(filterBy) {
         const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
         criteria.$or = [
             {
-                username: txtCriteria
+                email: txtCriteria
             },
             {
                 fullname: txtCriteria

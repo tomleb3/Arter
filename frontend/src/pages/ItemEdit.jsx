@@ -13,7 +13,7 @@ class _ItemEdit extends Component {
             price: 0,
             description: '',
             // tags: ['Traditional'],
-            // seller: this.props.loggedInUser.username
+            // seller: this.props.loggedInUser.email
 
         }
     }

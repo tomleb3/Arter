@@ -12,6 +12,13 @@
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         background-color: lightgray;
+
+        &.min {
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 300px;
+            max-height: 300px;
+        }
     }
 
     .info-container {
