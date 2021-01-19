@@ -1,5 +1,5 @@
 const dbService = require('../../services/db.service')
-const itemService = require('../item/item.service')
+const userService = require('../user/user.service')
 // const logger = require('../../services/logger.service')
 // const reviewService = require('../review/review.service')
 const ObjectId = require('mongodb').ObjectId
@@ -7,10 +7,8 @@ const ObjectId = require('mongodb').ObjectId
 module.exports = {
     query,
     getById,
-    getByItemname,
     remove,
-    update,
-    add
+    update
 }
 
 
@@ -27,7 +25,7 @@ async function query(filterBy = {}) {
             {
                 $lookup:
                 {
-                    from: 'item',
+                    from: 'user',
                     localField: 'sellerId',
                     foreignField: '_id',
                     as: 'seller'
@@ -53,22 +51,11 @@ async function getById(itemId) {
     try {
         const collection = await dbService.getCollection('item')
         const item = await collection.findOne({ '_id': ObjectId(itemId) })
-        const seller = await itemService.getById(item.sellerId)
+        const seller = await userService.getById(item.sellerId)
         item.seller = seller
         return item
     } catch (err) {
         logger.error(`while finding item ${itemId}`, err)
-        throw err
-    }
-}
-
-async function getByItemname(email) {
-    try {
-        const collection = await dbService.getCollection('item')
-        const item = await collection.findOne({ email })
-        return item
-    } catch (err) {
-        logger.error(`while finding item ${email}`, err)
         throw err
     }
 }
@@ -99,28 +86,11 @@ async function update(item) {
         }
         const collection = await dbService.getCollection('item')
         await collection.updateOne({ '_id': itemToSave._id }, { $set: itemToSave })
-        const seller = await itemService.getById(itemToSave.sellerId)
+        const seller = await userService.getById(itemToSave.sellerId)
         itemToSave.seller = seller
         return itemToSave;
     } catch (err) {
         logger.error(`cannot update item ${item._id}`, err)
-        throw err
-    }
-}
-
-async function add(item) {
-    try {
-        // peek only updatable fields!
-        const itemToAdd = {
-            email: item.email,
-            password: item.password,
-            fullname: item.fullname
-        }
-        const collection = await dbService.getCollection('item')
-        await collection.insertOne(itemToAdd)
-        return itemToAdd
-    } catch (err) {
-        logger.error('cannot insert item', err)
         throw err
     }
 }
