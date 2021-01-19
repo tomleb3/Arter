@@ -1,8 +1,8 @@
-let localLoggedinUser = null
-if (sessionStorage.loggedinUser) localLoggedinUser = JSON.parse(sessionStorage.loggedinUser)
+let localLoggedInUser = null
+if (sessionStorage.loggedInUser) localLoggedInUser = JSON.parse(sessionStorage.loggedInUser)
 
 const initialState = {
-  loggedInUser: localLoggedinUser,
+  loggedInUser: localLoggedInUser,
   users: []
 }
 
@@ -22,8 +22,6 @@ export function userReducer(state = initialState, action = {}) {
       // return state.users.map(user => (user._id === action.user._id) ? action.user : user)
     case 'REMOVE_REVIEW':
       return
-    case 'SET_SCORE':
-      return { ...state, loggedInUser: { ...state.loggedInUser } }
     default:
       return state
   }

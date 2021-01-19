@@ -13,6 +13,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import { loadItems } from '../store/actions/itemActions.js'
+import { addOrder } from '../store/actions/orderActions.js'
 
 class _ItemDetails extends Component {
 
@@ -44,8 +45,23 @@ class _ItemDetails extends Component {
         this.setState({ item, otherItems })
     }
 
+    onPurchase = async () => {
+        if (!this.props.loggedInUser) this.props.history.push('/login')
+        const { item } = this.state
+        console.log(item)
+        try {
+            await this.props.addOrder(item)
+            console.log('SUCCESS !')
+            alert ('Success!')
+        } catch (err) {
+            console.log('Purchase Failed');
+            alert ('Purchase Failed!')
+        }
+    }
+
     render() {
         const { item, otherItems } = this.state
+        const { loggedInUser } = this.props
         if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
         const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
@@ -73,13 +89,13 @@ class _ItemDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
-                        <button className="purchase-btn">Purchase</button>
+                        {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}>Edit Item</Link>}
+                        <button className="purchase-btn" onClick={this.onPurchase}>Purchase</button>
                         {/* <p>{item.tags}</p> */}
                     </div>
                 </div>
                 <div className="other-works">
-                    <div className="main-layout"><h3>Other Works By Artist:</h3></div>
+                    <div className="main-layout"><h3>Other Works By {user.fullname}:</h3></div>
                     {otherItems.length ? <div className="main-layout">
                         <Swiper
                             spaceBetween={80}
@@ -90,16 +106,16 @@ class _ItemDetails extends Component {
                             }}
                             observer
                             autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            pagination={{
-                                el: '.swiper-pagination',
-                                clickable: true
-                            }}
+                            // pagination={{
+                            //     el: '.swiper-pagination',
+                            //     clickable: true
+                            // }}
                             // scrollbar={{ draggable: true }}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}>
                             {otherItems.map(item => {
                                 return <SwiperSlide key={item._id}>
-                                    <ItemPreview item={item} user={user} />
+                                    <ItemPreview item={item} user={user} minified />
                                 </SwiperSlide>
                             })}
                         </Swiper></div> : ''}
@@ -111,13 +127,13 @@ class _ItemDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        // loggedInUser: state.userModule.loggedInUser
-        // users: state.userModule.users,
+        loggedInUser: state.userModule.loggedInUser,
         items: state.itemModule.items,
         users: state.userModule.users
     }
 }
 const mapDispatchToProps = {
-    loadItems
+    loadItems,
+    addOrder
 }
 export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)

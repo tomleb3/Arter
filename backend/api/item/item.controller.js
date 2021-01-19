@@ -26,30 +26,30 @@ async function getItem(req, res) {
     }
 }
 
-async function deleteUser(req, res) {
+async function deleteItem(req, res) {
     try {
-        await userService.remove(req.params.id)
+        await itemService.remove(req.params.id)
         res.send({ msg: 'Deleted successfully' })
     } catch (err) {
-        logger.error('Failed to delete user', err)
-        res.status(500).send({ err: 'Failed to delete user' })
+        logger.error('Failed to delete item', err)
+        res.status(500).send({ err: 'Failed to delete item' })
     }
 }
 
-async function updateUser(req, res) {
+async function updateItem(req, res) {
     try {
-        const user = req.body
-        const savedUser = await userService.update(user)
-        res.send(savedUser)
+        const item = req.body
+        const savedItem = await itemService.update(item)
+        res.send(savedItem)
     } catch (err) {
-        logger.error('Failed to update user', err)
-        res.status(500).send({ err: 'Failed to update user' })
+        logger.error('Failed to update item', err)
+        res.status(500).send({ err: 'Failed to update item' })
     }
 }
 
 module.exports = {
     getItem,
     getItems,
-    // deleteItem,
-    // updateItem
+    deleteItem,
+    updateItem
 }

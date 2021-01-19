@@ -1,4 +1,5 @@
 const dbService = require('../../services/db.service')
+const userService = require('../user/user.service')
 // const logger = require('../../services/logger.service')
 // const reviewService = require('../review/review.service')
 const ObjectId = require('mongodb').ObjectId
@@ -6,10 +7,8 @@ const ObjectId = require('mongodb').ObjectId
 module.exports = {
     query,
     getById,
-    getByUsername,
     remove,
-    update,
-    add
+    update
 }
 
 
@@ -18,7 +17,6 @@ async function query(filterBy = {}) {
     const criteria = {}
     try {
         const collection = await dbService.getCollection('item')
-
         var items = await collection.aggregate([
             {
                 $match: criteria
@@ -52,66 +50,46 @@ async function getById(itemId) {
     try {
         const collection = await dbService.getCollection('item')
         const item = await collection.findOne({ '_id': ObjectId(itemId) })
+        const seller = await userService.getById(item.sellerId)
+        item.seller = seller
         return item
     } catch (err) {
-        logger.error(`while finding user ${itemId}`, err)
+        logger.error(`while finding item ${itemId}`, err)
         throw err
     }
 }
 
-async function getByUsername(username) {
+async function remove(itemId) {
     try {
-        const collection = await dbService.getCollection('user')
-        const user = await collection.findOne({ username })
-        return user
+        const collection = await dbService.getCollection('item')
+        await collection.deleteOne({ '_id': ObjectId(itemId) })
     } catch (err) {
-        logger.error(`while finding user ${username}`, err)
+        logger.error(`cannot remove item ${itemId}`, err)
         throw err
     }
 }
 
-async function remove(userId) {
-    try {
-        const collection = await dbService.getCollection('user')
-        await collection.deleteOne({ '_id': ObjectId(userId) })
-    } catch (err) {
-        logger.error(`cannot remove user ${userId}`, err)
-        throw err
-    }
-}
-
-async function update(user) {
+async function update(item) {
     try {
         // peek only updatable fields!
-        const userToSave = {
-            _id: ObjectId(user._id),
-            username: user.username,
-            fullname: user.fullname,
-            score: user.score
+        const itemToSave = {
+            _id: ObjectId(item._id),
+            title: item.title,
+            price: +item.price,
+            description: item.description,
+            createdAt: item.createdAt,
+            purchasedAt: item.purchasedAt,
+            tags: item.tags,
+            sellerId: ObjectId(item.seller._id),
+            imgUrl: item.imgUrl
         }
-        const collection = await dbService.getCollection('user')
-        await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
-        return userToSave;
+        const collection = await dbService.getCollection('item')
+        await collection.updateOne({ '_id': itemToSave._id }, { $set: itemToSave })
+        const seller = await userService.getById(itemToSave.sellerId)
+        itemToSave.seller = seller
+        return itemToSave;
     } catch (err) {
-        logger.error(`cannot update user ${user._id}`, err)
-        throw err
-    }
-}
-
-async function add(user) {
-    try {
-        // peek only updatable fields!
-        const userToAdd = {
-            username: user.username,
-            password: user.password,
-            fullname: user.fullname,
-            score: user.score || 0
-        }
-        const collection = await dbService.getCollection('user')
-        await collection.insertOne(userToAdd)
-        return userToAdd
-    } catch (err) {
-        logger.error('cannot insert user', err)
+        logger.error(`cannot update item ${item._id}`, err)
         throw err
     }
 }
@@ -122,7 +100,7 @@ function _buildCriteria(filterBy) {
         const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
         criteria.$or = [
             {
-                username: txtCriteria
+                email: txtCriteria
             },
             {
                 fullname: txtCriteria

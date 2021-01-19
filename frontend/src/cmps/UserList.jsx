@@ -8,7 +8,6 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 
 
 function filterArtists(users, items) {
-
     const artistIds = items.reduce((accUserMap, item, idx) => {
         const { _id } = item.seller
         if (!accUserMap.includes(_id)) accUserMap.push(_id)
@@ -31,7 +30,7 @@ export function UserList({ users, items }) {
         slidesPerView={5}
         navigation
         autoplay={{ delay: 2500, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}>
