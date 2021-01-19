@@ -17,8 +17,8 @@ export const itemService = {
 // return axios.get('api/toy/?', {params: {id: 1223, balanse:13}})
 
 function query(filterTxt) {
-    var queryStr = (!filterTxt) ? '' : `?tags_like=${filterTxt}`
-    return httpService.get(`item/${queryStr}`)
+    var queryStr = (!filterTxt) ? '' : `?txt=${filterTxt}`
+    return httpService.get(`item${queryStr}`)
     // return storageService.query('item')
 }
 

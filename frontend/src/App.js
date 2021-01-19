@@ -28,7 +28,7 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        { items.length && users.length &&
+        { users.length &&
           <Switch>
             <Route exact path="/signup" component={LoginSignup} />
             <Route exact path="/login" component={LoginSignup} />

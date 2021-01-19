@@ -5,17 +5,18 @@ import { loadItems } from '../store/actions/itemActions'
 
 class _AppFilter extends Component {
 
-    inputRef = React.createRef()
-
     state = {
         title: this.props.initialFilter || '',
     }
 
-    componentDidMount() { this.handleChange() }
-    componentWillUnmount() { this.setState({ title: '' }) }
+    componentDidMount() {
+        console.log('dada',this.state); 
+        this.props.loadItems(this.state.title)
 
-    handleChange = () => {
-        const { value } = this.inputRef.current
+    }
+
+    handleChange = (ev) => {
+        const { value } = ev.target
 
         this.setState(({ title: value }), () => {
             this.props.loadItems(this.state.title)
@@ -34,7 +35,7 @@ class _AppFilter extends Component {
         return (
             <section className="app-filter">
                 <form className="filter-form" onSubmit={this.onFilter}>
-                    <input className="search-bar" placeholder="Search" type="text" name='title' value={title} ref={this.inputRef} onChange={this.handleChange} />
+                    <input className="search-bar" placeholder="Search" type="text" name='title' value={title} onChange={this.handleChange} />
                 </form>
             </section>
         )

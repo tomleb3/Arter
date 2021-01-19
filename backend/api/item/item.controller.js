@@ -3,12 +3,8 @@ const logger = require('../../services/logger.service')
 
 async function getItems(req, res) {
     try {
-        // const filterBy = {
-        //     txt: req.query?.txt || '',
-        //     minBalance: +req.query?.minBalance || 0
-        // }
-        // const items = await itemService.query(filterBy)
-        const items = await itemService.query()
+        const filterTxt = req.query.txt || ''
+        const items = await itemService.query(filterTxt)
         res.send(items)
     } catch (err) {
         logger.error('Failed to get items', err)

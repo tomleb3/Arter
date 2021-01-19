@@ -27,35 +27,35 @@ class _Home extends Component {
                     <h3>Hot Categories</h3>
                     <section className="categories flex j-between txt-center">
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Glass" }}>
+                            <Link to={{ pathname: "/explore", type: "Glass" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826046/Home%20topics/pexels-pixabay-220990_b1c6hg.jpg)` }}></div>
                             </Link>
                             <h5>Glasswork</h5>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Wood" }}>
+                            <Link to={{ pathname: "/explore", type: "Wood" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610901953/Home%20topics/woodwork2_dikhpk.jpg)` }}></div>
                             </Link>
                             <h5>Woodwork</h5>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Painting" }}>
+                            <Link to={{ pathname: "/explore", type: "Painting" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825845/Home%20topics/painting1_fvloac.jpg)` }}></div>
                             </Link>
                             <h5>Paintings</h5>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Jewelry" }}>
+                            <Link to={{ pathname: "/explore", type: "Jewelry" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825888/Home%20topics/jewlery_ifguvi.jpg)` }}></div>
                             </Link>
                             <h5>Jewelry</h5>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", state: "Crafts" }}>
+                            <Link to={{ pathname: "/explore", type: "Crafts" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}></div>
                             </Link>
