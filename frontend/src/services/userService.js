@@ -57,11 +57,11 @@ async function logout() {
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem('loggedinUser'))
+    return JSON.parse(sessionStorage.getItem('loggedInUser'))
 }
 
 function _saveLocalUser(user) {
-    sessionStorage.setItem('loggedinUser', JSON.stringify(user))
+    sessionStorage.setItem('loggedInUser', JSON.stringify(user))
     console.log(user)
     return user
 }

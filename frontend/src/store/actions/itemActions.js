@@ -15,7 +15,7 @@ export function addItem(item) {
     // console.log('item!!', item)
     return async dispatch => {
         try {
-            const addedItem = itemService.add(item)
+            const addedItem = await itemService.add(item)
             dispatch({ type: 'ADD_ITEM', item: addedItem })
         } catch (err) {
             console.log('itemActions:', err)
