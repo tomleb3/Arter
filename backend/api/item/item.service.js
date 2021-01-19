@@ -34,7 +34,6 @@ async function query(filterBy) {
                 $unwind: '$seller'
             }]).toArray()
 
-
         return items.map(item => {
             delete item.sellerId
             delete item.seller.password

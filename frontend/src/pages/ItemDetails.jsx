@@ -1,3 +1,4 @@
+import React from 'react'
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { itemService } from '../services/itemService.js'
@@ -15,6 +16,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import { loadItems } from '../store/actions/itemActions.js'
 import { addOrder } from '../store/actions/orderActions.js'
 import { socketService } from '../services/socketService.js'
+import swal from '@sweetalert/with-react'
 
 class _ItemDetails extends Component {
 
@@ -53,11 +55,20 @@ class _ItemDetails extends Component {
         try {
             const order = await this.props.addOrder(item)
             console.log('SUCCESS !')
-            alert('Success!')
+            // alert('Success!')
             socketService.emit('ORDER_OUT', order)
+            return swal(
+                <div>
+                    <h1>Success !</h1>
+                    <p>You have purchased this item</p>
+                </div>)
         } catch (err) {
             console.log('Purchase Failed');
-            alert('Purchase Failed!')
+            return swal(
+                <div>
+                    <h1>Failure !</h1>
+                    <p>There was a problem with the transaction</p>
+                </div>)
         }
     }
 

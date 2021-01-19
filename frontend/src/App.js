@@ -8,17 +8,20 @@ import { Home } from './pages/Home.jsx';
 import { Explore } from './pages/Explore.jsx';
 import { UserDetails } from './pages/UserDetails.jsx';
 import { ItemDetails } from './pages/ItemDetails.jsx';
-import { loadItems } from './store/actions/itemActions'
-import { loadUsers } from './store/actions/userActions'
+import { loadItems } from './store/actions/itemActions.js'
+import { loadUsers } from './store/actions/userActions.js'
+import { loadOrders } from './store/actions/orderActions.js'
 import { LoginSignup } from './pages/LoginSignup'
 import { ItemEdit } from './pages/ItemEdit'
 import { socketService } from './services/socketService.js'
+import swal from '@sweetalert/with-react'
 
 class _App extends Component {
 
   async componentDidMount() {
     await this.props.loadItems()
     await this.props.loadUsers()
+    await this.props.loadOrders()
     socketService.setup()
     socketService.on('ORDER_IN', this.onOrderIn)
   }
@@ -28,7 +31,12 @@ class _App extends Component {
   }
 
   onOrderIn = order => {
-    console.log('APP.JS:', order)
+    // const fullOrder = getOrderById(order._id)
+    return swal(
+      <div>
+        <h1>Hey there !</h1>
+        <p>{order.buyerId} has bought {order.itemId} from you</p>
+      </div>)
   }
 
   render() {
@@ -55,7 +63,6 @@ class _App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // loggedInUser: state.userModule.loggedInUser,
     items: state.itemModule.items,
     users: state.userModule.users
   }
@@ -63,7 +70,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   loadItems,
-  loadUsers
+  loadUsers,
+  loadOrders
 }
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App)

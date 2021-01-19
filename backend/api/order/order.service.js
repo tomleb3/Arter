@@ -10,9 +10,9 @@ async function query(filterBy = {}) {
         // const orders = await collection.find({}).toArray()
         // const orders = await collection.find(criteria).toArray()
         var orders = await collection.aggregate([
-            {
-                $match: criteria
-            },
+            // {
+            //     $match: criteria
+            // },
             {
                 $lookup:
                 {
@@ -50,7 +50,8 @@ async function query(filterBy = {}) {
                 $unwind: '$item'
             }
         ]).toArray()
-        orders = orders.map(order => {
+        console.log(orders)
+        return orders.map(order => {
             delete order.sellerId
             delete order.buyerId
             delete order.itemId
@@ -58,8 +59,6 @@ async function query(filterBy = {}) {
             delete order.buyer.password
             return order
         })
-
-        return orders
     } catch (err) {
         logger.error('cannot find orders', err)
         throw err

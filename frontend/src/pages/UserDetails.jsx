@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { userService } from '../services/userService.js'
 import { utilService } from '../services/utilService.js'
 import { ReviewList } from '../cmps/ReviewList.jsx'
-import { AppFilter } from '../cmps/AppFilter.jsx'
+import { loadOrders } from '../store/actions/orderActions.js'
+// import { AppFilter } from '../cmps/AppFilter.jsx'
 import { addReview } from '../store/actions/userActions.js'
-import { loadItems } from '../store/actions/itemActions.js'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
+import { Button, ButtonGroup } from '@material-ui/core'
 
 class _UserDetails extends Component {
 
@@ -19,12 +20,15 @@ class _UserDetails extends Component {
 
     async componentDidMount() {
         this.loadUser()
+        this.getItemsForDisplay()
         window.scrollTo(0, 0)
     }
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.loadOrders()
             this.loadUser()
+            this.getItemsForDisplay()
             window.scrollTo(0, 0)
         }
     }
@@ -45,12 +49,28 @@ class _UserDetails extends Component {
         const { id } = this.props.match.params
         const user = await userService.getById(id)
         this.setState({ user })
-
-        const { items } = this.props
-        const userItems = items.filter(item => id === item.seller._id)
-        this.setState({ items: userItems })
     }
 
+    getItemsForDisplay = async (sorter = 'all') => {
+        const { id } = this.props.match.params
+        const { items } = this.props
+        let itemsForDisplay
+        switch (sorter) {
+            case 'all':
+                itemsForDisplay = items.filter(item => id === item.seller._id)
+                break
+            case 'sold':
+                itemsForDisplay = items.filter(item => id === item.seller._id && item.purchasedAt)
+                break
+            case 'forSale':
+                itemsForDisplay = items.filter(item => id === item.seller._id && !item.purchasedAt)
+                break
+            // case 'purchased':
+            // const itemsForDisplay = items.filter(item =>
+        }
+        console.log(this.props.orders) // NO GET ORDERS...WHAT DO
+        this.setState({ items: itemsForDisplay })
+    }
 
     render() {
         const { user, items } = this.state
@@ -69,14 +89,6 @@ class _UserDetails extends Component {
                         {/* <AppFilter /> */}
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
-                        <button>Sold Items</button>
-                        <ul>SOLD</ul>
-                        <ul>PENDING
-
-                        </ul>
-                        <button>Purchased Items</button>
-                        <ul>PURCHASED</ul>
-                        <ul>PENDING</ul>
                     </div>
                     <div className="main">
                         <div className="about">
@@ -85,7 +97,14 @@ class _UserDetails extends Component {
                             <p>{user.description}</p>
                         </div>
 
-                        <h3 className="portfolio">Portfolio</h3>
+                        <div className="portfolio-container flex a-center j-between">
+                            <h3>Portfolio</h3>
+                            <ButtonGroup variant="text">
+                                <Button onClick={() => this.getItemsForDisplay('all')}>All</Button>
+                                <Button onClick={() => this.getItemsForDisplay('sold')}>Sold</Button>
+                                <Button onClick={() => this.getItemsForDisplay('forSale')}>For Sale</Button>
+                            </ButtonGroup>
+                        </div>
                         <ItemList items={items} users={users} />
                         <div className="review-container flex a-center j-between">
                             <div className="flex">
@@ -105,13 +124,14 @@ class _UserDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        // loggedInUser: state.userModule.loggedInUser
+        loggedInUser: state.userModule.loggedInUser,
         users: state.userModule.users,
-        items: state.itemModule.items
+        items: state.itemModule.items,
+        orders: state.orderModule.orders
     }
 }
 const mapDispatchToProps = {
-    loadItems,
-    addReview
+    addReview,
+    loadOrders
 }
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)

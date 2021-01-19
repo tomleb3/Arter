@@ -41,9 +41,11 @@
         background-color: rgba(211, 211, 211, 0.25);
         border-radius: 0.3rem;
     }
-    h3.portfolio {
+    .portfolio-container {
         margin: 75px 0 30px;
-        font-size: 1.8em;
+        h3 {
+            font-size: 1.8em;
+        }
     }
     .review-container {
         margin: 100px 0 0;
