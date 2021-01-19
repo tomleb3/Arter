@@ -68,7 +68,7 @@ class _LoginSignup extends Component {
         try {
             await this.props.login(userCreds)
             this.setState({ loginCred: { email: '', password: '' } })
-            if (sessionStorage['loggedinUser']) this.props.history.push('/toy')
+            if (sessionStorage['loggedInUser']) this.props.history.push('/explore')
         } catch (err) {
             return await this.setState({ msg: 'Login failed, try again.' })
         }
@@ -86,7 +86,7 @@ class _LoginSignup extends Component {
         const signupCreds = { email, password, fullname }
         await this.props.signup(signupCreds)
         this.setState({ signupCred: { email: '', password: '', fullname: '' } })
-        if (sessionStorage['loggedinUser']) this.props.history.push('/toy')
+        if (sessionStorage['loggedInUser']) this.props.history.push('/explore')
     }
 
     render() {

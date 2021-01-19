@@ -8,10 +8,10 @@ const router = express.Router()
 
 router.get('/', getItems)
 router.get('/:id', getItem)
-// router.put('/:id', updateItem)
+router.put('/:id', updateItem)
+router.delete('/:id', deleteItem)
 // router.delete('/:id', requireAuth, requireAdmin, deleteItem)
 
-// router.delete('/:id', deleteItem)
 
 
 

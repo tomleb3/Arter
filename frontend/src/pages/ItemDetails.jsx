@@ -13,6 +13,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import { loadItems } from '../store/actions/itemActions.js'
+import { addOrder } from '../store/actions/orderActions.js'
 
 class _ItemDetails extends Component {
 
@@ -42,6 +43,15 @@ class _ItemDetails extends Component {
             (item.sellerId === currItem.seller._id) && (item._id !== currItem._id)
         )
         this.setState({ item, otherItems })
+    }
+
+    onPurchase = async () => {
+        if (!this.props.loggedInUser) this.props.history.push('/login')
+        const { item } = this.state
+        console.log(item)
+        await this.props.addOrder(item)
+
+        console.log('SUCCESS !')
     }
 
     render() {
@@ -74,7 +84,7 @@ class _ItemDetails extends Component {
                             </div>
                         </div>
                         <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
-                        <button className="purchase-btn">Purchase</button>
+                        <button className="purchase-btn" onClick={this.onPurchase}>Purchase</button>
                         {/* <p>{item.tags}</p> */}
                     </div>
                 </div>
@@ -99,7 +109,7 @@ class _ItemDetails extends Component {
                             onSlideChange={() => console.log('slide change')}>
                             {otherItems.map(item => {
                                 return <SwiperSlide key={item._id}>
-                                    <ItemPreview item={item} user={user} />
+                                    <ItemPreview item={item} user={user} minified />
                                 </SwiperSlide>
                             })}
                         </Swiper></div> : ''}
@@ -111,13 +121,13 @@ class _ItemDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        // loggedInUser: state.userModule.loggedInUser
-        // users: state.userModule.users,
+        loggedInUser: state.userModule.loggedInUser,
         items: state.itemModule.items,
         users: state.userModule.users
     }
 }
 const mapDispatchToProps = {
-    loadItems
+    loadItems,
+    addOrder
 }
 export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)

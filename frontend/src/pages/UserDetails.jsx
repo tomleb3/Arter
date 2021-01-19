@@ -66,9 +66,17 @@ class _UserDetails extends Component {
                 </div>
                 <div className="content flex">
                     <div className="sidebar">
-                        <AppFilter />
+                        {/* <AppFilter /> */}
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
+                        <button>Sold Items</button>
+                        <ul>SOLD</ul>
+                        <ul>PENDING
+
+                        </ul>
+                        <button>Purchased Items</button>
+                        <ul>PURCHASED</ul>
+                        <ul>PENDING</ul>
                     </div>
                     <div className="main">
                         <div className="about">
