@@ -17,7 +17,6 @@ async function query(filterBy = {}) {
     const criteria = {}
     try {
         const collection = await dbService.getCollection('item')
-
         var items = await collection.aggregate([
             {
                 $match: criteria

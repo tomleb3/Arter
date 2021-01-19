@@ -4,6 +4,24 @@
     height: 100%;
     max-width: 300px;
 
+    &.min {
+        width: fit-content;
+        height: fit-content;
+
+        .item-img {
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 250px;
+            max-height: 250px;
+            border: none;
+            object-fit: cover;
+        }
+
+        &:hover {
+            border: none;
+        }
+    }
+
     &:hover {
         border: 1px solid rgba(19, 172, 202, 0.7);
     }
@@ -12,13 +30,6 @@
         width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         background-color: lightgray;
-
-        &.min {
-            min-width: 100px;
-            min-height: 100px;
-            max-width: 300px;
-            max-height: 300px;
-        }
     }
 
     .info-container {
