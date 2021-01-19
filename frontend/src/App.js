@@ -1,4 +1,3 @@
-// import React from 'react';
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
@@ -13,13 +12,23 @@ import { loadItems } from './store/actions/itemActions'
 import { loadUsers } from './store/actions/userActions'
 import { LoginSignup } from './pages/LoginSignup'
 import { ItemEdit } from './pages/ItemEdit'
-// import { AppFilter } from './cmps/AppFilter'
+import { socketService } from './services/socketService.js'
 
 class _App extends Component {
 
   async componentDidMount() {
     await this.props.loadItems()
     await this.props.loadUsers()
+    socketService.setup()
+    socketService.on('ORDER_IN', this.onOrderIn)
+  }
+
+  componentWillUnmount() {
+    socketService.terminate()
+  }
+
+  onOrderIn = order => {
+    console.log('APP.JS:', order)
   }
 
   render() {

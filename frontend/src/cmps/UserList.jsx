@@ -1,5 +1,6 @@
-import { UserPreview } from "./UserPreview.jsx"
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { UserPreview } from './UserPreview.jsx'
+import Swiper from 'react-id-swiper'
+import { SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -24,21 +25,29 @@ export function UserList({ users, items }) {
     if (!users || !users.length) return <div></div>
     const artists = filterArtists(users, items)
 
-    return <Swiper
-        className="user-list"
-        spaceBetween={30}
-        slidesPerView={5}
-        navigation
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}>
+    return <div className="user-list">
+        <Swiper
+            spaceBetween={30}
+            slidesPerView={5}
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }}
+            observer
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            // pagination={{
+            //     el: '.swiper-pagination',
+            //     clickable: true
+            // }}
+            // scrollbar={{ draggable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}>
 
-        {artists.map(artist => {
-            return <SwiperSlide key={artist._id}>
-                <UserPreview user={artist} />
-            </SwiperSlide>
-        })}
-    </Swiper>
+            {artists.map(artist => {
+                return <SwiperSlide key={artist._id}>
+                    <UserPreview user={artist} />
+                </SwiperSlide>
+            })}
+        </Swiper>
+    </div>
 }
