@@ -20,6 +20,7 @@ export function addOrder(item) {
             dispatch({ type: 'ADD_ORDER', order: addedOrder })
         } catch (err) {
             console.log('orderActions:', err)
+            throw err
         }
     }
 }

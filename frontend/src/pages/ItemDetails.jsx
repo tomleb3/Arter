@@ -49,9 +49,14 @@ class _ItemDetails extends Component {
         if (!this.props.loggedInUser) this.props.history.push('/login')
         const { item } = this.state
         console.log(item)
-        await this.props.addOrder(item)
-
-        console.log('SUCCESS !')
+        try {
+            await this.props.addOrder(item)
+            console.log('SUCCESS !')
+            alert ('Success!')
+        } catch (err) {
+            console.log('Purchase Failed');
+            alert ('Purchase Failed!')
+        }
     }
 
     render() {

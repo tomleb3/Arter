@@ -5,46 +5,59 @@ const itemService = require('../item/item.service')
 
 async function query(filterBy = {}) {
     try {
-        // const criteria = _buildCriteria(filterBy)
+        const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('order')
-        const orders = await collection.find({}).toArray()
+        // const orders = await collection.find({}).toArray()
         // const orders = await collection.find(criteria).toArray()
-        // var orders = await collection.aggregate([
-        //     {
-        //         $match: filterBy
-        //     },
-        //     {
-        //         $lookup:
-        //         {
-        //             from: 'user',
-        //             localField: 'byUserId',
-        //             foreignField: '_id',
-        //             as: 'byUser'
-        //         }
-        //     },
-        //     {
-        //         $unwind: '$byUser'
-        //     },
-        //     {
-        //         $lookup:
-        //         {
-        //             from: 'user',
-        //             localField: 'aboutUserId',
-        //             foreignField: '_id',
-        //             as: 'aboutUser'
-        //         }
-        //     },
-        //     {
-        //         $unwind: '$aboutUser'
-        //     }
-        // ]).toArray()
-        // orders = orders.map(order => {
-        //     order.byUser = { _id: order.byUser._id, fullname: order.byUser.fullname }
-        //     order.aboutUser = { _id: order.aboutUser._id, fullname: order.aboutUser.fullname }
-        //     delete order.byUserId
-        //     delete order.aboutUserId
-        //     return order
-        // })
+        var orders = await collection.aggregate([
+            {
+                $match: criteria
+            },
+            {
+                $lookup:
+                {
+                    from: 'user',
+                    localField: 'sellerId',
+                    foreignField: '_id',
+                    as: 'seller'
+                }
+            },
+            {
+                $unwind: '$seller'
+            },
+            {
+                $lookup:
+                {
+                    from: 'user',
+                    localField: 'buyerId',
+                    foreignField: '_id',
+                    as: 'buyer'
+                }
+            },
+            {
+                $unwind: '$buyer'
+            },
+            {
+                $lookup:
+                {
+                    from: 'item',
+                    localField: 'itemId',
+                    foreignField: '_id',
+                    as: 'item'
+                }
+            },
+            {
+                $unwind: '$item'
+            }
+        ]).toArray()
+        orders = orders.map(order => {
+            delete order.sellerId
+            delete order.buyerId
+            delete order.itemId
+            delete order.seller.password
+            delete order.buyer.password
+            return order
+        })
 
         return orders
     } catch (err) {
