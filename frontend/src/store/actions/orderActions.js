@@ -18,6 +18,7 @@ export function addOrder(item) {
             console.log('orderActions: (ADD)')
             const addedOrder = await orderService.add(item)
             dispatch({ type: 'ADD_ORDER', order: addedOrder })
+            return addedOrder
         } catch (err) {
             console.log('orderActions:', err)
             throw err

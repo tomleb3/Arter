@@ -14,6 +14,7 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 import { loadItems } from '../store/actions/itemActions.js'
 import { addOrder } from '../store/actions/orderActions.js'
+import { socketService } from '../services/socketService.js'
 
 class _ItemDetails extends Component {
 
@@ -50,12 +51,13 @@ class _ItemDetails extends Component {
         const { item } = this.state
         console.log(item)
         try {
-            await this.props.addOrder(item)
+            const order = await this.props.addOrder(item)
             console.log('SUCCESS !')
-            alert ('Success!')
+            alert('Success!')
+            socketService.emit('ORDER_OUT', order)
         } catch (err) {
             console.log('Purchase Failed');
-            alert ('Purchase Failed!')
+            alert('Purchase Failed!')
         }
     }
 

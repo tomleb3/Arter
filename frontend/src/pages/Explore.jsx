@@ -1,8 +1,8 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
 import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
-import { connect } from 'react-redux'
 
 class _Explore extends Component {
 
