@@ -7,10 +7,8 @@ import { utilService } from '../services/utilService.js'
 function _ItemPreview({ item, withProfile, minified }) {
     const userRating = utilService.calcRate(item.seller)
 
-    if (minified) return <section className="item-preview">
-        <Link to={`/item/${item._id}`}>
-            <img className={minified ? 'item-img' : 'item-img min'} src={item.imgUrl} alt="" />
-        </Link>
+    if (minified) return <section className="item-preview min">
+        <Link to={`/item/${item._id}`}><img className={'item-img min'} src={item.imgUrl} alt="" /></Link>
     </section>
 
     return <section className="item-preview">

@@ -1,5 +1,5 @@
 const dbService = require('../../services/db.service')
-const itemService = require('../item/item.service')
+const userService = require('../user/user.service')
 // const logger = require('../../services/logger.service')
 // const reviewService = require('../review/review.service')
 const ObjectId = require('mongodb').ObjectId
@@ -7,7 +7,6 @@ const ObjectId = require('mongodb').ObjectId
 module.exports = {
     query,
     getById,
-    getByItemname,
     remove,
     update,
     add
@@ -19,7 +18,6 @@ async function query(filterBy = {}) {
     const criteria = {}
     try {
         const collection = await dbService.getCollection('item')
-
         var items = await collection.aggregate([
             {
                 $match: criteria
@@ -27,7 +25,7 @@ async function query(filterBy = {}) {
             {
                 $lookup:
                 {
-                    from: 'item',
+                    from: 'user',
                     localField: 'sellerId',
                     foreignField: '_id',
                     as: 'seller'
@@ -53,32 +51,21 @@ async function getById(itemId) {
     try {
         const collection = await dbService.getCollection('item')
         const item = await collection.findOne({ '_id': ObjectId(itemId) })
-        const seller = await itemService.getById(item.sellerId)
+        const seller = await userService.getById(item.sellerId)
         item.seller = seller
         return item
     } catch (err) {
-        logger.error(`while finding item ${itemId}`, err)
+        logger.error(`while finding user ${itemId}`, err)
         throw err
     }
 }
 
-async function getByItemname(email) {
+async function remove(userId) {
     try {
-        const collection = await dbService.getCollection('item')
-        const item = await collection.findOne({ email })
-        return item
+        const collection = await dbService.getCollection('user')
+        await collection.deleteOne({ '_id': ObjectId(userId) })
     } catch (err) {
-        logger.error(`while finding item ${email}`, err)
-        throw err
-    }
-}
-
-async function remove(itemId) {
-    try {
-        const collection = await dbService.getCollection('item')
-        await collection.deleteOne({ '_id': ObjectId(itemId) })
-    } catch (err) {
-        logger.error(`cannot remove item ${itemId}`, err)
+        logger.error(`cannot remove user ${userId}`, err)
         throw err
     }
 }
@@ -99,8 +86,8 @@ async function update(item) {
         }
         const collection = await dbService.getCollection('item')
         await collection.updateOne({ '_id': itemToSave._id }, { $set: itemToSave })
-        const seller = await itemService.getById(itemToSave.sellerId)
-        itemToSave.seller = seller
+        const seller = await userService.getById(item.sellerId)
+        item.seller = seller
         return itemToSave;
     } catch (err) {
         logger.error(`cannot update item ${item._id}`, err)
@@ -108,19 +95,19 @@ async function update(item) {
     }
 }
 
-async function add(item) {
+async function add(user) {
     try {
         // peek only updatable fields!
-        const itemToAdd = {
-            email: item.email,
-            password: item.password,
-            fullname: item.fullname
+        const userToAdd = {
+            email: user.email,
+            password: user.password,
+            fullname: user.fullname
         }
-        const collection = await dbService.getCollection('item')
-        await collection.insertOne(itemToAdd)
-        return itemToAdd
+        const collection = await dbService.getCollection('user')
+        await collection.insertOne(userToAdd)
+        return userToAdd
     } catch (err) {
-        logger.error('cannot insert item', err)
+        logger.error('cannot insert user', err)
         throw err
     }
 }

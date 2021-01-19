@@ -56,6 +56,7 @@ class _ItemDetails extends Component {
 
     render() {
         const { item, otherItems } = this.state
+        const { loggedInUser } = this.props
         if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
         const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
@@ -83,13 +84,13 @@ class _ItemDetails extends Component {
                                 </div>
                             </div>
                         </div>
-                        <Link to={`/item/edit/${item._id}`}>Edit Item</Link>
+                        {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}>Edit Item</Link>}
                         <button className="purchase-btn" onClick={this.onPurchase}>Purchase</button>
                         {/* <p>{item.tags}</p> */}
                     </div>
                 </div>
                 <div className="other-works">
-                    <div className="main-layout"><h3>Other Works By Artist:</h3></div>
+                    <div className="main-layout"><h3>Other Works By {user.fullname}:</h3></div>
                     {otherItems.length ? <div className="main-layout">
                         <Swiper
                             spaceBetween={80}
@@ -100,10 +101,10 @@ class _ItemDetails extends Component {
                             }}
                             observer
                             autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            pagination={{
-                                el: '.swiper-pagination',
-                                clickable: true
-                            }}
+                            // pagination={{
+                            //     el: '.swiper-pagination',
+                            //     clickable: true
+                            // }}
                             // scrollbar={{ draggable: true }}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}>
