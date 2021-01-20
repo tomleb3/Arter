@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import './styles/global.scss'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { AppFooter } from './cmps/AppFooter.jsx'
@@ -30,13 +30,20 @@ class _App extends Component {
     socketService.terminate()
   }
 
+  // goToLink = (str) =>{
+  //   console.log('shit')
+  // return <Link to={str}></Link>
+  // }
+
+
   onOrderIn = order => {
     // const fullOrder = getOrderById(order._id)
     return swal(
       <div>
-        <h1>Hey there !</h1>
-        <p>{order.buyerId} has bought {order.itemId} from you</p>
-      </div>)
+        <h1>Hey there!</h1>
+        <p><a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
+        <p>you can see view your sold items in<a href={`#/user/${order.seller._id}`}> your profile page</a></p>
+      </div>) 
   }
 
   render() {

@@ -55,7 +55,6 @@ class _ItemDetails extends Component {
         try {
             const order = await this.props.addOrder(item)
             console.log('SUCCESS !')
-            // alert('Success!')
             socketService.emit('ORDER_OUT', order)
             return swal(
                 <div>

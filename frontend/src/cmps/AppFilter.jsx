@@ -10,9 +10,7 @@ class _AppFilter extends Component {
     }
 
     componentDidMount() {
-        console.log('dada',this.state); 
         this.props.loadItems(this.state.title)
-
     }
 
     handleChange = (ev) => {
