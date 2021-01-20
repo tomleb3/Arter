@@ -21,7 +21,8 @@
     }
 
     &:hover {
-        border: 1px solid rgba(19, 172, 202, 0.5);
+        border: 1px solid rgba(19, 172, 202, 0.7);
+        transition: 0.2s;
     }
 
     .item-img {

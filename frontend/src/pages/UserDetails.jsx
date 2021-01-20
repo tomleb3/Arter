@@ -74,15 +74,17 @@ class _UserDetails extends Component {
 
     render() {
         const { user, items } = this.state
-        const { users } = this.props
+        const { users, loggedInUser } = this.props
         const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
         return (
             <section className="main-layout m-page">
                 <div className="profile-header">
-                    <img className="banner-img" src={user.imgUrls.banner} alt="" />
-                    <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname} />
+                    <img className="banner-img" src={user.imgUrls.banner} alt=""
+                        onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY BANNER')} />
+                    <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname}
+                        onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY PROFILE')} />
                 </div>
                 <div className="content flex">
                     <div className="sidebar">
@@ -99,7 +101,7 @@ class _UserDetails extends Component {
 
                         <div className="portfolio-container flex a-center j-between">
                             <h3>Portfolio</h3>
-                            <ButtonGroup variant="text">
+                            <ButtonGroup variant="text" size="small">
                                 <Button onClick={() => this.getItemsForDisplay('all')}>All</Button>
                                 <Button onClick={() => this.getItemsForDisplay('sold')}>Sold</Button>
                                 <Button onClick={() => this.getItemsForDisplay('forSale')}>For Sale</Button>

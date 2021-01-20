@@ -13,8 +13,8 @@ header {
     }
 
     nav {
-        *:not(:last-child) {
-            // margin-inline-end: 25px;
+        > *:not(:last-child) {
+            margin-inline-end: 25px;
         }
         h3 {
             padding: 10px;
@@ -24,22 +24,17 @@ header {
             }
         }
         img {
-            height: 35px;
-            width: 35px;
+            height: 40px;
+            width: 40px;
             border-radius: 50%;
         }
-    }
-
-    nav {
     }
 }
 
 .logo {
-    // margin-left: 20px;
     font-family: Sofia;
     font-size: 2.1rem;
     color: $clr1;
     font-style: italic;
     font-weight: 600;
-    // padding: 0 24px;
 }

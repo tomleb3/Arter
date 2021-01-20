@@ -15,7 +15,7 @@ class _Explore extends Component {
 
     render() {
         const { users, items } = this.props
-        console.log('didi', this.props);
+
         return <section className="explore m-page main-layout">
             <AppFilter initialFilter={this.props.location.type} />
             <UserList users={users} items={items} />
@@ -31,5 +31,4 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items,
     }
 }
-
 export const Explore = connect(mapStateToProps)(_Explore)

@@ -17,8 +17,7 @@ export class Uploader extends Component {
             // style={ uploadStyle }
             >
                 <label htmlFor="imageUploader">{isUploading ? 'Uploading....' : 'Upload Image'}</label>
-                <input onChange={this.onUploadImg} hidden
-                    type="file" accept="image/*" id="imageUploader" />
+                <input onChange={this.onUploadImg} hidden type="file" accept="image/*" id="imageUploader" />
             </div>
         )
     }

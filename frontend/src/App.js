@@ -40,13 +40,13 @@ class _App extends Component {
   }
 
   render() {
-    const { users, items } = this.props
+    const { users, items, orders } = this.props
 
     return (
       <main>
         <AppHeader />
-        { users.length &&
-          <Switch>
+        { users.length && orders.length ?
+          < Switch >
             <Route exact path="/signup" component={LoginSignup} />
             <Route exact path="/login" component={LoginSignup} />
             <Route exact path="/item/edit/:id?" component={ItemEdit} />
@@ -54,9 +54,9 @@ class _App extends Component {
             <Route path="/explore" component={Explore} />
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/" component={Home} />
-          </Switch>}
+          </Switch> : ''}
         <AppFooter />
-      </main>
+      </main >
     );
   }
 }
@@ -64,7 +64,8 @@ class _App extends Component {
 const mapStateToProps = (state) => {
   return {
     items: state.itemModule.items,
-    users: state.userModule.users
+    users: state.userModule.users,
+    orders: state.orderModule.orders
   }
 }
 

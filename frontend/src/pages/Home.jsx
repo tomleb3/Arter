@@ -4,26 +4,25 @@ import { Link } from 'react-router-dom'
 import { GetStarted } from '../cmps/GetStarted.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
-import { Uploader } from '../cmps/Uploader.jsx'
 
 class _Home extends Component {
 
     componentDidMount() { window.scrollTo(0, 0) }
 
     render() {
-        const { users, items } = this.props
+        const { users, items, loggedInUser } = this.props
 
         return <section className="home m-page">
             <div className="hero-container">
                 <div className="hero"></div>
                 <h2>Join The Family,</h2>
                 <h2>Share Your Arts</h2>
-                <div className="btn"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Publish Now</Button></div>
+                <div className="btn"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}><Link to={loggedInUser ? '/item/edit' : '/login'}>Publish Now</Link></Button></div>
                 {/* <img src="../../public/hero1.jpg" /> */}
             </div>
 
-            <main className="main-layout">
-                <article>
+            <main>
+                <article className="main-layout">
                     <h3>Hot Categories</h3>
                     <section className="categories flex j-between txt-center">
                         <div className="flex col">
@@ -68,7 +67,7 @@ class _Home extends Component {
                     <h2>Get To Know The Artists</h2>
                     <div className="btn"><Link to="/explore" className="link"><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Discover</Button></Link></div>
                 </article>
-                <article>
+                <article className="main-layout">
                     <h3>Featured Artists</h3>
                     <UserList users={users} items={items} />
                 </article>
@@ -80,9 +79,9 @@ class _Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        // loggedInUser: state.userModule.loggedInUser
+        loggedInUser: state.userModule.loggedInUser,
         users: state.userModule.users,
-        items: state.itemModule.items,
+        items: state.itemModule.items
     }
 }
 

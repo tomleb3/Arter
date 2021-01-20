@@ -46,11 +46,8 @@
 .flex {
     display: flex;
 
-    > *.full {
+    > *.grow {
         flex: 1;
-    }
-    &.grow {
-        flex-grow: 1;
     }
     &.wrap {
         flex-wrap: wrap;
@@ -176,20 +173,6 @@
     }
 }
 
-// COLORS
-
-.red {
-    color: #d90007;
-}
-
-.green {
-    color: #43992c;
-}
-
-.lem-chif {
-    color: lemonchiffon;
-}
-
 // FONTS
 
 .font-sof {
@@ -202,6 +185,10 @@
 
 .font-mont {
     font-family: Montserrat;
+}
+
+.font-rale {
+    font-family: Raleway;
 }
 
 /* OTHERS */

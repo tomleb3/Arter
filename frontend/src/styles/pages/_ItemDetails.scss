@@ -1,6 +1,12 @@
-.item-page {
+.item-details {
+    margin-top: 110px;
+    h1 {
+        letter-spacing: 1px;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
     .profile-container {
-        .profile-img {
+        img {
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -11,34 +17,29 @@
             letter-spacing: 1px;
         }
     }
-    .swiper-pagination-bullet-active {
-        background-color: $clr1;
-    }
-    div.swiper-button-prev,
-    div.swiper-button-next {
-        color: $clr1;
-    }
-    .item-details {
-        height: 500px;
-        border-radius: 4px;
-        padding: 50px;
-        .item-show {
-            .item-img {
-                max-width: 500px;
-                max-height: 500px;
-                min-width: 200px;
-                min-height: 200px;
-                border: 1px solid rgba(0, 0, 0, 0.2);
-            }
+    .item-container {
+        gap: 3rem;
+        .item-img {
+            max-width: 30vw;
+            min-width: 20vw;
         }
         h5 {
             margin-bottom: 10px;
         }
         .item-desc {
-            width: 500px;
-            padding: 50px;
-            min-height: 550px;
-            background-color: rgba(211, 211, 211, 0.25);
+            width: 425px;
+
+            h2,
+            p,
+            .tags {
+                margin-bottom: 30px;
+            }
+            small {
+                color: $clr1;
+            }
+            .desc-txt {
+                font-size: 1.1em;
+            }
             > p {
                 font-size: 1rem;
 
@@ -47,38 +48,33 @@
                 }
             }
             .profile-container {
+                margin-bottom: 20px;
                 p {
                     margin: 0 5px;
                 }
             }
-            .item-name {
-                margin: 0 0 25px 0;
-                letter-spacing: 1px;
-            }
-            .purchase-btn {
-                background-color: #fff;
-                border: 2px solid #119ab5;
-                border-radius: 10px;
-                padding: 12px 0;
-                width: 100%;
-                font-size: 1.15em;
-                letter-spacing: 1px;
-                &:hover {
-                    border-color: $clr6;
-                }
-            }
+        }
+    }
+    .purchase-btn {
+        background-color: $clr1;
+        color: white;
+        border: none;
+        padding: 20px;
+        font-size: 1.5em;
+        font-weight: 600;
+        text-align: center;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #17a5c2;
         }
     }
     .other-works {
         background-color: rgba(211, 211, 211, 0.25);
         padding: 20px 0 35px;
-        margin-top: 175px;
-        // max-height: 350px;
+        margin-top: 100px;
         h3 {
             margin: 10px 0;
-        }
-        .swiper-pagination-bullet-active {
-            background-color: $clr6;
         }
         div.swiper-button-prev,
         div.swiper-button-next {

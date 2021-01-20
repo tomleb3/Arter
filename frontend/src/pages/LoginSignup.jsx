@@ -3,11 +3,11 @@ import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import FaceIcon from '@material-ui/icons/Face';
+import FaceIcon from '@material-ui/icons/Face'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import SecurityIcon from '@material-ui/icons/Security'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser'
 
 import {
     loadUsers,
@@ -69,8 +69,10 @@ class _LoginSignup extends Component {
         try {
             await this.props.login(userCreds)
             this.setState({ loginCred: { email: '', password: '' } })
-            socketService.emit('LOGIN', this.props.loggedInUser)
-            if (sessionStorage['loggedInUser']) this.props.history.push('/explore')
+            if (sessionStorage['loggedInUser']) {
+                socketService.emit('LOGIN', this.props.loggedInUser)
+                this.props.history.push('/explore')
+            }
         } catch (err) {
             return await this.setState({ msg: 'Login failed, try again.' })
         }

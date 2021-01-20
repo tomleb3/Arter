@@ -17,6 +17,7 @@ import { loadItems } from '../store/actions/itemActions.js'
 import { addOrder } from '../store/actions/orderActions.js'
 import { socketService } from '../services/socketService.js'
 import swal from '@sweetalert/with-react'
+import EditIcon from '@material-ui/icons/Edit';
 
 class _ItemDetails extends Component {
 
@@ -55,7 +56,6 @@ class _ItemDetails extends Component {
         try {
             const order = await this.props.addOrder(item)
             console.log('SUCCESS !')
-            // alert('Success!')
             socketService.emit('ORDER_OUT', order)
             return swal(
                 <div>
@@ -80,58 +80,60 @@ class _ItemDetails extends Component {
         const userRating = utilService.calcRate(user)
 
         return (
-            <section className="item-page flex col j-evenly m-page">
-                <div className="item-details flex j-evenly">
-                    <div className="item-show">
-                        <img className="item-img" src={item.imgUrl} alt={item.title} />
-                    </div>
-                    <div className="item-desc flex col j-between">
-                        <h2 className="item-name">{item.title}</h2>
-                        <p>{item.description}</p>
+            <section className="item-details main-layout m-page flex col">
+                <h1>{item.title}</h1>
+                <div className="item-container flex">
+                    <img className="item-img" src={item.imgUrl} alt={item.title} />
+                    <div className="item-desc flex col">
+                        <div className="flex j-between">
+                            <h2>About this piece</h2>
+                            {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}><EditIcon /></Link>}
+                        </div>
+                        <p className="desc-txt">{item.description}</p>
+                        <div className="tags flex">{item.tags.map(tag => { return <small>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;</small> })}</div>
                         <p>Price: ${item.price}</p>
-                        <div>
-                            <h5 className="muted">Artist:</h5>
-                            <div className="profile-container flex a-center">
-                                <Link to={`/user/${item.sellerId}`}><img className="profile-img flex a-center" src={user.imgUrls.profile} alt={user.fullname} /></Link>
-                                <div>
+                        <div className="profile-container flex a-center">
+                            <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />
+                                <div className="flex col">
                                     <h4>{user.fullname}</h4>
                                     <div className="flex">
                                         <Rating name="rating" value={userRating} readOnly size="small" />
                                         <p className="muted">({user.reviews.length})</p>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
-                        {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}>Edit Item</Link>}
-                        <button className="purchase-btn" onClick={this.onPurchase}>Purchase</button>
+                        <div className="grow"></div>
+                        {<button className="purchase-btn"
+                            onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
+                                : () => this.props.history.push('/login')}>Purchase</button>}
                         {/* <p>{item.tags}</p> */}
                     </div>
                 </div>
                 <div className="other-works">
-                    <div className="main-layout"><h3>Other Works By {user.fullname}:</h3></div>
-                    {otherItems.length ? <div className="main-layout">
-                        <Swiper
-                            spaceBetween={80}
-                            slidesPerView={4}
-                            navigation={{
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev'
-                            }}
-                            observer
-                            autoplay={{ delay: 2500, disableOnInteraction: false }}
-                            // pagination={{
-                            //     el: '.swiper-pagination',
-                            //     clickable: true
-                            // }}
-                            // scrollbar={{ draggable: true }}
-                            onSwiper={(swiper) => console.log(swiper)}
-                            onSlideChange={() => console.log('slide change')}>
-                            {otherItems.map(item => {
-                                return <SwiperSlide key={item._id}>
-                                    <ItemPreview item={item} user={user} minified />
-                                </SwiperSlide>
-                            })}
-                        </Swiper></div> : ''}
+                    <h3>Other Works By {user.fullname}:</h3>
+                    {otherItems.length ? <Swiper
+                        spaceBetween={80}
+                        slidesPerView={4}
+                        navigation={{
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev'
+                        }}
+                        observer
+                        autoplay={{ delay: 2500, disableOnInteraction: false }}
+                        // pagination={{
+                        //     el: '.swiper-pagination',
+                        //     clickable: true
+                        // }}
+                        // scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}>
+                        {otherItems.map(item => {
+                            return <SwiperSlide key={item._id}>
+                                <ItemPreview item={item} user={user} minified />
+                            </SwiperSlide>
+                        })}
+                    </Swiper> : ''}
                 </div>
             </section>
         )

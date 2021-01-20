@@ -1,9 +1,9 @@
-
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadItems, addItem, editItem, removeItem } from '../store/actions/itemActions'
 import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
+import { Uploader } from '../cmps/Uploader.jsx'
 
 class _ItemEdit extends Component {
 
@@ -12,9 +12,9 @@ class _ItemEdit extends Component {
             title: '',
             price: 0,
             description: '',
+            imgUrl: ''
             // tags: ['Traditional'],
             // seller: this.props.loggedInUser.email
-
         }
     }
 
@@ -22,10 +22,22 @@ class _ItemEdit extends Component {
         // if (!this.props.items.length) await this.props.loadItems()
         const { id } = this.props.match.params
         if (id) {
-            console.log('lieli',this.props.items);
-            const item = this.props.items.find(item =>item._id === id)
+            console.log('lieli', this.props.items);
+            const item = this.props.items.find(item => item._id === id)
             this.setState({ item: item })
         }
+    }
+
+    onUploadImg = (url) => {
+        this.setState(prevState => {
+            return {
+                item: {
+                    ...prevState.item,
+                    imgUrl: url
+                }
+            }
+        })
+        console.log('img url', url);
     }
 
     handleInput = ({ target }) => {
@@ -44,8 +56,8 @@ class _ItemEdit extends Component {
         })
     }
 
-     onRemoveItem = async(itemId) => {
-        const {item} = this.state
+    onRemoveItem = async (itemId) => {
+        const { item } = this.state
         await this.props.removeItem(itemId)
         this.props.history.push(`/user/${item.seller._id}`)
     }
@@ -73,9 +85,10 @@ class _ItemEdit extends Component {
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
                     <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
+                    <Uploader onFinishUpload={this.onUploadImg} />
                     <div>
-                    {item._id &&<Button type="button" onClick={() => this.onRemoveItem(item._id)}>Delete Item</Button>}
-                    <Button type="submit">Save</Button>
+                        {item._id && <Button type="button" onClick={() => this.onRemoveItem(item._id)}>Delete Item</Button>}
+                        <Button type="submit">Save</Button>
                     </div>
                 </form>
             </div>
