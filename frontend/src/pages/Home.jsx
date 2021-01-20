@@ -13,12 +13,10 @@ class _Home extends Component {
         const { users, items, loggedInUser } = this.props
 
         return <section className="home m-page">
-            <div className="hero-container">
-                <div className="hero"></div>
+            <div className="hero-container flex j-center a-center">
                 <h2>Join The Family,</h2>
                 <h2>Share Your Arts</h2>
                 <div className="btn"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}><Link to={loggedInUser ? '/item/edit' : '/login'}>Publish Now</Link></Button></div>
-                {/* <img src="../../public/hero1.jpg" /> */}
             </div>
 
             <main>

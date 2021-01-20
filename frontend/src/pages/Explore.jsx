@@ -12,7 +12,6 @@ class _Explore extends Component {
 
     componentDidMount() { window.scrollTo(0, 0) }
 
-
     render() {
         const { users, items } = this.props
 

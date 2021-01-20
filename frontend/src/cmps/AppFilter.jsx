@@ -10,17 +10,12 @@ class _AppFilter extends Component {
     }
 
     componentDidMount() {
-        console.log('dada',this.state); 
         this.props.loadItems(this.state.title)
-
     }
 
     handleChange = (ev) => {
         const { value } = ev.target
-
-        this.setState(({ title: value }), () => {
-            this.props.loadItems(this.state.title)
-        })
+        this.setState(({ title: value }), () => this.onFilter(ev))
     }
 
     onFilter = (ev) => {
@@ -42,14 +37,12 @@ class _AppFilter extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         // loggedInUser: state.userModule.loggedInUser
     }
 }
-
 const mapDispatchToProps = {
     loadItems
 }
-
 export const AppFilter = connect(mapStateToProps, mapDispatchToProps)(_AppFilter)

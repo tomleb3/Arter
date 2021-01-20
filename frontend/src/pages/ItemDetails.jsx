@@ -90,7 +90,7 @@ class _ItemDetails extends Component {
                             {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}><EditIcon /></Link>}
                         </div>
                         <p className="desc-txt">{item.description}</p>
-                        <div className="tags flex">{item.tags.map(tag => { return <small>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;</small> })}</div>
+                        <div className="tags flex">{item.tags.map(tag => { return <small>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
                         <p>Price: ${item.price}</p>
                         <div className="profile-container flex a-center">
                             <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />

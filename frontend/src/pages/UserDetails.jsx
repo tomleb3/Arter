@@ -9,6 +9,7 @@ import { addReview } from '../store/actions/userActions.js'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
+import { Link } from 'react-router-dom'
 import { Button, ButtonGroup } from '@material-ui/core'
 
 class _UserDetails extends Component {
@@ -89,6 +90,7 @@ class _UserDetails extends Component {
                 <div className="content flex">
                     <div className="sidebar">
                         {/* <AppFilter /> */}
+                        <Link to="/user-details"><button className="custom-order-btn">Edit profile</button></Link>
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
                     </div>
