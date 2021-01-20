@@ -1,4 +1,3 @@
-
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadItems, addItem, editItem, removeItem } from '../store/actions/itemActions'
@@ -103,7 +102,7 @@ export const ItemEdit = connect(mapStateToProps, mapDispatchToProps)(_ItemEdit)
 
 
 
-// <TextField id="standard-secondary" label="Name" type="text" name="name" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
-// <TextField label="Price" type="number" min="0" value={item.price} onChange={this.handleInput} name="price" />
-// <TextField label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-// <Button type="submit" color='secondary'>Save</Button>
+{/* <TextField id="standard-secondary" label="Name" type="text" name="name" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
+<TextField label="Price" type="number" min="0" value={item.price} onChange={this.handleInput} name="price" />
+<TextField label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
+<Button type="submit" color='secondary'>Save</Button> */}

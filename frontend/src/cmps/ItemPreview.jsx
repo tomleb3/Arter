@@ -15,6 +15,7 @@ function _ItemPreview({ item, withProfile, minified }) {
         <Link to={`/item/${item._id}`}>
             <img className="item-img" src={item.imgUrl} alt="" />
         </Link>
+        <h3>{item.title}</h3>
         {withProfile && <Link to={`/user/${item.seller._id}`} className="info-container flex a-center">
             <img className="user-img" src={item.seller.imgUrls.profile} alt="" />
             <div>
@@ -25,7 +26,7 @@ function _ItemPreview({ item, withProfile, minified }) {
                 </div>
             </div>
         </Link>}
-        <h3>{item.title}</h3>
+        
         <div className="bottom-container">
             <h5 className="right">${item.price}</h5>
         </div>

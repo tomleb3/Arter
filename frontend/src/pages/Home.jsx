@@ -14,17 +14,14 @@ class _Home extends Component {
         const { users, items } = this.props
 
         return <section className="home m-page">
-            <div className="hero-container">
-                <div className="hero-img"></div>
-                <div className="hero"></div>
+            <div className="hero-container flex j-center a-center">
                 <h2>Join The Family,</h2>
                 <h2>Share Your Arts</h2>
                 <div className="btn"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Publish Now</Button></div>
-                {/* <img src="../../public/hero1.jpg" /> */}
             </div>
 
-            <main className="main-layout">
-                <article>
+            <main>
+                <article className="main-layout">
                     <h3>Hot Categories</h3>
                     <section className="categories flex j-between txt-center">
                         <div className="flex col">
@@ -69,7 +66,7 @@ class _Home extends Component {
                     <h2>Get To Know The Artists</h2>
                     <div className="btn"><Link to="/explore" className="link"><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Discover</Button></Link></div>
                 </article>
-                <article>
+                <article className="main-layout">
                     <h3>Featured Artists</h3>
                     <UserList users={users} items={items} />
                 </article>
