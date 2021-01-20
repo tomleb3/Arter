@@ -12,9 +12,9 @@ module.exports = {
 }
 
 
-async function query(filterBy = {}) {
-    // const criteria = _buildCriteria(filterBy)
-    const criteria = {}
+async function query(filterBy) {
+    const criteria = _buildCriteria(filterBy)
+    // const criteria = {}
     try {
         const collection = await dbService.getCollection('item')
         var items = await collection.aggregate([
@@ -33,7 +33,6 @@ async function query(filterBy = {}) {
             {
                 $unwind: '$seller'
             }]).toArray()
-
 
         return items.map(item => {
             delete item.sellerId
@@ -72,6 +71,7 @@ async function remove(itemId) {
 async function update(item) {
     try {
         // peek only updatable fields!
+        // TODO: CHECK +item.price
         const itemToSave = {
             _id: ObjectId(item._id),
             title: item.title,
@@ -94,21 +94,18 @@ async function update(item) {
     }
 }
 
-function _buildCriteria(filterBy) {
+function _buildCriteria(txt) {
     const criteria = {}
-    if (filterBy.txt) {
-        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
+    if (txt) {
+        const txtCriteria = { $regex: txt, $options: 'i' }
         criteria.$or = [
             {
-                email: txtCriteria
+                title: txtCriteria
             },
             {
-                fullname: txtCriteria
+                tags: txtCriteria
             }
         ]
-    }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: filterBy.minBalance }
     }
     return criteria
 }

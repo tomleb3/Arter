@@ -16,6 +16,7 @@ import {
     logout,
     signup
 } from '../store/actions/userActions'
+import { socketService } from '../services/socketService'
 
 class _LoginSignup extends Component {
 
@@ -68,6 +69,7 @@ class _LoginSignup extends Component {
         try {
             await this.props.login(userCreds)
             this.setState({ loginCred: { email: '', password: '' } })
+            socketService.emit('LOGIN', this.props.loggedInUser)
             if (sessionStorage['loggedInUser']) this.props.history.push('/explore')
         } catch (err) {
             return await this.setState({ msg: 'Login failed, try again.' })
@@ -184,7 +186,7 @@ class _LoginSignup extends Component {
 const mapStateToProps = state => {
     return {
         users: state.userModule.users,
-        loggedInUser: state.userModule.loggedInUser,
+        loggedInUser: state.userModule.loggedInUser
     }
 }
 const mapDispatchToProps = {

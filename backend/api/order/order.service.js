@@ -2,6 +2,7 @@ const dbService = require('../../services/db.service')
 const ObjectId = require('mongodb').ObjectId
 const asyncLocalStorage = require('../../services/als.service')
 const itemService = require('../item/item.service')
+const userService = require('../user/user.service')
 
 async function query(filterBy = {}) {
     try {
@@ -10,9 +11,9 @@ async function query(filterBy = {}) {
         // const orders = await collection.find({}).toArray()
         // const orders = await collection.find(criteria).toArray()
         var orders = await collection.aggregate([
-            {
-                $match: criteria
-            },
+            // {
+            //     $match: criteria
+            // },
             {
                 $lookup:
                 {
@@ -50,7 +51,8 @@ async function query(filterBy = {}) {
                 $unwind: '$item'
             }
         ]).toArray()
-        orders = orders.map(order => {
+        console.log(orders)
+        return orders.map(order => {
             delete order.sellerId
             delete order.buyerId
             delete order.itemId
@@ -58,8 +60,6 @@ async function query(filterBy = {}) {
             delete order.buyer.password
             return order
         })
-
-        return orders
     } catch (err) {
         logger.error('cannot find orders', err)
         throw err
@@ -82,13 +82,36 @@ async function add(item) {
         const collection = await dbService.getCollection('order')
         await collection.insertOne(orderToAdd)
         item.purchasedAt = Date.now()
-        itemService.update(item)
-        return orderToAdd;
+        await itemService.update(item)
+        const fullbuyer = await userService.getById(userId)
+        orderToAdd.item = item
+        orderToAdd.seller = item.seller
+        orderToAdd.buyer = fullbuyer 
+        return orderToAdd; 
     } catch (err) {
         logger.error('cannot insert order', err)
         throw err
     }
 }
+
+
+async function getById(orderId) {
+    try {
+        const collection = await dbService.getCollection('order')
+        const user = await collection.findOne({ '_id': ObjectId(orderId) })
+        
+        
+
+
+        return user
+    } catch (err) {
+        logger.error(`while finding user ${userId}`, err)
+        throw err
+    }
+}
+
+
+
 
 function _buildCriteria(filterBy) {
     const criteria = {}

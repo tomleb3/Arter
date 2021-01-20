@@ -33,13 +33,9 @@ export function ReviewAdd({ onAdd }) {
     const [ratingValue, setValue] = React.useState(5);
     const textAreaRef = React.createRef()
 
-    const handleOpen = () => {
-        setOpen(true);
-    };
+    const handleOpen = () => setOpen(true)
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const handleClose = () => setOpen(false)
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
@@ -59,17 +55,15 @@ export function ReviewAdd({ onAdd }) {
                 <Button variant="contained" style={{ backgroundColor: '#13acca', color: 'white' }} onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
             </div>
         </div>
-    );
+    )
 
-    return (
-        <div>
-            <AddIcon className="pointer" onClick={handleOpen} fontSize="large" style={{ backgroundColor: '#13acca', color: 'white', borderRadius: '5px' }} />
-            <Modal
-                className="review-add-modal"
-                open={open}
-                onClose={handleClose}>
-                {body}
-            </Modal>
-        </div>
-    );
+    return <div>
+        <AddIcon className="pointer" onClick={handleOpen} fontSize="large" style={{ backgroundColor: '#13acca', color: 'white', borderRadius: '5px' }} />
+        <Modal
+            className="review-add-modal"
+            open={open}
+            onClose={handleClose}>
+            {body}
+        </Modal>
+    </div>
 }

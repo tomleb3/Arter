@@ -1,8 +1,8 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
 import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
-import { connect } from 'react-redux'
 
 class _Explore extends Component {
 
@@ -16,7 +16,7 @@ class _Explore extends Component {
     render() {
         const { users, items } = this.props
         return <section className="explore m-page main-layout">
-            <AppFilter initialFilter={this.props.location.state} />
+            <AppFilter initialFilter={this.props.location.type} />
             <UserList users={users} items={items} />
             <ItemList users={users} items={items} withProfile />
         </section>

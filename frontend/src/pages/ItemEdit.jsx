@@ -18,7 +18,7 @@ class _ItemEdit extends Component {
     }
 
     async componentDidMount() {
-        if (!this.props.items.length) await this.props.loadItems()
+        // if (!this.props.items.length) await this.props.loadItems()
         const { id } = this.props.match.params
         if (id) {
             console.log('lieli',this.props.items);
@@ -43,9 +43,10 @@ class _ItemEdit extends Component {
         })
     }
 
-    onRemoveItem = (itemId) => {
+     onRemoveItem = async(itemId) => {
         const {item} = this.state
-        this.props.removeItem(itemId).then(() => this.props.history.push(`/user/${item.seller._id}`))
+        await this.props.removeItem(itemId)
+        this.props.history.push(`/user/${item.seller._id}`)
     }
 
     onSaveItem = async (ev) => {
@@ -83,7 +84,7 @@ class _ItemEdit extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        // loggedInUser: state.userModule.loggedInUser
+        loggedInUser: state.userModule.loggedInUser,
         users: state.userModule.users,
         items: state.itemModule.items,
     }

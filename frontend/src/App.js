@@ -1,7 +1,6 @@
-// import React from 'react';
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import './styles/global.scss'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { AppFooter } from './cmps/AppFooter.jsx'
@@ -9,17 +8,42 @@ import { Home } from './pages/Home.jsx';
 import { Explore } from './pages/Explore.jsx';
 import { UserDetails } from './pages/UserDetails.jsx';
 import { ItemDetails } from './pages/ItemDetails.jsx';
-import { loadItems } from './store/actions/itemActions'
-import { loadUsers } from './store/actions/userActions'
+import { loadItems } from './store/actions/itemActions.js'
+import { loadUsers } from './store/actions/userActions.js'
+import { loadOrders } from './store/actions/orderActions.js'
 import { LoginSignup } from './pages/LoginSignup'
 import { ItemEdit } from './pages/ItemEdit'
-// import { AppFilter } from './cmps/AppFilter'
+import { socketService } from './services/socketService.js'
+import swal from '@sweetalert/with-react'
 
 class _App extends Component {
 
   async componentDidMount() {
     await this.props.loadItems()
     await this.props.loadUsers()
+    await this.props.loadOrders()
+    socketService.setup()
+    socketService.on('ORDER_IN', this.onOrderIn)
+  }
+
+  componentWillUnmount() {
+    socketService.terminate()
+  }
+
+  // goToLink = (str) =>{
+  //   console.log('shit')
+  // return <Link to={str}></Link>
+  // }
+
+
+  onOrderIn = order => {
+    // const fullOrder = getOrderById(order._id)
+    return swal(
+      <div>
+        <h1>Hey there!</h1>
+        <p><a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
+        <p>you can see view your sold items in<a href={`#/user/${order.seller._id}`}> your profile page</a></p>
+      </div>) 
   }
 
   render() {
@@ -28,7 +52,7 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        { items.length && users.length &&
+        { users.length &&
           <Switch>
             <Route exact path="/signup" component={LoginSignup} />
             <Route exact path="/login" component={LoginSignup} />
@@ -46,7 +70,6 @@ class _App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // loggedInUser: state.userModule.loggedInUser,
     items: state.itemModule.items,
     users: state.userModule.users
   }
@@ -54,7 +77,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   loadItems,
-  loadUsers
+  loadUsers,
+  loadOrders
 }
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App)

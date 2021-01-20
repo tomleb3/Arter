@@ -9,16 +9,14 @@
         height: fit-content;
 
         .item-img {
-            min-width: 100px;
-            min-height: 100px;
-            max-width: 250px;
-            max-height: 250px;
-            // border: none;
+            width: 250px;
+            height: 250px;
+            border: none;
             object-fit: cover;
         }
         
         &:hover {
-            border: none;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
     }
     
@@ -35,7 +33,7 @@
         background-color: lightgray;
     }
 
-    .info-container {
+    .user-info-container {
         width: fit-content;
         // margin-bottom: 10px;
         padding: 0px 15px;
