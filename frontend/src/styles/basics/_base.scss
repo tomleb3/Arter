@@ -9,8 +9,29 @@
 
         ::selection {
             color: $clr1;
-            background: rgb(58, 58, 58);
-          }
+            background: #444444;
+        }
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #e6e6e6;
+            border-radius: 1px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #13acca;
+            border-radius: 1px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #c51162;
+        }
 
         h1,
         h2,

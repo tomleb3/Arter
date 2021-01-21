@@ -16,7 +16,9 @@ class _Explore extends Component {
         const { users, items } = this.props
 
         return <section className="explore m-page main-layout">
-            <AppFilter initialFilter={this.props.location.type} />
+            <div className="filter flex a-center j-center">
+                <p className="search">Search:</p><AppFilter initialFilter={this.props.location.type} />
+            </div>
             <UserList users={users} items={items} />
             <ItemList users={users} items={items} withProfile />
         </section>
