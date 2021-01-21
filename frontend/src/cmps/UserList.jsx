@@ -19,7 +19,7 @@ function filterArtists(users, items) {
 }
 
 
-export function UserList({ users, items }) {
+export function UserList({ users, items, tallMode }) {
     SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
     if (!users || !users.length) return <div></div>
@@ -45,7 +45,7 @@ export function UserList({ users, items }) {
 
             {artists.map(artist => {
                 return <SwiperSlide key={artist._id}>
-                    <UserPreview user={artist} />
+                    <UserPreview user={artist} tallMode={tallMode} />
                 </SwiperSlide>
             })}
         </Swiper>
