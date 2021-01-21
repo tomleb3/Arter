@@ -31,7 +31,8 @@ class _Explore extends Component {
 
         return <section className="explore m-page main-layout">
             <div>
-                <AppFilter initialFilter={this.props.location.type} onFilter={this.onFilter} />
+               <AppFilter initialFilter={this.props.location.type} onFilter={this.onFilter} />
+
             </div>
             <UserList users={users} items={items} />
             <ItemList users={users} items={items} withProfile />
