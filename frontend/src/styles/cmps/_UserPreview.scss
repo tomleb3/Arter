@@ -6,7 +6,7 @@
         left: 0;
         height: 35%;
         width: 102%;
-        background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+        background-image: linear-gradient(to bottom, transparent 30%, black 100%);
 
         h3 {
             font-size: 1.3em;
@@ -20,5 +20,14 @@
         width: 220px;
         object-fit: cover;
         // opacity: 0.9; ??
+    }
+
+    &.min {
+        div {
+            background-image: linear-gradient(to bottom, transparent 30%, #119ebb 100%);
+        }
+        img {
+            height: 220px;
+        }
     }
 }

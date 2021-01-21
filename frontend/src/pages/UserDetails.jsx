@@ -69,13 +69,32 @@ class _UserDetails extends Component {
             // case 'purchased':
             // const itemsForDisplay = items.filter(item =>
         }
-        console.log(this.props.orders) // NO GET ORDERS...WHAT DO
         this.setState({ items: itemsForDisplay })
+    }
+
+    getSoldItems = () => {
+        const { user } = this.state
+        const { orders } = this.props
+        if (!orders.length || !user) return
+        return orders.filter(order => {
+            if (order.seller._id === user._id) return order
+        })
+    }
+
+    getBoughtItems = () => {
+        const { user } = this.state
+        const { orders } = this.props
+        if (!orders.length || !user) return
+        return orders.filter(order => {
+            if (order.buyer._id === user._id) return order
+        })
     }
 
     render() {
         const { user, items } = this.state
-        const { users, loggedInUser } = this.props
+        const { orders, loggedInUser } = this.props
+        const soldItems = this.getSoldItems()
+        const boughtItems = this.getBoughtItems()
         const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
@@ -93,6 +112,16 @@ class _UserDetails extends Component {
                         <Link to="/user-details"><button className="custom-order-btn">Edit profile</button></Link>
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
+                        <ul>SOLD ITEMS:
+                            {soldItems.map(order => {
+                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
+                        })}
+                        </ul>
+                        <ul>BOUGHT ITEMS:
+                        {boughtItems.map(order => {
+                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
+                        })}
+                        </ul>
                     </div>
                     <div className="main">
                         <div className="about">
@@ -109,7 +138,7 @@ class _UserDetails extends Component {
                                 <Button onClick={() => this.getItemsForDisplay('forSale')}>For Sale</Button>
                             </ButtonGroup>
                         </div>
-                        <ItemList items={items} users={users} />
+                        <ItemList items={items} />
                         <div className="review-container flex a-center j-between">
                             <div className="flex">
                                 <h3>Reviews</h3>
@@ -129,7 +158,6 @@ class _UserDetails extends Component {
 const mapStateToProps = (state) => {
     return {
         loggedInUser: state.userModule.loggedInUser,
-        users: state.userModule.users,
         items: state.itemModule.items,
         orders: state.orderModule.orders
     }

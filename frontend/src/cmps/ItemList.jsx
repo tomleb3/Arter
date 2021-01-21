@@ -9,8 +9,8 @@ export function ItemList({ items, minified, withProfile }) {
         </div>
     }
     return (
-        <ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 650: 2, 900: 3, 1400: 4 }}>
-            <Masonry columnsCount={4} gutter="30px">
+        <ResponsiveMasonry columnsCountBreakPoints={{ 450: 1, 700: 2, 1000: 3 }}>
+            <Masonry gutter="30px">
                 {items.map(item => {
                     return <ItemPreview key={item._id} item={item} withProfile={withProfile} minified={minified} />
                 })}

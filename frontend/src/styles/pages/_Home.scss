@@ -1,6 +1,6 @@
 .home {
     article {
-        margin: 30px auto;
+        margin: 100px auto;
     }
 
     .hero {
@@ -35,15 +35,17 @@
         // filter: brightness(85%);
 
         h2 {
-            transform: translateX(12vw);
             font-size: 3em;
             color: white;
+            &:first-of-type {
+                transform: translateX(12vw);
+            }
+            &:last-of-type {
+                transform: translate(16vw, 3vh);
+            }
         }
-        h2:last-of-type {
-            transform: translate(18vw,2vh);
-        }
-        .btn {
-            transform: translate(25vw,6vh);
+        .btn-cta {
+            transform: translate(30vw, 6vh);
 
             .MuiButton-label {
                 font-size: 1.15em;
@@ -70,7 +72,12 @@
         }
     }
 
-    h3 {
+    .see-more:hover {
+        color: $clr3;
+    }
+
+    label {
+        display: block;
         margin-bottom: 25px;
         font-size: 2em;
     }
@@ -94,9 +101,9 @@
             left: 15%;
             top: 40%;
         }
-        .btn {
+        .btn-cta {
             position: absolute;
-            left: 45%;
+            left: 25%;
             bottom: 25%;
 
             .link {
