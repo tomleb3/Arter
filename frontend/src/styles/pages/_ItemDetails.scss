@@ -1,9 +1,10 @@
 .item-details {
-    margin-top: 110px;
+    margin-top: 120px;
     h1 {
         letter-spacing: 1px;
-        font-size: 2.5em;
-        margin-bottom: 10px;
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        color: rgba(0, 0, 0,0.8);
     }
     .profile-container {
         img {
@@ -60,21 +61,24 @@
         color: white;
         border: none;
         padding: 20px;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 600;
         text-align: center;
         transition: 0.3s;
+        border-radius: 2px;
+        font-family: Montserrat;
 
         &:hover {
-            background-color: #17a5c2;
+            background-color: #1d8ea5;
         }
     }
     .other-works {
         background-color: rgba(211, 211, 211, 0.25);
-        padding: 20px 0 35px;
+        padding: 25px 15px;
         margin-top: 100px;
         h3 {
-            margin: 10px 0;
+            margin: 5px 0 15px;
+            font-size: 1.25em;
         }
         div.swiper-button-prev,
         div.swiper-button-next {

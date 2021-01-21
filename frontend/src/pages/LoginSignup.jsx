@@ -3,7 +3,8 @@ import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import FaceIcon from '@material-ui/icons/Face'
+// import FaceIcon from '@material-ui/icons/Face'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import SecurityIcon from '@material-ui/icons/Security'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
@@ -147,7 +148,7 @@ class _LoginSignup extends Component {
                     onChange={this.loginHandleChange}
                     label="Password"
                 />
-                <Button className="login-btn" type="submit" color="primary" variant="contained">SIGN IN</Button>
+                <Button className="login-btn" type="submit" variant="contained">SIGN IN</Button>
 
                 <div className="filler-logos flex j-between">
                     <SecurityIcon></SecurityIcon>
@@ -172,11 +173,12 @@ class _LoginSignup extends Component {
                         </div>
                     )}
                     <div className="btn-group flex">
-                        <Link to='/login' className="link"><Button color="primary" onClick={() => { this.setState({ currPage: '/login' }) }}>Login</Button></Link>
-                        <Link to='/signup' className="link"><Button color="secondary" onClick={() => { this.setState({ currPage: '/signup' }) }}>Signup</Button></Link>
+                        <Link to='/login' className="link"><Button style={{ color: "#13acca", fontWeight: "bold" }} onClick={() => { this.setState({ currPage: '/login' }) }}>Login</Button></Link>
+                        <Link to='/signup' className="link"><Button style={{ fontWeight: "bold" }} color="secondary" onClick={() => { this.setState({ currPage: '/signup' }) }}>Signup</Button></Link>
                     </div>
                     <p className="muted red">{msg ? '* ' + msg : ''}</p>
-                    <div className="lock-icon-div flex j-center"><FaceIcon fontSize="large" color={currPage === '/login' ? "primary" : "secondary"}></FaceIcon></div>
+                    <div className="lock-icon-div flex j-center">
+                        <AccountCircleIcon fontSize="large" className={currPage === '/login' ? "site-clr1" : "site-clr3"}></AccountCircleIcon></div>
                     {(!loggedInUser && currPage === '/login') && loginSection}
                     {(!loggedInUser && currPage === '/signup') && signupSection}
                 </div>

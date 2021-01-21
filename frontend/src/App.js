@@ -34,8 +34,8 @@ class _App extends Component {
     return swal(
       <div>
         <h1>Hey there!</h1>
-        <p><a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
-        <p>you can see view your sold items in<a href={`#/user/${order.seller._id}`}> your profile page</a></p>
+        <p><a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
+        <p>you can see view your sold items in<a className="site-clr1" href={`#/user/${order.seller._id}`}> your profile page</a></p>
       </div>) 
   }
 

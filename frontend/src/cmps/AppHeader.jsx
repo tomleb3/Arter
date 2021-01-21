@@ -5,6 +5,7 @@ import { logout } from '../store/actions/userActions.js'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import AccountBoxIcon from '@material-ui/icons/AccountBox'
 import EditIcon from '@material-ui/icons/Edit'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import {
     Menu,
@@ -31,7 +32,8 @@ function _AppHeader({ loggedInUser, logout }) {
                             <MenuItem><EditIcon />Edit Profile</MenuItem>
                             <MenuItem onClick={logout}><ExitToAppIcon /><Link to="/">Logout</Link></MenuItem>
                         </Menu>
-                        : <Link to="/login"><h3>Login</h3></Link>}
+                        // : <Link to="/login"><h3>Login</h3></Link>}
+                        : <Link to="/login"><AccountCircleIcon fontSize="large"/></Link>} 
                 </nav>
             </section>
         </header>
