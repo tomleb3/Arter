@@ -1,6 +1,6 @@
 .home {
     article {
-        margin: 100px auto;
+        margin: 30px auto;
     }
 
     .hero-container {
@@ -11,7 +11,7 @@
         background-blend-mode: luminosity;
         // transform: translateY(-30%);
         width: 100vw;
-        height: 55vh;
+        height: 75vh;
         background-size: cover;
         background-image: url(../../assets/imgs/lastandonly1.png);
         // background-image: url(../../assets/imgs/lastandonly.png);
@@ -36,24 +36,14 @@
 
         h2 {
             transform: translateX(12vw);
-            // transform: translate(12vw,4vh);
-            // position: absolute;
-            // right: 31%;
-            // top: 30%;
             font-size: 3em;
             color: white;
         }
         h2:last-of-type {
             transform: translate(18vw,2vh);
-            // right: 28%;
-            // top: 50%;
         }
         .btn {
-            // position: absolute;
-            // right: 25%;
-            // bottom: 10%;
             transform: translate(25vw,6vh);
-            // transform: translate(20vw,10vh);
 
             .MuiButton-label {
                 font-size: 1.15em;

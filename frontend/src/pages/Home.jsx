@@ -66,7 +66,7 @@ class _Home extends Component {
                     <div className="btn"><Link to="/explore" className="link"><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Discover</Button></Link></div>
                 </article>
                 <article className="main-layout">
-                    <h3>Featured Artists</h3>
+                    <h3>Top-Rated Artists</h3>
                     <UserList users={users} items={items} />
                 </article>
                 {/* <GetStarted /> */}

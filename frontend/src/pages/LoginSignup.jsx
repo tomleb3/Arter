@@ -102,6 +102,7 @@ class _LoginSignup extends Component {
                 <h2>Create Account</h2>
                 <TextField
                     type="text"
+                    color="secondary"
                     name="email"
                     value={this.state.signupCred.email}
                     onChange={this.signupHandleChange}
@@ -109,6 +110,7 @@ class _LoginSignup extends Component {
                 />
                 <TextField
                     type="text"
+                    color="secondary"
                     name="firstName"
                     value={this.state.signupCred.firstName}
                     onChange={this.signupHandleChange}
@@ -116,14 +118,16 @@ class _LoginSignup extends Component {
                 />
                 <TextField
                     type="text"
+                    color="secondary"
                     name="lastName"
                     value={this.state.signupCred.lastName}
                     onChange={this.signupHandleChange}
                     label="Last Name"
                 />
                 <TextField
-                    name="password"
                     type="password"
+                    name="password"
+                    color="secondary"
                     value={this.state.signupCred.password}
                     onChange={this.signupHandleChange}
                     label="Password"

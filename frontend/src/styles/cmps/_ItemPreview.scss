@@ -1,5 +1,5 @@
 .item-preview {
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 1px;
     height: 100%;
     max-width: 300px;
@@ -14,53 +14,40 @@
             border: none;
             object-fit: cover;
         }
-        
+
         &:hover {
-            box-shadow: 0px 0px 42px -19px #9c9c9c;
+            box-shadow: 0px 0px 29px -10px #bfbfbf;
         }
     }
-    
-    &:hover {  
-        // border: 1px solid $clr1;
-        box-shadow: 0px 0px 42px -19px #9c9c9c;
+
+    &:hover {
+        box-shadow: 0px 0px 29px -10px #bfbfbf;
     }
-    
+
+    p {
+        margin-bottom: 10px;
+    }
+
     .item-img {
-        // border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
         width: 100%;
-        // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 5px;
         background-color: lightgray;
     }
 
     .user-info-container {
         width: fit-content;
         // margin-bottom: 10px;
-        padding: 15px;
 
         h4 {
             font-size: 1.3em;
             letter-spacing: 1px;
-            margin-inline-start: 3px;
         }
-
-        p {
-            margin: 0 5px;
-        }
-    }
-
-    .user-img {
-        border-radius: 50%;
-        height: 45px;
-        width: 45px;
-        margin-inline-end: 10px;
-        background-color: lightgray;
     }
 
     h3 {
-        margin: 30px 0 30px;
-        font-size: 1.55em;
+        font-size: 1.4em;
         letter-spacing: 1.1px;
-        margin-inline-start: 20px;
+        margin-bottom: 10px;
     }
 
     .remove-btn {
@@ -73,15 +60,6 @@
         &:hover {
             background-color: rgb(179, 171, 171);
             color: white;
-        }
-    }
-
-    .bottom-container {
-        // border-top: 1px solid rgba(0, 0, 0, 0.1);
-
-        h5 {
-            padding: 15px;
-            font-size: 1.25em;
         }
     }
 }

@@ -10,7 +10,7 @@
         ::selection {
             color: $clr1;
             background: rgb(58, 58, 58);
-          }
+        }
 
         h1,
         h2,
@@ -38,6 +38,10 @@
 
         textarea {
             resize: none;
+        }
+
+        .MuiRating-root {
+            color: $clr3;
         }
     }
 }
