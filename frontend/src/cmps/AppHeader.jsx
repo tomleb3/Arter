@@ -22,18 +22,17 @@ function _AppHeader({ loggedInUser, logout }) {
             <section className="main-layout flex j-between a-center">
                 <div className="logo"><Link to="/">Arter</Link></div>
                 <nav className="flex">
-                    <Link to="/explore"><h3>Explore</h3></Link>
-                    <Link to={loggedInUser ? '/item/edit' : '/login'}><h3>Publish</h3></Link>
+                    <Link to="/explore" className="link"><h3>Explore</h3></Link>
+                    <Link to={loggedInUser ? '/item/edit' : '/login'} className="link"><h3>Publish</h3></Link>
                     {loggedInUser ?
                         <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} />}>
                             <MenuHeader>Account</MenuHeader>
-                            <MenuItem><AccountBoxIcon /><Link to={`/user/${loggedInUser._id}`}>Profile</Link></MenuItem>
+                            <MenuItem><AccountBoxIcon /><Link to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</Link></MenuItem>
                             <MenuDivider />
-                            <MenuItem><EditIcon />Edit Profile</MenuItem>
-                            <MenuItem onClick={logout}><ExitToAppIcon /><Link to="/">Logout</Link></MenuItem>
+                            <MenuItem><EditIcon />&nbsp;&nbsp;Edit Profile</MenuItem>
+                            <MenuItem onClick={logout}><ExitToAppIcon /><Link to="/">&nbsp;&nbsp;Logout</Link></MenuItem>
                         </Menu>
-                        // : <Link to="/login"><h3>Login</h3></Link>}
-                        : <Link to="/login"><AccountCircleIcon fontSize="large"/></Link>} 
+                        : <Link to="/login"><AccountCircleIcon/></Link>} 
                 </nav>
             </section>
         </header>

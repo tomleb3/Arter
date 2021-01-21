@@ -91,7 +91,7 @@ class _ItemDetails extends Component {
                         </div>
                         <p className="desc-txt">{item.description}</p>
                         <div className="tags flex">{item.tags.map((tag, idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
-                        {item.purchasedAt ? <p>${item.price}</p> : <p className="site-clr3">SOLD</p>}
+                        {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
                         <div className="profile-container flex a-center">
                             <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />
                                 <div className="flex col">
