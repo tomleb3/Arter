@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
+import { loadItems } from '../store/actions/itemActions'
 
 class _Explore extends Component {
 
@@ -10,10 +11,23 @@ class _Explore extends Component {
     //     this.props.loadItems(filterTxt)
     // }
 
-    componentDidMount() { window.scrollTo(0, 0) }
+    state = {
+        items: []
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+        this.setState({ items: this.props.items })
+    }
+
+    onFilter = async title => {
+        const items = await this.props.loadItems(title)
+        this.setState({ items })
+    }
 
     render() {
-        const { users, items } = this.props
+        const { users } = this.props
+        const { items } = this.state
 
         return <section className="explore m-page main-layout">
             <div className="filter flex a-center j-center">
@@ -32,4 +46,7 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items,
     }
 }
-export const Explore = connect(mapStateToProps)(_Explore)
+const mapDispatchToProps = {
+    loadItems
+}
+export const Explore = connect(mapStateToProps, mapDispatchToProps)(_Explore)

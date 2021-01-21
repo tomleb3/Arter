@@ -90,8 +90,8 @@ class _ItemDetails extends Component {
                             {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}><EditIcon /></Link>}
                         </div>
                         <p className="desc-txt">{item.description}</p>
-                        <div className="tags flex">{item.tags.map((tag,idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
-                        <p>Price: ${item.price}</p>
+                        <div className="tags flex">{item.tags.map((tag, idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
+                        {item.purchasedAt ? <p>${item.price}</p> : <p className="site-clr3">SOLD</p>}
                         <div className="profile-container flex a-center">
                             <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />
                                 <div className="flex col">
@@ -104,7 +104,7 @@ class _ItemDetails extends Component {
                             </Link>
                         </div>
                         <div className="grow"></div>
-                        {<button className="purchase-btn"
+                        {<button className="purchase-btn font-mont"
                             onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
                                 : () => this.props.history.push('/login')}>Purchase</button>}
                         {/* <p>{item.tags}</p> */}

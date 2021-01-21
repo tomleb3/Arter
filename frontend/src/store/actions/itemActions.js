@@ -4,7 +4,8 @@ export function loadItems(filterBy) {
     return async dispatch => {
         try {
             const items = await itemService.query(filterBy)
-            dispatch({ type: 'SET_ITEMS', items })
+            if (!filterBy) dispatch({ type: 'SET_ITEMS', items })
+            return items
         } catch (err) {
             console.log('itemActions:', err)
         }

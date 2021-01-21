@@ -60,5 +60,9 @@
         textarea {
             resize: none;
         }
+
+        .MuiRating-root {
+            color: $clr3;
+        }
     }
 }

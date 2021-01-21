@@ -4,7 +4,7 @@
         letter-spacing: 1px;
         font-size: 2.2em;
         margin-bottom: 20px;
-        color: rgba(0, 0, 0,0.8);
+        color: rgba(0, 0, 0, 0.8);
     }
     .profile-container {
         img {
@@ -22,7 +22,7 @@
         gap: 3rem;
         .item-img {
             max-width: 30vw;
-            min-width: 20vw;
+            min-width: 25vw;
         }
         h5 {
             margin-bottom: 10px;
@@ -65,8 +65,6 @@
         font-weight: 600;
         text-align: center;
         transition: 0.3s;
-        border-radius: 2px;
-        font-family: Montserrat;
 
         &:hover {
             background-color: #1d8ea5;
