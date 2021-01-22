@@ -114,12 +114,12 @@ class _UserDetails extends Component {
                         <button className="custom-order-btn">Contact Me</button>
                         <ul>SOLD ITEMS:
                             {soldItems.map(order => {
-                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
+                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
                         })}
                         </ul>
                         <ul>BOUGHT ITEMS:
                         {boughtItems.map(order => {
-                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
+                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
                         })}
                         </ul>
                     </div>

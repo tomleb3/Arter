@@ -25,7 +25,7 @@ function _AppHeader({ loggedInUser, logout }) {
                     <Link to="/explore" className="link"><h3>Explore</h3></Link>
                     <Link to={loggedInUser ? '/item/edit' : '/login'} className="link"><h3>Publish</h3></Link>
                     {loggedInUser ?
-                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} />}>
+                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} alt=""/>}>
                             <MenuHeader>Account</MenuHeader>
                             <MenuItem><AccountBoxIcon /><Link to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</Link></MenuItem>
                             <MenuDivider />
