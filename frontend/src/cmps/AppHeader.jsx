@@ -29,10 +29,10 @@ function _AppHeader({ loggedInUser, logout }) {
                             <MenuHeader>Account</MenuHeader>
                             <MenuItem><AccountBoxIcon /><Link to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</Link></MenuItem>
                             <MenuDivider />
-                            <MenuItem><EditIcon />&nbsp;&nbsp;Edit Profile</MenuItem>
+                            <MenuItem><EditIcon /><Link to="/user/edit">&nbsp;&nbsp;Edit Profile</Link></MenuItem>
                             <MenuItem onClick={logout}><ExitToAppIcon /><Link to="/">&nbsp;&nbsp;Logout</Link></MenuItem>
                         </Menu>
-                        : <Link to="/login"><AccountCircleIcon/></Link>} 
+                        : <Link to="/login"><AccountCircleIcon /></Link>}
                 </nav>
             </section>
         </header>

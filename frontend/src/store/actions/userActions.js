@@ -28,25 +28,14 @@ export function removeUser(userId) {
   }
 }
 
-export function addReview(review) {
+export function editUser(user) {
   return async dispatch => {
     try {
-      console.log(review)
-      // await userService.save(review)
-      dispatch({ type: 'ADD_REVIEW', review })
+      console.log('userActions:', user)
+      const editedUser = await userService.save(user)
+      dispatch({ type: 'EDIT_USER', user: editedUser })
     } catch (err) {
       console.log('UserActions: err in addReview', err)
-    }
-  }
-}
-
-export function removeReview(reviewId) {
-  return async dispatch => {
-    try {
-      await userService.save(reviewId)
-      dispatch({ type: 'REMOVE_REVIEW', reviewId })
-    } catch (err) {
-      console.log('UserActions: err in removeReview', err)
     }
   }
 }

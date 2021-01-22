@@ -18,6 +18,7 @@ import { addOrder } from '../store/actions/orderActions.js'
 import { socketService } from '../services/socketService.js'
 import swal from '@sweetalert/with-react'
 import EditIcon from '@material-ui/icons/Edit';
+import CheckIcon from '@material-ui/icons/Check';
 
 class _ItemDetails extends Component {
 
@@ -94,22 +95,27 @@ class _ItemDetails extends Component {
                             <p className="size-txt">Size:&nbsp;&nbsp;{item.size}</p>
                             <div className="tags flex">{item.tags.map((tag, idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
                             {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
-                            <div className="profile-container flex a-center">
-                                <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />
-                                    <div className="flex col">
-                                        <h4>{user.fullname}</h4>
-                                        <div className="flex">
-                                            <Rating name="rating" value={userRating} readOnly size="small" />
-                                            <p className="muted">({user.reviews.length})</p>
+                            <div className="flex col j-between grow">
+                                <div className="profile-container flex a-center">
+                                    <Link to={`/user/${item.sellerId}`} className="flex a-center"><img src={user.imgUrls.profile} alt={user.fullname} />
+                                        <div className="flex col">
+                                            <h4>{user.fullname}</h4>
+                                            <div className="flex">
+                                                <Rating name="rating" value={userRating} readOnly size="small" />
+                                                <p className="muted">({user.reviews.length})</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                </div>
+                                <div className="check-marks flex col muted">
+                                    <div className="flex a-center"><CheckIcon fontSize="small" />Express Shipping</div>
+                                    <div className="flex a-center"><CheckIcon fontSize="small" />Certificate of Authenticity included</div>
+                                    <div className="flex a-center"><CheckIcon fontSize="small" />Returns Accepted 14 days</div>
+                                </div>
+                                {<button className="purchase-btn font-mont"
+                                    onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
+                                        : () => this.props.history.push('/login')}>Purchase</button>}
                             </div>
-                            <div className="grow"></div>
-                            {<button className="purchase-btn font-mont"
-                                onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
-                                    : () => this.props.history.push('/login')}>Purchase</button>}
-                            {/* <p>{item.tags}</p> */}
                         </div>
                     </div>
                 </div>
@@ -118,7 +124,19 @@ class _ItemDetails extends Component {
                         <h3>Other Works By {user.fullname}:</h3>
                         {otherItems.length ? <Swiper
                             spaceBetween={80}
-                            slidesPerView={4}
+                            // slidesPerView={4}
+                            breakpoints={{
+                                // when window width is >= 580px
+                                580: {
+                                    slidesPerView: 2
+                                },
+                                860: {
+                                    slidesPerView: 3,
+                                },
+                                1300: {
+                                    slidesPerView: 4,
+                                },
+                            }}
                             navigation={{
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev'

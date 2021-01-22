@@ -123,5 +123,4 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items
     }
 }
-
 export const Home = connect(mapStateToProps)(_Home)
