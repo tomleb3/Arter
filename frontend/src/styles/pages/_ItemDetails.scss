@@ -21,8 +21,17 @@
     .item-container {
         gap: 3rem;
         .item-img {
-            max-width: 30vw;
+            max-width: 35vw;
             min-width: 25vw;
+
+            // @media (max-width: $narrow-breakpoint) {
+            //     max-width: 20vw;
+            //     min-width: 5vw;
+            // }
+            // @media (max-width: $mobile-breakpoint) {
+            //     max-width: 10vw;
+            //     min-width: 2vw;
+            // }
         }
         h5 {
             margin-bottom: 10px;
@@ -53,6 +62,9 @@
                 p {
                     margin: 0 5px;
                 }
+            }
+            .check-marks {
+                margin-bottom: 15px;
             }
         }
     }
