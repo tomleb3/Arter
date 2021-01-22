@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { GetStarted } from '../cmps/GetStarted.jsx'
+// import { GetStarted } from '../cmps/GetStarted.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
@@ -125,5 +125,4 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items
     }
 }
-
 export const Home = connect(mapStateToProps)(_Home)

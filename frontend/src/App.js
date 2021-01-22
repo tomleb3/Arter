@@ -13,6 +13,7 @@ import { loadUsers } from './store/actions/userActions.js'
 import { loadOrders } from './store/actions/orderActions.js'
 import { LoginSignup } from './pages/LoginSignup'
 import { ItemEdit } from './pages/ItemEdit'
+import { UserEdit } from './pages/UserEdit'
 import { socketService } from './services/socketService.js'
 import swal from '@sweetalert/with-react'
 
@@ -45,14 +46,15 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        { users.length && orders.length ?
+        { items.length && users.length && orders.length ?
           <Switch>
             <Route exact path="/signup" component={LoginSignup} />
             <Route exact path="/login" component={LoginSignup} />
             <Route exact path="/item/edit/:id?" component={ItemEdit} />
             <Route exact path="/item/:id" component={ItemDetails} />
-            <Route path="/explore" component={Explore} />
+            <Route path="/user/edit/:id?" component={UserEdit} />
             <Route path="/user/:id" component={UserDetails} />
+            <Route path="/explore" component={Explore} />
             <Route path="/" component={Home} />
           </Switch> : ''}
         <AppFooter />

@@ -70,15 +70,24 @@ async function remove(userId) {
 async function update(user) {
     try {
         // peek only updatable fields!
-        const userToSave = {
-            _id: ObjectId(user._id),
-            email: user.email,
-            fullname: user.fullname,
-            score: user.score
-        }
         const collection = await dbService.getCollection('user')
+        const userFromDB = await collection.findOne({ '_id': ObjectId(user._id) })
+
+        console.log('GOT USER REVIEW! ', user.reviews[0].byUser)
+        const userToSave = {
+            ...user,
+            _id: ObjectId(user._id),
+            password: userFromDB.password
+        }
+        if (userToSave.reviews.length) {
+            userToSave.reviews.map(review =>
+                review.byUser._id = ObjectId(review.byUser._id))
+        }
+
+        console.log(userToSave)
         await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
-        return userToSave;
+        delete userToSave.password
+        return userToSave
     } catch (err) {
         logger.error(`cannot update user ${user._id}`, err)
         throw err

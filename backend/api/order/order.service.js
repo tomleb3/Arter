@@ -101,8 +101,6 @@ async function getById(orderId) {
         const user = await collection.findOne({ '_id': ObjectId(orderId) })
         
         
-
-
         return user
     } catch (err) {
         logger.error(`while finding user ${userId}`, err)

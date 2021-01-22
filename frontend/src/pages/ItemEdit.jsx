@@ -22,7 +22,6 @@ class _ItemEdit extends Component {
         // if (!this.props.items.length) await this.props.loadItems()
         const { id } = this.props.match.params
         if (id) {
-            console.log('lieli', this.props.items);
             const item = this.props.items.find(item => item._id === id)
             this.setState({ item: item })
         }

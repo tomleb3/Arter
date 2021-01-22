@@ -5,7 +5,7 @@ import { utilService } from '../services/utilService.js'
 import { ReviewList } from '../cmps/ReviewList.jsx'
 import { loadOrders } from '../store/actions/orderActions.js'
 // import { AppFilter } from '../cmps/AppFilter.jsx'
-import { addReview } from '../store/actions/userActions.js'
+import { editUser } from '../store/actions/userActions.js'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
@@ -34,16 +34,24 @@ class _UserDetails extends Component {
         }
     }
 
-    onAddReview = (txt, rating) => {
-        console.log(txt, rating)
+    onAddReview = (txt, rate) => {
+        const { loggedInUser } = this.props
+        let { user } = this.state
+        let { reviews } = user
         const review = {
+            id: utilService.makeId(),
+            createdAt: Date.now(),
             txt,
-            rating,
-            createdAt: Date.now()
+            rate,
+            byUser: {
+                _id: loggedInUser._id,
+                fullname: loggedInUser.fullname,
+                imgUrl: loggedInUser.imgUrls.profile
+            }
         }
-        const { user } = this.state
-        user.reviews.unshift(review)
-        this.props.addReview(review)
+        reviews.unshift(review)
+        user = { ...user, reviews }
+        this.props.editUser(user)
     }
 
     loadUser = async () => {
@@ -114,12 +122,12 @@ class _UserDetails extends Component {
                         <button className="custom-order-btn">Contact Me</button>
                         <ul>SOLD ITEMS:
                             {soldItems.map(order => {
-                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
+                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
                         })}
                         </ul>
                         <ul>BOUGHT ITEMS:
                         {boughtItems.map(order => {
-                            return <li><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
+                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
                         })}
                         </ul>
                     </div>
@@ -145,7 +153,7 @@ class _UserDetails extends Component {
                                 <Rating name="rating" value={userRating} readOnly />
                                 <p className="muted">({user.reviews.length})</p>
                             </div>
-                            <ReviewAdd onAdd={this.onAddReview} />
+                            {user._id !== loggedInUser._id && <ReviewAdd onAdd={this.onAddReview} />}
                         </div>
                         <ReviewList reviews={user.reviews} />
                     </div>
@@ -163,7 +171,7 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = {
-    addReview,
+    editUser,
     loadOrders
 }
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)

@@ -26,10 +26,7 @@ function getById(userId) {
 }
 
 function save(userToSave) {
-    if (userToSave._id)
-        return httpService.put(`user/${userToSave._id}`, userToSave) // UPDATE
-    // else
-    //     return httpService.post('user/', userToSave) // CREATE
+    return httpService.put(`user/${userToSave._id}`, userToSave)
 }
 
 function remove(userId) {
