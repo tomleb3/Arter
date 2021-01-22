@@ -1,70 +1,110 @@
-.profile-header {
-    position: relative;
-    // margin-bottom: 12%;
-
-    .profile-img {
-        top: 55%;
-        left: 50%;
-        transform: translateX(-50%);
-        position: absolute;
-        width: 25%;
-        border-radius: 50%;
-        box-shadow: 0px 0px 36px 0px #00000067;
-        border: 4px solid white;
-    }
-
-    .banner-img {
+.user-details {
+    .profile-header {
         position: relative;
+        // margin-bottom: 12%;
+
+        .profile-img {
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            width: 25%;
+            border-radius: 50%;
+            box-shadow: 0px 0px 36px 0px #00000067;
+            border: 4px solid white;
+        }
+
+        .banner-img {
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .content {
+        .sidebar {
+            width: 25%;
+            // padding: 15px;
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+            a {
+                color: $clr1;
+            }
+
+            ul {
+                margin: 25px 0;
+                list-style: circle;
+                max-width: 90%;
+
+                h4 {
+                    margin-bottom: 5px;
+                }
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+
+            p {
+                margin-top: 30px;
+                font-size: 0.8em;
+                text-align: center;
+            }
+
+            .border-bottom {
+                width: 70%;
+                margin: auto;
+            }
+
+            button {
+                width: 80%;
+                margin: auto;
+                margin-bottom: 1rem;
+                display: block;
+                padding: 1rem;
+                background-color: transparent;
+                font-size: 0.9em;
+                font-family: Montserrat;
+
+                &:first-of-type {
+                    margin-top: 25px;
+                }
+
+                &.custom-order-btn {
+                    // background-color: rgb(223, 245, 246);
+                    border-radius: 5px;
+                    border: 1px solid rgb(202, 240, 255);
+                }
+            }
+        }
+    }
+
+    .main {
+        margin-inline-start: 35px;
         width: 100%;
-    }
-}
 
-.sidebar {
-    width: 25%;
-    padding: 15px;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+        .about {
+            margin: 115px 0 20px;
+            padding: 10px;
+            background-color: rgba(211, 211, 211, 0.25);
+            border-radius: 0.3rem;
+        }
+        .portfolio-container {
+            margin: 75px 0 30px;
+            h3 {
+                font-size: 1.8em;
+            }
+        }
+        .review-container {
+            margin: 100px 0 0;
 
-    button {
-        width: 70%;
-        padding: 10px;
-        margin: 6px;
-    }
-}
+            h3 {
+                margin-inline-end: 15px;
+                font-size: 1.8em;
+            }
 
-.main {
-    margin-inline-start: 35px;
-    width: 100%;
-
-    .about {
-        margin: 115px 0 20px;
-        padding: 10px;
-        background-color: rgba(211, 211, 211, 0.25);
-        border-radius: 0.3rem;
-    }
-    .portfolio-container {
-        margin: 75px 0 30px;
-        h3 {
-            font-size: 1.8em;
+            p {
+                margin: 0 5px;
+            }
         }
     }
-    .review-container {
-        margin: 100px 0 0;
-
-        h3 {
-            margin-inline-end: 15px;
-            font-size: 1.8em;
-        }
-
-        p {
-            margin: 0 5px;
-        }
-    }
-}
-
-.custom-order-btn {
-    background-color: rgb(223, 245, 246);
-    border-radius: 2rem;
-    padding: 1rem;
-    border: 1px solid rgb(202, 240, 255);
-    text-align: center;
 }

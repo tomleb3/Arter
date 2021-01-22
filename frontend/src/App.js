@@ -48,10 +48,10 @@ class _App extends Component {
         <AppHeader />
         { items.length && users.length && orders.length ?
           <Switch>
-            <Route exact path="/signup" component={LoginSignup} />
-            <Route exact path="/login" component={LoginSignup} />
-            <Route exact path="/item/edit/:id?" component={ItemEdit} />
-            <Route exact path="/item/:id" component={ItemDetails} />
+            <Route path="/signup" component={LoginSignup} />
+            <Route path="/login" component={LoginSignup} />
+            <Route path="/item/edit/:id?" component={ItemEdit} />
+            <Route path="/item/:id" component={ItemDetails} />
             <Route path="/user/edit/:id?" component={UserEdit} />
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/explore" component={Explore} />
