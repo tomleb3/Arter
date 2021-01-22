@@ -30,8 +30,8 @@ class _Home extends Component {
         const latestItems = this.getLatestItems(items)
 
         return <section className="home m-page">
-            <div className="hero flex j-center a-center">
-                <div className="main-layout">
+            <div className="hero">
+                <div className="hero-container main-layout flex j-center a-center">
                     <h2>Find New Creations,</h2>
                     <h2>Get To Know The Artists</h2>
                     <div className="btn-cta"><Link to="/explore" className="link"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Discover</Button></Link></div>
@@ -91,9 +91,11 @@ class _Home extends Component {
                     </div>
                 </article>
                 <article className="our-services">
-                    <h2>Join The Family,</h2>
-                    <h2>Share Your Arts</h2>
-                    <div className="btn-cta"><Link to={loggedInUser ? '/item/edit' : '/login'}><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Publish Now</Button></Link></div>
+                    <article className="our-services-container main-layout flex j-center a-center">
+                        <h2>Join The Family,</h2>
+                        <h2>Share Your Arts</h2>
+                        <div className="btn-cta"><Link to={loggedInUser ? '/item/edit' : '/login'}><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Publish Now</Button></Link></div>
+                    </article>
                 </article>
                 <article className="main-layout">
                     <div className="flex j-between a-center">

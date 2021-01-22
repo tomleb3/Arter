@@ -1,0 +1,25 @@
+.swal-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.swal-modal {
+    font-family: Yanone;
+    background-color: rgb(255, 255, 255);
+    border: 6px solid rgb(235, 235, 235);
+}
+
+.swal {
+    .swal-button {
+        border-radius: 2px;
+        background-color: $clr3;
+        &:hover {
+            background-color: $clr1; //Or $clr4
+        }
+    }
+    &-title{
+        font-size: 1.9rem;
+    }
+    &-text{
+        font-size: 1.4rem;
+    }
+}

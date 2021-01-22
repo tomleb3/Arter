@@ -4,52 +4,47 @@
     }
 
     .hero {
-        flex-direction: column;
-        // background-image: url(../../assets/imgs/oohohoh.png);
-        // background-image: url(../../assets/imgs/newnenew.png);
-        // background: url(../../assets/imgs/rtyrtyrty.png), linear-gradient(to right,#4ed8f3a1 , #ffffff44);
         background-blend-mode: luminosity;
-        // transform: translateY(-30%);
         width: 100vw;
         height: 65vh;
         background-size: cover;
-        background-image: url(../../assets/imgs/lastandonly1.png);
-        // background-image: url(../../assets/imgs/lastandonly.png);
-        // background-image: url(../../assets/imgs/lastMinimize.jpg);
-        // background-image: url(../../assets/imgs/new-1.png);
-        // background-image: url(../../assets/imgs/new-1.png);
-        // background-image: url(../../assets/imgs/new-4.png);
-        // background-image: url(../../assets/imgs/asdasdasdad.png);
-        // background-image: url(../../assets/imgs/ididid.png);
-        // background-image: url(../../assets/imgs/rrrrrrrrrrrr.png);
-        // background-image: url(../../assets/imgs/saddasdasdasdasdasd.png);
-        // background-image: url(../../assets/imgs/rererererereer.png);
-        // background-image: url(../../assets/imgs/newsnews.jpg);
+        background-image: url(../../assets/imgs/hero13.png);
+        background-position: center;
+        // background-image: url(../../assets/imgs/lastandonly1.png);
         // background-color: $clr1;
         // background-blend-mode: overlay;
         // background-color: rgb(255, 250, 187);
         // background-blend-mode: darken;
         // filter: saturate(1.7);
         // filter: contrast(1.2);
-
         // filter: brightness(85%);
-
-        h2 {
-            font-size: 3em;
-            color: white;
-            &:first-of-type {
-                transform: translateX(12vw);
+        .hero-container {
+            height: 65vh;
+            flex-direction: column;
+            h2 {
+                font-size: 3em;
+                color: white;
+                &:first-of-type {
+                    margin-left: 450px;
+                    margin-bottom: 2.5vh;
+                    // margin-left: 22vw;
+                    // transform: translateX(12vw);
+                }
+                &:last-of-type {
+                    margin-left: 590px;
+                    margin-bottom: 2.5vh;
+                    // margin-left: 30vw;
+                    // transform: translate(16vw, 3vh);
+                }
             }
-            &:last-of-type {
-                transform: translate(16vw, 3vh);
-            }
-        }
-        .btn-cta {
-            transform: translate(30vw, 6vh);
-
-            .MuiButton-label {
-                font-size: 1.15em;
-                font-weight: bolder;
+            .btn-cta {
+                margin-left: 895px;
+                // margin-left: 16vw;
+                // transform: translate(30vw, 6vh);
+                .MuiButton-label {
+                    font-size: 1.15em;
+                    font-weight: bolder;
+                }
             }
         }
     }
@@ -84,36 +79,38 @@
 
     .our-services {
         width: 100%;
-        height: 400px;
+        // height: 400px;
         background-color: lightgray;
         background: url("../../assets/imgs/bannerImg.jpeg") no-repeat;
         background-size: cover;
         background-position: 0 65%;
-        position: relative;
+        // position: relative;
 
-        h2 {
-            position: absolute;
-            left: 10%;
-            top: 20%;
-            font-size: 3em;
-        }
-        h2:last-of-type {
-            left: 15%;
-            top: 40%;
-        }
-        .btn-cta {
-            position: absolute;
-            left: 25%;
-            bottom: 25%;
-
-            .link {
-                height: 100%;
-                width: 100%;
+        .our-services-container{
+            flex-direction: column;
+            height: 400px;
+            h2 {
+                left: 10%;
+                top: 20%;
+                font-size: 3em;
             }
-
-            .MuiButton-label {
-                font-size: 1.15em;
-                font-weight: bolder;
+            h2:last-of-type {
+                left: 15%;
+                top: 40%;
+            }
+            .btn-cta {
+                left: 25%;
+                bottom: 25%;
+    
+                .link {
+                    height: 100%;
+                    width: 100%;
+                }
+    
+                .MuiButton-label {
+                    font-size: 1.15em;
+                    font-weight: bolder;
+                }
             }
         }
     }

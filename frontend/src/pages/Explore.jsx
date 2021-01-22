@@ -4,6 +4,7 @@ import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
 import { loadItems } from '../store/actions/itemActions'
+import swal from '@sweetalert/with-react'
 
 class _Explore extends Component {
 
@@ -18,6 +19,21 @@ class _Explore extends Component {
     componentDidMount() {
         window.scrollTo(0, 0)
         this.setState({ items: this.props.items })
+
+        // swal(
+        //     <p>There was a problem with the transaction</p>,
+        //     {
+        //     className: "swal",
+        //     html:<a className="site-clr1" href={`#/login`}>asasdasd</a>,
+        //     title: "New order!",
+        //     text: "New order!",
+        //     timer: 6000,
+        //     buttons: {
+        //         buyer: true,
+        //         item: <a href={`#/login`}>asasdasd</a>
+        //       }
+        // })
+
     }
 
     onFilter = async title => {

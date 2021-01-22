@@ -57,18 +57,22 @@ class _ItemDetails extends Component {
             const order = await this.props.addOrder(item)
             console.log('SUCCESS !')
             socketService.emit('ORDER_OUT', order)
-            return swal(
-                <div>
-                    <h1>Success!</h1>
-                    <p>You have purchased this item</p>
-                </div>)
+            return swal({
+                className: "swal",
+                icon: "success",
+                title: "Success!",
+                text: "You have purchased this item",
+                timer: 5000,
+            })
         } catch (err) {
             console.log('Purchase Failed');
-            return swal(
-                <div>
-                    <h1>Failure !</h1>
-                    <p>There was a problem with the transaction</p>
-                </div>)
+            return swal({
+                className: "swal",
+                icon: "info",
+                title: "Failure!",
+                text: "There was a problem with the transaction.",
+                timer: 6000,
+            })
         }
     }
 
