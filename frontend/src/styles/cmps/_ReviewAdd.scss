@@ -1,5 +1,14 @@
-.review-add-modal {
+.add-btn {
+    background-color: #13acca;
+    color: white;
+    border-radius: 5px;
 
+    &.disabled {
+        background-color: rgb(170, 170, 170);
+    }
+}
+
+.review-add-modal {
     h3,
     p {
         margin-bottom: 5px;

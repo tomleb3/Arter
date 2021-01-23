@@ -28,7 +28,21 @@ export function UserList({ users, items, tallMode }) {
     return <div className="user-list">
         <Swiper
             spaceBetween={30}
-            slidesPerView={5}
+            breakpoints={{
+                // when window width is >= 580px
+                500: {
+                    slidesPerView: 2
+                },
+                800: {
+                    slidesPerView: 3
+                },
+                1000: {
+                    slidesPerView: 4
+                },
+                1300: {
+                    slidesPerView: 5
+                },
+            }}
             navigation={{
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'

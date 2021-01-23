@@ -83,6 +83,7 @@ class _ItemDetails extends Component {
         if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
         const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
+        console.log(user._id === item.sellerId)
 
         return (
             <section className="item-details m-page">
@@ -116,7 +117,7 @@ class _ItemDetails extends Component {
                                     <div className="flex a-center"><CheckIcon fontSize="small" />Certificate of Authenticity included</div>
                                     <div className="flex a-center"><CheckIcon fontSize="small" />Returns Accepted 14 days</div>
                                 </div>
-                                {<button className="purchase-btn font-mont"
+                                {<button className="purchase-btn font-mont" disabled={(loggedInUser && loggedInUser._id === item.sellerId) || item.purchasedAt}
                                     onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
                                         : () => this.props.history.push('/login')}>Purchase</button>}
                             </div>

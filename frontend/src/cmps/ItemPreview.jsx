@@ -14,6 +14,7 @@ function _ItemPreview({ item, withProfile, minified }) {
             <Link to={`/item/${item._id}`}><h3>{item.title}</h3></Link>
             {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
         </div>
+        {withProfile && <Link to={`/user/${item.seller._id}`} className="user-name"><p>{item.seller.fullname}</p></Link>}
     </section>
 
     return <section className="item-preview">
@@ -34,7 +35,7 @@ function _ItemPreview({ item, withProfile, minified }) {
     </section>
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         // loggedInUser: state.userModule.loggedInUser
     }
