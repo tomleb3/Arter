@@ -173,11 +173,7 @@ class _UserDetails extends Component {
                                 <Rating name="rating" value={userRating} readOnly />
                                 <p className="muted">({user.reviews.length})</p>
                             </div>
-<<<<<<< HEAD
-                            <ReviewAdd onAdd={this.onAddReview} />
-=======
                             {<ReviewAdd onAdd={this.onAddReview} user={user} />}
->>>>>>> b56325342fda677f8168681a6f8bd4a2816a6fbe
                         </div>
                         <ReviewList reviews={user.reviews} />
                     </div>
