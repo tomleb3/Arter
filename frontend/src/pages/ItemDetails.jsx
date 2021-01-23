@@ -72,7 +72,7 @@ class _ItemDetails extends Component {
                 icon: "info",
                 title: "Failure!",
                 text: "There was a problem with the transaction.",
-                timer: 6000,
+                timer: 5000,
             })
         }
     }

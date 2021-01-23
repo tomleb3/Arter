@@ -149,7 +149,7 @@ class _UserDetails extends Component {
                         <p>Total earnings: ${this.getTotalMoneyEarned()}</p>
                     </aside>
                     <div className="main">
-                        <div className="about">
+                        <div className="about-user">
                             <h1>{user.fullname}</h1>
                             <br />
                             <p>{user.description}</p>
@@ -170,7 +170,7 @@ class _UserDetails extends Component {
                                 <Rating name="rating" value={userRating} readOnly />
                                 <p className="muted">({user.reviews.length})</p>
                             </div>
-                            {user._id !== loggedInUser._id && <ReviewAdd onAdd={this.onAddReview} />}
+                            <ReviewAdd onAdd={this.onAddReview} />
                         </div>
                         <ReviewList reviews={user.reviews} />
                     </div>

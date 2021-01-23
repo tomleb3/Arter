@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import AddIcon from '@material-ui/icons/Add'
 import SendIcon from '@material-ui/icons/Send'
-import { Button } from '@material-ui/core'
+import { Button} from '@material-ui/core'
 import { Rating } from '@material-ui/lab'
 
 function getModalStyle() {
@@ -11,6 +11,8 @@ function getModalStyle() {
         top: `${50}%`,
         left: `${50}%`,
         transform: `translate(-${50}%, -${50}%)`,
+        borderColor: 'darkgray',
+        borderRadius: `${2}px`
     };
 }
 
@@ -19,9 +21,10 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 400,
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
+        border: '1px solid #000',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        borderRadius: `${2}px`,
+        padding: theme.spacing(2, 4, 3)
     },
 }));
 
