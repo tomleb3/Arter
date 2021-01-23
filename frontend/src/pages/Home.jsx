@@ -53,7 +53,7 @@ class _Home extends Component {
         return <section className="home m-page">
             <div className="hero">
                 <div className="hero-container main-layout flex j-center a-center">
-                    <h2>Find New Creations,</h2>
+                    <h2>Find New Creations</h2>
                     <h2>Get To Know The Artists</h2>
                     <div className="btn-cta"><Link to="/explore" className="link"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Discover</Button></Link></div>
                 </div>

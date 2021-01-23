@@ -126,8 +126,10 @@ class _UserDetails extends Component {
                     <aside className="sidebar">
                         {/* <AppFilter /> */}
                         {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button className="custom-order-btn">Edit Profile</button></Link>}
+                        {loggedInUser && loggedInUser._id === user._id && <button className="custom-order-btn">Notifications</button>}
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
+                        <button className="custom-order-btn">Favourites</button>
                         {loggedInUser && loggedInUser._id === user._id &&
                             <Fragment>
                                 <ul><h4>Items Bought</h4>
@@ -153,7 +155,10 @@ class _UserDetails extends Component {
                     </aside>
                     <div className="main">
                         <div className="about-user">
-                            <h1>{user.fullname}</h1>
+                            <div className="flex j-between a-center">
+                                <h1>{user.fullname}</h1>
+                                {/* {sideNav} */}
+                            </div>
                             <br />
                             <p>{user.description}</p>
                         </div>
