@@ -9,7 +9,27 @@ import { utilService } from '../services/utilService.js'
 
 class _Home extends Component {
 
-    componentDidMount() { window.scrollTo(0, 0) }
+    // componentDidMount() {  }
+
+    constructor(props) {
+        super(props);
+        this.state = { windowWidth: 0, windowHeight: 0 };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
+    }
 
     getRandomItems = items => {
         return items.reduce((accRandItems, item, idx) => {
@@ -26,6 +46,7 @@ class _Home extends Component {
 
     render() {
         const { users, items, loggedInUser } = this.props
+        const { windowWidth, windowHeight } = this.state
         const randomItems = this.getRandomItems(items)
         const latestItems = this.getLatestItems(items)
 
@@ -41,41 +62,51 @@ class _Home extends Component {
             <main>
                 <article className="main-layout">
                     <label>Hot Categories</label>
-                    <section className="categories flex j-between txt-center">
+                    <section className="categories flex wrap j-between txt-center">
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", type: "Glass" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826046/Home%20topics/pexels-pixabay-220990_b1c6hg.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1611425886/Home%20topics/tiqlnoshz1qkpmjec3yi.jpg)` }}>
+                                    {windowWidth < 1300 && <h5>Glasswork</h5>}
+                                </div>
+                                {windowWidth > 1300 && <h5>Glasswork</h5>}
                             </Link>
-                            <h5>Glasswork</h5>
                         </div>
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", type: "Wood" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610901953/Home%20topics/woodwork2_dikhpk.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1611431953/Home%20topics/kpdnlxgr5sczqeo9sfom.jpg)` }}>
+                                    {windowWidth < 1300 && <h5>Woodwork</h5>}
+                                </div>
+                                {windowWidth > 1300 && <h5>Woodwork</h5>}
                             </Link>
-                            <h5>Woodwork</h5>
                         </div>
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", type: "Painting" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825845/Home%20topics/painting1_fvloac.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825845/Home%20topics/painting1_fvloac.jpg)` }}>
+                                    {windowWidth < 1300 && <h5>Paintings</h5>}
+                                </div>
+                                {windowWidth > 1300 && <h5>Paintings</h5>}
                             </Link>
-                            <h5>Paintings</h5>
                         </div>
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", type: "Jewelry" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825888/Home%20topics/jewlery_ifguvi.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825888/Home%20topics/jewlery_ifguvi.jpg)` }}>
+                                    {windowWidth < 1300 && <h5>Jewelry</h5>}
+                                </div>
+                                {windowWidth > 1300 && <h5>Jewelry</h5>}
                             </Link>
-                            <h5>Jewelry</h5>
                         </div>
                         <div className="flex col">
                             <Link to={{ pathname: "/explore", type: "Crafts" }}>
                                 <div className="flex a-center j-center"
-                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}></div>
+                                    style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}>
+                                    {windowWidth < 1300 && <h5>Crafts</h5>}
+                                </div>
+                                {windowWidth > 1300 && <h5>Crafts</h5>}
                             </Link>
-                            <h5>Crafts</h5>
                         </div>
                     </section>
                 </article>
@@ -84,7 +115,7 @@ class _Home extends Component {
                         <label>Latest Works</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
-                    <div className="flex j-between wrap">
+                    <div className="latest-works flex j-between wrap">
                         {latestItems.map(item => {
                             return <ItemPreview key={item._id} item={item} minified withProfile />
                         })}
@@ -102,7 +133,7 @@ class _Home extends Component {
                         <label>Featured Creations</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
-                    <div className="flex j-between wrap">
+                    <div className="featured-creations flex j-between wrap">
                         {randomItems.map(item => {
                             return <ItemPreview key={item._id} item={item} minified withProfile />
                         })}
