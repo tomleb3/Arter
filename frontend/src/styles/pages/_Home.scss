@@ -11,8 +11,8 @@
         // background-image: url(../../assets/imgs/lastandonly1.png);
         // background-image: url(../../assets/imgs/hero13.png);
         // background-image: url(../../assets/imgs/lastlast3.png);
-        background-image: url(../../assets/imgs/lastlast4.png);
-        background-position: center;
+        background-image: url(../../assets/imgs/llast.png);
+        // background-position: center;
         // background-attachment: fixed;
         // background-image: url(../../assets/imgs/lastandonly1.png);
         // background-color: $clr1;
@@ -85,26 +85,21 @@
         width: 100%;
         // height: 400px;
         background-color: lightgray;
-        background: url("../../assets/imgs/bannerImg.jpeg") no-repeat;
+        background: url(../../assets/imgs/banner2.png);
         background-size: cover;
-        background-position: 0 65%;
+        background-position: center;
         // position: relative;
 
         .our-services-container{
             flex-direction: column;
             height: 400px;
             h2 {
-                left: 10%;
-                top: 20%;
+                margin-bottom: 10px;
                 font-size: 3em;
             }
-            h2:last-of-type {
-                left: 15%;
-                top: 40%;
-            }
+
             .btn-cta {
-                left: 25%;
-                bottom: 25%;
+                padding-top: 10px;
     
                 .link {
                     height: 100%;

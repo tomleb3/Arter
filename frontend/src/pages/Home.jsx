@@ -1,11 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import { GetStarted } from '../cmps/GetStarted.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { utilService } from '../services/utilService.js'
+// import { GetStarted } from '../cmps/GetStarted.jsx'
 
 class _Home extends Component {
 
@@ -92,7 +92,7 @@ class _Home extends Component {
                 </article>
                 <article className="our-services">
                     <article className="our-services-container main-layout flex j-center a-center">
-                        <h2>Join The Family,</h2>
+                        <h2>Join The Family</h2>
                         <h2>Share Your Arts</h2>
                         <div className="btn-cta"><Link to={loggedInUser ? '/item/edit' : '/login'}><Button variant="outlined" style={{ backgroundColor: '#13acca', color: 'white' }}>Publish Now</Button></Link></div>
                     </article>
