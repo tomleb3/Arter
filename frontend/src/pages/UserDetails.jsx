@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { userService } from '../services/userService.js'
 import { utilService } from '../services/utilService.js'
@@ -98,6 +98,14 @@ class _UserDetails extends Component {
         })
     }
 
+    getTotalMoneyEarned() {
+        const soldItems = this.getSoldItems()
+        console.log(soldItems)
+        let sum = 0
+        if (soldItems) soldItems.map(item => sum += item.item.price)
+        return sum
+    }
+
     render() {
         const { user, items } = this.state
         const { orders, loggedInUser } = this.props
@@ -107,7 +115,7 @@ class _UserDetails extends Component {
 
         if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
         return (
-            <section className="main-layout m-page">
+            <section className="user-details main-layout m-page">
                 <div className="profile-header">
                     <img className="banner-img" src={user.imgUrls.banner} alt=""
                         onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY BANNER')} />
@@ -115,24 +123,36 @@ class _UserDetails extends Component {
                         onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY PROFILE')} />
                 </div>
                 <div className="content flex">
-                    <div className="sidebar">
+                    <aside className="sidebar">
                         {/* <AppFilter /> */}
-                        <Link to="/user-details"><button className="custom-order-btn">Edit profile</button></Link>
+                        {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button className="custom-order-btn">Edit Profile</button></Link>}
                         <button className="custom-order-btn">Custom Order</button>
                         <button className="custom-order-btn">Contact Me</button>
-                        <ul>SOLD ITEMS:
-                            {soldItems.map(order => {
-                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
-                        })}
-                        </ul>
-                        <ul>BOUGHT ITEMS:
-                        {boughtItems.map(order => {
-                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>, bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
-                        })}
-                        </ul>
-                    </div>
+                        {loggedInUser && loggedInUser._id === user._id &&
+                            <Fragment>
+                                <ul><h4>Items Bought</h4>
+                                    {boughtItems.length ?
+                                        boughtItems.map(order => {
+                                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
+                                    bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
+                                        })
+                                        : <p className="muted">Nothing bought yet...</p>}
+                                </ul>
+                                <div className="border-bottom"></div>
+                                <ul><h4>Items Sold</h4>
+                                    {soldItems.length ?
+                                        soldItems.map(order => {
+                                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
+                                    bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
+                                        })
+                                        : <p className="muted">Nothing sold yet...</p>}
+                                </ul>
+                                <div className="border-bottom"></div>
+                                <p>Total earnings: ${this.getTotalMoneyEarned()}</p>
+                            </Fragment>}
+                    </aside>
                     <div className="main">
-                        <div className="about">
+                        <div className="about-user">
                             <h1>{user.fullname}</h1>
                             <br />
                             <p>{user.description}</p>
@@ -153,7 +173,7 @@ class _UserDetails extends Component {
                                 <Rating name="rating" value={userRating} readOnly />
                                 <p className="muted">({user.reviews.length})</p>
                             </div>
-                            {user._id !== loggedInUser._id && <ReviewAdd onAdd={this.onAddReview} />}
+                            {<ReviewAdd onAdd={this.onAddReview} user={user} />}
                         </div>
                         <ReviewList reviews={user.reviews} />
                     </div>
@@ -163,7 +183,7 @@ class _UserDetails extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return {
         loggedInUser: state.userModule.loggedInUser,
         items: state.itemModule.items,

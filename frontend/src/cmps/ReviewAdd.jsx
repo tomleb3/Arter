@@ -1,16 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import AddIcon from '@material-ui/icons/Add'
 import SendIcon from '@material-ui/icons/Send'
-import { Button } from '@material-ui/core'
+import { Button} from '@material-ui/core'
 import { Rating } from '@material-ui/lab'
+import { Link } from 'react-router-dom'
 
 function getModalStyle() {
     return {
         top: `${50}%`,
         left: `${50}%`,
         transform: `translate(-${50}%, -${50}%)`,
+        borderColor: 'darkgray',
+        borderRadius: `${2}px`
     };
 }
 
@@ -19,13 +23,14 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: 400,
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
+        border: '1px solid #000',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        borderRadius: `${2}px`,
+        padding: theme.spacing(2, 4, 3)
     },
 }));
 
-export function ReviewAdd({ onAdd }) {
+function _ReviewAdd({ onAdd, user, loggedInUser }) {
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
@@ -33,7 +38,11 @@ export function ReviewAdd({ onAdd }) {
     const [ratingValue, setValue] = React.useState(5);
     const textAreaRef = React.createRef()
 
-    const handleOpen = () => setOpen(true)
+    const handleOpen = () => {
+        if (!loggedInUser) return window.location.href = '#/login'
+        else if (loggedInUser._id === user._id) return
+        setOpen(true)
+    }
 
     const handleClose = () => setOpen(false)
 
@@ -58,7 +67,7 @@ export function ReviewAdd({ onAdd }) {
     )
 
     return <div>
-        <AddIcon className="pointer" onClick={handleOpen} fontSize="large" style={{ backgroundColor: '#13acca', color: 'white', borderRadius: '5px' }} />
+        <AddIcon className={loggedInUser && loggedInUser._id === user._id ? "add-btn pointer disabled" : "add-btn pointer"} onClick={handleOpen} fontSize="large" />
         <Modal
             className="review-add-modal"
             open={open}
@@ -67,3 +76,10 @@ export function ReviewAdd({ onAdd }) {
         </Modal>
     </div>
 }
+
+const mapStateToProps = state => {
+    return {
+        loggedInUser: state.userModule.loggedInUser
+    }
+}
+export const ReviewAdd = connect(mapStateToProps)(_ReviewAdd)

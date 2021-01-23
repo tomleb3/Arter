@@ -14,7 +14,7 @@ class _Home extends Component {
     getRandomItems = items => {
         return items.reduce((accRandItems, item, idx) => {
             item = items[utilService.getRandomInt(0, items.length)]
-            if (!accRandItems.includes(item) && !item.purchasedAt && accRandItems.length <= 3) accRandItems.push(item)
+            if (!accRandItems.includes(item) && !item.purchasedAt && accRandItems.length <= 7) accRandItems.push(item)
             return accRandItems
         }, [])
     }
@@ -84,9 +84,9 @@ class _Home extends Component {
                         <label>Latest Works</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
-                    <div className="flex j-between">
+                    <div className="flex j-between wrap">
                         {latestItems.map(item => {
-                            return <ItemPreview key={item._id} item={item} minified />
+                            return <ItemPreview key={item._id} item={item} minified withProfile />
                         })}
                     </div>
                 </article>
@@ -102,9 +102,9 @@ class _Home extends Component {
                         <label>Featured Creations</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
-                    <div className="flex j-between">
+                    <div className="flex j-between wrap">
                         {randomItems.map(item => {
-                            return <ItemPreview key={item._id} item={item} minified />
+                            return <ItemPreview key={item._id} item={item} minified withProfile />
                         })}
                     </div>
                 </article>

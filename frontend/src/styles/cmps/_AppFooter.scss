@@ -1,16 +1,16 @@
 footer {
-    height: 300px;
+    // height: 300px;
     width: 100%;
-    // border-top: 1px solid $clr1;
-    
+    // border-top: 1px solid #dee2e6;
+
     .content {
         padding: 100px 0;
-        min-height: 100vh;
 
         section:first-child {
             h3 {
                 margin-inline-start: 35px;
                 margin-bottom: 5px;
+                letter-spacing: 1px;
                 // font-size: 1.5em;
                 // padding-top: 6px;
             }

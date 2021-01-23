@@ -9,17 +9,25 @@
 }
 
 .swal {
+    h1 {
+        margin-bottom: 1rem;
+    }
+    p {
+        margin-bottom: 5px;
+        font-size: 1.1em;
+    }
+
     .swal-button {
         border-radius: 2px;
         background-color: $clr3;
         &:hover {
-            background-color: $clr1; //Or $clr4
+            background-color: $clr1; 
         }
     }
-    &-title{
+    &-title {
         font-size: 1.9rem;
     }
-    &-text{
+    &-text {
         font-size: 1.4rem;
     }
 }

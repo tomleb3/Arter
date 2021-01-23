@@ -33,7 +33,7 @@ class _App extends Component {
 
   onOrderIn = order => {
     return swal(
-      <div>
+      <div className="swal">
         <h1>Hey there!</h1>
         <p><a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
         <p>you can see view your sold items in<a className="site-clr1" href={`#/user/${order.seller._id}`}> your profile page</a></p>
@@ -46,12 +46,12 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        { items.length && users.length && orders.length ?
+        {items.length && users.length && orders.length ?
           <Switch>
-            <Route exact path="/signup" component={LoginSignup} />
-            <Route exact path="/login" component={LoginSignup} />
-            <Route exact path="/item/edit/:id?" component={ItemEdit} />
-            <Route exact path="/item/:id" component={ItemDetails} />
+            <Route path="/signup" component={LoginSignup} />
+            <Route path="/login" component={LoginSignup} />
+            <Route path="/item/edit/:id?" component={ItemEdit} />
+            <Route path="/item/:id" component={ItemDetails} />
             <Route path="/user/edit/:id?" component={UserEdit} />
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/explore" component={Explore} />
