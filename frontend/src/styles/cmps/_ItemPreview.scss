@@ -4,6 +4,11 @@
     height: 100%;
     max-width: auto;
     transition: 0.1s;
+
+    @media (max-width: $mobile-breakpoint) {
+        margin-bottom: 50px;
+    }
+
     &.min {
         // width: fit-content;
         // height: fit-content;
@@ -17,7 +22,7 @@
 
             @media (max-width: $mobile-breakpoint) {
                 width: 100vw;
-                height: 360px;
+                height: auto;
             }
         }
     }
@@ -30,6 +35,12 @@
         width: 100%;
         margin-bottom: 5px;
         background-color: lightgray;
+    }
+
+    .item-info {
+        @media (max-width: $mobile-breakpoint) {
+            margin: 0 5px;
+        }
     }
 
     .user-name {

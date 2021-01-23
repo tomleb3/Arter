@@ -147,6 +147,7 @@ class _ItemDetails extends Component {
                                 prevEl: '.swiper-button-prev'
                             }}
                             observer
+                            updateOnWindowResize
                             autoplay={{ delay: 2500, disableOnInteraction: false }}
                             // pagination={{
                             //     el: '.swiper-pagination',

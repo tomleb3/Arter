@@ -14,7 +14,7 @@ class _Home extends Component {
     getRandomItems = items => {
         return items.reduce((accRandItems, item, idx) => {
             item = items[utilService.getRandomInt(0, items.length)]
-            if (!accRandItems.includes(item) && !item.purchasedAt && accRandItems.length <= 7) accRandItems.push(item)
+            if (!accRandItems.includes(item) && !item.purchasedAt && accRandItems.length <= 3) accRandItems.push(item)
             return accRandItems
         }, [])
     }

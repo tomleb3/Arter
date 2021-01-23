@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function _ReviewAdd({ onAdd, user, loggedInUser }) {
+function _ReviewAdd({ onAdd, currUser, loggedInUser }) {
     const classes = useStyles();
     // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
@@ -40,7 +40,7 @@ function _ReviewAdd({ onAdd, user, loggedInUser }) {
 
     const handleOpen = () => {
         if (!loggedInUser) return window.location.href = '#/login'
-        else if (loggedInUser._id === user._id) return
+        else if (loggedInUser._id === currUser._id) return
         setOpen(true)
     }
 
@@ -67,7 +67,7 @@ function _ReviewAdd({ onAdd, user, loggedInUser }) {
     )
 
     return <div>
-        <AddIcon className={loggedInUser && loggedInUser._id === user._id ? "add-btn pointer disabled" : "add-btn pointer"} onClick={handleOpen} fontSize="large" />
+        <AddIcon className={loggedInUser && loggedInUser._id === currUser._id ? "add-btn pointer disabled" : "add-btn pointer"} onClick={handleOpen} fontSize="large" />
         <Modal
             className="review-add-modal"
             open={open}
