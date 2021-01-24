@@ -5,7 +5,7 @@ import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { utilService } from '../services/utilService.js'
-// import { GetStarted } from '../cmps/GetStarted.jsx'
+
 
 class _Home extends Component {
 
@@ -130,7 +130,7 @@ class _Home extends Component {
                 </article>
                 <article className="main-layout">
                     <div className="flex j-between a-center">
-                        <label>Featured Creations</label>
+                        <label>Our Experts Choices</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
                     <div className="featured-creations flex j-between wrap">

@@ -74,7 +74,8 @@ async function add(item) {
         const { userId } = store
         const orderToAdd = {
             createdAt: Date.now(),
-            // status: 'pending',
+            status: 'pending',
+            shippingStatus: 'pending',
             itemId: ObjectId(item._id),
             sellerId: ObjectId(item.seller._id),
             buyerId: ObjectId(userId)
