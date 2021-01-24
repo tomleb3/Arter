@@ -204,5 +204,4 @@ const mapDispatchToProps = {
     removeUser,
     loadUsers
 }
-
 export const LoginSignup = connect(mapStateToProps, mapDispatchToProps)(_LoginSignup)
