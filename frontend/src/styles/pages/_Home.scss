@@ -1,6 +1,10 @@
 .home {
     article {
         margin: 100px auto;
+
+        @media (max-width: 1150px) {
+            margin: 50px auto;
+        }
     }
 
     .hero {
@@ -58,8 +62,9 @@
             .hero-content {
                 transform: translateY(-42%);
                 font-size: 0.7em;
-                .MuiButton-label {
-                    font-size: 0.7em;
+                .MuiButton-root {
+                    font-size: 0.7rem;
+                    border: 2px solid white;
                 }
             }
         }

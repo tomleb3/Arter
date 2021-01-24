@@ -20,6 +20,7 @@ class _ItemEdit extends Component {
 
     async componentDidMount() {
         // if (!this.props.items.length) await this.props.loadItems()
+        window.scrollTo(0, 0)
         const { id } = this.props.match.params
         if (id) {
             const item = this.props.items.find(item => item._id === id)
