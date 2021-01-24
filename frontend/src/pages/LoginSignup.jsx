@@ -72,7 +72,7 @@ class _LoginSignup extends Component {
             this.setState({ loginCred: { email: '', password: '' } })
             if (sessionStorage['loggedInUser']) {
                 socketService.emit('LOGIN', this.props.loggedInUser)
-                this.props.history.push('/explore')
+                this.props.history.push('/')
             }
         } catch (err) {
             return await this.setState({ msg: 'Login failed, try again.' })
@@ -91,7 +91,7 @@ class _LoginSignup extends Component {
         const signupCreds = { email, password, fullname }
         await this.props.signup(signupCreds)
         this.setState({ signupCred: { email: '', password: '', fullname: '' } })
-        if (sessionStorage['loggedInUser']) this.props.history.push('/explore')
+        if (sessionStorage['loggedInUser']) this.props.history.push('/')
     }
 
     render() {
