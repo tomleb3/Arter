@@ -22,7 +22,7 @@ function calcRate(user) {
     let sum = 0
     user.reviews.map(review => sum += review.rate)
     const rateAvg = sum / user.reviews.length
-    return Math.ceil(rateAvg)
+    return (Math.round(rateAvg * 100) / 100).toFixed(1)
 }
 
 function makeId(length = 5) {

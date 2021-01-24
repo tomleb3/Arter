@@ -13,7 +13,8 @@ class _Explore extends Component {
     // }
 
     state = {
-        items: []
+        items: [],
+        txt: ''
     }
 
     componentDidMount() {
@@ -27,19 +28,20 @@ class _Explore extends Component {
         //     </div>)
     }
 
-    onFilter = async title => {
-        const items = await this.props.loadItems(title)
-        this.setState({ items })
+    onFilter = async txt => {
+        const items = await this.props.loadItems(txt)
+        this.setState({ items, txt })
     }
 
     render() {
         const { users } = this.props
-        const { items } = this.state
+        const { items,txt } = this.state
 
         return <section className="explore m-page main-layout">
             <AppFilter initialFilter={this.props.location.type} onFilter={this.onFilter} />
             <p>Top Artists</p>
             <UserList users={users} items={this.props.items} />
+            {txt && <p>Results for {txt}</p>}
             <ItemList users={users} items={items} withProfile />
         </section>
     }

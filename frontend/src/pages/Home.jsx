@@ -5,7 +5,7 @@ import { UserList } from '../cmps/UserList.jsx'
 import { Button } from '@material-ui/core'
 import { ItemPreview } from '../cmps/ItemPreview.jsx'
 import { utilService } from '../services/utilService.js'
-// import { GetStarted } from '../cmps/GetStarted.jsx'
+
 
 class _Home extends Component {
 
@@ -52,7 +52,7 @@ class _Home extends Component {
 
         return <section className="home m-page">
             <div className="hero">
-                <div className="hero-container main-layout flex j-center a-center">
+                <div className="hero-content main-layout flex j-center a-center">
                     <h2>Find New Creations</h2>
                     <h2>Get To Know The Artists</h2>
                     <div className="btn-cta"><Link to="/explore" className="link"><Button variant="outlined" style={{ color: 'white', borderColor: 'white' }}>Discover</Button></Link></div>
@@ -130,7 +130,7 @@ class _Home extends Component {
                 </article>
                 <article className="main-layout">
                     <div className="flex j-between a-center">
-                        <label>Featured Creations</label>
+                        <label>Our Experts Choices</label>
                         <Link to="/explore" className="see-more">See More...</Link>
                     </div>
                     <div className="featured-creations flex j-between wrap">

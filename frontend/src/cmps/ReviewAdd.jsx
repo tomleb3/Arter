@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Modal from '@material-ui/core/Modal'
 import AddIcon from '@material-ui/icons/Add'
 import SendIcon from '@material-ui/icons/Send'
-import { Button} from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { Rating } from '@material-ui/lab'
 import { Link } from 'react-router-dom'
 
@@ -61,7 +61,8 @@ function _ReviewAdd({ onAdd, currUser, loggedInUser }) {
             <textarea autoFocus ref={textAreaRef}></textarea>
             <div className="btns-container right">
                 <Button onClick={handleClose}>Close</Button>
-                <Button variant="contained" style={{ backgroundColor: '#13acca', color: 'white'}} onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
+                <Button variant="contained" style={{ backgroundColor: '#13acca', color: 'white' }}
+                    onClick={() => { onAdd(textAreaRef.current.value, ratingValue); handleClose() }} endIcon={<SendIcon></SendIcon>}>Post</Button>
             </div>
         </div>
     )

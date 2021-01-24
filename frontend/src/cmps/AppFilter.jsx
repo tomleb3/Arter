@@ -6,27 +6,27 @@ import { loadItems } from '../store/actions/itemActions'
 class _AppFilter extends Component {
 
     state = {
-        title: this.props.initialFilter || '',
+        txt: this.props.initialFilter || '',
     }
 
     componentDidMount() {
-        this.props.onFilter(this.state.title)
+        this.props.onFilter(this.state.txt)
     }
 
     handleChange = (ev) => {
         const { value } = ev.target
-        this.setState(({ title: value }), () => this.props.onFilter(this.state.title))
+        this.setState(({ txt: value }), () => this.props.onFilter(this.state.txt))
     }
 
     onSubmit = ev => ev.preventDefault()
 
     render() {
-        const { title } = this.state
+        const { txt } = this.state
 
         return (
             <section className="app-filter">
                 <form className="filter-form" onSubmit={this.onSubmit}>
-                    <input className="search-bar" placeholder="Search" type="text" name='title' value={title} onChange={this.handleChange} />
+                    <input className="search-bar" placeholder="Search" type="text" name='txt' value={txt} onChange={this.handleChange} />
                 </form>
             </section>
         )

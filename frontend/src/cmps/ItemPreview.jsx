@@ -30,7 +30,7 @@ function _ItemPreview({ item, withProfile, minified }) {
                     {userRating &&
                         <Fragment>
                             <StarIcon color="secondary" readOnly fontSize="small" />
-                            <p className="user-rating">{userRating}</p>
+                            <p className="user-rating font-mont">{userRating}</p>
                         </Fragment>}
                 </div>
             </div>}

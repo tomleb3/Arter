@@ -1,25 +1,20 @@
 .home {
     article {
         margin: 100px auto;
+
+        @media (max-width: 1150px) {
+            margin: 50px auto;
+        }
     }
 
     .hero {
         background-blend-mode: luminosity;
         width: 100vw;
         height: 65vh;
+        transition: 0.3s;
         background-size: cover;
         background-image: url(../../assets/imgs/llast.png);
-        // background-position: center;
-        // background-attachment: fixed;
-        // background-image: url(../../assets/imgs/lastandonly1.png);
-        // background-color: $clr1;
-        // background-blend-mode: overlay;
-        // background-color: rgb(255, 250, 187);
-        // background-blend-mode: darken;
-        // filter: saturate(1.7);
-        // filter: contrast(1.2);
-        // filter: brightness(85%);
-        .hero-container {
+        .hero-content {
             height: 65vh;
             flex-direction: column;
             h2 {
@@ -28,20 +23,14 @@
                 &:first-of-type {
                     margin-left: 450px;
                     margin-bottom: 2.5vh;
-                    // margin-left: 22vw;
-                    // transform: translateX(12vw);
                 }
                 &:last-of-type {
                     margin-left: 590px;
                     margin-bottom: 2.5vh;
-                    // margin-left: 30vw;
-                    // transform: translate(16vw, 3vh);
                 }
             }
             .btn-cta {
                 margin-left: 895px;
-                // margin-left: 16vw;
-                // transform: translate(30vw, 6vh);
                 .MuiButton-label {
                     font-size: 1.15em;
                     font-weight: bolder;
@@ -50,7 +39,7 @@
         }
 
         @media (max-width: 1300px) {
-            .hero-container {
+            .hero-content {
                 justify-content: center;
                 align-items: flex-end;
                 h2,
@@ -60,14 +49,27 @@
             }
         }
         @media (max-width: 1150px) {
-            .hero-container {
+            height: 50vh;
+            .hero-content {
                 justify-content: flex-end;
                 align-items: flex-start;
-                transform: translateY(-30px);
+                font-size: 0.8em;
+                transform: translateY(-165px);
+            }
+        }
+        @media (max-width: 800px) {
+            height: 40vh;
+            .hero-content {
+                transform: translateY(-42%);
+                font-size: 0.7em;
+                .MuiButton-root {
+                    font-size: 0.7rem;
+                    border: 2px solid white;
+                }
             }
         }
         @media (max-width: $mobile-breakpoint) {
-            .hero-container {
+            .hero-content {
                 padding-inline-start: 10px;
             }
         }

@@ -11,6 +11,7 @@ import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
 import { Link } from 'react-router-dom'
 import { Button, ButtonGroup } from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu'
 
 class _UserDetails extends Component {
 
@@ -20,6 +21,7 @@ class _UserDetails extends Component {
     }
 
     async componentDidMount() {
+        this.props.loadOrders()
         this.loadUser()
         this.getItemsForDisplay()
         window.scrollTo(0, 0)
@@ -27,6 +29,7 @@ class _UserDetails extends Component {
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
+            window.location.reload()
             this.props.loadOrders()
             this.loadUser()
             this.getItemsForDisplay()
@@ -106,11 +109,51 @@ class _UserDetails extends Component {
         return sum
     }
 
-    render() {
-        const { user, items } = this.state
-        const { orders, loggedInUser } = this.props
+    sidenavContent(status) {
+        const { user } = this.state
+        const { loggedInUser } = this.props
         const soldItems = this.getSoldItems()
         const boughtItems = this.getBoughtItems()
+
+        return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
+            {/* <AppFilter /> */}
+            {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button className="custom-order-btn">Edit Profile</button></Link>}
+            {loggedInUser && loggedInUser._id === user._id && <button className="custom-order-btn">Notifications</button>}
+            <button className="custom-order-btn">Custom Order</button>
+            <button className="custom-order-btn">Contact Me</button>
+            <button className="custom-order-btn">Favourites</button>
+            {loggedInUser && loggedInUser._id === user._id &&
+                <Fragment>
+                    <ul><h4>Items Bought</h4>
+                        {boughtItems.length ?
+                            boughtItems.map(order => {
+                                return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
+                  bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a>
+                                    <p className="muted">Shipping Status: {order.shippingStatus}</p>
+                                </li>
+                            })
+                            : <p className="muted">Nothing bought yet...</p>}
+                    </ul>
+                    <div className="border-bottom"></div>
+                    <ul><h4>Items Sold</h4>
+                        {soldItems.length ?
+                            soldItems.map(order => {
+                                return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
+                  bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a>
+                                    <p className="muted">Shipping Status: {order.shippingStatus}</p>
+                                </li>
+                            })
+                            : <p className="muted">Nothing sold yet...</p>}
+                    </ul>
+                    <div className="border-bottom"></div>
+                    <p>Total earnings: ${this.getTotalMoneyEarned()}</p>
+                </Fragment>}
+        </aside >
+    }
+
+    render() {
+        const { user, items } = this.state
+        const { loggedInUser } = this.props
         const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
@@ -123,41 +166,20 @@ class _UserDetails extends Component {
                         onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY PROFILE')} />
                 </div>
                 <div className="content flex">
-                    <aside className="sidebar">
-                        {/* <AppFilter /> */}
-                        {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button className="custom-order-btn">Edit Profile</button></Link>}
-                        {loggedInUser && loggedInUser._id === user._id && <button className="custom-order-btn">Notifications</button>}
-                        <button className="custom-order-btn">Custom Order</button>
-                        <button className="custom-order-btn">Contact Me</button>
-                        <button className="custom-order-btn">Favourites</button>
-                        {loggedInUser && loggedInUser._id === user._id &&
-                            <Fragment>
-                                <ul><h4>Items Bought</h4>
-                                    {boughtItems.length ?
-                                        boughtItems.map(order => {
-                                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
-                                    bought from <a href={`#/user/${order.seller._id}`}>{order.seller.fullname}</a></li>
-                                        })
-                                        : <p className="muted">Nothing bought yet...</p>}
-                                </ul>
-                                <div className="border-bottom"></div>
-                                <ul><h4>Items Sold</h4>
-                                    {soldItems.length ?
-                                        soldItems.map(order => {
-                                            return <li key={order._id}><a href={`#/item/${order.item._id}`}>{order.item.title}</a>,
-                                    bought by <a href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a></li>
-                                        })
-                                        : <p className="muted">Nothing sold yet...</p>}
-                                </ul>
-                                <div className="border-bottom"></div>
-                                <p>Total earnings: ${this.getTotalMoneyEarned()}</p>
-                            </Fragment>}
-                    </aside>
+                    {this.sidenavContent('normal')}
                     <div className="main">
                         <div className="about-user">
                             <div className="flex j-between a-center">
                                 <h1>{user.fullname}</h1>
-                                {/* {sideNav} */}
+                                <div className="mobile-sidebar">
+                                    <div className="contact-btns-mobile flex">
+                                        <p className="site-clr3">Custom Order</p>
+                                        <p className="site-clr1">Contact Me</p>
+                                        <label htmlFor="mobile-sidebar-checkbox"><MenuIcon className="pointer" /></label>
+                                    </div>
+                                    <input type="checkbox" id="mobile-sidebar-checkbox" className="d-none" />
+                                    <nav className="d-none">{this.sidenavContent('mobile')}</nav>
+                                </div>
                             </div>
                             <br />
                             <p>{user.description}</p>
