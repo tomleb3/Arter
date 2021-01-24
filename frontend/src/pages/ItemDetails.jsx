@@ -161,7 +161,7 @@ class _ItemDetails extends Component {
                                     <ItemPreview item={item} user={user} minified />
                                 </SwiperSlide>
                             })}
-                        </Swiper> : ''}
+                        </Swiper> : <p className="muted">No works yet...</p>}
                     </div>
                 </div>
             </section>
