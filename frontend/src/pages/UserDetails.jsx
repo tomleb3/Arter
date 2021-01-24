@@ -21,6 +21,7 @@ class _UserDetails extends Component {
     }
 
     async componentDidMount() {
+        this.props.loadOrders()
         this.loadUser()
         this.getItemsForDisplay()
         window.scrollTo(0, 0)
