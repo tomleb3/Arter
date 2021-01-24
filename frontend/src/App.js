@@ -51,7 +51,7 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        {items.length && users.length && orders.length ?
+        {items?.length && users?.length && orders?.length ?
           <Switch>
             <Route path="/signup" component={LoginSignup} />
             <Route path="/login" component={LoginSignup} />
