@@ -49,16 +49,17 @@
             .hero-content {
                 justify-content: flex-end;
                 align-items: flex-start;
+                font-size: 0.8em;
                 transform: translateY(-165px);
             }
         }
         @media (max-width: 800px) {
             height: 40vh;
             .hero-content {
-                transform: translateY(-255px);
-                font-size: 0.8em;
+                transform: translateY(-42%);
+                font-size: 0.7em;
                 .MuiButton-label {
-                    font-size: 0.9em;
+                    font-size: 0.7em;
                 }
             }
         }
