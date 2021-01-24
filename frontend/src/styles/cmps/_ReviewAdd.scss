@@ -1,5 +1,5 @@
 .add-btn {
-    background-color: #13acca;
+    background-color: $clr1;
     color: white;
     border-radius: 5px;
 
@@ -9,19 +9,41 @@
 }
 
 .review-add-modal {
-    h3,
+    &:focus {
+        outline: 0;
+    }
+
+    h3 {
+        margin-bottom: 7px;
+        font-size: 1.9rem;
+    }
+
     p {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
     }
 
     textarea {
+        font-family: Raleway;
+        font-size: 1.1rem;
         width: 100%;
-        height: 100px;
+        height: 140px;
+        margin-bottom: 10px;
+        &:focus {
+            outline: 0;
+        }
     }
 
     .btns-container {
         .MuiButton-root:not(:last-child) {
             margin-inline-end: 15px;
+        }
+        .MuiButton-contained {
+            box-shadow: 0px 0px black;
+            &:hover {
+                box-shadow: 0px 0px black;
+                background-color: #0688a1 !important;
+            }
         }
     }
 }

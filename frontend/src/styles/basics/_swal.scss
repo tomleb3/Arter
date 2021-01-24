@@ -31,3 +31,13 @@
         font-size: 1.4rem;
     }
 }
+
+
+
+.swal-button {
+    border-radius: 2px;
+    background-color: $clr3;
+    &:hover {
+        background-color: $clr1 !important; 
+    }
+}
