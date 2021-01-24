@@ -5,7 +5,7 @@ export function ItemList({ items, minified, withProfile }) {
 
     if (!items.length) {
         return <div className="item-list main-layout">
-            <div>No items found...</div>
+            <div className="muted">No items found...</div>
         </div>
     }
     return (

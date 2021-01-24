@@ -75,11 +75,9 @@ const mapStateToProps = (state) => {
     orders: state.orderModule.orders
   }
 }
-
 const mapDispatchToProps = {
   loadItems,
   loadUsers,
   loadOrders
 }
-
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App)
