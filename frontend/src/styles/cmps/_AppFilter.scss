@@ -12,4 +12,8 @@
             outline: none;
         }
     }
+
+    @media (max-width: $narrow-breakpoint) {
+        text-align: center;
+    }
 }

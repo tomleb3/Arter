@@ -10,18 +10,18 @@
 
 .swal {
     h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.3rem;
     }
     p {
-        margin-bottom: 5px;
-        font-size: 1.1em;
+        margin-bottom: 1em;
+        font-size: 1.4em;
     }
 
     .swal-button {
         border-radius: 2px;
-        background-color: $clr3;
+        background-color: $clr1;
         &:hover {
-            background-color: $clr1; 
+            background-color: $clr3; 
         }
     }
     &-title {
@@ -29,5 +29,15 @@
     }
     &-text {
         font-size: 1.4rem;
+    }
+}
+
+
+
+.swal-button {
+    border-radius: 2px;
+    background-color: $clr3;
+    &:hover {
+        background-color: $clr1 !important; 
     }
 }

@@ -19,7 +19,7 @@ function _AppHeader({ loggedInUser, logout }) {
 
     return (
         <header>
-            <section className="main-layout flex j-between a-center">
+            <section className="main-layout flex j-between a-baseline">
                 <div className="logo"><Link to="/">Arter</Link></div>
                 <nav className="flex">
                     <Link to="/explore" className="link"><h3>Explore</h3></Link>

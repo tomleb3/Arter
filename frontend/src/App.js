@@ -36,9 +36,14 @@ class _App extends Component {
       <div className="swal">
         <h1>Hey there!</h1>
         <p><a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
-        <p>you can see view your sold items in<a className="site-clr1" href={`#/user/${order.seller._id}`}> your profile page</a></p>
+        <p>You can view your sold items in your <a className="site-clr1" href={`#/user/${order.seller._id}`}> Profile Page.</a></p>
       </div>)
   }
+
+
+
+
+
 
   render() {
     const { users, items, orders } = this.props
@@ -46,7 +51,7 @@ class _App extends Component {
     return (
       <main>
         <AppHeader />
-        {items.length && users.length && orders.length ?
+        {items?.length && users?.length && orders?.length ?
           <Switch>
             <Route path="/signup" component={LoginSignup} />
             <Route path="/login" component={LoginSignup} />

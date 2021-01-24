@@ -14,14 +14,14 @@ function getModalStyle() {
         left: `${50}%`,
         transform: `translate(-${50}%, -${50}%)`,
         borderColor: 'darkgray',
-        borderRadius: `${2}px`
+        borderRadius: `${5}px`
     };
 }
 
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        width: 400,
+        width: 430,
         backgroundColor: theme.palette.background.paper,
         border: '1px solid #000',
         boxShadow: theme.shadows[5],
@@ -61,7 +61,7 @@ function _ReviewAdd({ onAdd, currUser, loggedInUser }) {
             <textarea autoFocus ref={textAreaRef}></textarea>
             <div className="btns-container right">
                 <Button onClick={handleClose}>Close</Button>
-                <Button variant="contained" style={{ backgroundColor: '#13acca', color: 'white' }} onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
+                <Button variant="contained" style={{ backgroundColor: '#13acca', color: 'white'}} onClick={() => onAdd(textAreaRef.current.value, ratingValue)} endIcon={<SendIcon></SendIcon>}>Post</Button>
             </div>
         </div>
     )

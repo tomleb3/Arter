@@ -31,8 +31,8 @@ export function removeUser(userId) {
 export function editUser(user) {
   return async dispatch => {
     try {
-      console.log('userActions:', user)
       const editedUser = await userService.save(user)
+      console.log('editeduUser:', editedUser)
       dispatch({ type: 'EDIT_USER', user: editedUser })
     } catch (err) {
       console.log('UserActions: err in addReview', err)
