@@ -5,4 +5,7 @@
     @media (max-width: 1300px) {
         padding-right: 0;
     }
+    @media (max-width: $mobile-breakpoint) {
+        margin: 10px 10px 100px;
+    }
 }

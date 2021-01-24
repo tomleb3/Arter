@@ -15,4 +15,10 @@
     .MuiRating-root {
         margin: 10px 0;
     }
+
+    @media (max-width: $mobile-breakpoint) {
+        p {
+            font-size: 1.075em;
+        }
+    }
 }

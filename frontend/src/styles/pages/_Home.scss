@@ -195,6 +195,13 @@
         display: block;
         margin-bottom: 25px;
         font-size: 2em;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 1.5em;
+            :first-of-type {
+                // padding: 0 10px;
+            }
+        }
     }
 
     .our-services {
