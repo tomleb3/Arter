@@ -35,7 +35,7 @@ function _ItemPreview({ item, withProfile, minified }) {
                 </div>
             </div>}
             <Link to={`/item/${item._id}`}><h3>{item.title}</h3></Link>
-            {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
+            {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p className="font-mont">${item.price}</p>}
         </div>
     </section>
 }

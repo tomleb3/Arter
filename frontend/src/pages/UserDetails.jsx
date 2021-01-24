@@ -172,7 +172,7 @@ class _UserDetails extends Component {
                             <div className="flex j-between a-center">
                                 <h1>{user.fullname}</h1>
                                 <div className="mobile-sidebar">
-                                    <div className="contact-btns-mobile flex">
+                                    <div className="contact-btns-mobile flex a-center">
                                         <p className="site-clr3">Custom Order</p>
                                         <p className="site-clr1">Contact Me</p>
                                         <label htmlFor="mobile-sidebar-checkbox"><MenuIcon className="pointer" /></label>
@@ -182,7 +182,7 @@ class _UserDetails extends Component {
                                 </div>
                             </div>
                             <br />
-                            <p>{user.description}</p>
+                            <p className="desc-txt">{user.description}</p>
                         </div>
 
                         <div className="portfolio-container flex a-center j-between">

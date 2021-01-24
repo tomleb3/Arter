@@ -6,7 +6,7 @@
     transition: 0.1s;
 
     @media (max-width: $mobile-breakpoint) {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     &.min {
@@ -25,6 +25,12 @@
                 height: auto;
             }
         }
+
+        .item-info {
+            h3 {
+                font-weight: 400;
+            }
+        }
     }
 
     p {
@@ -34,12 +40,17 @@
     .item-img {
         width: 100%;
         margin-bottom: 5px;
-        background-color: lightgray;
+        // background-color: lightgray;
     }
 
     .item-info {
+        h3 {
+            font-weight: 400;
+            font-size: 1.5em;
+        }
+
         @media (max-width: $mobile-breakpoint) {
-            margin: 0 5px;
+            margin: 5px 10px;
         }
     }
 
@@ -47,9 +58,8 @@
         width: fit-content;
         // margin-bottom: 10px;
 
-        h4 {
-            font-size: 1.3em;
-            letter-spacing: 1px;
+        p {
+            font-size: 1.1em;
         }
     }
 

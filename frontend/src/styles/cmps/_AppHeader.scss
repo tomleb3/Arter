@@ -35,6 +35,10 @@ header {
             color: $clr1;
         }
     }
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 0 10px;
+    }
 }
 
 .logo {
@@ -44,5 +48,5 @@ header {
     color: $clr1;
     font-style: italic;
     font-weight: 600;
-    margin-left:5px;
+    margin-left: 5px;
 }
