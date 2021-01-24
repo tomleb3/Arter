@@ -151,6 +151,7 @@
             }
 
             #mobile-sidebar-checkbox:checked + nav {
+                // padding-top: 4px;
                 display: flex;
                 flex-direction: column;
                 z-index: 5;
@@ -198,6 +199,9 @@
 
             p {
                 margin: 0 5px;
+                &.rate-num {
+                    padding-top: 3px;
+                }
             }
             @media (max-width: $mobile-breakpoint) {
                 margin: 100px 10px 0 10px;

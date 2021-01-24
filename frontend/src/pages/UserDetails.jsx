@@ -198,7 +198,7 @@ class _UserDetails extends Component {
                             <div className="flex">
                                 <h3>Reviews</h3>
                                 <Rating name="rating" value={userRating} readOnly />
-                                <p className="muted">({user.reviews.length})</p>
+                                <p className="muted font-mont rate-num">({user.reviews.length})</p>
                             </div>
                             {<ReviewAdd onAdd={this.onAddReview} currUser={user} />}
                         </div>

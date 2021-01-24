@@ -21,11 +21,14 @@ class _Explore extends Component {
         window.scrollTo(0, 0)
         this.setState({ items: this.props.items })
 
-        // swal(
-        //     <div className="swal">
-        //         <h1>Hey there!</h1>
-        //         <p className="site-clr1">Masheo</p>
-        //     </div>)
+        // swal({
+        //     className: "swal",
+        //     // icon: "success",
+        //     title: "Purchase completed!",
+        //     text: "You can view your purchase details in your profile page.",
+        //     timer: 6000,
+        // })
+
     }
 
     onFilter = async txt => {

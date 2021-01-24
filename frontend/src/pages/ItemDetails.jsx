@@ -60,19 +60,17 @@ class _ItemDetails extends Component {
             socketService.emit('ORDER_OUT', order)
             return swal({
                 className: "swal",
-                icon: "success",
-                title: "Transaction completed!",
-                text: "You have successfully purchased this item",
-                timer: 5000,
+                title: "Purchase completed!",
+                text: "You can view your purchase details in your profile page",
+                timer: 6000,
             })
         } catch (err) {
             console.log('Purchase Failed');
             return swal({
                 className: "swal",
-                icon: "info",
-                title: "Failure!",
-                text: "There was a problem with the transaction.",
-                timer: 5000,
+                title: "Oops!",
+                text: "There was a problem with the purchase process.",
+                timer: 6000,
             })
         }
     }
@@ -107,7 +105,7 @@ class _ItemDetails extends Component {
                                             <h4>{user.fullname}</h4>
                                             <div className="flex">
                                                 <Rating name="rating" value={userRating} readOnly size="small" />
-                                                <p className="muted">({user.reviews.length})</p>
+                                                <p className="muted font-mont">({user.reviews.length})</p>
                                             </div>
                                         </div>
                                     </Link>

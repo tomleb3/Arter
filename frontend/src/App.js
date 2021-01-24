@@ -36,14 +36,9 @@ class _App extends Component {
       <div className="swal">
         <h1>Hey there!</h1>
         <p><a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
-        <p>You can view your sold items in your <a className="site-clr1" href={`#/user/${order.seller._id}`}> Profile Page.</a></p>
+        <p>You can view your sold items details in your <a className="site-clr1" href={`#/user/${order.seller._id}`}> Profile Page.</a></p>
       </div>)
   }
-
-
-
-
-
 
   render() {
     const { users, items, orders } = this.props
