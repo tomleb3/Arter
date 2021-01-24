@@ -1,11 +1,35 @@
 footer {
-    // height: 300px;
     width: 100%;
+    background-color: #d3d3d33d;
+    // height: 300px;
     // background-color: rgb(243, 243, 243);
     // border-top: 1px solid #dee2e6;
 
     .content {
         padding: 100px 0;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            align-items: flex-start !important;
+            padding-left: 10px;
+            white-space: nowrap;
+
+            section:first-child {
+                margin-bottom: 2.5rem;
+                h3 {
+                    margin-inline-start: 10px !important;
+                }
+            }
+            section:last-of-type {
+                div {
+                    flex-direction: row;
+
+                    .link {
+                        margin-inline-end: 15px;
+                    }
+                }
+            }
+        }
 
         section:first-child {
             h3 {
@@ -13,6 +37,7 @@ footer {
                 margin-inline-start: 35px;
                 margin-bottom: 5px;
                 letter-spacing: 1px;
+                font-weight: 400;
                 // font-size: 1.5em;
                 // padding-top: 6px;
             }

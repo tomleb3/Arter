@@ -18,6 +18,12 @@
             position: relative;
             width: 100%;
         }
+
+        @media (max-width: 800px) {
+            .profile-img {
+                box-shadow: 0px 0px 13px 0px #00000067;
+            }
+        }
     }
 
     .content {
@@ -112,9 +118,19 @@
 
         .about-user {
             margin: 115px 0 20px;
-            padding: 15px 10px 20px 10px;
+            padding: 15px 10px 20px 15px;
             background-color: rgba(211, 211, 211, 0.25);
             border-radius: 0.3rem;
+
+            @media (max-width: 800px) {
+                margin: 50px 0 20px;
+                padding: 15px 15px 20px 15px;
+            }
+
+            .desc-txt {
+                font-size: 1.15em;
+                letter-spacing: 1px;
+            }
 
             .mobile-sidebar {
                 display: none;
@@ -129,13 +145,13 @@
                 .contact-btns-mobile {
                     p {
                         margin-inline-end: 10px;
-                        font-size: 0.8em;
-                        margin-top: 5px;
+                        font-weight: 600;
                     }
                 }
             }
 
             #mobile-sidebar-checkbox:checked + nav {
+                // padding-top: 4px;
                 display: flex;
                 flex-direction: column;
                 z-index: 5;
@@ -167,6 +183,11 @@
             h3 {
                 font-size: 1.8em;
             }
+
+            @media (max-width: $mobile-breakpoint) {
+                margin: 50px 0 30px;
+                padding: 0 10px;
+            }
         }
         .review-container {
             margin: 100px 0 0;
@@ -180,6 +201,13 @@
                 margin: 0 5px;
                 &.rate-num {
                     padding-top: 3px;
+                }
+            }
+            @media (max-width: $mobile-breakpoint) {
+                margin: 100px 10px 0 10px;
+
+                h3 {
+                    font-size: 1.5em;
                 }
             }
         }
