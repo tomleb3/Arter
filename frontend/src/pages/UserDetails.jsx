@@ -29,6 +29,7 @@ class _UserDetails extends Component {
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
+            window.location.reload()
             this.props.loadOrders()
             this.loadUser()
             this.getItemsForDisplay()

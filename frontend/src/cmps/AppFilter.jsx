@@ -26,7 +26,7 @@ class _AppFilter extends Component {
         return (
             <section className="app-filter">
                 <form className="filter-form" onSubmit={this.onSubmit}>
-                    <input className="search-bar" placeholder="Search" type="text" name='txt' value={txt} onChange={this.handleChange} />
+                    <input className="search-bar" placeholder="Search" type="text" autoComplete="off" name='txt' value={txt} onChange={this.handleChange} />
                 </form>
             </section>
         )
