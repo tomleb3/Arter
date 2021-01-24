@@ -154,7 +154,7 @@ class _UserDetails extends Component {
     render() {
         const { user, items } = this.state
         const { loggedInUser } = this.props
-        const userRating = utilService.calcRate(user) || 0
+        const userRating = utilService.calcRate(user)|| 0
 
         if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
         return (
