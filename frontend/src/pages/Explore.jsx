@@ -20,20 +20,11 @@ class _Explore extends Component {
         window.scrollTo(0, 0)
         this.setState({ items: this.props.items })
 
-        // swal({
-        //     content: {
-        //       element: "h1",
-        //       attributes: {
-        //         txt: "Huat",
-        //       },
-        //     },
-        //   });
-
-        swal(
-            <div className="swal">
-                <h1>Hey there!</h1>
-                <p className="site-clr1">Masheo</p>
-            </div>)
+        // swal(
+        //     <div className="swal">
+        //         <h1>Hey there!</h1>
+        //         <p className="site-clr1">Masheo</p>
+        //     </div>)
     }
 
     onFilter = async title => {
