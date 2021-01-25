@@ -1,15 +1,7 @@
 const dbService = require('../../services/db.service')
 const userService = require('../user/user.service')
-// const logger = require('../../services/logger.service')
-// const reviewService = require('../review/review.service')
+const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
-
-module.exports = {
-    query,
-    getById,
-    remove,
-    update
-}
 
 
 async function query(filterBy) {
@@ -107,4 +99,11 @@ async function update(item) {
         logger.error(`cannot update item ${item._id}`, err)
         throw err
     }
+}
+
+module.exports = {
+    query,
+    getById,
+    remove,
+    update
 }
