@@ -11,6 +11,7 @@ FRONTEND/coverage
 
 # production
 FRONTEND/build
+BACKEND/public
 
 .vscode/
 
