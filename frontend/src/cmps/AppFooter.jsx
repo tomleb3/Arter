@@ -7,7 +7,7 @@ export function AppFooter() {
                 <div className="logo"><Link to="/">Arter</Link></div>
                 <h3>is an online marketplace created with the artist in mind.</h3>
                 <h3>Our application gives artists, both amateur and professional,</h3>
-                <h3>a safe platform to share and sell their art with the world.</h3>
+                <h3>a social platform to share and sell their art with the world.</h3>
             </section>
             <section>
                 <p>Meet the team</p>
