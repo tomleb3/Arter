@@ -59,7 +59,7 @@ class _ItemDetails extends Component {
             console.log(order);
             console.log('SUCCESS !')
             socketService.emit('ORDER_OUT', order)
-            this.setState({item: order.item})
+            this.setState({ item: order.item })
             return swal({
                 className: "swal",
                 title: "Purchase completed!",
@@ -97,7 +97,7 @@ class _ItemDetails extends Component {
                                 {(loggedInUser && loggedInUser._id === item.sellerId) && <Link to={`/item/edit/${item._id}`}><EditIcon /></Link>}
                             </div>
                             <p className="desc-txt">{item.description}</p>
-                            <p className="size-txt">Size:&nbsp;&nbsp;{item.size}</p>
+                            <p className="size-txt font-mont">Size:&nbsp;&nbsp;{item.size}</p>
                             <div className="tags flex">{item.tags.map((tag, idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
                             {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
                             <div className="flex col j-between grow">
@@ -117,7 +117,7 @@ class _ItemDetails extends Component {
                                     <div className="flex a-center"><CheckIcon fontSize="small" />Certificate of Authenticity included</div>
                                     <div className="flex a-center"><CheckIcon fontSize="small" />Returns Accepted 14 days</div>
                                 </div>
-                                {<button className="purchase-btn font-mont" disabled={(loggedInUser && loggedInUser._id === item.sellerId) || item.purchasedAt}
+                                {<button className={item.purchasedAt ? "purchase-btn font-mont purchased" : "purchase-btn font-mont"} disabled={(loggedInUser && loggedInUser._id === item.sellerId) || item.purchasedAt}
                                     onClick={(loggedInUser && loggedInUser._id !== item.sellerId) ? this.onPurchase
                                         : () => this.props.history.push('/login')}>Purchase</button>}
                             </div>

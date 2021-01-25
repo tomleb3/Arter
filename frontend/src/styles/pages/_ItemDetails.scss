@@ -25,7 +25,6 @@
         h4 {
             letter-spacing: 1px;
         }
-
     }
     .item-container {
         gap: 3rem;
@@ -40,6 +39,7 @@
 
             @media (max-width: 1000px) {
                 max-width: 100%;
+                padding-bottom: 15px;
             }
         }
         h5 {
@@ -52,9 +52,9 @@
             p,
             .tags {
                 margin-bottom: 30px;
-            }
-            small {
-                color: $clr1;
+                small {
+                    color: $clr1;
+                }
             }
             .desc-txt {
                 font-size: 1.1em;
@@ -76,7 +76,7 @@
                 margin-bottom: 15px;
             }
 
-            @media (max-width: $mobile-breakpoint) {
+            @media (max-width: 1000px) {
                 width: 100%;
             }
         }
@@ -89,6 +89,7 @@
         font-size: 1.3em;
         font-weight: 600;
         text-align: center;
+        letter-spacing: 1px;
         transition: 0.2s;
 
         &:hover {
@@ -96,6 +97,11 @@
         }
         &:disabled {
             background-color: rgb(170, 170, 170);
+            &.purchased {
+                &::after {
+                    content: "d";
+                }
+            }
         }
     }
     .other-works {

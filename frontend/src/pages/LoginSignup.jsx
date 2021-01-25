@@ -62,10 +62,9 @@ class _LoginSignup extends Component {
 
     doLogin = async ev => {
         ev.preventDefault()
-        const { email, password } = this.state.loginCred
-        if (!email || !password) {
-            return this.setState({ msg: 'Please enter user/password' })
-        }
+        let { email, password } = this.state.loginCred
+        if (!email || !password) return this.setState({ msg: 'Please enter user/password' })
+        email = email.toLowerCase()
         const userCreds = { email, password }
         try {
             await this.props.login(userCreds)
@@ -82,11 +81,10 @@ class _LoginSignup extends Component {
     doSignup = async ev => {
         ev.preventDefault()
         let { email, password, firstName, lastName } = this.state.signupCred
-        if (!email || !password || !firstName || !lastName || !email) {
-            return this.setState({ msg: 'All inputs are required' })
-        }
+        if (!email || !password || !firstName || !lastName) return this.setState({ msg: 'All inputs are required' })
         firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1)
         lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1)
+        email = email.toLowerCase()
         let fullname = firstName + ' ' + lastName
         const signupCreds = { email, password, fullname }
         await this.props.signup(signupCreds)

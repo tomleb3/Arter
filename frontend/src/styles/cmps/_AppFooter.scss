@@ -6,7 +6,7 @@ footer {
 
     .content {
         padding: 80px 0;
-    
+
         @media (max-width: 800px) {
             flex-direction: column;
             align-items: flex-start !important;
@@ -28,6 +28,9 @@ footer {
                     }
                 }
             }
+        }
+        @media (max-width: 470px) {
+            font-size: 0.8em;
         }
 
         section:first-child {

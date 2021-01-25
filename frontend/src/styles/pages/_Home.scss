@@ -84,6 +84,14 @@
                 padding-inline-start: 10px;
             }
         }
+        @media (max-width: 400px) {
+            .hero-content {
+                font-size: 0.5em;
+                .MuiButton-root {
+                    font-size: 0.5rem;
+                }
+            }
+        }
     }
 
     .categories {
