@@ -56,8 +56,10 @@ class _ItemDetails extends Component {
         console.log(item)
         try {
             const order = await this.props.addOrder(item)
+            console.log(order);
             console.log('SUCCESS !')
             socketService.emit('ORDER_OUT', order)
+            this.setState({item: order.item})
             return swal({
                 className: "swal",
                 title: "Purchase completed!",
