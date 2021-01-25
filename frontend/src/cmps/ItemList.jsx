@@ -5,7 +5,7 @@ export function ItemList({ items, minified, withProfile }) {
 
     if (!items.length) {
         return <div className="item-list main-layout">
-            <div className="muted">No items found...</div>
+            <p className="no-items-txt muted">No items found...</p>
         </div>
     }
     return (
@@ -17,10 +17,4 @@ export function ItemList({ items, minified, withProfile }) {
             </Masonry>
         </ResponsiveMasonry>
     )
-
-    // return <section className="item-list grid j-center">
-    //     {items.map(item => {
-    //         return <ItemPreview key={item._id} item={item} withProfile={withProfile} />
-    //     })}
-    // </section>
 }

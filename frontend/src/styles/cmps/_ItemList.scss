@@ -3,4 +3,14 @@
     // grid-auto-rows: minmax(150px, auto);
     // grid-gap: 2em;
     // margin-bottom: 200px;
+
+    .no-items-txt {
+        margin-bottom: 50vh;
+        font-size: 1.1em;
+        margin-block-start: 20px;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-inline-start: 10px;
+        }
+    }
 }

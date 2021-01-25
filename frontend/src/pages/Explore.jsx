@@ -38,13 +38,13 @@ class _Explore extends Component {
 
     render() {
         const { users } = this.props
-        const { items,txt } = this.state
+        const { items, txt } = this.state
 
         return <section className="explore m-page main-layout">
             <AppFilter initialFilter={this.props.location.type} onFilter={this.onFilter} />
             <p>Top Artists</p>
             <UserList users={users} items={this.props.items} />
-            {txt && <p>Results for {txt}</p>}
+            <p className={txt ? "visible" : "hidden"}>Results for {txt}</p>
             <ItemList users={users} items={items} withProfile />
         </section>
     }
