@@ -1,9 +1,21 @@
 .home {
     article {
         margin: 100px auto;
+        > :first-child,
+        > label:first-of-type {
+            margin-bottom: 20px;
+        }
 
         @media (max-width: 1150px) {
             margin: 50px auto;
+        }
+        @media (max-width: $mobile-breakpoint) {
+            > :first-child {
+                margin: 0 10px 20px 10px;
+            }
+            > label:first-of-type {
+                margin: 0 0 25px 10px;
+            }
         }
     }
 
@@ -151,7 +163,7 @@
             }
         }
         @media (max-width: 580px) {
-            width: 90%;
+            width: 95%;
             margin: auto;
             div {
                 height: 180px;
@@ -193,7 +205,6 @@
 
     label {
         display: block;
-        margin-bottom: 25px;
         font-size: 2em;
 
         @media (max-width: $mobile-breakpoint) {

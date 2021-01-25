@@ -150,8 +150,11 @@
                 }
             }
 
+            label[for=mobile-sidebar-checkbox] {
+                padding-top: 4px;
+            }
+
             #mobile-sidebar-checkbox:checked + nav {
-                // padding-top: 4px;
                 display: flex;
                 flex-direction: column;
                 z-index: 5;
