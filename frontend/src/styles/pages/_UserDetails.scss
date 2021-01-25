@@ -29,7 +29,6 @@
     .content {
         .sidebar {
             width: 25%;
-            // padding: 15px;
             border-right: 1px solid rgba(0, 0, 0, 0.1);
 
             :first-child {
@@ -68,6 +67,10 @@
                 margin-top: 30px;
                 font-size: 0.8em;
                 text-align: center;
+
+                &:last-of-type {
+                    margin-block-end: 15px;
+                }
             }
 
             .border-bottom {
@@ -84,12 +87,8 @@
                 background-color: transparent;
                 font-size: 0.9em;
                 font-family: Montserrat;
-
-                &.custom-order-btn {
-                    // background-color: rgb(223, 245, 246);
-                    border-radius: 5px;
-                    border: 1px solid rgb(190, 230, 250);
-                }
+                border-radius: 5px;
+                border: 1px solid rgb(190, 230, 250);
 
                 &:hover {
                     background-color: rgba(126, 126, 126, 0.1);
@@ -98,7 +97,6 @@
 
             &.mobile {
                 display: none;
-                max-height: 100vh;
                 @media (max-width: 1000px) {
                     display: flex;
                     flex-direction: column;
@@ -150,7 +148,7 @@
                 }
             }
 
-            label[for=mobile-sidebar-checkbox] {
+            label[for="mobile-sidebar-checkbox"] {
                 padding-top: 4px;
             }
 
@@ -165,6 +163,8 @@
                 width: 30%;
                 background-color: white;
                 border-right: 1px solid rgba(0, 0, 0, 0.1);
+                margin-block-start: 15px;
+                overflow-y: scroll;
 
                 :first-child {
                     margin-top: 10px;

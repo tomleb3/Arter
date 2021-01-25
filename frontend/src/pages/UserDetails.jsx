@@ -117,11 +117,11 @@ class _UserDetails extends Component {
 
         return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
             {/* <AppFilter /> */}
-            {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button className="custom-order-btn">Edit Profile</button></Link>}
-            {loggedInUser && loggedInUser._id === user._id && <button className="custom-order-btn">Notifications</button>}
-            <button className="custom-order-btn">Custom Order</button>
-            <button className="custom-order-btn">Contact Me</button>
-            <button className="custom-order-btn">Favourites</button>
+            {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button>Edit Profile</button></Link>}
+            {loggedInUser && loggedInUser._id === user._id && <button>Notifications</button>}
+            <button>Custom Order</button>
+            <button>Contact Me</button>
+            <button>Favourites</button>
             {loggedInUser && loggedInUser._id === user._id &&
                 <Fragment>
                     <ul><h4>Items Bought</h4>
