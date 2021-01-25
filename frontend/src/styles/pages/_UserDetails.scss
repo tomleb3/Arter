@@ -186,6 +186,10 @@
             @media (max-width: $mobile-breakpoint) {
                 margin: 50px 0 30px;
                 padding: 0 10px;
+
+                h3 {
+                    font-size: 1.55em;
+                }
             }
         }
         .review-container {
