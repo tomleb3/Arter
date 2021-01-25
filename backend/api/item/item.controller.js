@@ -4,7 +4,7 @@ const logger = require('../../services/logger.service')
 async function getItems(req, res) {
     try {
         const filterTxt = req.query.txt || ''
-        const items = await itemService.query(filterTxt)
+        const items = await itemService.query({ txt: filterTxt })
         res.send(items)
     } catch (err) {
         logger.error('Failed to get items', err)

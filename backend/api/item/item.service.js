@@ -44,6 +44,22 @@ async function query(filterBy) {
     }
 }
 
+function _buildCriteria(filterBy) {
+    const criteria = {}
+    if (filterBy.txt) {
+        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
+        criteria.$or = [
+            {
+                title: txtCriteria
+            },
+            {
+                tags: txtCriteria
+            }
+        ]
+    }
+    return criteria
+}
+
 async function getById(itemId) {
     try {
         const collection = await dbService.getCollection('item')
@@ -91,20 +107,4 @@ async function update(item) {
         logger.error(`cannot update item ${item._id}`, err)
         throw err
     }
-}
-
-function _buildCriteria(txt) {
-    const criteria = {}
-    if (txt) {
-        const txtCriteria = { $regex: txt, $options: 'i' }
-        criteria.$or = [
-            {
-                title: txtCriteria
-            },
-            {
-                tags: txtCriteria
-            }
-        ]
-    }
-    return criteria
 }
