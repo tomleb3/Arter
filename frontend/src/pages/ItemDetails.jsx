@@ -80,7 +80,7 @@ class _ItemDetails extends Component {
     render() {
         const { item, otherItems } = this.state
         const { loggedInUser } = this.props
-        if (!item || !this.props.users.length) return <div className="loader-container"><div className="loader m-page"></div></div>
+        if (!item || !this.props.users.length) return <div></div>
         const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
         console.log(user._id === item.sellerId)

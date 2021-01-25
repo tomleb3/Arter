@@ -156,7 +156,7 @@ class _UserDetails extends Component {
         const { loggedInUser } = this.props
         const userRating = utilService.calcRate(user)|| 0
 
-        if (!user) return <div className="loader-container"><div className="loader m-page"></div></div>
+        if (!user) return <div></div>
         return (
             <section className="user-details main-layout m-page">
                 <div className="profile-header">

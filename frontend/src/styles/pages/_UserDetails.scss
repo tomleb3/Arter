@@ -164,6 +164,7 @@
                 background-color: white;
                 border-right: 1px solid rgba(0, 0, 0, 0.1);
                 margin-block-start: 15px;
+                padding-bottom: 30px;
                 overflow-y: scroll;
 
                 :first-child {
@@ -171,13 +172,14 @@
                 }
                 button {
                     padding: 10px;
+                    min-height: 40px;
                 }
 
                 @media (max-width: 800px) {
                     width: 35%;
                 }
                 @media (max-width: $mobile-breakpoint) {
-                    width: 50%;
+                    width: 55%;
                 }
             }
         }
