@@ -5,14 +5,16 @@
 .swal-modal {
     font-family: Yanone;
     background-color: rgb(255, 255, 255);
-    border: 6px solid rgb(235, 235, 235);
+    // border: 1px solid rgb(255, 255, 255);
 }
 
 .swal {
     h1 {
+        color: rgb(61, 61, 61);
         margin-bottom: 1.3rem;
     }
     p {
+        color: rgb(61, 61, 61);
         margin-bottom: 1em;
         font-size: 1.4em;
     }
