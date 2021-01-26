@@ -1,8 +1,4 @@
 import { httpService } from './httpService'
-import { utilService } from './utilService'
-// import { storageService } from './asyncStorageService'
-// import userService from './userService'
-// import { utilService } from './utilService'
 
 export const userService = {
     query,
@@ -49,16 +45,16 @@ async function signup(userCred) {
 }
 
 async function logout() {
-    sessionStorage.clear()
+    localStorage.clear()
     return await httpService.post('auth/logout')
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem('loggedInUser'))
+    return JSON.parse(localStorage.getItem('loggedInUser'))
 }
 
 function _saveLocalUser(user) {
-    sessionStorage.setItem('loggedInUser', JSON.stringify(user))
+    localStorage.setItem('loggedInUser', JSON.stringify(user))
     console.log(user)
     return user
 }

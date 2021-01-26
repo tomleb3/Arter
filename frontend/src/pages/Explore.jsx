@@ -4,7 +4,6 @@ import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
 import { loadItems } from '../store/actions/itemActions'
-import swal from '@sweetalert/with-react'
 
 class _Explore extends Component {
 

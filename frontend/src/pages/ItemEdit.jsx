@@ -75,12 +75,11 @@ class _ItemEdit extends Component {
     }
 
     render() {
-        // console.log(this.props.loggedInUser)
         const { item } = this.state
         if (!item) return <div className="loader m-page"></div>
         return (
             <div className="item-edit m-page">
-                {/* <h3>{toy._id ? 'Update' : 'Add'} Toy</h3> */}
+                {/* <h3>{item._id ? 'Update' : 'Add'} Item</h3> */}
                 <form className="flex col j-between" autoComplete="off" onSubmit={this.onSaveItem}>
                     <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
                     <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
@@ -103,21 +102,10 @@ const mapStateToProps = (state) => {
         items: state.itemModule.items,
     }
 }
-
 const mapDispatchToProps = {
     loadItems,
     addItem,
     editItem,
     removeItem
 }
-
 export const ItemEdit = connect(mapStateToProps, mapDispatchToProps)(_ItemEdit)
-
-
-
-
-
-{/* <TextField id="standard-secondary" label="Name" type="text" name="name" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
-<TextField label="Price" type="number" min="0" value={item.price} onChange={this.handleInput} name="price" />
-<TextField label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" />
-<Button type="submit" color='secondary'>Save</Button> */}

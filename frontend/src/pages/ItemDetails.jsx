@@ -53,10 +53,8 @@ class _ItemDetails extends Component {
     onPurchase = async () => {
         if (!this.props.loggedInUser) this.props.history.push('/login')
         const { item } = this.state
-        console.log(item)
         try {
             const order = await this.props.addOrder(item)
-            console.log(order);
             console.log('SUCCESS !')
             socketService.emit('ORDER_OUT', order)
             this.setState({ item: order.item })
@@ -67,7 +65,6 @@ class _ItemDetails extends Component {
                 timer: 6000,
             })
         } catch (err) {
-            console.log('Purchase Failed');
             return swal({
                 className: "swal",
                 title: "Oops!",
@@ -83,7 +80,6 @@ class _ItemDetails extends Component {
         if (!item || !this.props.users.length) return <div></div>
         const user = this.props.users.find(user => item.sellerId === user._id)
         const userRating = utilService.calcRate(user)
-        console.log(user._id === item.sellerId)
 
         return (
             <section className="item-details m-page">

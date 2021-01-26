@@ -1,7 +1,4 @@
 import { httpService } from './httpService'
-// import { storageService } from './asyncStorageService'
-// import userService from './userService'
-// import { utilService } from './utilService'
 
 export const orderService = {
     add,
@@ -43,10 +40,7 @@ function update(order) {
     return httpService.put(`order/${order._id}`, order)
 }
 
-
-
 // function remove(orderId) {
 //     return httpService.delete(`order/${orderId}`)
 //     // return storageService.delete('order', orderId)
-
 // }

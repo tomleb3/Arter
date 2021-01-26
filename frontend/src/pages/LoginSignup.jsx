@@ -69,7 +69,7 @@ class _LoginSignup extends Component {
         try {
             await this.props.login(userCreds)
             this.setState({ loginCred: { email: '', password: '' } })
-            if (sessionStorage['loggedInUser']) {
+            if (localStorage['loggedInUser']) {
                 socketService.emit('LOGIN', this.props.loggedInUser)
                 this.props.history.push('/')
             }
@@ -89,7 +89,7 @@ class _LoginSignup extends Component {
         const signupCreds = { email, password, fullname }
         await this.props.signup(signupCreds)
         this.setState({ signupCred: { email: '', password: '', fullname: '' } })
-        if (sessionStorage['loggedInUser']) this.props.history.push('/')
+        if (localStorage['loggedInUser']) this.props.history.push('/')
     }
 
     render() {

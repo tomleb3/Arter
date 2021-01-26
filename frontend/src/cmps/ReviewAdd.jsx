@@ -6,7 +6,6 @@ import AddIcon from '@material-ui/icons/Add'
 import SendIcon from '@material-ui/icons/Send'
 import { Button } from '@material-ui/core'
 import { Rating } from '@material-ui/lab'
-import { Link } from 'react-router-dom'
 
 function getModalStyle() {
     return {

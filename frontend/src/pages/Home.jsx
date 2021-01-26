@@ -51,13 +51,12 @@ class _Home extends Component {
 
     getLatestItems = items => {
         const sortedItems = items.sort((a, b) => b.createdAt - a.createdAt)
-        return sortedItems.filter((item, idx) => { if (idx <= 3) return item })
+        return sortedItems.filter((item, idx) => { return idx <= 3 ? item : null })
     }
 
     render() {
         const { users, items, loggedInUser } = this.props
-        const { randomItems, latestItems, windowWidth, windowHeight } = this.state
-        console.log(this.state)
+        const { randomItems, latestItems, windowWidth } = this.state
 
         return <section className="home m-page">
             <div className="hero">

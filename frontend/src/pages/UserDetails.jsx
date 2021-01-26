@@ -63,19 +63,19 @@ class _UserDetails extends Component {
         this.setState({ user })
     }
 
-    getItemsForDisplay = async (sorter = 'all') => {
+    getItemsForDisplay = async (sorter) => {
         const { id } = this.props.match.params
         const { items } = this.props
         let itemsForDisplay
         switch (sorter) {
-            case 'all':
-                itemsForDisplay = items.filter(item => id === item.seller._id)
-                break
             case 'sold':
                 itemsForDisplay = items.filter(item => id === item.seller._id && item.purchasedAt)
                 break
             case 'forSale':
                 itemsForDisplay = items.filter(item => id === item.seller._id && !item.purchasedAt)
+                break
+            default:
+                itemsForDisplay = items.filter(item => id === item.seller._id)
                 break
             // case 'purchased':
             // const itemsForDisplay = items.filter(item =>
@@ -88,7 +88,7 @@ class _UserDetails extends Component {
         const { orders } = this.props
         if (!orders.length || !user) return
         return orders.filter(order => {
-            if (order.seller._id === user._id) return order
+            return (order.seller._id === user._id) ? order : null
         })
     }
 
@@ -97,13 +97,12 @@ class _UserDetails extends Component {
         const { orders } = this.props
         if (!orders.length || !user) return
         return orders.filter(order => {
-            if (order.buyer._id === user._id) return order
+            return (order.buyer._id === user._id) ? order : null
         })
     }
 
     getTotalMoneyEarned() {
         const soldItems = this.getSoldItems()
-        console.log(soldItems)
         let sum = 0
         if (soldItems) soldItems.map(item => sum += item.item.price)
         return sum
@@ -154,7 +153,7 @@ class _UserDetails extends Component {
     render() {
         const { user, items } = this.state
         const { loggedInUser } = this.props
-        const userRating = utilService.calcRate(user)|| 0
+        const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div></div>
         return (
@@ -188,7 +187,7 @@ class _UserDetails extends Component {
                         <div className="portfolio-container flex a-center j-between">
                             <h3>Portfolio</h3>
                             <ButtonGroup variant="text" size="small">
-                                <Button onClick={() => this.getItemsForDisplay('all')}>All</Button>
+                                <Button onClick={() => this.getItemsForDisplay()}>All</Button>
                                 <Button onClick={() => this.getItemsForDisplay('sold')}>Sold</Button>
                                 <Button onClick={() => this.getItemsForDisplay('forSale')}>For Sale</Button>
                             </ButtonGroup>
