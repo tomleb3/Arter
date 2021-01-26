@@ -1,6 +1,5 @@
 const dbService = require('../../services/db.service')
-// const logger = require('../../services/logger.service')
-// const reviewService = require('../review/review.service')
+const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
@@ -13,7 +12,6 @@ module.exports = {
 }
 
 async function query(filterBy = {}) {
-    // const criteria = _buildCriteria(filterBy)
     const criteria = {}
     try {
         const collection = await dbService.getCollection('user')
@@ -33,13 +31,6 @@ async function getById(userId) {
         const collection = await dbService.getCollection('user')
         const user = await collection.findOne({ '_id': ObjectId(userId) })
         delete user.password
-
-        // user.givenReviews = await reviewService.query({ byUserId: ObjectId(user._id) })
-        // user.givenReviews = user.givenReviews.map(review => {
-        //     delete review.byUser
-        //     return review
-        // })
-
         return user
     } catch (err) {
         logger.error(`while finding user ${userId}`, err)
@@ -69,7 +60,6 @@ async function remove(userId) {
 
 async function update(user) {
     try {
-        // peek only updatable fields!
         const collection = await dbService.getCollection('user')
         const userFromDB = await collection.findOne({ '_id': ObjectId(user._id) })
 
@@ -96,7 +86,6 @@ async function update(user) {
 
 async function add(user) {
     try {
-        // peek only updatable fields!
         const userToAdd = {
             ...user,
             isAdmin: false,
@@ -107,9 +96,6 @@ async function add(user) {
                 profile: '',
                 banner: ''
             }
-            // email: user.email,
-            // password: user.password,
-            // fullname: user.fullname,
         }
         const collection = await dbService.getCollection('user')
         await collection.insertOne(userToAdd)

@@ -12,9 +12,6 @@ router.put('/:id', updateItem)
 router.delete('/:id', deleteItem)
 // router.delete('/:id', requireAuth, requireAdmin, deleteItem)
 
-
-
-
 // router.put('/:id',  requireAuth, updateItem)
 
 module.exports = router

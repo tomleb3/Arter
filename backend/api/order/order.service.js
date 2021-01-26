@@ -8,12 +8,7 @@ async function query(filterBy = {}) {
     try {
         const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('order')
-        // const orders = await collection.find({}).toArray()
-        // const orders = await collection.find(criteria).toArray()
         var orders = await collection.aggregate([
-            // {
-            //     $match: criteria
-            // },
             {
                 $lookup:
                 {
@@ -68,7 +63,6 @@ async function query(filterBy = {}) {
 
 async function add(item) {
     try {
-        // peek only updatable fields!
         console.log('ORDER.SERVICE:', item)
         const store = asyncLocalStorage.getStore()
         const { userId } = store
@@ -95,22 +89,16 @@ async function add(item) {
     }
 }
 
-
 async function getById(orderId) {
     try {
         const collection = await dbService.getCollection('order')
         const user = await collection.findOne({ '_id': ObjectId(orderId) })
-        
-        
         return user
     } catch (err) {
         logger.error(`while finding user ${userId}`, err)
         throw err
     }
 }
-
-
-
 
 function _buildCriteria(filterBy) {
     const criteria = {}

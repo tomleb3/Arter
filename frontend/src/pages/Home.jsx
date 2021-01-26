@@ -13,14 +13,24 @@ class _Home extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { windowWidth: 0, windowHeight: 0 };
+        this.state = {
+            windowWidth: 0,
+            windowHeight: 0,
+            randomItems: [],
+            latestItems: []
+        };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
     componentDidMount() {
+        const { items } = this.props
         window.scrollTo(0, 0)
-        this.updateWindowDimensions();
+        this.setState({
+            randomItems: this.getRandomItems(items),
+            latestItems: this.getLatestItems(items)
+        })
         window.addEventListener('resize', this.updateWindowDimensions);
+        this.updateWindowDimensions()
     }
 
     componentWillUnmount() {
@@ -46,9 +56,8 @@ class _Home extends Component {
 
     render() {
         const { users, items, loggedInUser } = this.props
-        const { windowWidth, windowHeight } = this.state
-        const randomItems = this.getRandomItems(items)
-        const latestItems = this.getLatestItems(items)
+        const { randomItems, latestItems, windowWidth, windowHeight } = this.state
+        console.log(this.state)
 
         return <section className="home m-page">
             <div className="hero">

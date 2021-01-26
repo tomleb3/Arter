@@ -77,8 +77,6 @@ async function remove(itemId) {
 
 async function update(item) {
     try {
-        // peek only updatable fields!
-        // TODO: CHECK +item.price
         const itemToSave = {
             _id: ObjectId(item._id),
             title: item.title,

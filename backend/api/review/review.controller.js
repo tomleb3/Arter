@@ -22,7 +22,6 @@ async function deleteReview(req, res) {
     }
 }
 
-
 async function addReview(req, res) {
     try {
         var review = req.body
@@ -31,7 +30,6 @@ async function addReview(req, res) {
         review.byUser = req.session.user
         review.aboutUser = await userService.getById(review.aboutUserId)
         res.send(review)
-
     } catch (err) {
         logger.error('Failed to add review', err)
         res.status(500).send({ err: 'Failed to add review' })

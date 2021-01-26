@@ -4,9 +4,7 @@ const asyncLocalStorage = require('../../services/als.service')
 
 async function query(filterBy = {}) {
     try {
-        // const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('review')
-        // const reviews = await collection.find(criteria).toArray()
         var reviews = await collection.aggregate([
             {
                 $match: filterBy
@@ -57,11 +55,9 @@ async function remove(reviewId) {
         const store = asyncLocalStorage.getStore()
         const { userId, isAdmin } = store
         const collection = await dbService.getCollection('review')
-        // remove only if user is owner/admin
         const query = { _id: ObjectId(reviewId) }
         if (!isAdmin) query.byUserId = ObjectId(userId)
         await collection.deleteOne(query)
-        // return await collection.deleteOne({ _id: ObjectId(reviewId), byUserId: ObjectId(userId) })
     } catch (err) {
         logger.error(`cannot remove review ${reviewId}`, err)
         throw err
@@ -71,7 +67,6 @@ async function remove(reviewId) {
 
 async function add(review) {
     try {
-        // peek only updatable fields!
         const reviewToAdd = {
             byUserId: ObjectId(review.byUserId),
             aboutUserId: ObjectId(review.aboutUserId),
@@ -96,5 +91,3 @@ module.exports = {
     remove,
     add
 }
-
-
