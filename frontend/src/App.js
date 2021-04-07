@@ -17,6 +17,11 @@ import { UserEdit } from './pages/UserEdit'
 import { socketService } from './services/socketService.js'
 import swal from '@sweetalert/with-react'
 
+
+// WHEN FINISHING PROJECT -->
+// finally delete api/review folder in backend
+// and make sure nothing broke
+
 class _App extends Component {
 
   async componentDidMount() {

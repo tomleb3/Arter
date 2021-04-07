@@ -63,7 +63,6 @@ async function update(user) {
         const collection = await dbService.getCollection('user')
         const userFromDB = await collection.findOne({ '_id': ObjectId(user._id) })
 
-        console.log('GOT USER REVIEW! ', user.reviews[0].byUser)
         const userToSave = {
             ...user,
             _id: ObjectId(user._id),
@@ -74,7 +73,6 @@ async function update(user) {
                 review.byUser._id = ObjectId(review.byUser._id))
         }
 
-        console.log(userToSave)
         await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
         delete userToSave.password
         return userToSave

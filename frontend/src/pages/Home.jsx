@@ -151,7 +151,6 @@ class _Home extends Component {
                     <label>Top Artists</label>
                     <UserList users={users} items={items} tallMode />
                 </article>
-                {/* <GetStarted /> */}
             </main>
         </section>
     }

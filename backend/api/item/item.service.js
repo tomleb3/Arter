@@ -36,22 +36,6 @@ async function query(filterBy) {
     }
 }
 
-function _buildCriteria(filterBy) {
-    const criteria = {}
-    if (filterBy.txt) {
-        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
-        criteria.$or = [
-            {
-                title: txtCriteria
-            },
-            {
-                tags: txtCriteria
-            }
-        ]
-    }
-    return criteria
-}
-
 async function getById(itemId) {
     try {
         const collection = await dbService.getCollection('item')
@@ -65,12 +49,23 @@ async function getById(itemId) {
     }
 }
 
-async function remove(itemId) {
+async function add(item) {
     try {
+        const itemToAdd = {
+            ...item,
+            sellerId: ObjectId(item.sellerId),
+            createdAt: Date.now(),
+            purchasedAt: null
+        }
         const collection = await dbService.getCollection('item')
-        await collection.deleteOne({ '_id': ObjectId(itemId) })
+        await collection.insertOne(itemToAdd)
+        itemToAdd.seller = await userService.getById(itemToAdd.sellerId)
+        delete itemToAdd.sellerId
+        console.log('add:',itemToAdd)
+        return itemToAdd
+
     } catch (err) {
-        logger.error(`cannot remove item ${itemId}`, err)
+        logger.error('cannot add item', err)
         throw err
     }
 }
@@ -99,9 +94,37 @@ async function update(item) {
     }
 }
 
+async function remove(itemId) {
+    try {
+        const collection = await dbService.getCollection('item')
+        await collection.deleteOne({ '_id': ObjectId(itemId) })
+    } catch (err) {
+        logger.error(`cannot remove item ${itemId}`, err)
+        throw err
+    }
+}
+
+
+function _buildCriteria(filterBy) {
+    const criteria = {}
+    if (filterBy.txt) {
+        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
+        criteria.$or = [
+            {
+                title: txtCriteria
+            },
+            {
+                tags: txtCriteria
+            }
+        ]
+    }
+    return criteria
+}
+
 module.exports = {
     query,
     getById,
+    add,
     remove,
     update
 }

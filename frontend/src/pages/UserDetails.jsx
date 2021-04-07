@@ -118,8 +118,10 @@ class _UserDetails extends Component {
             {/* <AppFilter /> */}
             {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button>Edit Profile</button></Link>}
             {loggedInUser && loggedInUser._id === user._id && <button>Notifications</button>}
-            <button>Custom Order</button>
-            <button>Contact Me</button>
+            {status === 'normal' && <Fragment>
+                <button>Custom Order</button>
+                <button>Contact Me</button>
+            </Fragment>}
             <button>Favourites</button>
             {loggedInUser && loggedInUser._id === user._id &&
                 <Fragment>
