@@ -10,7 +10,6 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 
 function filterArtists(users, items) {
     const artistIds = items.reduce((accUserMap, item, idx) => {
-        console.log(item)
         const { _id } = item.seller
         if (!accUserMap.includes(_id)) accUserMap.push(_id)
         return accUserMap
