@@ -5,6 +5,8 @@ import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Uploader } from '../cmps/Uploader.jsx'
 import { utilService } from '../services/utilService.js'
+import { ItemDetails } from './ItemDetails'
+import { Fragment } from 'react'
 
 class _ItemEdit extends Component {
 
@@ -95,7 +97,7 @@ class _ItemEdit extends Component {
             this.props.history.push(`/item/${item._id}`)
         } else {
             await this.props.addItem(item)
-            this.props.history.push(`/`)
+            this.props.history.push(`/user/${this.props.loggedInUser._id}`)
         }
     }
 
@@ -104,28 +106,39 @@ class _ItemEdit extends Component {
         const { tags } = this.state.item
         if (!item) return <div className="loader m-page"></div>
         return (
-            <div className="item-edit m-page">
+            <div className="item-edit main-layout">
                 {/* <h3>{item._id ? 'Update' : 'Add'} Item</h3> */}
-                <form className="flex col j-between" autoComplete="off" onSubmit={this.onSaveItem}>
-                    <TextField id="standard-secondary" label="Name" type="text" name="title" value={item.title} placeholder="Title" color="secondary" onChange={this.handleInput} />
-                    <TextField label="Price" type="number" value={item.price} onChange={this.handleInput} name="price" />
-                    <TextField label="Size" type="text" value={item.size} onChange={this.handleInput} name="size" />
-                    <div>
-                        <TextField label="Tag" type="text" name="tag" onKeyDown={ev => ev.key === 'Enter' && this.onAddTag()}
-                            onChange={ev => this.setState({ ...this.state, tagToAdd: ev.target.value })} value={tagToAdd} />
-                        <button onClick={this.onAddTag}>+</button>
-                    </div>
-                    {tags.length ? tags.map((tag, idx) => {
-                        return <div key={utilService.makeId()}>
-                            <label>{tag}</label>
-                            <button onClick={ev => this.onRemoveTag(ev, idx)}>x</button>
+                <form autoComplete="off" onSubmit={this.onSaveItem}>
+                    <TextField label="Title" type="text" name="title" className="txtfield-title" value={item.title} color="secondary" onChange={this.handleInput} />
+                    <div className="panel-container flex">
+                        <div className="left-panel">
+                            <Uploader imgUrl={item.imgUrl} onFinishUpload={this.onUploadImg} />
                         </div>
-                    }) : null}
-                    <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" placeholder="Description" />
-                    <Uploader onFinishUpload={this.onUploadImg} />
-                    <div>
-                        {item._id && <Button type="button" onClick={() => this.onRemoveItem(item._id)}>Delete Item</Button>}
-                        <Button type="submit">Save</Button>
+                        <div className="right-panel flex col">
+                            <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" placeholder="Description" />
+                            <TextField label="Size" type="text" color="secondary" value={item.size} onChange={this.handleInput} name="size" />
+                            <div className="flex a-center">
+                                <TextField label="Tag" type="text" name="tag" color="secondary" onKeyDown={ev => ev.key === 'Enter' && this.onAddTag}
+                                    onChange={ev => this.setState({ ...this.state, tagToAdd: ev.target.value })} value={tagToAdd} />
+                                <button className="btn-addtag" onClick={this.onAddTag}>+</button>
+                            </div>
+                            <div className="tags-container flex">
+                                {tags.length ? tags.map((tag, idx) => {
+                                    return <div className="pos-relative pointer" key={utilService.makeId()} onClick={ev => this.onRemoveTag(ev, idx)}>
+                                        <small>#{tag}</small>
+                                        <button>x</button>
+                                    </div>
+                                }) : null}
+                            </div>
+                            <div className="price-container grow">
+                                <label className="d-block">Price: </label>
+                                <TextField className="txtfield-price" type="number" value={item.price} color="secondary" onChange={this.handleInput} name="price" />
+                            </div>
+                            <div className="btns-container">
+                                {item._id && <Button type="button" className="btn-delete" onClick={() => this.onRemoveItem(item._id)}>Delete</Button>}
+                                <Button type="submit" className="btn-save">Save</Button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

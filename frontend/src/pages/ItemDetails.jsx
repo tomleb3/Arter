@@ -29,24 +29,23 @@ class _ItemDetails extends Component {
 
     async componentDidMount() {
         SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
-        this.loadOtherItems()
+        this.loadItems()
         window.scrollTo(0, 0)
     }
 
     async componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
-            this.loadOtherItems()
+            this.loadItems()
             window.scrollTo(0, 0)
         }
     }
 
-    async loadOtherItems() {
+    loadItems = async () => {
         const { id } = this.props.match.params
         const { items } = this.props
         const item = await itemService.getById(id)
         const otherItems = items.filter(currItem =>
-            (item.sellerId === currItem.seller._id) && (item._id !== currItem._id)
-        )
+            (item.sellerId === currItem.seller._id) && (item._id !== currItem._id))
         this.setState({ item, otherItems })
     }
 
@@ -94,7 +93,12 @@ class _ItemDetails extends Component {
                             </div>
                             <p className="desc-txt">{item.description}</p>
                             <p className="size-txt font-mont">Size:&nbsp;&nbsp;{item.size}</p>
-                            <div className="tags flex">{item.tags.map((tag, idx) => { return <small key={idx}>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link>&nbsp;&nbsp;&nbsp;</small> })}</div>
+                            <div className="tags-container flex">{item.tags.map((tag, idx) => {
+                                return <div key={idx}>
+                                    <small>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link></small>
+                                </div>
+                            })}
+                            </div>
                             {item.purchasedAt ? <p className="site-clr3">SOLD</p> : <p>${item.price}</p>}
                             <div className="flex col j-between grow">
                                 <div className="profile-container flex a-center">

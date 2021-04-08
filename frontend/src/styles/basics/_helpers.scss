@@ -127,7 +127,19 @@
     }
 }
 
-/* FLOAT */
+/* POSITIONS */
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.pos-fixed {
+    position: fixed;
+}
 
 .left {
     float: left;

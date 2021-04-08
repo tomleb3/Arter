@@ -1211,3 +1211,6 @@
 4/7/2021, 7:31:39 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: 7x6tSYJn1Hg0zXQfR-yZOXSWXCkl_t1D)
 4/7/2021, 8:31:19 PM - ERROR - while finding item 606ddeed9f867f68742118fb | {} (sid: 7x6tSYJn1Hg0zXQfR-yZOXSWXCkl_t1D)
 4/7/2021, 8:31:19 PM - ERROR - Failed to get item | {} (sid: 7x6tSYJn1Hg0zXQfR-yZOXSWXCkl_t1D)
+4/8/2021, 6:37:37 PM - INFO - Server is running on port: 3030 
+4/8/2021, 10:04:08 PM - DEBUG - auth.service - login with email: avnia12@gmail.com (sid: Zl4oQhhhQFNs8jjDfwf5v0PKEOaVxd39)
+4/8/2021, 10:07:29 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: W_YTMmrQU0I8sbyzQ48-yxgHxDa5Dw8f)

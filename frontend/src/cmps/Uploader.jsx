@@ -12,11 +12,14 @@ export class Uploader extends Component {
     }
     render() {
         const { isUploading } = this.state
+        const { imgUrl } = this.props
         return (
-            <div className="uploader"
-            // style={ uploadStyle }
-            >
-                <label htmlFor="imageUploader">{isUploading ? 'Uploading....' : 'Upload Image'}</label>
+            <div className={`uploader ${imgUrl && 'img-ready'}`}>
+                {imgUrl && <img src={imgUrl} alt="" />}
+                <div className="pointer">
+                    <label htmlFor="imageUploader" className="pointer"></label>
+                    <label htmlFor="imageUploader" className="pointer">{isUploading ? 'Uploading....' : 'Upload Image'}</label>
+                </div>
                 <input onChange={this.onUploadImg} hidden type="file" accept="image/*" id="imageUploader" />
             </div>
         )
