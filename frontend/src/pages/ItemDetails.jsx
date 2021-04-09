@@ -93,7 +93,7 @@ class _ItemDetails extends Component {
                             </div>
                             <p className="desc-txt">{item.description}</p>
                             <p className="size-txt font-mont">Size:&nbsp;&nbsp;{item.size}</p>
-                            <div className="tags-container flex">{item.tags.map((tag, idx) => {
+                            <div className="tags-container flex wrap">{item.tags.map((tag, idx) => {
                                 return <div key={idx}>
                                     <small>#<Link to={{ pathname: "/explore", type: tag }}>{tag}</Link></small>
                                 </div>

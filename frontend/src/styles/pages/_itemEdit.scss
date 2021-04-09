@@ -2,6 +2,7 @@
     min-height: 50vh;
     margin-top: 120px;
     margin-bottom: 80px;
+    padding: 10px;
 
     .MuiTextField-root {
         display: block;
@@ -21,14 +22,14 @@
         }
     }
     .panel-container {
-        gap: 3rem;
+        gap: 2.5rem;
         @media (max-width: 1000px) {
             flex-direction: column;
         }
         .left-panel {
             // margin-inline-end: 3rem;
             @media (max-width: 1000px) {
-                // padding-bottom: 15px;
+                padding-bottom: 15px;
             }
             .uploader {
                 @media (max-width: 1000px) {
@@ -75,6 +76,10 @@
             @media (max-width: 1000px) {
                 width: 100%;
             }
+            > h2 {
+                font-family: Yanone;
+                margin-bottom: 30px;
+            }
             textarea {
                 outline: none;
                 border: none;
@@ -101,6 +106,7 @@
             .MuiTextField-root {
                 margin-bottom: 30px;
                 &.txtfield-price {
+                    margin-bottom: 50px;
                     > div {
                         width: 22%;
                     }
@@ -113,12 +119,10 @@
                     &:not(:last-of-type) {
                         margin-inline-end: 30px;
                     }
-                    button {
-                        border: none;
-                        position: absolute;
-                        top: -3px;
-                        background-color: transparent;
-                        // border-radius: 50%;
+                    sup {
+                        color: black;
+                        font-size: 0.7em;
+                        margin-inline-start: 4px;
                     }
                 }
             }

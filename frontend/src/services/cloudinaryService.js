@@ -5,9 +5,9 @@ async function uploadImg(file) {
     const CLOUD_NAME = 'arter'
     const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
 
-    const formData = new FormData();
+    const formData = new FormData()
     formData.append('file', file)
-    formData.append('upload_preset', 'arter-preset');
+    formData.append('upload_preset', 'arter-preset')
     try {
         const res = await fetch(UPLOAD_URL, {
             method: 'POST',
@@ -17,6 +17,6 @@ async function uploadImg(file) {
         return data
 
     } catch (err) {
-        console.log(err);
+        console.log(err)
     }
 }

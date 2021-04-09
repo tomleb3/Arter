@@ -13,7 +13,7 @@ class _ItemEdit extends Component {
     state = {
         item: {
             title: '',
-            price: 0,
+            price: '',
             description: '',
             imgUrl: '',
             size: '',
@@ -49,7 +49,7 @@ class _ItemEdit extends Component {
         const field = target.name
         let value = target.value
         value = (field === 'price') ? +value : value
-        if (field === 'price' && value < 0) return
+        if (field === 'price' && value < 1) value = ''
 
         this.setState(prevState => {
             return {
@@ -115,6 +115,7 @@ class _ItemEdit extends Component {
                             <Uploader imgUrl={item.imgUrl} onFinishUpload={this.onUploadImg} />
                         </div>
                         <div className="right-panel flex col">
+                            <h2>About this piece</h2>
                             <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" placeholder="Description" />
                             <TextField label="Size" type="text" color="secondary" value={item.size} onChange={this.handleInput} name="size" />
                             <div className="flex a-center">
@@ -122,11 +123,11 @@ class _ItemEdit extends Component {
                                     onChange={ev => this.setState({ ...this.state, tagToAdd: ev.target.value })} value={tagToAdd} />
                                 <button className="btn-addtag" onClick={this.onAddTag}>+</button>
                             </div>
-                            <div className="tags-container flex">
+                            <div className="tags-container flex wrap">
                                 {tags.length ? tags.map((tag, idx) => {
-                                    return <div className="pos-relative pointer" key={utilService.makeId()} onClick={ev => this.onRemoveTag(ev, idx)}>
+                                    return <div className="pointer" key={utilService.makeId()} onClick={ev => this.onRemoveTag(ev, idx)}>
                                         <small>#{tag}</small>
-                                        <button>x</button>
+                                        <sup>x</sup>
                                     </div>
                                 }) : null}
                             </div>
@@ -136,6 +137,7 @@ class _ItemEdit extends Component {
                             </div>
                             <div className="btns-container">
                                 {item._id && <Button type="button" className="btn-delete" onClick={() => this.onRemoveItem(item._id)}>Delete</Button>}
+                                <Button type="button" className="btn-cancel" onClick={this.props.history.goBack}>Cancel</Button>
                                 <Button type="submit" className="btn-save">Save</Button>
                             </div>
                         </div>
