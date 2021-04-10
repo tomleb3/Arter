@@ -1,0 +1,16 @@
+.app-sorter {
+    .btn-all {
+        margin: 0 13px;
+        transition: color 0.2s;
+        &.active {
+            color: $clr1;
+        }
+    }
+    .btn-date {
+        margin-inline-end: 13px;
+    }
+    .btn-date,
+    .btn-available {
+        margin-inline-start: 5px;
+    }
+}

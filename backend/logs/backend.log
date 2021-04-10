@@ -1214,3 +1214,17 @@
 4/8/2021, 6:37:37 PM - INFO - Server is running on port: 3030 
 4/8/2021, 10:04:08 PM - DEBUG - auth.service - login with email: avnia12@gmail.com (sid: Zl4oQhhhQFNs8jjDfwf5v0PKEOaVxd39)
 4/8/2021, 10:07:29 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: W_YTMmrQU0I8sbyzQ48-yxgHxDa5Dw8f)
+4/9/2021, 4:19:22 PM - INFO - Server is running on port: 3030 
+4/9/2021, 5:29:29 PM - INFO - Server is running on port: 3030 
+4/10/2021, 3:12:19 PM - INFO - Server is running on port: 3030 
+4/10/2021, 3:13:27 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: ylp19uEnEfd3-uoS67DcuOq4GV1v4PW7)
+4/10/2021, 3:13:27 PM - ERROR - Failed to Login Invalid email or password (sid: ylp19uEnEfd3-uoS67DcuOq4GV1v4PW7)
+4/10/2021, 3:13:32 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: ylp19uEnEfd3-uoS67DcuOq4GV1v4PW7)
+4/10/2021, 3:59:59 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: UYdHWDwVqmc02qFlWKP5O1tyKnM2tAak)
+4/10/2021, 4:00:34 PM - INFO - Server is running on port: 3030 
+4/10/2021, 4:01:04 PM - INFO - Server is running on port: 3030 
+4/10/2021, 4:04:12 PM - INFO - Server is running on port: 3030 
+4/10/2021, 4:21:46 PM - INFO - Server is running on port: 3030 
+4/10/2021, 4:22:26 PM - INFO - Server is running on port: 3030 
+4/10/2021, 4:35:04 PM - INFO - Server is running on port: 3030 
+4/10/2021, 7:13:33 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: 2MwS0sUHTdSnFdelxLacCmJM64s5a1qz)
