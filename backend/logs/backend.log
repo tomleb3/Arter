@@ -1228,3 +1228,27 @@
 4/10/2021, 4:22:26 PM - INFO - Server is running on port: 3030 
 4/10/2021, 4:35:04 PM - INFO - Server is running on port: 3030 
 4/10/2021, 7:13:33 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: 2MwS0sUHTdSnFdelxLacCmJM64s5a1qz)
+4/10/2021, 8:43:31 PM - INFO - Server is running on port: 3030 
+4/12/2021, 1:22:23 PM - INFO - Server is running on port: 3030 
+4/12/2021, 1:23:11 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:28:59 PM - ERROR - while finding user edit | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:28:59 PM - ERROR - Failed to get user | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:29:08 PM - ERROR - while finding user edit | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:29:08 PM - ERROR - Failed to get user | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:29:09 PM - ERROR - while finding user edit | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:29:09 PM - ERROR - Failed to get user | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:30:14 PM - ERROR - while finding user edit | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:30:14 PM - ERROR - Failed to get user | {} (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 1:56:24 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: tHkbdgGT7tQpVyr3HHwR1bdnoRgwhhek)
+4/12/2021, 2:10:21 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: cg2GpY1eUK1yz6qMaOti5nKjL25y76JE)
+4/12/2021, 2:47:51 PM - INFO - Server is running on port: 3030 
+4/12/2021, 2:48:04 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: FCr4ZpBKIBa4EakgLvHHTrncq_Gd2F45)
+4/12/2021, 2:50:43 PM - INFO - Server is running on port: 3030 
+4/12/2021, 2:50:53 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: mwF6IiU1PmhQ8AfcXio72nGkbbo5lPKL)
+4/12/2021, 2:51:11 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: D4XCiHLO03hInYKLPt5l9V-kZqdWmCSQ)
+4/12/2021, 2:51:11 PM - ERROR - Failed to Login Invalid email or password (sid: D4XCiHLO03hInYKLPt5l9V-kZqdWmCSQ)
+4/12/2021, 2:51:17 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: D4XCiHLO03hInYKLPt5l9V-kZqdWmCSQ)
+4/12/2021, 2:52:22 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: A89_OjW-ptmK2Ic3BKlI1jcUekc8UaFS)
+4/12/2021, 3:35:57 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)
+4/12/2021, 5:46:14 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)
+4/12/2021, 5:47:09 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)

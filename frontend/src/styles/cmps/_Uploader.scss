@@ -1,0 +1,54 @@
+.uploader {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    padding: 10px;
+    background-color: #d2d2d2;
+    z-index: 2;
+    border-radius: 4px;
+    opacity: 0.8;
+    > label.uploader-logo {
+        height: 80px;
+        width: 70px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        margin: auto;
+        background-image: url(../../assets/imgs/upload-logo.svg);
+    }
+    &.small-mode {
+        top: 80%;
+        left: 50%;
+        transform: translateX(-40%);
+        width: fit-content;
+        height: fit-content;
+        padding: 5px;
+        > label.uploader-logo {
+            width: 25px;
+            height: 25px;
+        }
+        @media (max-width: $mobile-breakpoint) {
+            padding: 2px;
+        }
+    }
+    @media (max-width: $narrow-breakpoint) {
+        > label {
+            &.uploader-logo {
+                height: 40px;
+                width: 40px;
+            }
+            &.uploader-txt {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: $mobile-breakpoint) {
+        padding: 5px;
+        > label {
+            &.uploader-logo {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}

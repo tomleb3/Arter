@@ -62,7 +62,7 @@ class _App extends Component {
             <Route path="/login" component={LoginSignup} />
             <Route path="/item/edit/:id?" component={ItemEdit} />
             <Route path="/item/:id" component={ItemDetails} />
-            <Route path="/user/edit/:id?" component={UserEdit} />
+            <Route path="/user/edit/:id" component={UserEdit} />
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/explore" component={Explore} />
             <Route path="/" component={Home} />

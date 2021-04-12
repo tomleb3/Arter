@@ -22,53 +22,28 @@
         }
     }
     .panel-container {
-        gap: 2.5rem;
         @media (max-width: 1000px) {
             flex-direction: column;
         }
         .left-panel {
             // margin-inline-end: 3rem;
+            max-width: 40vw;
+            min-width: 35vw;
+            height: 55vh;
+            background-color: #f3f3f3;
+            margin-inline-end: 2.5rem;
             @media (max-width: 1000px) {
-                padding-bottom: 15px;
+                margin-inline-end: 0;
+                margin-bottom: 2.5rem;
+                width: inherit;
+                max-width: none;
             }
-            .uploader {
-                @media (max-width: 1000px) {
-                    width: inherit;
-                    max-width: none;
-                }
-                position: relative;
-                max-width: 40vw;
-                min-width: 35vw;
-                height: 55vh;
-                background-color: #f3f3f3;
-                &.img-ready {
-                    height: auto;
-                }
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-                > div {
-                    position: absolute;
-                    right: 10px;
-                    bottom: 10px;
-                    padding: 10px;
-                    background-color: #d2d2d2;
-                    z-index: 2;
-                    border-radius: 4px;
-                    opacity: 0.8;
-                    > label {
-                        &:first-of-type {
-                            height: 80px;
-                            width: 70px;
-                            background-size: contain;
-                            background-repeat: no-repeat;
-                            display: block;
-                            margin: auto;
-                            background-image: url(../../assets/imgs/upload-logo.svg);
-                        }
-                    }
-                }
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+            &.img-ready {
+                height: auto;
             }
         }
         .right-panel {
@@ -83,7 +58,6 @@
             textarea {
                 outline: none;
                 border: none;
-                // border-bottom: 1px solid #888787;
                 background-color: #f3f3f3;
                 margin-bottom: 30px;
                 padding: 10px;
@@ -132,15 +106,11 @@
                 button {
                     font-size: 1em;
                     transition: color 0.1s;
-                    &.btn-save {
-                        &:hover {
-                            color: $clr1;
-                        }
+                    &.btn-save:hover {
+                        color: $clr1;
                     }
-                    &.btn-delete {
-                        &:hover {
-                            color: $clr3;
-                        }
+                    &.btn-delete:hover {
+                        color: $clr3;
                     }
                 }
             }

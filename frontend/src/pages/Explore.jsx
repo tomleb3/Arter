@@ -25,7 +25,6 @@ class _Explore extends Component {
     }
 
     onSort = sortParams => {
-        console.log('onSort activated', sortParams)
         let { items } = this.state
         switch (sortParams.type) {
             case 'date': sortParams.ascending ? items.sort((a, b) => a.createdAt - b.createdAt)

@@ -19,14 +19,14 @@ class _UserDetails extends Component {
         items: []
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         this.props.loadOrders()
         this.loadUser()
         this.getItemsForDisplay()
         window.scrollTo(0, 0)
     }
 
-    async componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps) {
         if (this.props.match.params.id !== prevProps.match.params.id) {
             window.location.reload()
             this.props.loadOrders()
@@ -75,9 +75,6 @@ class _UserDetails extends Component {
                 break
             default:
                 itemsForDisplay = items.filter(item => id === item.seller._id)
-                break
-            // case 'purchased':
-            // const itemsForDisplay = items.filter(item =>
         }
         this.setState({ items: itemsForDisplay })
     }
@@ -160,10 +157,8 @@ class _UserDetails extends Component {
         return (
             <section className="user-details main-layout m-page">
                 <div className="profile-header">
-                    <img className="banner-img" src={user.imgUrls.banner} alt=""
-                        onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY BANNER')} />
-                    <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname}
-                        onClick={() => loggedInUser && loggedInUser._id === user._id && console.log('THIS IS MY PROFILE')} />
+                    <img className="banner-img" src={user.imgUrls.banner} alt="" />
+                    <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname} alt="" />
                 </div>
                 <div className="content flex">
                     {this.sidenavContent('normal')}

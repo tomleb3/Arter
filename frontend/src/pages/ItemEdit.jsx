@@ -5,8 +5,6 @@ import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Uploader } from '../cmps/Uploader.jsx'
 import { utilService } from '../services/utilService.js'
-import { ItemDetails } from './ItemDetails'
-import { Fragment } from 'react'
 
 class _ItemEdit extends Component {
 
@@ -18,13 +16,11 @@ class _ItemEdit extends Component {
             imgUrl: '',
             size: '',
             tags: [],
-            // seller: this.props.loggedInUser.email
         },
         tagToAdd: ''
     }
 
     async componentDidMount() {
-        // if (!this.props.items.length) await this.props.loadItems()
         window.scrollTo(0, 0)
         const { id } = this.props.match.params
         if (id) {
@@ -107,16 +103,16 @@ class _ItemEdit extends Component {
         if (!item) return <div className="loader m-page"></div>
         return (
             <div className="item-edit main-layout">
-                {/* <h3>{item._id ? 'Update' : 'Add'} Item</h3> */}
                 <form autoComplete="off" onSubmit={this.onSaveItem}>
                     <TextField label="Title" type="text" name="title" className="txtfield-title" value={item.title} color="secondary" onChange={this.handleInput} />
                     <div className="panel-container flex">
-                        <div className="left-panel">
-                            <Uploader imgUrl={item.imgUrl} onFinishUpload={this.onUploadImg} />
+                        <div className={`left-panel pos-relative ${item.imgUrl && 'img-ready'}`}>
+                            {item.imgUrl && <img src={item.imgUrl} alt="" />}
+                            <Uploader userId={this.props.loggedInUser._id} onFinishUpload={this.onUploadImg} />
                         </div>
                         <div className="right-panel flex col">
                             <h2>About this piece</h2>
-                            <textarea label="Description" type="text" value={item.description} onChange={this.handleInput} name="description" placeholder="Description" />
+                            <textarea label="Description" value={item.description} onChange={this.handleInput} name="description" placeholder="Description" />
                             <TextField label="Size" type="text" color="secondary" value={item.size} onChange={this.handleInput} name="size" />
                             <div className="flex a-center">
                                 <TextField label="Tag" type="text" name="tag" color="secondary" onKeyDown={ev => ev.key === 'Enter' && this.onAddTag}

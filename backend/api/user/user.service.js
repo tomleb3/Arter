@@ -1,5 +1,6 @@
 const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
+const bcrypt = require('bcrypt')
 const ObjectId = require('mongodb').ObjectId
 
 module.exports = {
@@ -66,7 +67,7 @@ async function update(user) {
         const userToSave = {
             ...user,
             _id: ObjectId(user._id),
-            password: userFromDB.password
+            password: user.password ? await bcrypt.hash(user.password, 10) : userFromDB.password
         }
         if (userToSave.reviews.length) {
             userToSave.reviews.map(review =>
@@ -76,6 +77,7 @@ async function update(user) {
         await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
         delete userToSave.password
         return userToSave
+        
     } catch (err) {
         logger.error(`cannot update user ${user._id}`, err)
         throw err
