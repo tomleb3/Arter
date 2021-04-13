@@ -1252,3 +1252,6 @@
 4/12/2021, 3:35:57 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)
 4/12/2021, 5:46:14 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)
 4/12/2021, 5:47:09 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: uVQ2QxvKYtBjF78Veu9AhY0VMqekHtk1)
+4/12/2021, 7:10:02 PM - INFO - Server is running on port: 3030 
+4/12/2021, 9:57:54 PM - INFO - Server is running on port: 3030 
+4/13/2021, 6:05:50 PM - INFO - Server is running on port: 3030 
