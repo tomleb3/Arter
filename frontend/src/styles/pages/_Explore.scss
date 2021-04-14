@@ -2,9 +2,12 @@
     > p {
         font-size: 1.5em;
         margin-bottom: 15px;
+        margin-top: 15px;
 
         @media (max-width: $mobile-breakpoint) {
-            margin: 0 0 15px 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 1.2em;
         }
     }
 }

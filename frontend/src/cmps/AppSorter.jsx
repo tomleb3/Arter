@@ -26,7 +26,7 @@ export class AppSorter extends Component {
     render() {
         let { type, ascending } = this.state.sortParams
 
-        return <section className="app-sorter right">
+        return <section className="app-sorter flex j-end">
             <ButtonGroup variant="text">
                 <Button onClick={() => this.handleChange('')}>
                     <span className={`btn-all ${!type && 'active'}`}>All</span>

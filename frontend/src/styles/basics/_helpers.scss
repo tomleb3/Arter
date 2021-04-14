@@ -96,6 +96,15 @@
     &.a-baseline {
         align-items: baseline;
     }
+    &.a-self-center {
+        align-self: center;
+    }
+    &.a-self-start {
+        align-self: flex-start;
+    }
+    &.a-self-end {
+        align-self: flex-end;
+    }
 }
 
 .grid {

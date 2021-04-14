@@ -34,7 +34,6 @@ class _Explore extends Component {
                 : items.sort((a, b) => a.purchasedAt - b.purchasedAt)
                 break
             default: items = JSON.parse(JSON.stringify(this.props.items))
-            // default: items.sort((a, b) => b._id < a._id ? 1 : -1)
         }
         this.setState({
             ...this.state,

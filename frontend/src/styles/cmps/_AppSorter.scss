@@ -13,4 +13,7 @@
     .btn-available {
         margin-inline-start: 5px;
     }
+    @media (max-width: $mobile-breakpoint) {
+        justify-content: center !important;
+    }
 }

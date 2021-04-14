@@ -16,7 +16,8 @@ class _UserDetails extends Component {
 
     state = {
         user: null,
-        items: []
+        items: [],
+        itemFilter: ''
     }
 
     componentDidMount() {
@@ -62,11 +63,11 @@ class _UserDetails extends Component {
         this.setState({ user })
     }
 
-    getItemsForDisplay = async (sorter) => {
+    getItemsForDisplay = async filterBy => {
         const { id } = this.props.match.params
-        const { items } = this.props
+        const { items } = this.props //
         let itemsForDisplay
-        switch (sorter) {
+        switch (filterBy) {
             case 'sold':
                 itemsForDisplay = items.filter(item => id === item.seller._id && item.purchasedAt)
                 break
@@ -76,7 +77,11 @@ class _UserDetails extends Component {
             default:
                 itemsForDisplay = items.filter(item => id === item.seller._id)
         }
-        this.setState({ items: itemsForDisplay })
+        this.setState({
+            ...this.state,
+            items: itemsForDisplay,
+            itemFilter: filterBy
+        })
     }
 
     getSoldItems = () => {
@@ -111,7 +116,6 @@ class _UserDetails extends Component {
         const boughtItems = this.getBoughtItems()
 
         return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
-            {/* <AppFilter /> */}
             {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button>Edit Profile</button></Link>}
             {loggedInUser && loggedInUser._id === user._id && <button>Notifications</button>}
             {status === 'normal' && <Fragment>
@@ -149,8 +153,7 @@ class _UserDetails extends Component {
     }
 
     render() {
-        const { user, items } = this.state
-        const { loggedInUser } = this.props
+        const { user, items, itemFilter } = this.state
         const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div></div>
@@ -164,17 +167,17 @@ class _UserDetails extends Component {
                     {this.sidenavContent('normal')}
                     <div className="main">
                         <div className="about-user">
-                            <div className="flex j-between a-center">
+                            <div className="flex j-between a-baseline">
                                 <h1>{user.fullname}</h1>
                                 <div className="mobile-sidebar">
-                                    <div className="contact-btns-mobile flex a-center">
-                                        <p className="site-clr3">Custom Order</p>
-                                        <p className="site-clr1">Contact Me</p>
-                                        <label htmlFor="mobile-sidebar-checkbox"><MenuIcon className="pointer" /></label>
-                                    </div>
+                                    <label htmlFor="mobile-sidebar-checkbox"><MenuIcon className="pointer" /></label>
                                     <input type="checkbox" id="mobile-sidebar-checkbox" className="d-none" />
                                     <nav className="d-none">{this.sidenavContent('mobile')}</nav>
                                 </div>
+                            </div>
+                            <div className="contact-btns-mobile flex">
+                                <p className="site-clr3">Custom Order</p>
+                                <p className="site-clr1">Contact Me</p>
                             </div>
                             <br />
                             <p className="desc-txt">{user.description}</p>
@@ -183,9 +186,15 @@ class _UserDetails extends Component {
                         <div className="portfolio-container flex a-center j-between">
                             <h3>Portfolio</h3>
                             <ButtonGroup variant="text" size="small">
-                                <Button onClick={() => this.getItemsForDisplay()}>All</Button>
-                                <Button onClick={() => this.getItemsForDisplay('sold')}>Sold</Button>
-                                <Button onClick={() => this.getItemsForDisplay('forSale')}>For Sale</Button>
+                                <Button onClick={() => this.getItemsForDisplay('')}>
+                                    <span className={`btn-group ${!itemFilter && 'active'}`}>All</span>
+                                </Button>
+                                <Button onClick={() => this.getItemsForDisplay('sold')}>
+                                    <span className={`btn-group ${itemFilter === 'sold' && 'active'}`}>Sold</span>
+                                </Button>
+                                <Button onClick={() => this.getItemsForDisplay('forSale')}>
+                                    <span className={`btn-group ${itemFilter === 'forSale' && 'active'}`}>For Sale</span>
+                                </Button>
                             </ButtonGroup>
                         </div>
                         <ItemList items={items} />
