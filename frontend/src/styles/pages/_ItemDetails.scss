@@ -28,7 +28,6 @@
         }
     }
     .item-container {
-
         @media (max-width: 1000px) {
             flex-direction: column;
         }
@@ -36,8 +35,10 @@
         .item-img {
             max-width: 35vw;
             min-width: 25vw;
-            margin-inline-end: 2.5rem;
-
+            
+            @media (min-width: 1000px) {
+                margin-inline-end: 2.5rem;
+            }
             @media (max-width: 1000px) {
                 max-width: 100%;
                 margin-bottom: 2.5rem;

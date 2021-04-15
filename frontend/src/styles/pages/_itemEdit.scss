@@ -30,9 +30,10 @@
             min-width: 35vw;
             height: 55vh;
             background-color: #f3f3f3;
-            margin-inline-end: 2.5rem;
+            @media (min-width: 1000px) {
+                margin-inline-end: 2.5rem;
+            }
             @media (max-width: 1000px) {
-                margin-inline-end: 0;
                 margin-bottom: 2.5rem;
                 width: inherit;
                 max-width: none;
