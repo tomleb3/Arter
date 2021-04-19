@@ -1,5 +1,8 @@
 .user-list {
     margin-bottom: 70px;
+    @media (max-width: $mobile-breakpoint) {
+        margin-bottom: 40px;
+    }
 
     .swiper-pagination-bullet-active {
         background-color: $clr6;

@@ -12,15 +12,10 @@
         &:focus {
             outline: none;
         }
-
         @media (max-width: $narrow-breakpoint) {
-            width: 70%;
-        }
-        @media (max-width: $mobile-breakpoint) {
-            width: 95%;
+            width: 90%;
         }
     }
-
     @media (max-width: $narrow-breakpoint) {
         text-align: center;
     }

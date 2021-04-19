@@ -1,4 +1,8 @@
 .app-sorter {
+    margin-bottom: 10px;
+    .MuiButton-text {
+        padding: 6px 0 6px 8px;
+    }
     .btn-all {
         margin: 0 13px;
         transition: color 0.2s;
@@ -7,7 +11,7 @@
         }
     }
     .btn-date {
-        margin-inline-end: 13px;
+        margin-inline-end: 20px;
     }
     .btn-date,
     .btn-available {

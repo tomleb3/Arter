@@ -50,7 +50,7 @@ class _Explore extends Component {
             <p>Top Artists</p>
             <UserList users={users} items={this.props.items} />
             <AppSorter initialSort={location.sortBy} onSort={this.onSort} />
-            <p className={txt ? "visible" : "hidden"}>Results for {txt}</p>
+            <p className={txt ? "d-block" : "d-none"}>Results for {txt}</p>
             <ItemList users={users} items={items} withProfile />
         </section>
     }
