@@ -3,7 +3,6 @@ import { TextField } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import FaceIcon from '@material-ui/icons/Face'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import SecurityIcon from '@material-ui/icons/Security'
@@ -74,7 +73,7 @@ class _LoginSignup extends Component {
                 this.props.history.push('/')
             }
         } catch (err) {
-            return await this.setState({ msg: 'Login failed, try again.' })
+            return await this.setState({ msg: 'Login failed, please try again.' })
         }
     }
 
@@ -175,10 +174,10 @@ class _LoginSignup extends Component {
                         </div>
                     )}
                     <div className="btn-group flex">
-                        <Link to='/login' className="link"><Button style={{ color: "#13acca", fontWeight: "bold" }} onClick={() => { this.setState({ currPage: '/login' }) }}>Login</Button></Link>
-                        <Link to='/signup' className="link"><Button style={{ fontWeight: "bold" }} color="secondary" onClick={() => { this.setState({ currPage: '/signup' }) }}>Signup</Button></Link>
+                        <Link to='/login' className="link"><Button style={{ color: "#13acca", fontWeight: "bold" }} onClick={() => { this.setState({ currPage: '/login', msg: '' }) }}>Login</Button></Link>
+                        <Link to='/signup' className="link"><Button style={{ fontWeight: "bold" }} color="secondary" onClick={() => { this.setState({ currPage: '/signup', msg: '' }) }}>Signup</Button></Link>
                     </div>
-                    <p className="muted red">{msg ? '* ' + msg : ''}</p>
+                    <p className="muted site-clr3">{msg ? '* ' + msg : ''}</p>
                     <div className="lock-icon-div flex j-center">
                         <AccountCircleIcon fontSize="large" className={currPage === '/login' ? "site-clr1" : "site-clr3"}></AccountCircleIcon></div>
                     {(!loggedInUser && currPage === '/login') && loginSection}

@@ -1,5 +1,9 @@
 .app-filter {
     text-align: right;
+    position: sticky;
+    top: 70px;
+    z-index: 5;
+    background-color: #ffffffed;
 
     .search-bar {
         font-size: 1.1rem;

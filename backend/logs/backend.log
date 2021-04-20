@@ -1259,3 +1259,20 @@
 4/14/2021, 2:14:00 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: mWn5H22jf7MugJntvcvbiesQJwEJK4gZ)
 4/15/2021, 4:10:22 PM - INFO - Server is running on port: 3030 
 4/19/2021, 9:33:06 PM - INFO - Server is running on port: 3030 
+4/20/2021, 6:06:37 PM - INFO - Server is running on port: 3030 
+4/20/2021, 6:35:44 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:35:44 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:41:00 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:41:00 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:43:19 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:43:19 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:43:47 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:43:47 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:44:31 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:44:32 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:44:40 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:44:40 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:45:04 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:45:04 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:46:52 PM - DEBUG - auth.service - login with email: dfgert (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/20/2021, 6:46:52 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)

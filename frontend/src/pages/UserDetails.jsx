@@ -160,7 +160,8 @@ class _UserDetails extends Component {
         return (
             <section className="user-details main-layout m-page">
                 <div className="profile-header">
-                    <img className="banner-img" src={user.imgUrls.banner} alt="" />
+                    <img className="banner-img" src={user.imgUrls.banner ||
+                        'https://www.solidbackgrounds.com/images/950x350/950x350-light-gray-solid-color-background.jpg'} alt="" />
                     <img className="profile-img" src={user.imgUrls.profile} alt={user.fullname} alt="" />
                 </div>
                 <div className="content flex">
