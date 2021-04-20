@@ -121,6 +121,7 @@ class _UserDetails extends Component {
             <button>Custom Order</button>
             <button>Contact Me</button>
             <button>Favourites</button>
+            <button>Upcoming Events</button>
             {loggedInUser && loggedInUser._id === user._id &&
                 <Fragment>
                     <ul><h4>Items Bought</h4>
