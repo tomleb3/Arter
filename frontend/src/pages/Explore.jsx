@@ -4,30 +4,19 @@ import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { AppFilter } from '../cmps/AppFilter'
 import { loadItems } from '../store/actions/itemActions'
+import { AppSorter } from '../cmps/AppSorter.jsx'
 
 class _Explore extends Component {
 
-    // onSetFilter = (filterTxt) => {
-    //     this.props.loadItems(filterTxt)
-    // }
-
     state = {
-        items: [],
+        items: JSON.parse(JSON.stringify(this.props.items)),
         txt: ''
     }
 
     componentDidMount() {
+        const { sortBy } = this.props.location
+        if (sortBy) this.onSort({ type: sortBy, ascending: false })
         window.scrollTo(0, 0)
-        this.setState({ items: this.props.items })
-
-        // swal({
-        //     className: "swal",
-        //     // icon: "success",
-        //     title: "Purchase completed!",
-        //     text: "You can view your purchase details in your profile page.",
-        //     timer: 6000,
-        // })
-
     }
 
     onFilter = async txt => {
@@ -35,15 +24,33 @@ class _Explore extends Component {
         this.setState({ items, txt })
     }
 
+    onSort = sortParams => {
+        let { items } = this.state
+        switch (sortParams.type) {
+            case 'date': sortParams.ascending ? items.sort((a, b) => a.createdAt - b.createdAt)
+                : items.sort((a, b) => b.createdAt - a.createdAt)
+                break
+            case 'available': sortParams.ascending ? items.sort((a, b) => b.purchasedAt - a.purchasedAt)
+                : items.sort((a, b) => a.purchasedAt - b.purchasedAt)
+                break
+            default: items = JSON.parse(JSON.stringify(this.props.items))
+        }
+        this.setState({
+            ...this.state,
+            items: items
+        })
+    }
+
     render() {
-        const { users } = this.props
+        const { users, location } = this.props
         const { items, txt } = this.state
 
         return <section className="explore m-page main-layout">
-            <AppFilter initialFilter={this.props.location.type} onFilter={this.onFilter} />
+            <AppFilter initialFilter={location.filterBy} onFilter={this.onFilter} />
             <p>Top Artists</p>
             <UserList users={users} items={this.props.items} />
-            <p className={txt ? "visible" : "hidden"}>Results for {txt}</p>
+            <AppSorter initialSort={location.sortBy} onSort={this.onSort} />
+            <p className={txt ? "d-block" : "d-none"}>Results for {txt}</p>
             <ItemList users={users} items={items} withProfile />
         </section>
     }

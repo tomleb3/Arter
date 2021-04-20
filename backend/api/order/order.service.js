@@ -46,7 +46,6 @@ async function query(filterBy = {}) {
                 $unwind: '$item'
             }
         ]).toArray()
-        console.log(orders)
         return orders.map(order => {
             delete order.sellerId
             delete order.buyerId
@@ -63,7 +62,6 @@ async function query(filterBy = {}) {
 
 async function add(item) {
     try {
-        console.log('ORDER.SERVICE:', item)
         const store = asyncLocalStorage.getStore()
         const { userId } = store
         const orderToAdd = {

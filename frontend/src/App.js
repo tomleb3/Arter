@@ -17,6 +17,11 @@ import { UserEdit } from './pages/UserEdit'
 import { socketService } from './services/socketService.js'
 import swal from '@sweetalert/with-react'
 
+
+// WHEN FINISHING PROJECT -->
+// finally delete api/review folder in backend
+// and make sure nothing broke
+
 class _App extends Component {
 
   async componentDidMount() {
@@ -35,8 +40,13 @@ class _App extends Component {
     return swal(
       <div className="swal">
         <h1>Hey there!</h1>
-        <p><a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a> has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a> from you!</p>
-        <p>You can view your sold items details in your <a className="site-clr1" href={`#/user/${order.seller._id}`}> Profile Page.</a></p>
+        <p>
+          <a className="site-clr1" href={`#/user/${order.buyer._id}`}>{order.buyer.fullname}</a>
+           has just bought <a className="site-clr1" href={`#/item/${order.item._id}`}>{order.item.title}</a>
+            from you!</p>
+        <p>You can view your sold items details in your
+          <a className="site-clr1" href={`#/user/${order.seller._id}`}> Profile Page.</a>
+        </p>
       </div>)
   }
 
@@ -52,7 +62,7 @@ class _App extends Component {
             <Route path="/login" component={LoginSignup} />
             <Route path="/item/edit/:id?" component={ItemEdit} />
             <Route path="/item/:id" component={ItemDetails} />
-            <Route path="/user/edit/:id?" component={UserEdit} />
+            <Route path="/user/edit/:id" component={UserEdit} />
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/explore" component={Explore} />
             <Route path="/" component={Home} />

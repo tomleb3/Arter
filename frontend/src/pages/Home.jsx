@@ -9,36 +9,44 @@ import { utilService } from '../services/utilService.js'
 
 class _Home extends Component {
 
-    // componentDidMount() {  }
-
     constructor(props) {
         super(props);
         this.state = {
-            windowWidth: 0,
-            windowHeight: 0,
+            windowSize: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            },
+            items: JSON.parse(JSON.stringify(this.props.items)),
             randomItems: [],
             latestItems: []
         };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
     }
 
     componentDidMount() {
-        const { items } = this.props
+        const { items } = this.state
         window.scrollTo(0, 0)
+        window.addEventListener('resize', this.updateWindowDimensions)
+        this.updateWindowDimensions()
         this.setState({
+            ...this.state,
             randomItems: this.getRandomItems(items),
             latestItems: this.getLatestItems(items)
         })
-        window.addEventListener('resize', this.updateWindowDimensions);
-        this.updateWindowDimensions()
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
+        window.removeEventListener('resize', this.updateWindowDimensions)
     }
 
     updateWindowDimensions() {
-        this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
+        this.setState({
+            ...this.state,
+            windowSize: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            }
+        })
     }
 
     getRandomItems = items => {
@@ -55,8 +63,8 @@ class _Home extends Component {
     }
 
     render() {
-        const { users, items, loggedInUser } = this.props
-        const { randomItems, latestItems, windowWidth } = this.state
+        const { users, loggedInUser } = this.props
+        const { items, randomItems, latestItems, windowSize } = this.state
 
         return <section className="home m-page">
             <div className="hero">
@@ -72,48 +80,48 @@ class _Home extends Component {
                     <label>Hot Categories</label>
                     <section className="categories flex wrap j-between txt-center">
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", type: "Glass" }}>
+                            <Link to={{ pathname: "/explore", filterBy: "Glass" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1611425886/Home%20topics/tiqlnoshz1qkpmjec3yi.jpg)` }}>
-                                    {windowWidth < 1300 && <h5>Glasswork</h5>}
+                                    {windowSize.width < 1300 && <h5>Glasswork</h5>}
                                 </div>
-                                {windowWidth > 1300 && <h5>Glasswork</h5>}
+                                {windowSize.width > 1300 && <h5>Glasswork</h5>}
                             </Link>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", type: "Wood" }}>
+                            <Link to={{ pathname: "/explore", filterBy: "Wood" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1611431953/Home%20topics/kpdnlxgr5sczqeo9sfom.jpg)` }}>
-                                    {windowWidth < 1300 && <h5>Woodwork</h5>}
+                                    {windowSize.width < 1300 && <h5>Woodwork</h5>}
                                 </div>
-                                {windowWidth > 1300 && <h5>Woodwork</h5>}
+                                {windowSize.width > 1300 && <h5>Woodwork</h5>}
                             </Link>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", type: "Painting" }}>
+                            <Link to={{ pathname: "/explore", filterBy: "Painting" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825845/Home%20topics/painting1_fvloac.jpg)` }}>
-                                    {windowWidth < 1300 && <h5>Paintings</h5>}
+                                    {windowSize.width < 1300 && <h5>Paintings</h5>}
                                 </div>
-                                {windowWidth > 1300 && <h5>Paintings</h5>}
+                                {windowSize.width > 1300 && <h5>Paintings</h5>}
                             </Link>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", type: "Jewelry" }}>
+                            <Link to={{ pathname: "/explore", filterBy: "Jewelry" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610825888/Home%20topics/jewlery_ifguvi.jpg)` }}>
-                                    {windowWidth < 1300 && <h5>Jewelry</h5>}
+                                    {windowSize.width < 1300 && <h5>Jewelry</h5>}
                                 </div>
-                                {windowWidth > 1300 && <h5>Jewelry</h5>}
+                                {windowSize.width > 1300 && <h5>Jewelry</h5>}
                             </Link>
                         </div>
                         <div className="flex col">
-                            <Link to={{ pathname: "/explore", type: "Crafts" }}>
+                            <Link to={{ pathname: "/explore", filterBy: "Crafts" }}>
                                 <div className="flex a-center j-center"
                                     style={{ backgroundImage: `url(https://res.cloudinary.com/arter/image/upload/v1610826083/Home%20topics/origami-crafts_yx7ejc.jpg)` }}>
-                                    {windowWidth < 1300 && <h5>Crafts</h5>}
+                                    {windowSize.width < 1300 && <h5>Crafts</h5>}
                                 </div>
-                                {windowWidth > 1300 && <h5>Crafts</h5>}
+                                {windowSize.width > 1300 && <h5>Crafts</h5>}
                             </Link>
                         </div>
                     </section>
@@ -121,7 +129,7 @@ class _Home extends Component {
                 <article className="main-layout">
                     <div className="flex j-between a-center">
                         <label>Latest Works</label>
-                        <Link to="/explore" className="see-more">See More...</Link>
+                        <Link to={{ pathname: "/explore", sortBy: "date" }} className="see-more">See More...</Link>
                     </div>
                     <div className="latest-works flex j-between wrap">
                         {latestItems.map(item => {
@@ -151,7 +159,6 @@ class _Home extends Component {
                     <label>Top Artists</label>
                     <UserList users={users} items={items} tallMode />
                 </article>
-                {/* <GetStarted /> */}
             </main>
         </section>
     }

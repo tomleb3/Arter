@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { logout } from '../store/actions/userActions.js'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import AccountBoxIcon from '@material-ui/icons/AccountBox'
@@ -20,19 +20,23 @@ function _AppHeader({ loggedInUser, logout }) {
     return (
         <header>
             <section className="main-layout flex j-between a-baseline">
-                <div className="logo"><Link to="/">Arter</Link></div>
+                <div className="logo"><NavLink to="/">Arter</NavLink></div>
                 <nav className="flex">
-                    <Link to="/explore" className="link"><h3>Explore</h3></Link>
-                    <Link to={loggedInUser ? '/item/edit' : '/login'} className="link"><h3>Publish</h3></Link>
+                    <NavLink to="/explore" className="link">
+                        <h3>Explore</h3>
+                    </NavLink>
+                    <NavLink to={loggedInUser ? '/item/edit' : '/login'} className="link">
+                        <h3>Publish</h3>
+                    </NavLink>
                     {loggedInUser ?
-                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} alt=""/>}>
+                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} alt="" />}>
                             <MenuHeader>Account</MenuHeader>
-                            <MenuItem><AccountBoxIcon /><Link to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</Link></MenuItem>
+                            <MenuItem><AccountBoxIcon /><NavLink to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</NavLink></MenuItem>
                             <MenuDivider />
-                            <MenuItem><EditIcon /><Link to="/user/edit">&nbsp;&nbsp;Edit Profile</Link></MenuItem>
-                            <MenuItem onClick={logout}><ExitToAppIcon /><Link to="/">&nbsp;&nbsp;Logout</Link></MenuItem>
+                            <MenuItem><EditIcon /><NavLink to={`/user/edit/${loggedInUser._id}`}>&nbsp;&nbsp;Edit Profile</NavLink></MenuItem>
+                            <MenuItem onClick={logout}><ExitToAppIcon /><NavLink to="/">&nbsp;&nbsp;Logout</NavLink></MenuItem>
                         </Menu>
-                        : <Link to="/login"><AccountCircleIcon /></Link>}
+                        : <NavLink to="/login"><AccountCircleIcon /></NavLink>}
                 </nav>
             </section>
         </header>

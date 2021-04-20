@@ -1,25 +1,119 @@
-.item-edit{
-    width: 40vw;
-    min-width: 300px;
-    margin: 150px auto;
-    height: 47vh;
+.item-edit {
+    min-height: 60vh;
+    margin-top: 120px;
+    margin-bottom: 80px;
+    padding: 10px;
 
-    // .MuiButton-root{
-        // background-color: rgb(0, 255, 128);
-    // }
-
-    .m-bottom{
-        margin-bottom: 15px;
+    .MuiTextField-root {
+        display: block;
+        &.txtfield-title {
+            margin-bottom: 20px;
+            > div {
+                @media (min-width: 1000px) {
+                    width: 30vw;
+                }
+                label {
+                    font-size: 1.25em;
+                }
+                input {
+                    font-size: 2.2em;
+                }
+            }
+        }
     }
-
-    .save-btn{
-        width: 220px;
-        align-self: center;
-        margin-top: 40px;
-        margin-bottom: 30px;
-    }
-    .discard-btn{
-        width: 220px;
-        align-self: center;
+    .panel-container {
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+        .left-panel {
+            max-width: 40vw;
+            min-width: 35vw;
+            height: 55vh;
+            background-color: #f3f3f3;
+            @media (min-width: 1000px) {
+                margin-inline-end: 2.5rem;
+            }
+            @media (max-width: 1000px) {
+                margin-bottom: 2.5rem;
+                width: inherit;
+                max-width: none;
+            }
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+            &.img-ready {
+                height: auto;
+            }
+        }
+        .right-panel {
+            width: 425px;
+            @media (max-width: 1000px) {
+                width: 100%;
+            }
+            > h2 {
+                font-family: Yanone;
+                margin-bottom: 30px;
+            }
+            textarea {
+                outline: none;
+                border: none;
+                background-color: #f3f3f3;
+                margin-bottom: 30px;
+                padding: 10px;
+                width: 100%;
+                height: 120px;
+                font-family: raleway;
+                font-size: 1.1em;
+            }
+            .btn-addtag {
+                border: none;
+                background-color: transparent;
+                font-size: 1.5em;
+                height: fit-content;
+                margin-inline-start: 20px;
+                transition: color 0.1s;
+                &:hover {
+                    color: $clr1;
+                }
+            }
+            .MuiTextField-root {
+                margin-bottom: 30px;
+                &.txtfield-price {
+                    margin-bottom: 50px;
+                    > div {
+                        width: 22%;
+                    }
+                }
+            }
+            .tags-container {
+                margin-bottom: 30px;
+                color: $clr1;
+                > div {
+                    &:not(:last-of-type) {
+                        margin-inline-end: 30px;
+                    }
+                    sup {
+                        color: black;
+                        font-size: 0.7em;
+                        margin-inline-start: 4px;
+                    }
+                }
+            }
+            .btns-container {
+                width: fit-content;
+                align-self: flex-end;
+                button {
+                    font-size: 1em;
+                    transition: color 0.1s;
+                    &.btn-save:hover {
+                        color: $clr1;
+                    }
+                    &.btn-delete:hover {
+                        color: $clr3;
+                    }
+                }
+            }
+        }
     }
 }

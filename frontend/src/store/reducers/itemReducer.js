@@ -6,6 +6,7 @@ const initialState = {
 export function itemReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_ITEMS':
+            console.log(action.items)
             return { ...state, items: action.items }
         case 'EDIT_ITEM':
             return {

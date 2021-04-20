@@ -39,7 +39,8 @@ function remove(itemId) {
 
 }
 function add(item) {
-    return httpService.post(`item`, item)
+    console.log('itemService:', item)
+    return httpService.post('item', item)
 }
 
 function update(item) {

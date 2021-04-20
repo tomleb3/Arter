@@ -15,12 +15,12 @@ header {
     nav {
         .link {
             margin-inline-end: 25px;
-        }
-        h3 {
-            padding: 10px;
-            &:hover {
-                background-color: rgba(140, 140, 140, 0.06);
-                border-radius: 6px;
+            h3 {
+                padding: 10px;
+                &:hover {
+                    background-color: rgba(140, 140, 140, 0.06);
+                    border-radius: 6px;
+                }
             }
         }
         img {

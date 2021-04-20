@@ -1,5 +1,6 @@
 .item-details {
     margin-top: 120px;
+    min-height: 60vh;
 
     @media (max-width: $mobile-breakpoint) {
         margin-top: 90px;
@@ -27,8 +28,6 @@
         }
     }
     .item-container {
-        gap: 3rem;
-
         @media (max-width: 1000px) {
             flex-direction: column;
         }
@@ -36,10 +35,13 @@
         .item-img {
             max-width: 35vw;
             min-width: 25vw;
-
+            
+            @media (min-width: 1000px) {
+                margin-inline-end: 2.5rem;
+            }
             @media (max-width: 1000px) {
                 max-width: 100%;
-                padding-bottom: 15px;
+                margin-bottom: 2.5rem;
             }
         }
         h5 {
@@ -50,10 +52,13 @@
 
             h2,
             p,
-            .tags {
+            .tags-container {
                 margin-bottom: 30px;
-                small {
-                    color: $clr1;
+                > div {
+                    margin-inline-end: 15px;
+                    small {
+                        color: $clr1;
+                    }
                 }
             }
             .desc-txt {
