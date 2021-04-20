@@ -47,7 +47,7 @@ class _Explore extends Component {
 
         return <section className="explore m-page main-layout">
             <AppFilter initialFilter={location.filterBy} onFilter={this.onFilter} />
-            <p>Top Artists</p>
+            <p>Featured Artists</p>
             <UserList users={users} items={this.props.items} />
             <AppSorter initialSort={location.sortBy} onSort={this.onSort} />
             <p className={txt ? "d-block" : "d-none"}>Results for {txt}</p>
