@@ -194,9 +194,6 @@
                 }
             }
         }
-        .btn-group-container {
-            margin-bottom: 20px;
-        }
         .portfolio-container {
             margin-top: 75px;
             > h3 {
@@ -213,11 +210,6 @@
                 margin-inline-start: 10px;
                 margin-inline-end: 10px;
             }
-            .btn-group {
-                &.active {
-                    color: $clr1;
-                }
-            }
 
             @media (max-width: $mobile-breakpoint) {
                 margin-top: 50px;
@@ -225,6 +217,12 @@
                 h3 {
                     font-size: 1.55em;
                 }
+            }
+        }
+        .btn-group-container {
+            margin-bottom: 20px;
+            span.active {
+                color: $clr1;
             }
         }
         .review-container {
