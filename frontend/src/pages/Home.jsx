@@ -156,7 +156,7 @@ class _Home extends Component {
                     </div>
                 </article>
                 <article className="main-layout">
-                    <label>Top Artists</label>
+                    <label>Featured Artists</label>
                     <UserList users={users} items={items} tallMode />
                 </article>
             </main>
