@@ -129,48 +129,58 @@ class _UserDetails extends Component {
         this.setState({ ...this.state, currTab: tabToSwitch }, this.getItemsForDisplay)
     }
 
+    socialLinksCheck = () => {
+        const { user } = this.state
+        if (!user.socialLinks) return
+        for (var link in user.socialLinks) {
+            return user.socialLinks[link] ? true : false
+        }
+    }
+
     sidenavContent(status) {
         const { user } = this.state
         const { loggedInUser } = this.props
         const soldItems = this.getSoldItems()
         const boughtItems = this.getBoughtItems()
+        console.log(this.socialLinksCheck())
 
         return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
             <div className="socials-container">
                 <h4 className="lbl-socials">Socials</h4>
                 <div>
-                    {user.socialLinks && <Fragment>
+                    {this.socialLinksCheck() ? <Fragment>
                         {user.socialLinks.facebook && <a className="social-box flex a-center"
                             href={`https://www.facebook.com/${user.socialLinks.facebook}`}>
-                            <img src={facebookIcon} alt="" />
+                            <img src={facebookIcon} alt="Facebook" />
                             <strong>{user.socialLinks.facebook}</strong>
                         </a>}
                         {user.socialLinks.instagram && <a className="social-box flex a-center"
                             href={`https://www.instagram.com/${user.socialLinks.instagram}`}>
-                            <img src={instagramIcon} alt="" />
+                            <img src={instagramIcon} alt="Instagram" />
                             <strong>{user.socialLinks.instagram}</strong>
                         </a>}
                         {user.socialLinks.behance && <a className="social-box flex a-center"
                             href={`https://www.behance.net/${user.socialLinks.behance}`}>
-                            <img src={behanceIcon} alt="" />
+                            <img src={behanceIcon} alt="Behance" />
                             <strong>{user.socialLinks.behance}</strong>
                         </a>}
                         {user.socialLinks.dribbble && <a className="social-box flex a-center"
                             href={`https://www.dribbble.com/${user.socialLinks.dribbble}`}>
-                            <img src={dribbbleIcon} alt="" />
+                            <img src={dribbbleIcon} alt="Dribbble" />
                             <strong>{user.socialLinks.dribbble}</strong>
                         </a>}
                         {user.socialLinks.linkedin && <a className="social-box flex a-center"
                             href={`https://www.linkedin.com/in/${user.socialLinks.linkedin}`}>
-                            <img src={linkedinIcon} alt="" />
+                            <img src={linkedinIcon} alt="Linkedin" />
                             <strong>{user.socialLinks.linkedin}</strong>
                         </a>}
                         {user.socialLinks.deviantart && <a className="social-box flex a-center"
-                        href={`https://www.deviantart.com/${user.socialLinks.deviantart}`}>
-                            <img src={deviantartIcon} alt="" />
+                            href={`https://www.deviantart.com/${user.socialLinks.deviantart}`}>
+                            <img src={deviantartIcon} alt="DeviantArt" />
                             <strong>{user.socialLinks.deviantart}</strong>
                         </a>}
-                    </Fragment>}
+                    </Fragment>
+                        : <span className="muted">No social links yet..</span>}
                 </div>
             </div>
             {loggedInUser && loggedInUser._id === user._id &&

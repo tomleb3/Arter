@@ -1298,3 +1298,4 @@
 23/04/2021, 10:42:22 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: tM6_18mQxD14gNQ9qxGNjU1-yVKWWR1E)
 23/04/2021, 10:57:29 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: eBRwIEUrDSLqevSWp44_O4EnfUOov5be)
 23/04/2021, 11:22:49 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: eBRwIEUrDSLqevSWp44_O4EnfUOov5be)
+23/04/2021, 19:23:05 - INFO - Server is running on port: 3030 
