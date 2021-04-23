@@ -35,7 +35,7 @@
         .item-img {
             max-width: 35vw;
             min-width: 25vw;
-            
+
             @media (min-width: 1000px) {
                 margin-inline-end: 2.5rem;
             }
@@ -49,6 +49,17 @@
         }
         .item-desc {
             width: 425px;
+
+            > div > div {
+                a {
+                    margin-inline-end: 18px;
+                }
+                button {
+                    border: none;
+                    background-color: transparent;
+                    padding: 0;
+                }
+            }
 
             h2,
             p,

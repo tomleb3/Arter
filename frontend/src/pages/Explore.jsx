@@ -51,7 +51,7 @@ class _Explore extends Component {
             <UserList users={users} items={this.props.items} />
             <AppSorter initialSort={location.sortBy} onSort={this.onSort} />
             <p className={txt ? "d-block" : "d-none"}>Results for {txt}</p>
-            <ItemList users={users} items={items} withProfile />
+            <ItemList users={users} items={items} />
         </section>
     }
 }

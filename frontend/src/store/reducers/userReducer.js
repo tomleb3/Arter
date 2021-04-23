@@ -18,9 +18,9 @@ export function userReducer(state = initialState, action = {}) {
     case 'SET_USERS':
       return { ...state, users: action.users }
     case 'EDIT_USER':
-      console.log('editAction:', action)
       return {
         ...state,
+        loggedInUser: action.user,
         users: state.users.map(user => (user._id === action.user._id) ? action.user : user)
       }
     case 'REMOVE_REVIEW':

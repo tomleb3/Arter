@@ -29,7 +29,7 @@ export function UserList({ users, items, tallMode }) {
         <Swiper
             spaceBetween={30}
             breakpoints={{
-                // when window width is >= 580px
+                // when window width is >= 500px
                 500: {
                     slidesPerView: 2
                 },
@@ -50,11 +50,6 @@ export function UserList({ users, items, tallMode }) {
             observer
             updateOnWindowResize
             autoplay={{ delay: 2500, disableOnInteraction: false }}
-            // pagination={{
-            //     el: '.swiper-pagination',
-            //     clickable: true
-            // }}
-            // scrollbar={{ draggable: true }}
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}>
 

@@ -11,9 +11,8 @@ export const userService = {
     getLoggedinUser
 }
 
-function query(filterBy) {
-    var queryStr = (!filterBy) ? '' : `?fullname_like=${filterBy.name}&sort=anaAref`
-    return httpService.get(`user/${queryStr}`)
+function query() {
+    return httpService.get(`user`)
 }
 
 function getById(userId) {
@@ -22,7 +21,6 @@ function getById(userId) {
 
 async function save(userToSave) {
     const savedUser = await httpService.put(`user/${userToSave._id}`, userToSave)
-    console.log(savedUser)
     _saveLocalUser(savedUser)
     return savedUser
 }

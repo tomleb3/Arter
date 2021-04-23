@@ -1,5 +1,4 @@
 .item-preview {
-    // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 1px;
     height: 100%;
     max-width: auto;
@@ -10,8 +9,6 @@
     }
 
     &.min {
-        // width: fit-content;
-        // height: fit-content;
         max-width: fit-content;
 
         .item-img {
@@ -33,58 +30,54 @@
         }
     }
 
-    p {
-        margin-bottom: 10px;
-    }
-
     .item-img {
         width: 100%;
         margin-bottom: 5px;
-        // background-color: lightgray;
+        background-color: lightgray;
     }
 
-    .item-info {
-        h3 {
-            font-weight: 400;
-            font-size: 1.5em;
+    > div {
+        .item-info {
+            h3 {
+                font-weight: 400;
+                font-size: 1.5em;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            .user-name {
+                width: fit-content;
+                p {
+                    font-size: 1.1em;
+                    margin-inline-end: 5px;
+                }
+            }
+            h3 {
+                font-size: 1.4em;
+                letter-spacing: 1.1px;
+                margin-bottom: 10px;
+            }
+            .user-rating {
+                font-size: 0.75rem;
+                margin-top: 3px;
+            }
         }
-
         @media (max-width: $mobile-breakpoint) {
             margin: 5px 10px;
         }
     }
-
-    .user-name {
+    button {
+        height: fit-content;
         width: fit-content;
-        // margin-bottom: 10px;
-
-        p {
-            font-size: 1.1em;
-            margin-inline-end: 5px;
-        }
-    }
-
-    h3 {
-        font-size: 1.4em;
-        letter-spacing: 1.1px;
-        margin-bottom: 10px;
-    }
-
-    .user-rating {
-        font-size: 0.75rem;
-        margin-top: 3px;
-    }
-
-    .remove-btn {
-        background-color: lightgray;
-        border-radius: 50%;
         border: none;
-        padding-right: 5px;
-        padding-left: 5px;
+        background-color: transparent;
+        padding: 0;
 
-        &:hover {
-            background-color: rgb(179, 171, 171);
-            color: white;
+        @media (max-width: $mobile-breakpoint) {
+            svg {
+                height: 25px;
+                width: 25px;
+            }
         }
     }
 }

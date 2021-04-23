@@ -1,8 +1,6 @@
 import React from 'react'
 import { Rating } from '@material-ui/lab'
 import { Link } from 'react-router-dom'
-// import { UserPreview } from './UserPreview';
-// import { LongTxt } from './LongTxt';
 
 
 export function ReviewPreview({ review }) {

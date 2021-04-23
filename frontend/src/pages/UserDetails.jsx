@@ -8,16 +8,24 @@ import { editUser } from '../store/actions/userActions.js'
 import { ItemList } from '../cmps/ItemList.jsx'
 import { ReviewAdd } from '../cmps/ReviewAdd.jsx'
 import { Rating } from '@material-ui/lab'
-import { Link } from 'react-router-dom'
 import { Button, ButtonGroup } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+
+// Social icons -
+import facebookIcon from '../assets/imgs/socials-icons/facebook.svg'
+import instagramIcon from '../assets/imgs/socials-icons/instagram.svg'
+import behanceIcon from '../assets/imgs/socials-icons/behance.svg'
+import dribbbleIcon from '../assets/imgs/socials-icons/dribbble.svg'
+import linkedinIcon from '../assets/imgs/socials-icons/linkedin.svg'
+import deviantartIcon from '../assets/imgs/socials-icons/deviantart.svg'
 
 class _UserDetails extends Component {
 
     state = {
         user: null,
         items: [],
-        itemFilter: ''
+        itemFilter: '',
+        currTab: 'portfolio'
     }
 
     componentDidMount() {
@@ -64,18 +72,25 @@ class _UserDetails extends Component {
     }
 
     getItemsForDisplay = async filterBy => {
-        const { id } = this.props.match.params
-        const { items } = this.props //
-        let itemsForDisplay
+        const userId = this.props.match.params.id
+        const { items, loggedInUser } = this.props
+        const { currTab } = this.state
+
+        let itemsForDisplay = JSON.parse(JSON.stringify(items))
+        itemsForDisplay = (currTab === 'portfolio')
+            ? itemsForDisplay.filter(item => userId === item.seller._id)
+            : itemsForDisplay.filter(item => loggedInUser.favorites &&
+                loggedInUser.favorites.includes(item._id))
+
         switch (filterBy) {
             case 'sold':
-                itemsForDisplay = items.filter(item => id === item.seller._id && item.purchasedAt)
+                itemsForDisplay = itemsForDisplay.filter(item => item.purchasedAt)
                 break
             case 'forSale':
-                itemsForDisplay = items.filter(item => id === item.seller._id && !item.purchasedAt)
+                itemsForDisplay = itemsForDisplay.filter(item => !item.purchasedAt)
                 break
             default:
-                itemsForDisplay = items.filter(item => id === item.seller._id)
+                itemsForDisplay = itemsForDisplay
         }
         this.setState({
             ...this.state,
@@ -109,6 +124,11 @@ class _UserDetails extends Component {
         return sum
     }
 
+    onSwitchTab = tabToSwitch => {
+        if (tabToSwitch === this.state.currTab) return
+        this.setState({ ...this.state, currTab: tabToSwitch }, this.getItemsForDisplay)
+    }
+
     sidenavContent(status) {
         const { user } = this.state
         const { loggedInUser } = this.props
@@ -116,13 +136,43 @@ class _UserDetails extends Component {
         const boughtItems = this.getBoughtItems()
 
         return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
-            {loggedInUser && loggedInUser._id === user._id && <Link to={`/user/edit/${user._id}`}><button>Edit Profile</button></Link>}
-            {loggedInUser && loggedInUser._id === user._id && <button>Notifications</button>}
-            {status === 'normal' && <Fragment>
-                <button>Custom Order</button>
-                <button>Contact Me</button>
-            </Fragment>}
-            <button>Favourites</button>
+            <div className="socials-container">
+                <h4 className="lbl-socials">Socials</h4>
+                <div>
+                    {user.socialLinks && <Fragment>
+                        {user.socialLinks.facebook && <a className="social-box flex a-center"
+                            href={`https://www.facebook.com/${user.socialLinks.facebook}`}>
+                            <img src={facebookIcon} alt="" />
+                            <strong>{user.socialLinks.facebook}</strong>
+                        </a>}
+                        {user.socialLinks.instagram && <a className="social-box flex a-center"
+                            href={`https://www.instagram.com/${user.socialLinks.instagram}`}>
+                            <img src={instagramIcon} alt="" />
+                            <strong>{user.socialLinks.instagram}</strong>
+                        </a>}
+                        {user.socialLinks.behance && <a className="social-box flex a-center"
+                            href={`https://www.behance.net/${user.socialLinks.behance}`}>
+                            <img src={behanceIcon} alt="" />
+                            <strong>{user.socialLinks.behance}</strong>
+                        </a>}
+                        {user.socialLinks.dribbble && <a className="social-box flex a-center"
+                            href={`https://www.dribbble.com/${user.socialLinks.dribbble}`}>
+                            <img src={dribbbleIcon} alt="" />
+                            <strong>{user.socialLinks.dribbble}</strong>
+                        </a>}
+                        {user.socialLinks.linkedin && <a className="social-box flex a-center"
+                            href={`https://www.linkedin.com/in/${user.socialLinks.linkedin}`}>
+                            <img src={linkedinIcon} alt="" />
+                            <strong>{user.socialLinks.linkedin}</strong>
+                        </a>}
+                        {user.socialLinks.deviantart && <a className="social-box flex a-center"
+                        href={`https://www.deviantart.com/${user.socialLinks.deviantart}`}>
+                            <img src={deviantartIcon} alt="" />
+                            <strong>{user.socialLinks.deviantart}</strong>
+                        </a>}
+                    </Fragment>}
+                </div>
+            </div>
             {loggedInUser && loggedInUser._id === user._id &&
                 <Fragment>
                     <ul><h4>Items Bought</h4>
@@ -153,7 +203,8 @@ class _UserDetails extends Component {
     }
 
     render() {
-        const { user, items, itemFilter } = this.state
+        const { user, items, itemFilter, currTab } = this.state
+        const { loggedInUser } = this.props
         const userRating = utilService.calcRate(user) || 0
 
         if (!user) return <div></div>
@@ -166,7 +217,7 @@ class _UserDetails extends Component {
                 </div>
                 <div className="content flex">
                     {this.sidenavContent('normal')}
-                    <div className="main">
+                    <main>
                         <div className="about-user">
                             <div className="flex j-between a-baseline">
                                 <h1>{user.fullname}</h1>
@@ -184,8 +235,17 @@ class _UserDetails extends Component {
                             <p className="desc-txt">{user.description}</p>
                         </div>
 
-                        <div className="portfolio-container flex a-center j-between">
-                            <h3>Portfolio</h3>
+                        <div className="portfolio-container flex a-center">
+                            <h3 className={currTab === 'portfolio' ? 'activeTab' : ''}
+                                onClick={() => this.onSwitchTab('portfolio')}>Portfolio</h3>
+                            {loggedInUser && user._id === loggedInUser._id &&
+                                <Fragment>
+                                    <span>•</span>
+                                    <h3 className={currTab === 'favorites' ? 'activeTab' : ''}
+                                        onClick={() => this.onSwitchTab('favorites')}>Favorites</h3>
+                                </Fragment>}
+                        </div>
+                        <div className="btn-group-container flex j-end">
                             <ButtonGroup variant="text" size="small">
                                 <Button onClick={() => this.getItemsForDisplay('')}>
                                     <span className={`btn-group ${!itemFilter && 'active'}`}>All</span>
@@ -208,7 +268,7 @@ class _UserDetails extends Component {
                             {<ReviewAdd onAdd={this.onAddReview} currUser={user} />}
                         </div>
                         <ReviewList reviews={user.reviews} />
-                    </div>
+                    </main>
                 </div>
             </section>
         )

@@ -133,7 +133,7 @@ class _Home extends Component {
                     </div>
                     <div className="latest-works flex j-between wrap">
                         {latestItems.map(item => {
-                            return <ItemPreview key={item._id} item={item} minified withProfile />
+                            return <ItemPreview key={item._id} item={item} minified />
                         })}
                     </div>
                 </article>
@@ -151,7 +151,7 @@ class _Home extends Component {
                     </div>
                     <div className="featured-creations flex j-between wrap">
                         {randomItems.map(item => {
-                            return <ItemPreview key={item._id} item={item} minified withProfile />
+                            return <ItemPreview key={item._id} item={item} minified />
                         })}
                     </div>
                 </article>

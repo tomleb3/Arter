@@ -1276,3 +1276,25 @@
 4/20/2021, 6:45:04 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
 4/20/2021, 6:46:52 PM - DEBUG - auth.service - login with email: dfgert (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
 4/20/2021, 6:46:52 PM - ERROR - Failed to Login Invalid email or password (sid: sBqNu3nIw7X0LPAkvZfPn7MSt2wDdTV0)
+4/21/2021, 1:03:17 PM - INFO - Server is running on port: 3030 
+4/21/2021, 1:40:13 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: YoIUIDXV5VIJnRTj9_EkSsZ-GmXHKGGn)
+4/21/2021, 1:41:13 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: YoIUIDXV5VIJnRTj9_EkSsZ-GmXHKGGn)
+4/21/2021, 2:06:41 PM - INFO - Server is running on port: 3030 
+4/21/2021, 2:21:54 PM - INFO - Server is running on port: 3030 
+4/21/2021, 7:18:59 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: bIgSNpQAlrsgMVL8r_nPVvr7tahzz9jC)
+4/21/2021, 7:49:33 PM - INFO - Server is running on port: 3030 
+4/21/2021, 8:07:39 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: oQ-jjq1f_6yodoq1nno4Z80oS9pboVOt)
+4/21/2021, 8:12:19 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: oQ-jjq1f_6yodoq1nno4Z80oS9pboVOt)
+4/21/2021, 9:44:06 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: oQ-jjq1f_6yodoq1nno4Z80oS9pboVOt)
+4/21/2021, 11:11:29 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: oQ-jjq1f_6yodoq1nno4Z80oS9pboVOt)
+4/22/2021, 10:10:53 AM - INFO - Server is running on port: 3030 
+4/22/2021, 12:28:14 PM - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: U8l69GVqERnakGhV-Ih6Ym_k61VrETZX)
+4/22/2021, 12:30:06 PM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: VlWiyxk-_F6y0dy--73DjOqXEn0RmmQB)
+23/04/2021, 10:06:33 - INFO - Server is running on port: 3030 
+23/04/2021, 10:07:28 - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: E0psHq-Ls6-gJ9CnbFFtF5M2xSY8vkiS)
+23/04/2021, 10:35:48 - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: Mc4vYCPITYc2iafqto2qH4IKFLbK0d9T)
+23/04/2021, 10:36:34 - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: ovR7w4iwdjG-ss4sVFPtmLruB1LtVWW6)
+23/04/2021, 10:36:43 - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: Z_UFTYIPENFjIBeTFRO3ieicv8NDHa6_)
+23/04/2021, 10:42:22 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: tM6_18mQxD14gNQ9qxGNjU1-yVKWWR1E)
+23/04/2021, 10:57:29 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: eBRwIEUrDSLqevSWp44_O4EnfUOov5be)
+23/04/2021, 11:22:49 - DEBUG - auth.service - login with email: sophilinya@gmail.com (sid: eBRwIEUrDSLqevSWp44_O4EnfUOov5be)

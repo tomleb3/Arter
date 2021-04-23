@@ -60,6 +60,29 @@
                 }
             }
         }
+        .social-container {
+            margin-top: 55px;
+            h3 {
+                font-weight: 400;
+                margin-bottom: 10px;
+            }
+            > div {
+                > div {
+                    > div {
+                        margin-bottom: 20px;
+                    }
+                }
+                img {
+                    margin-inline-end: 10px;
+                    width: 25px;
+                    height: 25px;
+                }
+                .MuiTextField-root {
+                    margin-bottom: 0;
+                    width: 30%;
+                }
+            }
+        }
     }
     .MuiTextField-root {
         display: block;
