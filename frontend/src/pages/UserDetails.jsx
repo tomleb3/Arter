@@ -180,7 +180,7 @@ class _UserDetails extends Component {
                             <strong>{user.socialLinks.deviantart}</strong>
                         </a>}
                     </Fragment>
-                        : <span className="muted">No social links yet..</span>}
+                        : <span className="muted">No social links yet...</span>}
                 </div>
             </div>
             {loggedInUser && loggedInUser._id === user._id &&
@@ -245,7 +245,7 @@ class _UserDetails extends Component {
                             <p className="desc-txt">{user.description}</p>
                         </div>
 
-                        <div className="portfolio-container flex a-center">
+                        <div className="tab-container flex a-center">
                             <h3 className={currTab === 'portfolio' ? 'activeTab' : ''}
                                 onClick={() => this.onSwitchTab('portfolio')}>Portfolio</h3>
                             {loggedInUser && user._id === loggedInUser._id &&
@@ -255,7 +255,8 @@ class _UserDetails extends Component {
                                         onClick={() => this.onSwitchTab('favorites')}>Favorites</h3>
                                 </Fragment>}
                         </div>
-                        <div className="btn-group-container flex j-end">
+                        <div className="piece-count-btn-group-container flex j-between">
+                            <span>{items.length} {items.length === 1 ? 'piece' : 'pieces'}</span>
                             <ButtonGroup variant="text" size="small">
                                 <Button onClick={() => this.getItemsForDisplay('')}>
                                     <span className={`btn-group ${!itemFilter && 'active'}`}>All</span>

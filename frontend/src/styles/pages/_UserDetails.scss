@@ -194,8 +194,9 @@
                 }
             }
         }
-        .portfolio-container {
+        .tab-container {
             margin-top: 75px;
+            margin-bottom: 4px;
             > h3 {
                 font-size: 1.8em;
                 opacity: 0.25;
@@ -219,10 +220,17 @@
                 }
             }
         }
-        .btn-group-container {
+        .piece-count-btn-group-container {
             margin-bottom: 20px;
-            span.active {
-                color: $clr1;
+            @media (max-width: $mobile-breakpoint) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            > span {
+                margin-top: 6px;
+                &.active {
+                    color: $clr1;
+                }
             }
         }
         .review-container {
