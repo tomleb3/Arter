@@ -228,9 +228,9 @@
             }
             > span {
                 margin-top: 6px;
-                &.active {
-                    color: $clr1;
-                }
+            }
+            button span.active {
+                color: $clr1;
             }
         }
         .review-container {

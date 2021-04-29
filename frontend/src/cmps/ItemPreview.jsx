@@ -33,8 +33,8 @@ function _ItemPreview({ item, minified, loggedInUser, editUser }) {
         const user = JSON.parse(JSON.stringify(loggedInUser))
         try {
             if (isLiked) {
-                user.favorites = user.favorites.filter(like => {
-                    return like !== item._id
+                user.favorites = user.favorites.filter(likeId => {
+                    return likeId !== item._id
                 })
             }
             else {

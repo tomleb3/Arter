@@ -126,7 +126,8 @@ class _UserDetails extends Component {
 
     onSwitchTab = tabToSwitch => {
         if (tabToSwitch === this.state.currTab) return
-        this.setState({ ...this.state, currTab: tabToSwitch }, this.getItemsForDisplay)
+        this.setState({ ...this.state, currTab: tabToSwitch },
+            this.getItemsForDisplay)
     }
 
     socialLinksCheck = () => {
@@ -142,7 +143,6 @@ class _UserDetails extends Component {
         const { loggedInUser } = this.props
         const soldItems = this.getSoldItems()
         const boughtItems = this.getBoughtItems()
-        console.log(this.socialLinksCheck())
 
         return <aside className={status === 'normal' ? "sidebar" : "sidebar mobile"}>
             <div className="socials-container">
