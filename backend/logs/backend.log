@@ -1305,3 +1305,14 @@
 23/04/2021, 21:42:40 - INFO - Server is running on port: 3030 
 4/25/2021, 10:04:04 AM - INFO - Server is running on port: 3030 
 4/29/2021, 7:07:46 PM - INFO - Server is running on port: 3030 
+5/4/2021, 1:36:51 PM - INFO - Server is running on port: 3030 
+5/4/2021, 1:37:22 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: P1zpaLTZe0PvxVJoxKPn8No_VB_r8Q7H)
+5/4/2021, 1:45:43 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: ZIwr_CytCCVy5n4nqTuLBHmFlAawUQLs)
+5/4/2021, 1:50:42 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: R1egGXTfHAGOlkZ1u-m1FaZ-sqit9fs1)
+5/4/2021, 1:51:44 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: 49kNoc1LltDkDkLOyfwA65FGOSmnsAQy)
+5/4/2021, 1:53:22 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: CoFmBfal9-Hl2jnqvcakIAKxttqQjGhZ)
+5/4/2021, 1:55:55 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: 8dD6dKxhxIwmgqlZM0-4jFTjrNFIvh67)
+5/4/2021, 1:56:48 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: eg3VxaoH61Qt2SIg7ufsaka-CwKChjzE)
+5/4/2021, 1:57:18 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: V8u1hW8jXjA0TJohXFU3VfgYH0msYVd9)
+5/4/2021, 2:00:49 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: uYbZIZ9OJ54-c5_W3zgpyCIi92L11oDD)
+5/4/2021, 2:05:59 PM - DEBUG - auth.service - login with email: effratt@gmail.com (sid: -QMDtZljaPh1PybYEXJsrrhJDe6JyMx5)

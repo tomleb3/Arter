@@ -21,7 +21,6 @@ function getById(userId) {
 
 async function save(userToSave) {
     const savedUser = await httpService.put(`user/${userToSave._id}`, userToSave)
-    _saveLocalUser(savedUser)
     return savedUser
 }
 

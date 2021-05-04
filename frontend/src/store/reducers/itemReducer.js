@@ -1,6 +1,5 @@
 const initialState = {
     items: [],
-    // filterBy: { type: 'All', name: '' , inStock: true }
 }
 
 export function itemReducer(state = initialState, action) {
@@ -22,10 +21,4 @@ export function itemReducer(state = initialState, action) {
         default:
             return state
     }
-} 
-
-
-
-
-// case 'FILTER_ITEMS':
-        //     return { ...state, filterBy: action.filterBy }
+}
