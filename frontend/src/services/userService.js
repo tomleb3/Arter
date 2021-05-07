@@ -20,7 +20,9 @@ function getById(userId) {
 }
 
 async function save(userToSave) {
+    const loggedInUser = getLoggedinUser()
     const savedUser = await httpService.put(`user/${userToSave._id}`, userToSave)
+    savedUser._id === loggedInUser._id && _saveLocalUser(savedUser)
     return savedUser
 }
 

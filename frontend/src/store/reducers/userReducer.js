@@ -18,7 +18,6 @@ export function userReducer(state = initialState, action = {}) {
     case 'SET_USERS':
       return { ...state, users: action.users }
     case 'EDIT_USER':
-      console.log(action.user, localLoggedInUser)
       return {
         ...state,
         loggedInUser: (action.user._id === state.loggedInUser._id) ? action.user : state.loggedInUser,
