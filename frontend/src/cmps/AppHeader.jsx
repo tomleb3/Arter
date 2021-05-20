@@ -29,7 +29,8 @@ function _AppHeader({ loggedInUser, logout }) {
                         <h3>Publish</h3>
                     </NavLink>
                     {loggedInUser ?
-                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile} alt="" />}>
+                        <Menu align="end" menuButton={<img src={loggedInUser.imgUrls.profile ||
+                            'https://www.infinitealoe.com/media/wysiwyg/swatches/grey.png'} alt="" />}>
                             <MenuHeader>Account</MenuHeader>
                             <MenuItem><AccountBoxIcon /><NavLink to={`/user/${loggedInUser._id}`}>&nbsp;&nbsp;Profile</NavLink></MenuItem>
                             <MenuDivider />

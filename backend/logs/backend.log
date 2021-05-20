@@ -1340,3 +1340,6 @@
 5/20/2021, 10:29:02 AM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: w2cma23yq6iQXWYmfGHMe19ArND-Pkpk)
 5/20/2021, 10:29:02 AM - ERROR - Failed to Login Invalid email or password (sid: w2cma23yq6iQXWYmfGHMe19ArND-Pkpk)
 5/20/2021, 10:29:06 AM - DEBUG - auth.service - login with email: tomleb3@gmail.com (sid: w2cma23yq6iQXWYmfGHMe19ArND-Pkpk)
+5/20/2021, 1:20:24 PM - DEBUG - auth.service - signup with email: ttt@gmail.com, fullname: Asd Xcv (sid: mPPSFaHrdRZAoqkxothniaiouUS4YGEY)
+5/20/2021, 1:20:24 PM - DEBUG - auth.route - new account created: {"email":"ttt@gmail.com","password":"$2b$10$eBgKiMvNDrkWHQH9uIiC/OI3AA89VxR8uz6vz8JiEkC8EYS8Ye5.u","fullname":"Asd Xcv","isAdmin":false,"description":"","createdAt":1621506024168,"reviews":[],"imgUrls":{"profile":"","banner":""},"_id":"60a637e8d630013080badcfb"} (sid: mPPSFaHrdRZAoqkxothniaiouUS4YGEY)
+5/20/2021, 1:20:24 PM - DEBUG - auth.service - login with email: ttt@gmail.com (sid: mPPSFaHrdRZAoqkxothniaiouUS4YGEY)
