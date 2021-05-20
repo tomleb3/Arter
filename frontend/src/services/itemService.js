@@ -7,7 +7,6 @@ export const itemService = {
     add,
     update,
     query,
-    save,
     remove,
     getById
 }
@@ -26,24 +25,14 @@ function getById(itemId) {
     return httpService.get(`item/${itemId}`)
 }
 
-function save(itemToSave) {
-    if (itemToSave._id)
-        return httpService.put(`item/${itemToSave._id}`, itemToSave) // UPDATE
-    else
-        return httpService.post('item/', itemToSave) // CREATE
-}
-
 function remove(itemId) {
     return httpService.delete(`item/${itemId}`)
-    // return storageService.delete('item', itemId)
-
 }
+
 function add(item) {
-    console.log('itemService:', item)
     return httpService.post('item', item)
 }
 
 function update(item) {
-    // console.log('item', item)
     return httpService.put(`item/${item._id}`, item)
 }
