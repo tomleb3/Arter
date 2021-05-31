@@ -73,21 +73,26 @@ class _LoginSignup extends Component {
                 this.props.history.push('/')
             }
         } catch (err) {
-            return await this.setState({ msg: 'Login failed, please try again.' })
+            return this.setState({ ...this.state, msg: err.response.data })
         }
     }
 
     doSignup = async ev => {
         ev.preventDefault()
         let { email, password, firstName, lastName } = this.state.signupCred
-        if (!email || !password || !firstName || !lastName) return this.setState({ msg: 'All inputs are required' })
-        firstName = firstName.charAt(0).toUpperCase() + firstName.slice(1)
-        lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1)
-        email = email.toLowerCase()
+        if (!email || !password || !firstName || !lastName) return this.setState({ msg: 'All fields are required' })
+        firstName = firstName.trim().charAt(0).toUpperCase() + firstName.slice(1)
+        lastName = lastName.trim().charAt(0).toUpperCase() + lastName.slice(1)
+        email = email.trim().toLowerCase()
         let fullname = firstName + ' ' + lastName
         const signupCreds = { email, password, fullname }
-        await this.props.signup(signupCreds)
-        this.setState({ signupCred: { email: '', password: '', fullname: '' } })
+        try {
+            await this.props.signup(signupCreds)
+            this.setState({ signupCred: { email: '', password: '', fullname: '' } })
+        }
+        catch (err) {
+            return this.setState({ ...this.state, msg: err.response.data })
+        }
         if (localStorage['loggedInUser']) this.props.history.push('/')
     }
 
@@ -104,6 +109,7 @@ class _LoginSignup extends Component {
                     value={this.state.signupCred.email}
                     onChange={this.signupHandleChange}
                     label="Email"
+                    autoComplete="on"
                 />
                 <TextField
                     type="text"
@@ -112,6 +118,7 @@ class _LoginSignup extends Component {
                     value={this.state.signupCred.firstName}
                     onChange={this.signupHandleChange}
                     label="First Name"
+                    autoComplete="on"
                 />
                 <TextField
                     type="text"
@@ -120,6 +127,7 @@ class _LoginSignup extends Component {
                     value={this.state.signupCred.lastName}
                     onChange={this.signupHandleChange}
                     label="Last Name"
+                    autoComplete="on"
                 />
                 <TextField
                     type="password"
@@ -128,6 +136,7 @@ class _LoginSignup extends Component {
                     value={this.state.signupCred.password}
                     onChange={this.signupHandleChange}
                     label="Password"
+                    autoComplete="off"
                 />
                 <Button className="signup-btn" type="submit" color="secondary" variant="contained">SIGN UP</Button>
             </form>
@@ -141,6 +150,7 @@ class _LoginSignup extends Component {
                     value={this.state.loginCred.email}
                     onChange={this.loginHandleChange}
                     label="Email"
+                    autoComplete="on"
                 />
                 <TextField
                     type="password"
@@ -148,6 +158,7 @@ class _LoginSignup extends Component {
                     value={this.state.loginCred.password}
                     onChange={this.loginHandleChange}
                     label="Password"
+                    autoComplete="off"
                 />
                 <Button className="login-btn" type="submit" variant="contained">SIGN IN</Button>
 

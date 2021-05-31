@@ -45,7 +45,7 @@ export function login(userCreds) {
       const user = await userService.login(userCreds)
       dispatch({ type: 'SET_USER', user })
     } catch (err) {
-      console.log('UserActions: err in login', err)
+      throw err
     }
   }
 }
@@ -56,7 +56,7 @@ export function signup(userCreds) {
       const user = await userService.signup(userCreds)
       dispatch({ type: 'SET_USER', user })
     } catch (err) {
-      console.log('UserActions: err in signup', err)
+      throw err
     }
   }
 }

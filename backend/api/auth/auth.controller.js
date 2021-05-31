@@ -2,14 +2,14 @@ const authService = require('./auth.service')
 const logger = require('../../services/logger.service')
 
 async function login(req, res) {
-    const { email, password } = req.body
     try {
+        const { email, password } = req.body
         const user = await authService.login(email, password)
         req.session.user = user
         res.json(user)
     } catch (err) {
         logger.error('Failed to Login ' + err)
-        res.status(401).send({ err: 'Failed to Login' })
+        res.status(401).send(err)
     }
 }
 
@@ -23,11 +23,11 @@ async function signup(req, res) {
         res.json(user)
     } catch (err) {
         logger.error('Failed to signup ' + err)
-        res.status(500).send({ err: 'Failed to signup' })
+        res.status(500).send(err)
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ msg: 'Logged out successfully' })
