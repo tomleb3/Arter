@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { editUser } from '../store/actions/userActions'
 import { utilService } from '../services/utilService.js'
@@ -8,11 +8,11 @@ import StarIcon from '@material-ui/icons/Star'
 function _ItemPreview({ item, minified, loggedInUser, editUser }) {
 
     const userRating = utilService.calcRate(item.seller)
+    const history = useHistory(null)
 
     const dynamicLikeButton = () => {
-        if (!loggedInUser) return
-        const isLiked = loggedInUser.favorites && loggedInUser.favorites.includes(item._id)
-        return <button onClick={() => onToggleLike(isLiked)}>
+        const isLiked = loggedInUser && loggedInUser.favorites && loggedInUser.favorites.includes(item._id)
+        return <button onClick={() => loggedInUser ? onToggleLike(isLiked) : history.push('/login')}>
             {isLiked ? <svg aria-label="Unlike" className="pointer" fill="#ed4956" height="20" viewBox="0 0 48 48" width="20">
                 <path d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12
              10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6
