@@ -1,4 +1,4 @@
-import { Component, createRef } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { UserList } from '../cmps/UserList.jsx'
 import { ItemList } from '../cmps/ItemList.jsx'

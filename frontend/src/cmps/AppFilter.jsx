@@ -30,7 +30,7 @@ export class AppFilter extends Component {
         const { value } = ev.target
         this.setState(({ txt: value }), () => this.props.onFilter(this.state.txt))
         window.scrollTo({ top: 0 })
-        this.lastScrollY = 0
+        this.lastScrollY = window.scrollY
     }
 
     render() {
