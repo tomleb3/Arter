@@ -2,8 +2,9 @@
     text-align: right;
     position: sticky;
     top: 70px;
-    z-index: 5;
+    transition: top 0.3s;
     background-color: #ffffffed;
+    z-index: 5;
 
     .search-bar {
         font-size: 1.1rem;
